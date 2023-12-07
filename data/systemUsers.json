@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Manager",
+        "email": "manager@admin.com",
+        "password": "password",
+        "role": "manager",
+        "section": null
+    },
+    {
+        "name": "Eva",
+        "email": "eva@admin.com",
+        "password": "password",
+        "role": "eva",
+        "section": null
+    },
+    {
+        "name": "Area",
+        "email": "area@admin.com",
+        "password": "password",
+        "role": "area",
+        "section": null
+    }
+]

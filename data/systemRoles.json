@@ -1,0 +1,58 @@
+[
+    {
+        "slug": "admin",
+        "name": "ผู้ดูแลระบบ",
+        "permissions": {
+            "platform.index" : true,
+            "platform.systems.roles" : true,
+            "platform.systems.users" : true,
+            "platform.systems.attachment" : true,
+            "platform.userType.isAdmin" : true,
+            "platform.userType.isManager" : false,
+            "platform.userType.isEVA" : false,
+            "platform.userType.isArea" : false
+        }
+    },
+    {
+        "slug": "area",
+        "name": "สพท",
+        "permissions": {
+            "platform.index" : true,
+            "platform.systems.roles" : false,
+            "platform.systems.users" : false,
+            "platform.systems.attachment" : true,
+            "platform.userType.isAdmin" : false,
+            "platform.userType.isManager" : false,
+            "platform.userType.isEVA" : false,
+            "platform.userType.isArea" : true
+        }
+    },
+    {
+        "slug": "eva",
+        "name": "สตผ",
+        "permissions": {
+            "platform.index" : true,
+            "platform.systems.roles" : false,
+            "platform.systems.users" : false,
+            "platform.systems.attachment" : true,
+            "platform.userType.isAdmin" : false,
+            "platform.userType.isManager" : false,
+            "platform.userType.isEVA" : true,
+            "platform.userType.isArea" : false
+        }
+    },
+    {
+        "slug": "manager",
+        "name": "ผู้บริหาร",
+        "permissions": {
+            "platform.index" : true,
+            "platform.systems.roles" : false,
+            "platform.systems.users" : false,
+            "platform.systems.attachment" : true,
+            "platform.userType.isAdmin" : false,
+            "platform.userType.isManager" : true,
+            "platform.userType.isEVA" : false,
+            "platform.userType.isArea" : false
+        }
+    }
+]

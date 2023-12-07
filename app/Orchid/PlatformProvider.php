@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Orchid;
 
+use Illuminate\Support\Facades\Auth;
 use Orchid\Platform\Dashboard;
 use Orchid\Platform\ItemPermission;
 use Orchid\Platform\OrchidServiceProvider;
@@ -33,7 +34,7 @@ class PlatformProvider extends OrchidServiceProvider
      */
     public function menu(): array
     {
-        return [
+        $menu = [
             Menu::make('Get Started')
                 ->icon('bs.book')
                 ->title('Navigation')
@@ -82,12 +83,14 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('bag')
                 ->route('platform.task')
                 ->title('Tools'),
-
-            Menu::make('Login')
-                ->icon('bag')
-                ->route('platform.login')
-                ->title('เข้าสู่ระบบ')
         ];
+        if (Auth::guest()) {
+            array_push($menu, Menu::make('เข้าสู่ระบบ')
+            ->icon('person-vcard')
+            ->route('platform.login')
+            ->title('บัญชี'));
+        }
+        return $menu;
     }
 
     /**
@@ -99,11 +102,11 @@ class PlatformProvider extends OrchidServiceProvider
     {
         return [
             ItemPermission::group(__('System'))
-                ->addPermission('platform.systems.roles', __('Roles'))
-                ->addPermission('platform.systems.users', __('Users'))
-                ->addPermission('platform.systems.isManager', __('is Manager'))
-                ->addPermission('platform.systems.isEVA', __('is EVA'))
-                ->addPermission('platform.systems.isArea', __('is Area'))
+                ->addPermission('platform.systems.roles', __('Roles Manage'))
+                ->addPermission('platform.systems.users', __('Users Manage'))
+                ->addPermission('platform.userType.isManager', __('is Manager'))
+                ->addPermission('platform.userType.isEVA', __('is EVA'))
+                ->addPermission('platform.userType.isArea', __('is Area'))
         ];
     }
 }
