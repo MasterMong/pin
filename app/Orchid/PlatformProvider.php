@@ -78,22 +78,15 @@ class PlatformProvider extends OrchidServiceProvider
                 ->permission('platform.systems.roles')
                 ->divider(),
 
-            Menu::make('Documentation')
-                ->title('Docs')
-                ->icon('bs.box-arrow-up-right')
-                ->url('https://orchid.software/en/docs')
-                ->target('_blank'),
-
-            Menu::make('Changelog')
-                ->icon('bs.box-arrow-up-right')
-                ->url('https://github.com/orchidsoftware/platform/blob/master/CHANGELOG.md')
-                ->target('_blank')
-                ->badge(fn () => Dashboard::version(), Color::DARK),
-
             Menu::make('Tasks')
                 ->icon('bag')
                 ->route('platform.task')
-                ->title('Tools')
+                ->title('Tools'),
+
+            Menu::make('Login')
+                ->icon('bag')
+                ->route('platform.login')
+                ->title('เข้าสู่ระบบ')
         ];
     }
 
@@ -107,7 +100,10 @@ class PlatformProvider extends OrchidServiceProvider
         return [
             ItemPermission::group(__('System'))
                 ->addPermission('platform.systems.roles', __('Roles'))
-                ->addPermission('platform.systems.users', __('Users')),
+                ->addPermission('platform.systems.users', __('Users'))
+                ->addPermission('platform.systems.isManager', __('is Manager'))
+                ->addPermission('platform.systems.isEVA', __('is EVA'))
+                ->addPermission('platform.systems.isArea', __('is Area'))
         ];
     }
 }

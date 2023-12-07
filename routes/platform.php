@@ -20,6 +20,9 @@ use App\Orchid\Screens\User\UserProfileScreen;
 use Illuminate\Support\Facades\Route;
 use Tabuna\Breadcrumbs\Trail;
 use App\Orchid\Screens\TaskScreen;
+use App\Orchid\Screens\StateScreen;
+use App\Orchid\Screens\PostEditScreen;
+use App\Orchid\Screens\PostListScreen;
 
 /*
 |--------------------------------------------------------------------------
@@ -111,3 +114,10 @@ Route::screen('task', TaskScreen::class)
             ->parent('platform.index')
             ->push('Task');
     });
+
+Route::screen('state', StateScreen::class)->name('state');
+Route::screen('post/{post?}', PostEditScreen::class)
+    ->name('platform.post.edit');
+
+Route::screen('posts', PostListScreen::class)
+    ->name('platform.post.list');
