@@ -5,7 +5,7 @@
         "permissions": {
             "platform.index" : true,
             "platform.systems.roles" : true,
-            "platform.systems.users" : true,
+            "users" : true,
             "platform.systems.attachment" : true,
             "platform.userType.isAdmin" : true,
             "platform.userType.isManager" : false,
@@ -19,7 +19,7 @@
         "permissions": {
             "platform.index" : true,
             "platform.systems.roles" : false,
-            "platform.systems.users" : false,
+            "users" : false,
             "platform.systems.attachment" : true,
             "platform.userType.isAdmin" : false,
             "platform.userType.isManager" : false,
@@ -33,7 +33,7 @@
         "permissions": {
             "platform.index" : true,
             "platform.systems.roles" : false,
-            "platform.systems.users" : false,
+            "users" : false,
             "platform.systems.attachment" : true,
             "platform.userType.isAdmin" : false,
             "platform.userType.isManager" : false,
@@ -47,7 +47,7 @@
         "permissions": {
             "platform.index" : true,
             "platform.systems.roles" : false,
-            "platform.systems.users" : false,
+            "users" : false,
             "platform.systems.attachment" : true,
             "platform.userType.isAdmin" : false,
             "platform.userType.isManager" : true,

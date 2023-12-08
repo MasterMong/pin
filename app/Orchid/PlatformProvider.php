@@ -69,8 +69,8 @@ class PlatformProvider extends OrchidServiceProvider
 
             Menu::make(__('Users'))
                 ->icon('bs.people')
-                ->route('platform.systems.users')
-                ->permission('platform.systems.users')
+                ->route('users.users')
+                ->permission('users')
                 ->title(__('Access Controls')),
 
             Menu::make(__('Roles'))
@@ -103,7 +103,7 @@ class PlatformProvider extends OrchidServiceProvider
         return [
             ItemPermission::group(__('System'))
                 ->addPermission('platform.systems.roles', __('Roles Manage'))
-                ->addPermission('platform.systems.users', __('Users Manage'))
+                ->addPermission('users', __('Users Manage'))
                 ->addPermission('platform.userType.isManager', __('is Manager'))
                 ->addPermission('platform.userType.isEVA', __('is EVA'))
                 ->addPermission('platform.userType.isArea', __('is Area'))

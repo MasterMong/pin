@@ -28,11 +28,11 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        $jsonRoles = json_decode(File::get(base_path('data/roles.json')), true);
+        $jsonRoles = json_decode(File::get(base_path('data/systemRoles.json')), true);
         foreach ($jsonRoles as $key => $value) {
             self::createRole($value);
         }
-        $jsonUsers = json_decode(File::get(base_path('data/users.json')));
+        $jsonUsers = json_decode(File::get(base_path('data/systemUsers.json')));
         foreach ($jsonUsers as $key => $value) {
             self::createUser($value);
         }
