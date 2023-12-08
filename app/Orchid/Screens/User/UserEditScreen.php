@@ -62,7 +62,7 @@ class UserEditScreen extends Screen
     public function permission(): ?iterable
     {
         return [
-            'users',
+            'manage.users',
         ];
     }
 
@@ -176,7 +176,7 @@ class UserEditScreen extends Screen
 
         Toast::info(__('User was saved.'));
 
-        return redirect()->route('users');
+        return redirect()->route('users.users');
     }
 
     /**
@@ -190,7 +190,7 @@ class UserEditScreen extends Screen
 
         Toast::info(__('User was removed'));
 
-        return redirect()->route('users');
+        return redirect()->route('users.users');
     }
 
     /**

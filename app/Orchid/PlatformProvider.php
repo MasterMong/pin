@@ -38,57 +38,97 @@ class PlatformProvider extends OrchidServiceProvider
             Menu::make('Get Started')
                 ->icon('bs.book')
                 ->title('Navigation')
-                ->route(config('platform.index')),
+                ->route(config('platform.index'))
+                ->permission('userType.isAdmin')
+                ->list([
+                    Menu::make('Sample Screen')
+                        ->icon('bs.collection')
+                        ->route('platform.example')
+                        ->badge(fn () => 6),
 
-            Menu::make('Sample Screen')
-                ->icon('bs.collection')
-                ->route('platform.example')
-                ->badge(fn () => 6),
+                    Menu::make('Form Elements')
+                        ->icon('bs.card-list')
+                        ->route('platform.example.fields')
+                        ->active('*/examples/form/*'),
 
-            Menu::make('Form Elements')
-                ->icon('bs.card-list')
-                ->route('platform.example.fields')
-                ->active('*/examples/form/*'),
+                    Menu::make('Overview Layouts')
+                        ->icon('bs.window-sidebar')
+                        ->route('platform.example.layouts'),
 
-            Menu::make('Overview Layouts')
-                ->icon('bs.window-sidebar')
-                ->route('platform.example.layouts'),
+                    Menu::make('Grid System')
+                        ->icon('bs.columns-gap')
+                        ->route('platform.example.grid'),
 
-            Menu::make('Grid System')
-                ->icon('bs.columns-gap')
-                ->route('platform.example.grid'),
+                    Menu::make('Charts')
+                        ->icon('bs.bar-chart')
+                        ->route('platform.example.charts'),
 
-            Menu::make('Charts')
-                ->icon('bs.bar-chart')
-                ->route('platform.example.charts'),
+                    Menu::make('Cards')
+                        ->icon('bs.card-text')
+                        ->route('platform.example.cards')
+                        ->divider(),
+                ]),
 
-            Menu::make('Cards')
+
+
+            Menu::make('รายงานความก้าวหน้า')
+                ->title("รายงานแผน/ความก้าวหน้า")
                 ->icon('bs.card-text')
-                ->route('platform.example.cards')
-                ->divider(),
+                ->route('startegy.index')
+                ->list([
+                    Menu::make('Startegy map')
+                        ->icon('bs.card-text')
+                        ->route('startegy.map'),
+                    Menu::make('โครงการ')
+                        ->icon('bs.card-text')
+                        ->active([
+                            'startegy.project'
+                        ])
+                        ->route('startegy.project'),
+                    Menu::make('ส่งแผน')
+                        ->icon('bs.card-text')
+                        ->route('startegy.contex.form')
+                        ->active([
+                            'startegy.contex.form',
+                            'startegy.project.form'
+                        ])
+                        ->list([
+                            Menu::make('สภาพบริบท')
+                                ->icon('bs.card-text')
+                                ->route('startegy.contex.form'),
+                            Menu::make('โครงการ')
+                                ->icon('bs.card-text')
+                                ->route('startegy.project.form'),
+                        ]),
+                ]),
+            Menu::make('รายงานผล รอบ 12 เดือน')
+                ->icon('bs.card-text')
+                ->route('startegy.report'),
+
 
             Menu::make(__('Users'))
                 ->icon('bs.people')
                 ->route('users.users')
-                ->permission('users')
+                ->permission('manage.users')
                 ->title(__('Access Controls')),
 
             Menu::make(__('Roles'))
                 ->icon('bs.shield')
-                ->route('platform.systems.roles')
-                ->permission('platform.systems.roles')
+                ->route('roles.roles')
+                ->permission('manage.roles')
                 ->divider(),
 
             Menu::make('Tasks')
                 ->icon('bag')
                 ->route('platform.task')
+                ->permission('userType.isAdmin')
                 ->title('Tools'),
         ];
         if (Auth::guest()) {
             array_push($menu, Menu::make('เข้าสู่ระบบ')
-            ->icon('person-vcard')
-            ->route('platform.login')
-            ->title('บัญชี'));
+                ->icon('person-vcard')
+                ->route('platform.login')
+                ->title('บัญชี'));
         }
         return $menu;
     }
@@ -102,11 +142,12 @@ class PlatformProvider extends OrchidServiceProvider
     {
         return [
             ItemPermission::group(__('System'))
-                ->addPermission('platform.systems.roles', __('Roles Manage'))
-                ->addPermission('users', __('Users Manage'))
-                ->addPermission('platform.userType.isManager', __('is Manager'))
-                ->addPermission('platform.userType.isEVA', __('is EVA'))
-                ->addPermission('platform.userType.isArea', __('is Area'))
+                ->addPermission('manage.roles', __('Roles Manage'))
+                ->addPermission('manage.users', __('Users Manage'))
+                ->addPermission('userType.isManager', __('is Manager'))
+                ->addPermission('userType.isEVA', __('is EVA'))
+                ->addPermission('userType.isArea', __('is Area'))
+                ->addPermission('userType.isAdmin', __('is Admin'))
         ];
     }
 }

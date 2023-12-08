@@ -51,7 +51,7 @@ class UserListScreen extends Screen
     public function permission(): ?iterable
     {
         return [
-            'users',
+            'manage.users',
         ];
     }
 

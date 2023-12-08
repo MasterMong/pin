@@ -4,13 +4,13 @@
         "name": "ผู้ดูแลระบบ",
         "permissions": {
             "platform.index" : true,
-            "platform.systems.roles" : true,
-            "users" : true,
+            "manage.roles" : true,
+            "manage.users" : true,
             "platform.systems.attachment" : true,
-            "platform.userType.isAdmin" : true,
-            "platform.userType.isManager" : false,
-            "platform.userType.isEVA" : false,
-            "platform.userType.isArea" : false
+            "userType.isAdmin" : true,
+            "userType.isManager" : false,
+            "userType.isEVA" : false,
+            "userType.isArea" : false
         }
     },
     {
@@ -18,13 +18,13 @@
         "name": "สพท",
         "permissions": {
             "platform.index" : true,
-            "platform.systems.roles" : false,
-            "users" : false,
+            "manage.roles" : false,
+            "manage.users" : false,
             "platform.systems.attachment" : true,
-            "platform.userType.isAdmin" : false,
-            "platform.userType.isManager" : false,
-            "platform.userType.isEVA" : false,
-            "platform.userType.isArea" : true
+            "userType.isAdmin" : false,
+            "userType.isManager" : false,
+            "userType.isEVA" : false,
+            "userType.isArea" : true
         }
     },
     {
@@ -32,13 +32,13 @@
         "name": "สตผ",
         "permissions": {
             "platform.index" : true,
-            "platform.systems.roles" : false,
-            "users" : false,
+            "manage.roles" : false,
+            "manage.users" : false,
             "platform.systems.attachment" : true,
-            "platform.userType.isAdmin" : false,
-            "platform.userType.isManager" : false,
-            "platform.userType.isEVA" : true,
-            "platform.userType.isArea" : false
+            "userType.isAdmin" : false,
+            "userType.isManager" : false,
+            "userType.isEVA" : true,
+            "userType.isArea" : false
         }
     },
     {
@@ -46,13 +46,13 @@
         "name": "ผู้บริหาร",
         "permissions": {
             "platform.index" : true,
-            "platform.systems.roles" : false,
-            "users" : false,
+            "manage.roles" : false,
+            "manage.users" : false,
             "platform.systems.attachment" : true,
-            "platform.userType.isAdmin" : false,
-            "platform.userType.isManager" : true,
-            "platform.userType.isEVA" : false,
-            "platform.userType.isArea" : false
+            "userType.isAdmin" : false,
+            "userType.isManager" : true,
+            "userType.isEVA" : false,
+            "userType.isArea" : false
         }
     }
 ]

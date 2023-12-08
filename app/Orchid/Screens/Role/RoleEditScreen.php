@@ -55,7 +55,7 @@ class RoleEditScreen extends Screen
     public function permission(): ?iterable
     {
         return [
-            'platform.systems.roles',
+            'manage.roles',
         ];
     }
 
@@ -123,7 +123,7 @@ class RoleEditScreen extends Screen
 
         Toast::info(__('Role was saved'));
 
-        return redirect()->route('platform.systems.roles');
+        return redirect()->route('roles.roles');
     }
 
     /**
@@ -137,6 +137,6 @@ class RoleEditScreen extends Screen
 
         Toast::info(__('Role was removed'));
 
-        return redirect()->route('platform.systems.roles');
+        return redirect()->route('roles.roles');
     }
 }
