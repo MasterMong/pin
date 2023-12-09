@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Orchid\Filters\Types\Like;
 use Orchid\Filters\Types\Where;
 use Orchid\Filters\Types\WhereDateStartEnd;
 use Orchid\Platform\Models\User as Authenticatable;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class User extends Authenticatable
 {
@@ -68,4 +70,8 @@ class User extends Authenticatable
         'updated_at',
         'created_at',
     ];
+
+    public function area(): BelongsTo {
+        return $this->belongsTo(Area::class);
+    }
 }

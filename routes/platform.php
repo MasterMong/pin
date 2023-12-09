@@ -14,7 +14,7 @@ use App\Orchid\Screens\Examples\ExampleTextEditorsScreen;
 use App\Orchid\Screens\PlatformScreen;
 use App\Orchid\Screens\PostEditScreen;
 use App\Orchid\Screens\PostListScreen;
-use App\Orchid\Screens\Profile\ProfileArea;
+use App\Orchid\Screens\Profile\ProfileAreaScreen;
 use App\Orchid\Screens\Role\RoleEditScreen;
 use App\Orchid\Screens\Role\RoleListScreen;
 use App\Orchid\Screens\Startegy\StartegyFormContexScreen;
@@ -53,7 +53,7 @@ Route::prefix('/profile')->name('profile.')->group(function () {
                 ->parent('platform.index')
                 ->push(__('Profile'), route('profile.account')));
 
-    Route::screen('/area', ProfileArea::class)
+    Route::screen('/area', ProfileAreaScreen::class)
         ->name('area')
         ->breadcrumbs(fn(Trail $trail) => $trail
                 ->parent('platform.index')

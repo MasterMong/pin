@@ -30,8 +30,8 @@ return new class extends Migration
             $table->integer('school_count')->default(0);
             $table->integer('member_count')->default(0);
             $table->string('website')->nullable();
-            $table->float('latitude')->nullable();
-            $table->float('longtitude')->nullable();
+            $table->string('latitude')->nullable();
+            $table->string('longtitude')->nullable();
             $table->json('etc')->nullable();
             $table->timestamps();
 
