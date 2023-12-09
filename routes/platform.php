@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 use App\Orchid\Screens\Examples\ExampleActionsScreen;
 use App\Orchid\Screens\Examples\ExampleCardsScreen;
@@ -12,22 +12,22 @@ use App\Orchid\Screens\Examples\ExampleLayoutsScreen;
 use App\Orchid\Screens\Examples\ExampleScreen;
 use App\Orchid\Screens\Examples\ExampleTextEditorsScreen;
 use App\Orchid\Screens\PlatformScreen;
-use App\Orchid\Screens\Role\RoleEditScreen;
-use App\Orchid\Screens\Role\RoleListScreen;
-use App\Orchid\Screens\User\UserEditScreen;
-use App\Orchid\Screens\User\UserListScreen;
-use App\Orchid\Screens\User\UserProfileScreen;
-use Illuminate\Support\Facades\Route;
-use Tabuna\Breadcrumbs\Trail;
-use App\Orchid\Screens\TaskScreen;
-use App\Orchid\Screens\StateScreen;
 use App\Orchid\Screens\PostEditScreen;
 use App\Orchid\Screens\PostListScreen;
+use App\Orchid\Screens\Role\RoleEditScreen;
+use App\Orchid\Screens\Role\RoleListScreen;
 use App\Orchid\Screens\Startegy\StartegyFormContexScreen;
 use App\Orchid\Screens\Startegy\StartegyFormProjectScreen;
 use App\Orchid\Screens\Startegy\StartegyMapScreen;
 use App\Orchid\Screens\Startegy\StartegyProjectScreen;
 use App\Orchid\Screens\Startegy\StartegyScreen;
+use App\Orchid\Screens\StateScreen;
+use App\Orchid\Screens\TaskScreen;
+use App\Orchid\Screens\User\UserEditScreen;
+use App\Orchid\Screens\User\UserListScreen;
+use App\Orchid\Screens\User\UserProfileScreen;
+use Illuminate\Support\Facades\Route;
+use Tabuna\Breadcrumbs\Trail;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,105 +38,107 @@ use App\Orchid\Screens\Startegy\StartegyScreen;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the need "dashboard" middleware group. Now create something great!
 |
-*/
+ */
 
 // Main
 Route::screen('/main', PlatformScreen::class)
     ->name('platform.main');
 
+// Route::prefix('/profile')->name('profile.')->group(function () {
+
+// });
 // Platform > Profile
 Route::screen('profile', UserProfileScreen::class)
     ->name('platform.profile')
-    ->breadcrumbs(fn (Trail $trail) => $trail
-        ->parent('platform.index')
-        ->push(__('Profile'), route('platform.profile')));
+    ->breadcrumbs(fn(Trail $trail) => $trail
+            ->parent('platform.index')
+            ->push(__('Profile'), route('platform.profile')));
 
 Route::prefix('/users')->name('users.')->group(function () {
     // Users > User
     Route::screen('users/{user}/edit', UserEditScreen::class)
         ->name('edit')
-        ->breadcrumbs(fn (Trail $trail, $user) => $trail
-            ->parent('users.users')
-            ->push($user->name, route('users.edit', $user)));
+        ->breadcrumbs(fn(Trail $trail, $user) => $trail
+                ->parent('users.users')
+                ->push($user->name, route('users.edit', $user)));
 
     // Users > Create
     Route::screen('users/create', UserEditScreen::class)
         ->name('create')
-        ->breadcrumbs(fn (Trail $trail) => $trail
-            ->parent('users.users')
-            ->push(__('Create'), route('users.create')));
+        ->breadcrumbs(fn(Trail $trail) => $trail
+                ->parent('users.users')
+                ->push(__('Create'), route('users.create')));
 
     // Users
     Route::screen('users', UserListScreen::class)
         ->name('users')
-        ->breadcrumbs(fn (Trail $trail) => $trail
-            ->parent('platform.index')
-            ->push(__('Users'), route('users.users')));
+        ->breadcrumbs(fn(Trail $trail) => $trail
+                ->parent('platform.index')
+                ->push(__('Users'), route('users.users')));
 });
 
 Route::prefix('/startegy')->name('startegy.')->group(function () {
     Route::screen('/main', StartegyScreen::class)
         ->name('index')
-        ->breadcrumbs(fn (Trail $trail) => $trail
-            ->parent('platform.index')
-            ->push("แผนการดำเนินงาน", route('startegy.index')));
+        ->breadcrumbs(fn(Trail $trail) => $trail
+                ->parent('platform.index')
+                ->push("แผนการดำเนินงาน", route('startegy.index')));
     Route::screen('/map', StartegyMapScreen::class)
         ->name('map')
-        ->breadcrumbs(fn (Trail $trail) => $trail
-            ->parent('startegy.index')
-            ->push("Startegy map", route('startegy.map')));
+        ->breadcrumbs(fn(Trail $trail) => $trail
+                ->parent('startegy.index')
+                ->push("Startegy map", route('startegy.map')));
     Route::screen('/project', StartegyProjectScreen::class)
         ->name('project')
-        ->breadcrumbs(fn (Trail $trail) => $trail
-            ->parent('startegy.index')
-            ->push("โครงการ", route('startegy.project')));
+        ->breadcrumbs(fn(Trail $trail) => $trail
+                ->parent('startegy.index')
+                ->push("โครงการ", route('startegy.project')));
     Route::screen('/contex/form', StartegyFormContexScreen::class)
         ->name('contex.form')
-        ->breadcrumbs(fn (Trail $trail) => $trail
-            ->parent('startegy.index')
-            ->push("สภาพบริบท/แนวทางพัฒนาเชิงกลยุทธ์", route('startegy.contex.form')));
+        ->breadcrumbs(fn(Trail $trail) => $trail
+                ->parent('startegy.index')
+                ->push("สภาพบริบท/แนวทางพัฒนาเชิงกลยุทธ์", route('startegy.contex.form')));
     Route::screen('/project/form', StartegyFormProjectScreen::class)
         ->name('project.form')
-        ->breadcrumbs(fn (Trail $trail) => $trail
-            ->parent('startegy.index')
-            ->push("โครงการ", route('startegy.project.form')));
+        ->breadcrumbs(fn(Trail $trail) => $trail
+                ->parent('startegy.index')
+                ->push("โครงการ", route('startegy.project.form')));
     Route::screen('/report', StartegyMapScreen::class)
         ->name('report')
-        ->breadcrumbs(fn (Trail $trail) => $trail
-            ->parent('platform.index')
-            ->push("รายงานผลการดำเนินงาน รอบ 12 เดือน", route('startegy.report')));
+        ->breadcrumbs(fn(Trail $trail) => $trail
+                ->parent('platform.index')
+                ->push("รายงานผลการดำเนินงาน รอบ 12 เดือน", route('startegy.report')));
 });
 
 Route::prefix('/roles')->name('roles.')->group(function () {
     // Platform > System > Roles > Role
     Route::screen('roles/{role}/edit', RoleEditScreen::class)
         ->name('edit')
-        ->breadcrumbs(fn (Trail $trail, $role) => $trail
-            ->parent('roles.roles')
-            ->push($role->name, route('roles.edit', $role)));
+        ->breadcrumbs(fn(Trail $trail, $role) => $trail
+                ->parent('roles.roles')
+                ->push($role->name, route('roles.edit', $role)));
 
     // Platform > System > Roles > Create
     Route::screen('roles/create', RoleEditScreen::class)
         ->name('create')
-        ->breadcrumbs(fn (Trail $trail) => $trail
-            ->parent('roles')
-            ->push(__('Create'), route('roles.create')));
+        ->breadcrumbs(fn(Trail $trail) => $trail
+                ->parent('roles')
+                ->push(__('Create'), route('roles.create')));
 
     // Platform > System > Roles
     Route::screen('roles', RoleListScreen::class)
         ->name('roles')
-        ->breadcrumbs(fn (Trail $trail) => $trail
-            ->parent('platform.index')
-            ->push(__('Roles'), route('roles.roles')));
+        ->breadcrumbs(fn(Trail $trail) => $trail
+                ->parent('platform.index')
+                ->push(__('Roles'), route('roles.roles')));
 });
-
 
 // Example...
 Route::screen('example', ExampleScreen::class)
     ->name('platform.example')
-    ->breadcrumbs(fn (Trail $trail) => $trail
-        ->parent('platform.index')
-        ->push('Example Screen'));
+    ->breadcrumbs(fn(Trail $trail) => $trail
+            ->parent('platform.index')
+            ->push('Example Screen'));
 
 Route::screen('/examples/form/fields', ExampleFieldsScreen::class)->name('platform.example.fields');
 Route::screen('/examples/form/advanced', ExampleFieldsAdvancedScreen::class)->name('platform.example.advanced');

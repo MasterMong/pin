@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Province extends Model
+class District extends Model
 {
     use HasFactory;
 
@@ -13,6 +13,6 @@ class Province extends Model
         'code',
         'name_in_thai',
         'name_in_english',
-        'regionID'
+        'province_id'
     ];
 }

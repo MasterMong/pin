@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             // $table->foreignId('area_id')->references('id')->on('areas')->restrictOnDelete();
+            $table->foreignId('area_id')->nullable();
         });
     }
 
@@ -22,7 +23,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('posts', function (Blueprint $table) {
-            // $table->dropColumn('area_code');
+            $table->dropColumn('area_id');
         });
     }
 };

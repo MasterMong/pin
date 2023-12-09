@@ -18,6 +18,34 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // init
+        $jsonRegions = json_decode(File::get(base_path('data/dataRegions.json')), true);
+        foreach ($jsonRegions as $key => $value) {
+            self::createIfEmpty($value, 'regions');
+        }
+        $jsonInspection = json_decode(File::get(base_path('data/dataInspection.json')), true);
+        foreach ($jsonInspection as $key => $value) {
+            self::createIfEmpty($value, 'inspection_areas');
+        }
+        $jsonProvince = json_decode(File::get(base_path('data/dataProvinces.json')), true);
+        foreach ($jsonProvince as $key => $value) {
+            self::createIfEmpty($value, 'provinces');
+        }
+        $jsonDistricts = json_decode(File::get(base_path('data/dataDistricts.json')), true);
+        foreach ($jsonDistricts as $key => $value) {
+            self::createIfEmpty($value, 'districts');
+        }
+        $jsonAreaTypes = json_decode(File::get(base_path('data/areaType.json')), true);
+        foreach ($jsonAreaTypes as $key => $value) {
+            self::createIfEmpty($value, 'area_types');
+        }
+        $jsonAreas = json_decode(File::get(base_path('data/areaLists.json')), true);
+        foreach ($jsonAreas as $key => $value) {
+            self::createIfEmpty($value, 'areas', 'code');
+        }
+
+        // user
+
         // User::createAdmin(Env('ADMIN_NAME', 'admin'), Env('ADMIN_EMAIL', 'admin@admin.com'), Env('ADMIN_PASSWORD', 'password'));
         if (empty(User::where('email', Env('ADMIN_EMAIL', 'admin@admin.com'))->first())) {
             User::create([
@@ -32,11 +60,6 @@ class DatabaseSeeder extends Seeder
         foreach ($jsonRoles as $key => $value) {
             self::createRole($value);
         }
-        $jsonUsers = json_decode(File::get(base_path('data/systemUsers.json')));
-        foreach ($jsonUsers as $key => $value) {
-            self::createUser($value);
-        }
-
         $adminUser = User::where('email', Env('ADMIN_EMAIL', 'admin@admin.com'))->first();
         $adminRole = Role::where('slug', 'admin')->first();
 
@@ -47,6 +70,11 @@ class DatabaseSeeder extends Seeder
                 'role_id' => $adminRole->id,
             ]);
         }
+        $jsonUsers = json_decode(File::get(base_path('data/systemUsers.json')));
+        foreach ($jsonUsers as $key => $value) {
+            self::createUser($value);
+        }
+
         \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
@@ -64,12 +92,12 @@ class DatabaseSeeder extends Seeder
 
     public static function createUser($data)
     {
-        $exitsUser = User::where('email', $data->email)->first();
         if (empty(User::where('email', $data->email)->first())) {
             $user = User::create([
                 'name' => $data->name,
                 'email' => $data->email,
-                'password' => $data->password,
+                'area_id' => $data->area_id,
+                'password' => Hash::make($data->password),
                 'email_verified_at' => now(),
             ]);
             $role = Role::where('slug', $data->role)->first();
@@ -85,6 +113,16 @@ class DatabaseSeeder extends Seeder
                     ]);
                 }
             }
+        }
+    }
+
+    public static function createIfEmpty($data, $table, $key = 'id')
+    {
+        $exits = DB::table($table)->where($key, $data[$key])->first();
+        $data['created_at'] = now();
+        $data['updated_at'] = now();
+        if (empty($exits)) {
+            DB::table($table)->insert($data);
         }
     }
 }
