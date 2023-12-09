@@ -112,9 +112,9 @@ class PlatformProvider extends OrchidServiceProvider
                 ->permission('manage.users')
                 ->title(__('Access Controls')),
 
-            Menu::make("ปรับปรุงข้อมูล")
+            Menu::make("ปรับปรุงข้อมูล สพท")
                 ->icon('bs.pen')
-                ->route('users.users')
+                ->route('profile.area')
                 ->permission('userType.isArea')
                 ->title("ข้อมูล สพท."),
 

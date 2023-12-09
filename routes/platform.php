@@ -14,6 +14,7 @@ use App\Orchid\Screens\Examples\ExampleTextEditorsScreen;
 use App\Orchid\Screens\PlatformScreen;
 use App\Orchid\Screens\PostEditScreen;
 use App\Orchid\Screens\PostListScreen;
+use App\Orchid\Screens\Profile\ProfileArea;
 use App\Orchid\Screens\Role\RoleEditScreen;
 use App\Orchid\Screens\Role\RoleListScreen;
 use App\Orchid\Screens\Startegy\StartegyFormContexScreen;
@@ -44,15 +45,20 @@ use Tabuna\Breadcrumbs\Trail;
 Route::screen('/main', PlatformScreen::class)
     ->name('platform.main');
 
-// Route::prefix('/profile')->name('profile.')->group(function () {
+Route::prefix('/profile')->name('profile.')->group(function () {
+    // Profile
+    Route::screen('/account', UserProfileScreen::class)
+        ->name('account')
+        ->breadcrumbs(fn(Trail $trail) => $trail
+                ->parent('platform.index')
+                ->push(__('Profile'), route('profile.account')));
 
-// });
-// Platform > Profile
-Route::screen('profile', UserProfileScreen::class)
-    ->name('platform.profile')
-    ->breadcrumbs(fn(Trail $trail) => $trail
-            ->parent('platform.index')
-            ->push(__('Profile'), route('platform.profile')));
+    Route::screen('/area', ProfileArea::class)
+        ->name('area')
+        ->breadcrumbs(fn(Trail $trail) => $trail
+                ->parent('platform.index')
+                ->push("ปรับปรุงข้อมูล สพท", route('profile.area')));
+});
 
 Route::prefix('/users')->name('users.')->group(function () {
     // Users > User
