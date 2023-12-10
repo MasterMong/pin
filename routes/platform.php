@@ -15,6 +15,7 @@ use App\Orchid\Screens\PlatformScreen;
 use App\Orchid\Screens\PostEditScreen;
 use App\Orchid\Screens\PostListScreen;
 use App\Orchid\Screens\Profile\ProfileAreaScreen;
+use App\Orchid\Screens\Report\ReportStartegyYear;
 use App\Orchid\Screens\Role\RoleEditScreen;
 use App\Orchid\Screens\Role\RoleListScreen;
 use App\Orchid\Screens\Startegy\StartegyFormContexScreen;
@@ -109,7 +110,7 @@ Route::prefix('/startegy')->name('startegy.')->group(function () {
         ->breadcrumbs(fn(Trail $trail) => $trail
                 ->parent('startegy.index')
                 ->push("โครงการ", route('startegy.project.form')));
-    Route::screen('/report', StartegyMapScreen::class)
+    Route::screen('/report', ReportStartegyYear::class)
         ->name('report')
         ->breadcrumbs(fn(Trail $trail) => $trail
                 ->parent('platform.index')

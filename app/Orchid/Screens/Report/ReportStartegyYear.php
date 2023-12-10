@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Orchid\Screens\Startegy;
+namespace App\Orchid\Screens\Report;
 
-use App\Orchid\Layouts\AreaContextTabMenu;
 use Orchid\Screen\Screen;
-use Orchid\Support\Facades\Layout;
 
-class StartegyFormProjectScreen extends Screen
+class ReportStartegyYear extends Screen
 {
     /**
      * Fetch data to be displayed on the screen.
@@ -25,12 +23,11 @@ class StartegyFormProjectScreen extends Screen
     public function permission(): ?iterable
     {
         return [
-            'userType.isArea',
-            'userType.isEVA',
-            'userType.isManager',
+            // 'userType.isArea',
+            // 'userType.isEVA',
+            // 'userType.isManager',
         ];
     }
-
     /**
      * The name of the screen displayed in the header.
      *
@@ -38,7 +35,7 @@ class StartegyFormProjectScreen extends Screen
      */
     public function name(): ?string
     {
-        return 'ส่งแผน : โครงการ';
+        return 'ReportStartegyYear';
     }
 
     /**
@@ -58,13 +55,6 @@ class StartegyFormProjectScreen extends Screen
      */
     public function layout(): iterable
     {
-        return [
-            AreaContextTabMenu::class,
-            Layout::columns([
-                Layout::rows([])->title('ข้อมูลโครงการ'),
-                Layout::rows([])->title('ความสอดคล้อง'),
-            ]),
-            Layout::rows([])->title('กิจกรรม')
-        ];
+        return [];
     }
 }

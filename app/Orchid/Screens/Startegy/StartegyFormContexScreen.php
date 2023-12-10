@@ -2,7 +2,14 @@
 
 namespace App\Orchid\Screens\Startegy;
 
+use App\Orchid\Layouts\AreaContextTabMenu;
+use Orchid\Screen\Actions\Button;
+use Orchid\Screen\Fields\Group;
+use Orchid\Screen\Fields\Input;
+use Orchid\Screen\Fields\Label;
 use Orchid\Screen\Screen;
+use Orchid\Support\Color;
+use Orchid\Support\Facades\Layout;
 
 class StartegyFormContexScreen extends Screen
 {
@@ -15,7 +22,19 @@ class StartegyFormContexScreen extends Screen
     {
         return [];
     }
-
+    /**
+     * Permission
+     *
+     * @return iterable|null
+     */
+    public function permission(): ?iterable
+    {
+        return [
+            'userType.isArea',
+            'userType.isEVA',
+            'userType.isManager',
+        ];
+    }
     /**
      * The name of the screen displayed in the header.
      *
@@ -23,7 +42,7 @@ class StartegyFormContexScreen extends Screen
      */
     public function name(): ?string
     {
-        return 'StartegyFormContexScreen';
+        return 'ส่งแผน : สภาพบริบท / แนวทางพัฒนาเชิงกลยุทธ์';
     }
 
     /**
@@ -43,6 +62,19 @@ class StartegyFormContexScreen extends Screen
      */
     public function layout(): iterable
     {
-        return [];
+        return [
+            AreaContextTabMenu::class,
+            Layout::rows([
+                Label::make("heading")->title("Click"),
+                Input::make('contex')->value('1'),
+                Button::make('New')
+                ->type(Color::SUCCESS),
+                Group::make([
+                    Input::make('contex')->value('1'),
+                    Button::make('New')
+                    ->type(Color::SUCCESS)
+                ])->alignEnd()
+            ])
+        ];
     }
 }

@@ -2,7 +2,9 @@
 
 namespace App\Orchid\Screens\Startegy;
 
+use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Screen;
+use Orchid\Support\Facades\Layout;
 
 class StartegyMapScreen extends Screen
 {
@@ -23,7 +25,7 @@ class StartegyMapScreen extends Screen
      */
     public function name(): ?string
     {
-        return 'StartegyMapScreen';
+        return 'Startegy Map';
     }
 
     /**
@@ -43,6 +45,31 @@ class StartegyMapScreen extends Screen
      */
     public function layout(): iterable
     {
-        return [];
+        return [
+            Layout::tabs([
+                'Personal Information' => [
+                    Layout::rows([
+                        Input::make('user.name')
+                            ->type('text')
+                            ->required()
+                            ->title('Name')
+                            ->placeholder('Name'),
+
+                        Input::make('user.email')
+                            ->type('email')
+                            ->required()
+                            ->title('Email')
+                            ->placeholder('Email'),
+                    ]),
+                ],
+                'Billing Address'      => [
+                    Layout::rows([
+                        Input::make('address')
+                            ->type('text')
+                            ->required(),
+                    ]),
+                ],
+            ]),
+        ];
     }
 }

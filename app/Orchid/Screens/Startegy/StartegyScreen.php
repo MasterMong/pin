@@ -23,7 +23,19 @@ class StartegyScreen extends Screen
     {
         return [];
     }
-
+    /**
+     * Permission
+     *
+     * @return iterable|null
+     */
+    public function permission(): ?iterable
+    {
+        return [
+            'userType.isArea',
+            'userType.isEVA',
+            'userType.isManager',
+        ];
+    }
     /**
      * The name of the screen displayed in the header.
      *
