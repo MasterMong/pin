@@ -2,17 +2,25 @@
 
 namespace App\Orchid\Screens\Startegy;
 
-use App\Orchid\Layouts\AreaContextTabMenu;
+use App\Models\Area;
+use App\Models\InspectionArea;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Fields\Group;
-use Orchid\Screen\Fields\Input;
-use Orchid\Screen\Fields\Label;
+use Orchid\Screen\Fields\Relation;
 use Orchid\Screen\Screen;
-use Orchid\Support\Color;
 use Orchid\Support\Facades\Layout;
+use Orchid\Support\Color;
+use Orchid\Screen\Fields\Label;
 
 class StartegyFormContexScreen extends Screen
 {
+    public $areaData;
+    public $inspection;
+    public $areas;
+    public $clicks;
     /**
      * Fetch data to be displayed on the screen.
      *
@@ -20,7 +28,12 @@ class StartegyFormContexScreen extends Screen
      */
     public function query(): iterable
     {
-        return [];
+        return [
+            'inspection' => $this->inspection ?? InspectionArea::all(),
+            'areaData' => $this->areaData ?? Auth::user()->area,
+            'areas' => $this->areas ?? Auth::user()->area->byInspection(Auth::user()->area->inspection_id)->select(['id', 'name'])->get(),
+            'clicks'  => $this->clicks ?? 0,
+        ];
     }
     /**
      * Permission
@@ -56,6 +69,14 @@ class StartegyFormContexScreen extends Screen
     }
 
     /**
+     * @return string|null
+     */
+    public function description(): ?string
+    {
+        return $this->areaData->name ?? Auth::user()->area->name;
+    }
+
+    /**
      * The screen's layout elements.
      *
      * @return \Orchid\Screen\Layout[]|string[]
@@ -63,18 +84,29 @@ class StartegyFormContexScreen extends Screen
     public function layout(): iterable
     {
         return [
-            AreaContextTabMenu::class,
-            Layout::rows([
-                Label::make("heading")->title("Click"),
-                Input::make('contex')->value('1'),
-                Button::make('New')
-                ->type(Color::SUCCESS),
-                Group::make([
-                    Input::make('contex')->value('1'),
-                    Button::make('New')
-                    ->type(Color::SUCCESS)
-                ])->alignEnd()
-            ])
+            Layout::view('Forms.contex'),
+            // Layout::rows([
+            //     Group::make([
+            //         Relation::make('inspection')
+            //             ->fromModel(InspectionArea::class, 'name')->title('เขตตรวจราชการ')
+            //             ->chunk(100),
+            //         Relation::make('area')
+            //             ->fromModel(Area::class, 'name')->title('สำนักงานเขต')
+            //             ->applyScope('byInspection', $this->inspection)
+            //             ->chunk(100),
+            //     ])
+            // ])
         ];
+    }
+
+    public function getArea(Request $request)
+    {
+        // if ($this->areaData->inspection_id !== $request->inspection_id) {
+        //     $this->areas = Area::byInspection(1)->select(['id', 'name'])->get();
+        // } else {
+        // }
+        $this->areas = Area::byInspection($request->inspection_id)->select(['id', 'name'])->get();
+        $this->areaData = Area::where('id', $request->area_id)->first();
+        $this->clicks = $this->areaData->name;
     }
 }

@@ -36,6 +36,11 @@ class Area extends Model
         'name'
     ];
 
+    public function scopeByInspection($query, $inspection_id)
+    {
+        return $query->where('inspection_id', $inspection_id);
+    }
+
     public function users(): HasMany {
         return $this->hasMany(User::class);
     }
