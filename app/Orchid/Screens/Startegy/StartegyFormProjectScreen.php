@@ -2,12 +2,26 @@
 
 namespace App\Orchid\Screens\Startegy;
 
+use App\Models\Area;
+use App\Models\InspectionArea;
+use App\Models\User;
 use App\Orchid\Layouts\AreaContextTabMenu;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Orchid\Screen\Actions\Button;
+use Orchid\Screen\Fields\Group;
+use Orchid\Screen\Fields\Relation;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Layout;
+use Orchid\Support\Color;
+use Orchid\Screen\Fields\Label;
+use Orchid\Support\Facades\Toast;
 
 class StartegyFormProjectScreen extends Screen
 {
+    public $areaData;
+    public $inspection_id;
+    public $areas;
     /**
      * Fetch data to be displayed on the screen.
      *
@@ -15,7 +29,12 @@ class StartegyFormProjectScreen extends Screen
      */
     public function query(): iterable
     {
-        return [];
+        return [
+            'inspections' => InspectionArea::all(),
+            'areaData' => $this->areaData ?? Auth::user()->area,
+            'areas' => $this->areas ?? Auth::user()->area->byInspection(Auth::user()->area->inspection_id)->select(['id', 'name', 'inspection_id'])->get(),
+            'inspection_id'  => $this->inspection_id ?? Auth::user()->area->inspection_id,
+        ];
     }
     /**
      * Permission
@@ -30,7 +49,6 @@ class StartegyFormProjectScreen extends Screen
             'userType.isManager',
         ];
     }
-
     /**
      * The name of the screen displayed in the header.
      *
@@ -48,7 +66,20 @@ class StartegyFormProjectScreen extends Screen
      */
     public function commandBar(): iterable
     {
-        return [];
+        return [
+            Button::make("บันทึก")
+            ->icon('save')
+            ->type(Color::SUCCESS)
+            ->method('createOrUpdate')
+        ];
+    }
+
+    /**
+     * @return string|null
+     */
+    public function description(): ?string
+    {
+        return $this->areaData->name ?? Auth::user()->area->name;
     }
 
     /**
@@ -60,11 +91,26 @@ class StartegyFormProjectScreen extends Screen
     {
         return [
             AreaContextTabMenu::class,
-            Layout::columns([
-                Layout::rows([])->title('ข้อมูลโครงการ'),
-                Layout::rows([])->title('ความสอดคล้อง'),
-            ]),
-            Layout::rows([])->title('กิจกรรม')
+            Layout::view('Forms.project'),
         ];
+    }
+
+    public function getArea(Request $request)
+    {
+        #todo bug when change inspection_id
+        $area_id = $request->area_id;
+        $inspection_id = $this->inspection_id;
+        if ($inspection_id != $request->inspection_id) {
+            // dd($request->inspection_id);
+            $this->areas = Area::byInspection($request->inspection_id)->select(['id', 'name', 'inspection_id'])->get();
+            $this->inspection_id = $request->inspection_id;
+            $area_id = $this->areas[0]->id;
+        }
+        $this->areaData = Area::where('id', $area_id)->where('inspection_id', $request->inspection_id)->first();
+    }
+
+    function createOrUpdate() {
+        Toast::success('saved!');
+        return back();
     }
 }

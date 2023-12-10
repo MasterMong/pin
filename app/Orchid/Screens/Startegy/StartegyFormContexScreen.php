@@ -5,6 +5,7 @@ namespace App\Orchid\Screens\Startegy;
 use App\Models\Area;
 use App\Models\InspectionArea;
 use App\Models\User;
+use App\Orchid\Layouts\AreaContextTabMenu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Orchid\Screen\Actions\Button;
@@ -14,13 +15,13 @@ use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Layout;
 use Orchid\Support\Color;
 use Orchid\Screen\Fields\Label;
+use Orchid\Support\Facades\Toast;
 
 class StartegyFormContexScreen extends Screen
 {
     public $areaData;
-    public $inspection;
+    public $inspection_id;
     public $areas;
-    public $clicks;
     /**
      * Fetch data to be displayed on the screen.
      *
@@ -29,10 +30,10 @@ class StartegyFormContexScreen extends Screen
     public function query(): iterable
     {
         return [
-            'inspection' => $this->inspection ?? InspectionArea::all(),
+            'inspections' => InspectionArea::all(),
             'areaData' => $this->areaData ?? Auth::user()->area,
-            'areas' => $this->areas ?? Auth::user()->area->byInspection(Auth::user()->area->inspection_id)->select(['id', 'name'])->get(),
-            'clicks'  => $this->clicks ?? 0,
+            'areas' => $this->areas ?? Auth::user()->area->byInspection(Auth::user()->area->inspection_id)->select(['id', 'name', 'inspection_id'])->get(),
+            'inspection_id'  => $this->inspection_id ?? Auth::user()->area->inspection_id,
         ];
     }
     /**
@@ -65,7 +66,12 @@ class StartegyFormContexScreen extends Screen
      */
     public function commandBar(): iterable
     {
-        return [];
+        return [
+            Button::make("บันทึก")
+            ->icon('save')
+            ->type(Color::SUCCESS)
+            ->method('createOrUpdate')
+        ];
     }
 
     /**
@@ -84,29 +90,27 @@ class StartegyFormContexScreen extends Screen
     public function layout(): iterable
     {
         return [
+            AreaContextTabMenu::class,
             Layout::view('Forms.contex'),
-            // Layout::rows([
-            //     Group::make([
-            //         Relation::make('inspection')
-            //             ->fromModel(InspectionArea::class, 'name')->title('เขตตรวจราชการ')
-            //             ->chunk(100),
-            //         Relation::make('area')
-            //             ->fromModel(Area::class, 'name')->title('สำนักงานเขต')
-            //             ->applyScope('byInspection', $this->inspection)
-            //             ->chunk(100),
-            //     ])
-            // ])
         ];
     }
 
     public function getArea(Request $request)
     {
-        // if ($this->areaData->inspection_id !== $request->inspection_id) {
-        //     $this->areas = Area::byInspection(1)->select(['id', 'name'])->get();
-        // } else {
-        // }
-        $this->areas = Area::byInspection($request->inspection_id)->select(['id', 'name'])->get();
-        $this->areaData = Area::where('id', $request->area_id)->first();
-        $this->clicks = $this->areaData->name;
+        #todo bug when change inspection_id
+        $area_id = $request->area_id;
+        $inspection_id = $this->inspection_id;
+        if ($inspection_id != $request->inspection_id) {
+            // dd($request->inspection_id);
+            $this->areas = Area::byInspection($request->inspection_id)->select(['id', 'name', 'inspection_id'])->get();
+            $this->inspection_id = $request->inspection_id;
+            $area_id = $this->areas[0]->id;
+        }
+        $this->areaData = Area::where('id', $area_id)->where('inspection_id', $request->inspection_id)->first();
+    }
+
+    function createOrUpdate() {
+        Toast::success('saved!');
+        return back();
     }
 }
