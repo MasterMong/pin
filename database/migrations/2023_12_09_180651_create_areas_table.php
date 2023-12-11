@@ -27,8 +27,10 @@ return new class extends Migration
             $table->foreignId('province_id')->references('id')->on('provinces');
             $table->integer('zip_code')->nullable();
             $table->string('tel')->nullable();
-            $table->integer('school_count')->default(0);
-            $table->integer('member_count')->default(0);
+            $table->integer('num_school')->default(0);
+            $table->integer('num_teacher')->default(0);
+            $table->integer('num_student')->default(0);
+            $table->integer('num_person')->default(0);
             $table->string('website')->nullable();
             $table->string('latitude')->nullable();
             $table->string('longtitude')->nullable();
