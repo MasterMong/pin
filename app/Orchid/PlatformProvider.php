@@ -65,16 +65,87 @@ class PlatformProvider extends OrchidServiceProvider
 
                     Menu::make('Cards')
                         ->icon('bs.card-text')
-                        ->route('platform.example.cards')
-                        ->divider(),
+                        ->route('platform.example.cards'),
+
+                    Menu::make('State')
+                        ->icon('bag')
+                        ->route('platform.state'),
+
+                    Menu::make('Post')
+                        ->icon('bag')
+                        ->route('platform.post.list'),
                 ]),
 
-
-
+            Menu::make('ข้อมูลพื้นฐาน')
+                ->title("ข้อมูลทั่วไป")
+                ->icon('bs.card-text')
+                ->route('info.national')
+                ->permission(['userType.isArea', 'userType.isManager', 'userType.isEva'])
+                ->active([
+                    'info.national',
+                    'info.area'
+                ])
+                ->list([
+                    Menu::make('ภาพรวมทั่วประเทศ')
+                        ->icon('bs.card-text')
+                        ->active(['info.national'])
+                        ->route('info.national'),
+                    Menu::make('สพท. (รายเขต)')
+                        ->icon('bs.card-text')
+                        ->active(['info.area'])
+                        ->route('info.area'),
+                ]),
+            Menu::make('ผลการติดตามและประเมินผล')
+                ->title("ผลการติดตามและประเมินผล")
+                ->icon('bs.card-text')
+                ->route('supervise.national')
+                ->permission(['userType.isArea', 'userType.isManager', 'userType.isEva'])
+                ->list([
+                    Menu::make('ทั่วประเทศ')
+                        ->icon('bs.card-text')
+                        ->route('supervise.national')
+                        ->list([
+                            Menu::make('Quick Policy')
+                                ->icon('bs.card-text')
+                                ->route('supervise.national.qp'),
+                            Menu::make('Action Plan')
+                                ->icon('bs.card-text')
+                                ->route('supervise.national.ap'),
+                            Menu::make('มาตรฐาน สพท')
+                                ->icon('bs.card-text')
+                                ->route('supervise.national.areaStandard'),
+                            Menu::make('ก.ต.ป.น.')
+                                ->icon('bs.card-text')
+                                ->route('supervise.national')
+                                ->list([
+                                    Menu::make('ก.ต.ป.น. ต้นแบบ')
+                                        ->icon('bs.card-text')
+                                        ->route('supervise.national'),
+                                    Menu::make('ก.ต.ป.น. สถานศึกษา')
+                                        ->icon('bs.card-text')
+                                        ->route('supervise.national'),
+                                ]),
+                        ]),
+                    Menu::make('สพท. (รายเขต)')
+                        ->icon('bs.card-text')
+                        ->route('supervise.area')
+                        ->list([
+                            Menu::make('Quick Policy')
+                                ->icon('bs.card-text')
+                                ->route('supervise.area.qp'),
+                            Menu::make('Action Plan')
+                                ->icon('bs.card-text')
+                                ->route('supervise.area.ap'),
+                            Menu::make('มาตรฐาน สพท')
+                                ->icon('bs.card-text')
+                                ->route('supervise.area.areaStandard'),
+                        ]),
+                ]),
             Menu::make('รายงานความก้าวหน้า')
                 ->title("รายงานแผน/ความก้าวหน้า")
                 ->icon('bs.card-text')
                 ->route('startegy.index')
+                ->permission(['userType.isArea', 'userType.isManager', 'userType.isEva'])
                 ->list([
                     Menu::make('Startegy map')
                         ->icon('bs.card-text')
@@ -103,6 +174,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ]),
             Menu::make('รายงานผล รอบ 12 เดือน')
                 ->icon('bs.card-text')
+                ->permission(['userType.isArea', 'userType.isManager', 'userType.isEva'])
                 ->route('startegy.report'),
 
 

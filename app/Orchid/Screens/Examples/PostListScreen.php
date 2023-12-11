@@ -1,5 +1,5 @@
 <?php
-namespace App\Orchid\Screens;
+namespace App\Orchid\Screens\Examples;
 
 use App\Orchid\Layouts\PostListLayout;
 use App\Models\Post;

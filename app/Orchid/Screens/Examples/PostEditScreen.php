@@ -1,5 +1,5 @@
 <?php
-namespace App\Orchid\Screens;
+namespace App\Orchid\Screens\Examples;
 
 use App\Models\Post;
 use App\Models\User;
