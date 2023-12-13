@@ -13,7 +13,7 @@ cp .env.example .env
 - แก้ไขการตั้งค่าในไฟล์ .env
 - ติดตั้ง Package
 ```bash
-composer -i
+composer -i หรือ composer install
 ```
 - เอาข้อมูลลง DB
 ```bash
