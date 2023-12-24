@@ -2,7 +2,9 @@
 
 namespace App\Orchid\Screens\Startegy;
 
+use App\Http\Controllers\SettingsController;
 use App\Models\Area;
+use App\Models\AreaVision;
 use App\Models\InspectionArea;
 use App\Models\User;
 use App\Orchid\Layouts\AreaContextTabMenu;
@@ -10,11 +12,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Fields\Group;
+use Orchid\Screen\Fields\Label;
 use Orchid\Screen\Fields\Relation;
 use Orchid\Screen\Screen;
-use Orchid\Support\Facades\Layout;
 use Orchid\Support\Color;
-use Orchid\Screen\Fields\Label;
+use Orchid\Support\Facades\Layout;
 use Orchid\Support\Facades\Toast;
 
 class StartegyFormContexScreen extends Screen
@@ -22,6 +24,18 @@ class StartegyFormContexScreen extends Screen
     public $areaData;
     public $inspection_id;
     public $areas;
+    public $template_target;
+    public $template_startegy;
+    public $template_goal;
+    public $budget_year_id;
+
+    public function __construct()
+    {
+        $this->budget_year_id       = SettingsController::getSetting('budget_year');
+        $this->template_target      = ["name"   => "a", "indicator" => "b", "unit" => "c", "target_value" => "d"];
+        $this->template_startegy    = ["detail" => "e", "target"    => [$this->template_target]];
+        $this->template_goal        = ["detail" => "f", "startegy"  => [$this->template_startegy]];
+    }
     /**
      * Fetch data to be displayed on the screen.
      *
@@ -34,6 +48,7 @@ class StartegyFormContexScreen extends Screen
             'areaData' => $this->areaData ?? Auth::user()->area,
             'areas' => $this->areas ?? Auth::user()->area->byInspection(Auth::user()->area->inspection_id)->select(['id', 'name', 'inspection_id'])->get(),
             'inspection_id'  => $this->inspection_id ?? Auth::user()->area->inspection_id,
+            'goals' => $this->goals(),
         ];
     }
     /**
@@ -68,9 +83,9 @@ class StartegyFormContexScreen extends Screen
     {
         return [
             Button::make("บันทึก")
-            ->icon('save')
-            ->type(Color::SUCCESS)
-            ->method('createOrUpdate')
+                ->icon('save')
+                ->type(Color::SUCCESS)
+                ->method('createOrUpdate')
         ];
     }
 
@@ -109,8 +124,38 @@ class StartegyFormContexScreen extends Screen
         $this->areaData = Area::where('id', $area_id)->where('inspection_id', $request->inspection_id)->first();
     }
 
-    function createOrUpdate() {
-        Toast::success('saved!');
+    function createOrUpdate(Request $request)
+    {
+        $this->budget_year_id = SettingsController::getSetting('budget_year');
+        // dd($this->budget_year_id);
+        if (empty(Auth::user()->area_id)) {
+            Toast::error('failed');
+        } else {
+            $area_vision = AreaVision::where('area_id', Auth::user()->area_code)->where('budget_year_id', $this->budget_year_id)->first();
+            if (empty($area_vision)) {
+                $area_vision = AreaVision::create([
+                    'area_id' => Auth::user()->area_id,
+                    'budget_year_id' => $this->budget_year_id,
+                    'detail' => $request->vision,
+                ]);
+            } else {
+                $area_vision->detail = $request->vision;
+                $area_vision->save();
+            }
+            Toast::success('saved!');
+        }
+
         return back();
+    }
+
+    function push_goal()
+    {
+        return back();
+    }
+    public function goals(): array
+    {
+        $mockup = [["detail" => "cc", "startegy" => [["detail" => "bb", "target" => [["name" => "aa", "indicator" => "in", "unit" => "m", "target_value" => "100"], ["name" => "aa", "indicator" => "in", "unit" => "m", "target_value" => "100"],]]]],];
+
+        return $goals = [$this->template_goal];
     }
 }

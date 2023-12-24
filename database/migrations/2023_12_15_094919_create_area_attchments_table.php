@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('area_members', function (Blueprint $table) {
+        Schema::create('area_attchments', function (Blueprint $table) {
             $table->id();
-            $table->integer('attachment_id')->nullable();
-            $table->string('name');
+            $table->foreignId('area_id')->references('id')->on('areas');
+            $table->foreignId('area_attchment_type_id')->references('id')->on('area_attchment_types');
+            $table->foreignId('budget_year_id')->references('id')->on('budget_years');
+            $table->json('attr');
             $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('area_members');
+        Schema::dropIfExists('area_attchments');
     }
 };

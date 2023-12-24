@@ -26,10 +26,15 @@
                         </template>
                     </select>
                     <button data-controller="button" data-turbo="true" class="btn btn-primary" type="submit"
-                        form="post-form" formaction="{{ route('startegy.contex.form') }}/getArea"
+                        form="post-form" formaction="{{ route('reflex') }}"
                         x-show="inspection_id == areaData.inspection_id">
                         <span>ตกลง</span>
                     </button>
+                    {{-- <button data-controller="button" data-turbo="true" class="btn btn-primary" type="submit"
+                        form="post-form" formaction="{{ route('startegy.contex.form') }}/getArea"
+                        x-show="inspection_id == areaData.inspection_id">
+                        <span>ตกลง</span>
+                    </button> --}}
                     {{-- <span class="btn btn-primary">ตกลง</span> --}}
                 </div>
             </div>
@@ -37,75 +42,106 @@
         <hr>
         <div>
             <div class="row py-1">
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <p class="text-end m-0 py-2">วิสัยทัศน์</p>
                 </div>
-                <div class="col-md-9"><input class="form-control" type="text" name="form[vision]"
-                        placeholder="ระบุวิสัยทัศน์" /></div>
+                <div class="col-md-10"><input class="form-control" type="text" name="vision"
+                        placeholder="ระบุวิสัยทัศน์" required /></div>
             </div>
             <div class="row py-1">
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <p class="text-end m-0 py-2">พันธกิจ</p>
                 </div>
-                <div class="col-md-9">
-                    <textarea class="form-control" rows="6" placeholder="ระบุพันธกิจ" name="form[mission]"></textarea>
+                <div class="col-md-10">
+                    <textarea class="form-control" rows="6" placeholder="ระบุพันธกิจ" name="mission" required></textarea>
                 </div>
             </div>
-            <div class="row py-1">
-                <div class="col-md-3">
-                    <p class="text-end m-0 py-2">เป้าประสงค์</p>
-                </div>
-                <div class="col-md-9">
-                    <div>
-                        <div class="input-group">
-                            <input class="form-control" type="text" name="form[goal[0]name]"
-                                placeholder="ระบุเป้าประสงค์" style="display: inline-block !important;" />
-                            <span class="btn btn-primary btn-sm">+เพิ่มเป้าประสงค์</span>
+            @php($count_goal = count($goals))
+            @foreach ($goals as $i_goal => $goal)
+                <div class="row py-1">
+                    <div class="col-md-2">
+                        <p class="text-end m-0 py-2">เป้าประสงค์ {{ $i_goal + 1 }}</p>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="col-12">
+                            <div class="input-group"><input class="form-control" type="text"
+                                    name="goal[{{ $i_goal }}]['detail']" placeholder="ระบุเป้าประสงค์"
+                                    style="display: inline-block !important;" required
+                                    value="{{ $goal['detail'] }}" /><button class="btn btn-info btn-sm"
+                                    type="button"><span> เพิ่มเป้าประสงค์</span></button>
+                            </div>
                         </div>
-                        <div class="row py-1">
-                            <div class="col-md-2 pt-2"><span>กลยุทธ์</span></div>
-                            <div class="col-md-10">
-                                <div class="input-group">
-                                    <input class="form-control" type="text" name="strategy_des"
-                                        placeholder="รายละเอียด" />
-                                    <span class="btn btn-primary btn-sm" type="button">+เพิ่มเป้าประสงค์</span>
+                        @php($count_startegy = count($goal['startegy']))
+                        @foreach ($goal['startegy'] as $i_startegy => $startegy)
+                            <div class="row py-1">
+                                <div class="col-md-2 pt-2 text-center"><span>กลยุทธ์ {{ $i_startegy + 1 }}</span></div>
+                                <div class="col-md-10">
+                                    <div class="input-group"><input class="form-control" type="text"
+                                            placeholder="รายละเอียดกลยุทธ์"
+                                            name="goal[{{ $i_goal }}]['startegy'][{{ $i_startegy }}]['detail']"
+                                            required value="{{ $startegy['detail'] }}" /><button class="btn btn-info"
+                                            type="button">เพิ่ม</button><button class="btn btn-primary"
+                                            type="button">ลบ</button></div>
                                 </div>
+                                @php($count_target = count($startegy['target']))
+                                @foreach ($startegy['target'] as $i_target => $target)
+                                    <div class="col-12 py-1">
+                                        <div class="row">
+                                            <div class="col-md-1 text-center px-md-1">
+                                                <div style="padding: 12px;"></div>
+                                                <div class="py-2"><span id="noLabel"
+                                                        class="d-md-none">เป้าหมายที่ </span><span
+                                                        id="no">{{ $i_startegy + 1 }}</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5 px-md-1">
+                                                <div class="text-md-center"><span class=".target_target">เป้าหมาย</span>
+                                                </div>
+                                                <input class="form-control" type="text" placeholder="ระบุเป้าหมาย"
+                                                    name="goal[{{ $i_goal }}]['startegy'][{{ $i_startegy }}]['target'][0]['name']"
+                                                    value="{{ $target['name'] }}" required />
+                                            </div>
+                                            <div class="col-md-2 px-md-1">
+                                                <div class="text-md-center"><span
+                                                        class="target_pointer">ตัวชี้วัด</span>
+                                                </div>
+                                                <input class="form-control text-center" type="text"
+                                                    placeholder="ระบุตัวชี้วัด"
+                                                    name="goal[{{ $i_goal }}]['startegy'][{{ $i_startegy }}]['target'][0]['indicator']"
+                                                    value="{{ $target['indicator'] }}" required />
+                                            </div>
+                                            <div class="col-md-2 px-md-1">
+                                                <div class="text-md-center"><span class="target_unit">หน่วยนับ</span>
+                                                </div>
+                                                <input class="form-control text-center" type="text"
+                                                    placeholder="ระบุหน่วยนับ"
+                                                    name="goal[{{ $i_goal }}]['startegy'][{{ $i_startegy }}]['target'][0]['unit']"
+                                                    value="{{ $target['unit'] }}" required />
+                                            </div>
+                                            <div class="col-md-2 px-md-1" style="padding-right: 12px !important;">
+                                                <div class="text-md-center"><span
+                                                        class=".target_targetScore">ค่าเป้าหมาย</span>
+                                                </div><input class="form-control text-center" type="text"
+                                                    placeholder="ระบุค่าเป้าหมาย"
+                                                    name="goal[{{ $i_goal }}]['startegy'][{{ $i_startegy }}]['target'][0]['target_value']"
+                                                    value="{{ $target['target_value'] }}" required />
+                                            </div>
+                                            <div class="py-1">
+                                                <div class="text-end">
+                                                    <div class="btn-group">
+                                                        <span class="d-inline-block btn btn-info"> เพิ่มเป้าหมาย</span>
+                                                        <span class="d-inline-block btn btn-danger"> ลบเป้าหมาย</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
                             </div>
-                        </div>
-                        <div class="row py-1">
-                            <div class="col-md-6 text-center"><span>เป้าหมาย</span></div>
-                            <div class="col-md-2 text-center"><span>ตัวชี้วัด</span></div>
-                            <div class="col-md-2 text-center"><span>หน่วยนับ</span></div>
-                            <div class="col-md-2 text-center"><span>ค่าเป้าหมาย</span></div>
-                            <div class="row">
-                                <div class="text-end col-md-2 py-2"><span>เป้าหมายที่ 1</span></div>
-                                <div class="col-md-4 px-1"><input class="form-control" type="text"
-                                        placeholder="ระบุรายละเอียด" name="target_des[]" /></div>
-                                <div class="col-md-2 px-1"><input class="form-control text-center" type="text"
-                                        placeholder="ระบุ" name="target_Indicator[]" /></div>
-                                <div class="col-md-2 px-1"><input class="form-control text-center" type="text"
-                                        placeholder="ระบุ" name="target_unitM[]" /></div>
-                                <div class="col-md-2 px-1"><input class="form-control text-center" type="text"
-                                        placeholder="ระบุ" name="target_target[]" /></div>
-                            </div>
-                            <div class="py-1">
-                                <div class="text-end"><button class="btn btn-primary" type="button">+
-                                        เป้าหมาย</button></div>
-                            </div>
-                        </div>
-                        <div class="py-1">
-                            <div class="input-group"><span class="input-group-text">กรอบแนวคิดการบริหาร
-                                    และแนวทางนำไปสู่การปฏิบัติ</span><input class="form-control" type="file"
-                                    name="concept" /></div>
-                        </div>
-                        <div class="py-1">
-                            <div class="input-group"><span class="input-group-text">แผนการปฏิบัติราชการของ
-                                    สพฐ.</span><input class="form-control" type="file" name="strategy_obec" />
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
-            </div>
+            @endforeach
         </div>
     </div>
 

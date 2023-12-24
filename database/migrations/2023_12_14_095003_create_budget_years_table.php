@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('area_member_types', function (Blueprint $table) {
+        Schema::create('budget_years', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('des')->nullable();
+            $table->integer('name');
             $table->timestamps();
         });
     }
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('area_member_types');
+        Schema::dropIfExists('budget_years');
     }
 };

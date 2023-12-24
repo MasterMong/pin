@@ -10,7 +10,10 @@ class ServicesController extends Controller
 {
     public function test()
     {
-        return Area::byInspection(1)->get();
         return Auth::user()->area;
+    }
+
+    function reflex(Request $request) : Request {
+        return $request;
     }
 }

@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('area_member_types', function (Blueprint $table) {
+        Schema::create('area_attchment_types', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('des')->nullable();
+            $table->boolean('is_single')->default(true);
+            $table->string('file_types');
+            $table->json('req_attr');
             $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('area_member_types');
+        Schema::dropIfExists('area_attchment_types');
     }
 };

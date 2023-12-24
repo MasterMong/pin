@@ -43,6 +43,14 @@ class DatabaseSeeder extends Seeder
         foreach ($jsonAreas as $key => $value) {
             self::createIfEmpty($value, 'areas', 'code');
         }
+        $jsonBudgetYear = json_decode(File::get(base_path('data/budgetYear.json')), true);
+        foreach ($jsonBudgetYear as $key => $value) {
+            self::createIfEmpty($value, 'budget_years', 'id');
+        }
+        $jsonSettings = json_decode(File::get(base_path('data/settings.json')), true);
+        foreach ($jsonSettings as $key => $value) {
+            self::createIfEmpty($value, 'settings', 'key');
+        }
 
         // user
 
