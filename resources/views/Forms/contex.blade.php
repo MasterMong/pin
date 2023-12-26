@@ -1,5 +1,13 @@
 <fieldset data-async=""
-    x-data='{"inspections" : {{ $inspections }}, "areas": {{ $areas }}, "areaData" : {{ $areaData }}, "inspection_id" : {{ $inspection_id }}, "area_id" : {{ $areaData->id }} }'>
+    x-data='
+    {
+        "inspections" : {{ $inspections }},
+        "areas": {{ $areas }},
+        "areaData" : {{ $areaData }},
+        "inspection_id" : {{ $inspection_id }},
+        "area_id" : {{ $areaData->id }},
+    }
+    '>
     <div class="bg-white rounded shadow-sm p-4 py-4 d-flex flex-column">
         <div class="row px-2">
             {{-- #todo lock when change inspection and reload areas --}}
@@ -26,15 +34,10 @@
                         </template>
                     </select>
                     <button data-controller="button" data-turbo="true" class="btn btn-primary" type="submit"
-                        form="post-form" formaction="{{ route('reflex') }}"
-                        x-show="inspection_id == areaData.inspection_id">
-                        <span>ตกลง</span>
-                    </button>
-                    {{-- <button data-controller="button" data-turbo="true" class="btn btn-primary" type="submit"
                         form="post-form" formaction="{{ route('startegy.contex.form') }}/getArea"
                         x-show="inspection_id == areaData.inspection_id">
                         <span>ตกลง</span>
-                    </button> --}}
+                    </button>
                     {{-- <span class="btn btn-primary">ตกลง</span> --}}
                 </div>
             </div>
@@ -46,14 +49,14 @@
                     <p class="text-end m-0 py-2">วิสัยทัศน์</p>
                 </div>
                 <div class="col-md-10"><input class="form-control" type="text" name="vision"
-                        placeholder="ระบุวิสัยทัศน์" required /></div>
+                        placeholder="ระบุวิสัยทัศน์" required value="{{ $vision }}" /></div>
             </div>
             <div class="row py-1">
                 <div class="col-md-2">
                     <p class="text-end m-0 py-2">พันธกิจ</p>
                 </div>
                 <div class="col-md-10">
-                    <textarea class="form-control" rows="6" placeholder="ระบุพันธกิจ" name="mission" required></textarea>
+                    <textarea class="form-control" rows="6" placeholder="ระบุพันธกิจ" name="mission" required>{{ $mission }}</textarea>
                 </div>
             </div>
             @php($count_goal = count($goals))

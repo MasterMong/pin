@@ -80,7 +80,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->title("ข้อมูลทั่วไป")
                 ->icon('bs.card-text')
                 ->route('info.national')
-                ->permission(['userType.isArea', 'userType.isManager', 'userType.isEva'])
+                // ->permission(['userType.isArea', 'userType.isManager', 'userType.isEva'])
                 ->active([
                     'info.national',
                     'info.area'
@@ -99,7 +99,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->title("ผลการติดตามและประเมินผล")
                 ->icon('bs.card-text')
                 ->route('supervise.national')
-                ->permission(['userType.isArea', 'userType.isManager', 'userType.isEva'])
+                // ->permission(['userType.isArea', 'userType.isManager', 'userType.isEva'])
                 ->list([
                     Menu::make('ทั่วประเทศ')
                         ->icon('bs.card-text')
@@ -145,7 +145,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->title("รายงานแผน/ความก้าวหน้า")
                 ->icon('bs.card-text')
                 ->route('startegy.index')
-                ->permission(['userType.isArea', 'userType.isManager', 'userType.isEva'])
+                // ->permission(['userType.isArea', 'userType.isManager', 'userType.isEva'])
                 ->list([
                     Menu::make('Startegy map')
                         ->icon('bs.card-text')
@@ -174,7 +174,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ]),
             Menu::make('รายงานผล รอบ 12 เดือน')
                 ->icon('bs.card-text')
-                ->permission(['userType.isArea', 'userType.isManager', 'userType.isEva'])
+                // ->permission(['userType.isArea', 'userType.isManager', 'userType.isEva'])
                 ->route('startegy.report'),
 
 

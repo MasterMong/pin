@@ -4,6 +4,7 @@ namespace App\Orchid\Screens\Startegy;
 
 use App\Http\Controllers\SettingsController;
 use App\Models\Area;
+use App\Models\AreaMission;
 use App\Models\AreaVision;
 use App\Models\InspectionArea;
 use App\Models\User;
@@ -31,24 +32,44 @@ class StartegyFormContexScreen extends Screen
 
     public function __construct()
     {
-        $this->budget_year_id       = SettingsController::getSetting('budget_year');
-        $this->template_target      = ["name"   => "a", "indicator" => "b", "unit" => "c", "target_value" => "d"];
-        $this->template_startegy    = ["detail" => "e", "target"    => [$this->template_target]];
-        $this->template_goal        = ["detail" => "f", "startegy"  => [$this->template_startegy]];
+        $this->areaData = Area::first();
+        $this->inspection_id = $this->areaData->inspection_id;
+        $this->areas = Area::byInspection( $this->areaData->inspection_id)->select(['id', 'name', 'inspection_id'])->get();
     }
     /**
      * Fetch data to be displayed on the screen.
      *
      * @return array
      */
-    public function query(): iterable
+    public function query(Request $request): iterable
     {
+        $null_value = (Auth::user()->hasAccess('userType.isArea') ? '' : '-');
+
+        $this->template_target      = ["name"   => $null_value, "indicator" => $null_value, "unit" => $null_value, "target_value" => $null_value];
+        $this->template_startegy    = ["detail" => $null_value, "target"    => [$this->template_target]];
+        $this->template_goal        = ["detail" => $null_value, "startegy"  => [$this->template_startegy]];
+
+        $this->budget_year_id       = SettingsController::getSetting('budget_year');
+        if(Auth::user()->hasAnyAccess(['userType.isArea'])) {
+            // สพท กำหนดข้อมูลตามบัญชี | สตผ, ผู้บริหาร กำหนดข้อมูลตามการเลือกช่องใน getArea()
+            $this->areaData = Auth::user()->area;
+            $inspections = InspectionArea::where('id', Auth::user()->area->inspection_id)->get();
+        } else if (Auth::user()->hasAnyAccess(['userType.isEVA', 'userType.isManager'])) {
+            $inspections = InspectionArea::all();
+        }
+
+        $vision = AreaVision::byAreaAndYear($this->areaData->id, $this->budget_year_id)->first();
+        $mission = AreaMission::byAreaAndYear($this->areaData->id, $this->budget_year_id)->first();
+
+
         return [
-            'inspections' => InspectionArea::all(),
+            'inspections' => $inspections,
             'areaData' => $this->areaData ?? Auth::user()->area,
             'areas' => $this->areas ?? Auth::user()->area->byInspection(Auth::user()->area->inspection_id)->select(['id', 'name', 'inspection_id'])->get(),
             'inspection_id'  => $this->inspection_id ?? Auth::user()->area->inspection_id,
             'goals' => $this->goals(),
+            'vision' => $vision->detail ?? $null_value,
+            'mission' => $mission->detail ?? $null_value,
         ];
     }
     /**
@@ -112,26 +133,33 @@ class StartegyFormContexScreen extends Screen
 
     public function getArea(Request $request)
     {
-        #todo bug when change inspection_id
-        $area_id = $request->area_id;
-        $inspection_id = $this->inspection_id;
-        if ($inspection_id != $request->inspection_id) {
-            // dd($request->inspection_id);
-            $this->areas = Area::byInspection($request->inspection_id)->select(['id', 'name', 'inspection_id'])->get();
-            $this->inspection_id = $request->inspection_id;
-            $area_id = $this->areas[0]->id;
+        if(Auth::user()->hasAnyAccess(['userType.isEVA', 'userType.isManager'])) {
+            #todo bug when change inspection_id
+            $area_id = $request->area_id;
+            $inspection_id = $this->inspection_id;
+            if ($inspection_id != $request->inspection_id) {
+                // dd($request->inspection_id);
+                $this->areas = Area::byInspection($request->inspection_id)->select(['id', 'name', 'inspection_id'])->get();
+                $this->inspection_id = $request->inspection_id;
+                $area_id = $this->areas[0]->id;
+            }
+            $this->areaData = Area::where('id', $area_id)->where('inspection_id', $request->inspection_id)->first();
+        } else {
+            Toast::warning(__('No permission'));
         }
-        $this->areaData = Area::where('id', $area_id)->where('inspection_id', $request->inspection_id)->first();
     }
 
     function createOrUpdate(Request $request)
     {
         $this->budget_year_id = SettingsController::getSetting('budget_year');
-        // dd($this->budget_year_id);
+        if(!Auth::user()->hasAnyAccess(['userType.isArea'])) {
+            return abort(403, 'สำหรับ' . __('is Area') . 'เท่านั้น');
+        }
         if (empty(Auth::user()->area_id)) {
-            Toast::error('failed');
+            return abort(403, 'สำหรับ' . __('is Area') . 'เท่านั้น');
         } else {
-            $area_vision = AreaVision::where('area_id', Auth::user()->area_code)->where('budget_year_id', $this->budget_year_id)->first();
+            // วิสัยทัศน์
+            $area_vision = AreaVision::where('area_id', Auth::user()->area_id)->where('budget_year_id', $this->budget_year_id)->first();
             if (empty($area_vision)) {
                 $area_vision = AreaVision::create([
                     'area_id' => Auth::user()->area_id,
@@ -142,6 +170,20 @@ class StartegyFormContexScreen extends Screen
                 $area_vision->detail = $request->vision;
                 $area_vision->save();
             }
+            // พันธกิจ
+            $area_mission = AreaMission::where('area_id', Auth::user()->area_id)->where('budget_year_id', $this->budget_year_id)->first();
+            if (empty($area_mission)) {
+                $area_mission = AreaMission::create([
+                    'area_id' => Auth::user()->area_id,
+                    'budget_year_id' => $this->budget_year_id,
+                    'area_vision_id' => $area_vision->id,
+                    'detail' => $request->mission,
+                ]);
+            } else {
+                $area_mission->detail = $request->mission;
+                $area_mission->save();
+            }
+            // เป้าประสงค์
             Toast::success('saved!');
         }
 

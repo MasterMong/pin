@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Orchid\Attachment\Attachable;
 use Orchid\Filters\Filterable;
 use Orchid\Screen\AsSource;
@@ -45,5 +46,9 @@ class Area extends Model
 
     public function users(): HasMany {
         return $this->hasMany(User::class);
+    }
+
+    public function vision() : HasOne {
+        return $this->hasOne(AreaVision::class);
     }
 }
