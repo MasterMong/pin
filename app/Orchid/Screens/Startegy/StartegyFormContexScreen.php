@@ -22,7 +22,7 @@ use Orchid\Support\Facades\Toast;
 
 class StartegyFormContexScreen extends Screen
 {
-    public $areaData;
+    public $current_area;
     public $inspection_id;
     public $areas;
     public $template_target;
@@ -32,44 +32,46 @@ class StartegyFormContexScreen extends Screen
 
     public function __construct()
     {
-        $this->areaData = Area::first();
-        $this->inspection_id = $this->areaData->inspection_id;
-        $this->areas = Area::byInspection( $this->areaData->inspection_id)->select(['id', 'name', 'inspection_id'])->get();
+        $this->current_area = Area::first();
+        $this->inspection_id = $this->current_area->inspection_id;
+        $this->areas = Area::byInspection( $this->current_area->inspection_id)->select(['id', 'name', 'inspection_id'])->get();
     }
     /**
      * Fetch data to be displayed on the screen.
      *
      * @return array
      */
-    public function query(Request $request): iterable
+    public function query(): iterable
     {
-        $null_value = (Auth::user()->hasAccess('userType.isArea') ? '' : '-');
+        $null_value = (Auth::user()->hasAccess('userType.isArea') ? '?' : '-');
 
-        $this->template_target      = ["name"   => $null_value, "indicator" => $null_value, "unit" => $null_value, "target_value" => $null_value];
-        $this->template_startegy    = ["detail" => $null_value, "target"    => [$this->template_target]];
-        $this->template_goal        = ["detail" => $null_value, "startegy"  => [$this->template_startegy]];
-
+        $this->template_target      = ["id" => 0, "name"   => $null_value, "indicator" => $null_value, "unit" => $null_value, "target_value" => $null_value];
+        $this->template_startegy    = ["id" => 0, "detail" => $null_value, "target"    => [$this->template_target]];
+        $this->template_goal        = ["id" => 0, "detail" => $null_value, "startegy"  => [$this->template_startegy]];
         $this->budget_year_id       = SettingsController::getSetting('budget_year');
+
         if(Auth::user()->hasAnyAccess(['userType.isArea'])) {
             // สพท กำหนดข้อมูลตามบัญชี | สตผ, ผู้บริหาร กำหนดข้อมูลตามการเลือกช่องใน getArea()
-            $this->areaData = Auth::user()->area;
+            $this->current_area = Auth::user()->area;
             $inspections = InspectionArea::where('id', Auth::user()->area->inspection_id)->get();
+            $disabled = false;
         } else if (Auth::user()->hasAnyAccess(['userType.isEVA', 'userType.isManager'])) {
             $inspections = InspectionArea::all();
+            $disabled = true;
         }
 
-        $vision = AreaVision::byAreaAndYear($this->areaData->id, $this->budget_year_id)->first();
-        $mission = AreaMission::byAreaAndYear($this->areaData->id, $this->budget_year_id)->first();
-
+        $vision = AreaVision::byAreaAndYear($this->current_area->id, $this->budget_year_id)->first();
+        $mission = AreaMission::byAreaAndYear($this->current_area->id, $this->budget_year_id)->first();
 
         return [
             'inspections' => $inspections,
-            'areaData' => $this->areaData ?? Auth::user()->area,
             'areas' => $this->areas ?? Auth::user()->area->byInspection(Auth::user()->area->inspection_id)->select(['id', 'name', 'inspection_id'])->get(),
+            'current_area' => $this->current_area ?? Auth::user()->area,
             'inspection_id'  => $this->inspection_id ?? Auth::user()->area->inspection_id,
             'goals' => $this->goals(),
             'vision' => $vision->detail ?? $null_value,
             'mission' => $mission->detail ?? $null_value,
+            'disabled' => $disabled
         ];
     }
     /**
@@ -115,7 +117,7 @@ class StartegyFormContexScreen extends Screen
      */
     public function description(): ?string
     {
-        return $this->areaData->name ?? Auth::user()->area->name;
+        return $this->current_area->name ?? Auth::user()->area->name;
     }
 
     /**
@@ -143,7 +145,7 @@ class StartegyFormContexScreen extends Screen
                 $this->inspection_id = $request->inspection_id;
                 $area_id = $this->areas[0]->id;
             }
-            $this->areaData = Area::where('id', $area_id)->where('inspection_id', $request->inspection_id)->first();
+            $this->current_area = Area::where('id', $area_id)->where('inspection_id', $request->inspection_id)->first();
         } else {
             Toast::warning(__('No permission'));
         }
@@ -151,6 +153,7 @@ class StartegyFormContexScreen extends Screen
 
     function createOrUpdate(Request $request)
     {
+        $data = $request;
         $this->budget_year_id = SettingsController::getSetting('budget_year');
         if(!Auth::user()->hasAnyAccess(['userType.isArea'])) {
             return abort(403, 'สำหรับ' . __('is Area') . 'เท่านั้น');
@@ -164,10 +167,10 @@ class StartegyFormContexScreen extends Screen
                 $area_vision = AreaVision::create([
                     'area_id' => Auth::user()->area_id,
                     'budget_year_id' => $this->budget_year_id,
-                    'detail' => $request->vision,
+                    'detail' => $data->vision,
                 ]);
             } else {
-                $area_vision->detail = $request->vision;
+                $area_vision->detail = $data->vision;
                 $area_vision->save();
             }
             // พันธกิจ
@@ -177,14 +180,18 @@ class StartegyFormContexScreen extends Screen
                     'area_id' => Auth::user()->area_id,
                     'budget_year_id' => $this->budget_year_id,
                     'area_vision_id' => $area_vision->id,
-                    'detail' => $request->mission,
+                    'detail' => $data->mission,
                 ]);
             } else {
-                $area_mission->detail = $request->mission;
+                $area_mission->detail = $data->mission;
                 $area_mission->save();
             }
             // เป้าประสงค์
-            Toast::success('saved!');
+
+            // กลยุทธ์
+
+            // เป้าหมาย
+            Toast::success(__('Saved'));
         }
 
         return back();
