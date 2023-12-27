@@ -141,7 +141,7 @@ class PlatformProvider extends OrchidServiceProvider
                                 ->route('supervise.area.areaStandard'),
                         ]),
                 ]),
-            Menu::make('รายงานความก้าวหน้า')
+            Menu::make('รายงานแผน')
                 ->title("รายงานแผน/ความก้าวหน้า")
                 ->icon('bs.card-text')
                 ->route('startegy.index')
@@ -171,6 +171,21 @@ class PlatformProvider extends OrchidServiceProvider
                                 ->icon('bs.card-text')
                                 ->route('startegy.project.form'),
                         ]),
+                ]),
+            Menu::make('รายงานความก้าวหน้า real time')
+                ->icon('bs.card-text')
+                ->route('startegy.index')
+                // ->permission(['userType.isArea', 'userType.isManager', 'userType.isEva'])
+                ->list([
+                    Menu::make('โครงการ')
+                        ->icon('bs.card-text')
+                        ->active([
+                            'startegy.project'
+                        ])
+                        ->route('startegy.project'),
+                    Menu::make('รายงานความก้าวหน้า')
+                        ->icon('bs.card-text')
+                        ->route('startegy.report'),
                 ]),
             Menu::make('รายงานผล รอบ 12 เดือน')
                 ->icon('bs.card-text')
