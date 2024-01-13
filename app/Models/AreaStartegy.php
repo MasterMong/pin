@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class AreaStartegy extends Model
 {
@@ -29,5 +30,9 @@ class AreaStartegy extends Model
 
     public function goal(): BelongsTo {
         return $this->belongsTo(AreaGoal::class);
+    }
+
+    public function target(): HasMany {
+        return $this->hasMany(AreaTarget::class);
     }
 }

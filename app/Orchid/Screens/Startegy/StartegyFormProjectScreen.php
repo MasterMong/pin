@@ -97,7 +97,7 @@ class StartegyFormProjectScreen extends Screen
 
     public function getArea(Request $request)
     {
-        #todo bug when change inspection_id
+        #TODO bug when change inspection_id
         $area_id = $request->area_id;
         $inspection_id = $this->inspection_id;
         if ($inspection_id != $request->inspection_id) {

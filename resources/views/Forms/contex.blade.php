@@ -11,7 +11,7 @@
     '>
     <div class="bg-white rounded shadow-sm p-4 py-4 d-flex flex-column">
         <div class="row px-2">
-            {{-- #todo lock when change inspection and reload areas --}}
+            {{-- #TODO lock when change inspection and reload areas --}}
             <div class="col-md-6 px-1">
                 <div class="input-group">
                     <select class="form-select bg-white" x-model="inspection_id" name="inspection_id"
@@ -72,13 +72,13 @@
                     <div class="col-md-10">
                         <div class="col-12">
                             <div class="input-group"><input class="form-control" type="text"
-                                    name="goal[{{ $i_goal }}]['detail']" placeholder="ระบุเป้าประสงค์"
+                                    name="goal[{{ $i_goal }}][detail]" placeholder="ระบุเป้าประสงค์"
                                     style="display: inline-block !important;" required value="{{ $goal['detail'] }}"
                                     @disabled($disabled) /><button class="btn btn-info btn-sm" type="button"
                                     x-show="!disabled"><span> เพิ่มเป้าประสงค์</span></button><button
                                     class="btn btn-danger" type="button" x-show="!disabled">ลบ</button>
                             </div>
-                            <input type="hidden" value="{{ $goal['id'] }}" name="goal[{{ $i_goal }}]['id']">
+                            <input type="hidden" value="{{ $goal['id'] }}" name="goal[{{ $i_goal }}][id]">
                         </div>
                         @php($count_startegy = count($goal['startegy']))
                         @foreach ($goal['startegy'] as $i_startegy => $startegy)
@@ -87,13 +87,13 @@
                                 <div class="col-md-10">
                                     <div class="input-group"><input class="form-control" type="text"
                                             placeholder="รายละเอียดกลยุทธ์"
-                                            name="goal[{{ $i_goal }}]['startegy'][{{ $i_startegy }}]['detail']"
+                                            name="goal[{{ $i_goal }}][startegy][{{ $i_startegy }}][detail]"
                                             required value="{{ $startegy['detail'] }}"
                                             @disabled($disabled) /><button class="btn btn-info" type="button"
                                             x-show="!disabled">เพิ่ม</button><button class="btn btn-danger"
                                             type="button" x-show="!disabled">ลบ</button></div>
                                     <input type="hidden" value="{{ $startegy['id'] }}"
-                                        name="goal[{{ $i_goal }}]['startegy'][{{ $i_startegy }}]['id']">
+                                        name="goal[{{ $i_goal }}][startegy][{{ $i_startegy }}][id]">
                                 </div>
                                 @php($count_target = count($startegy['target']))
                                 @foreach ($startegy['target'] as $i_target => $target)
@@ -109,7 +109,7 @@
                                                 <div class="text-md-center"><span class=".target_target">เป้าหมาย</span>
                                                 </div>
                                                 <input class="form-control" type="text" placeholder="ระบุเป้าหมาย"
-                                                    name="goal[{{ $i_goal }}]['startegy'][{{ $i_startegy }}]['target'][{{ $i_target }}]['name']"
+                                                    name="goal[{{ $i_goal }}][startegy][{{ $i_startegy }}][target][{{ $i_target }}][name]"
                                                     value="{{ $target['name'] }}" required
                                                     @disabled($disabled) />
                                             </div>
@@ -119,7 +119,7 @@
                                                 </div>
                                                 <input class="form-control text-center" type="text"
                                                     placeholder="ระบุตัวชี้วัด"
-                                                    name="goal[{{ $i_goal }}]['startegy'][{{ $i_startegy }}]['target'][{{ $i_target }}]['indicator']"
+                                                    name="goal[{{ $i_goal }}][startegy][{{ $i_startegy }}][target][{{ $i_target }}][indicator]"
                                                     value="{{ $target['indicator'] }}" required
                                                     @disabled($disabled) />
                                             </div>
@@ -128,7 +128,7 @@
                                                 </div>
                                                 <input class="form-control text-center" type="text"
                                                     placeholder="ระบุหน่วยนับ"
-                                                    name="goal[{{ $i_goal }}]['startegy'][{{ $i_startegy }}]['target'][{{ $i_target }}]['unit']"
+                                                    name="goal[{{ $i_goal }}][startegy][{{ $i_startegy }}][target][{{ $i_target }}][unit]"
                                                     value="{{ $target['unit'] }}" required
                                                     @disabled($disabled) />
                                             </div>
@@ -137,12 +137,12 @@
                                                         class=".target_targetScore">ค่าเป้าหมาย</span>
                                                 </div><input class="form-control text-center" type="text"
                                                     placeholder="ระบุค่าเป้าหมาย"
-                                                    name="goal[{{ $i_goal }}]['startegy'][{{ $i_startegy }}]['target'][{{ $i_target }}]['target_value']"
+                                                    name="goal[{{ $i_goal }}][startegy][{{ $i_startegy }}][target][{{ $i_target }}][target_value]"
                                                     value="{{ $target['target_value'] }}" required
                                                     @disabled($disabled) />
                                             </div>
                                             <input type="hidden" value="{{ $target['id'] }}"
-                                                name="goal[{{ $i_goal }}]['startegy'][{{ $i_startegy }}]['target'][{{ $i_target }}]['id']">
+                                                name="goal[{{ $i_goal }}][startegy][{{ $i_startegy }}][target][{{ $i_target }}][id]">
                                             <div class="py-1" x-show="!disabled">
                                                 <div class="text-end">
                                                     <div class="btn-group">

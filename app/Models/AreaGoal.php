@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class AreaGoal extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'area_mision_id',
         'area_id',
         'budget_year_id',
         'detail',
@@ -29,5 +29,9 @@ class AreaGoal extends Model
 
     public function mission(): BelongsTo {
         return $this->belongsTo(AreaMission::class);
+    }
+
+    public function startegy(): HasMany {
+        return $this->hasMany(AreaStartegy::class);
     }
 }

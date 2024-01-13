@@ -24,7 +24,7 @@ class StartegyProjectScreen extends Screen
     public $template_project;
     public $template_rows;
     public $template_cols;
-    
+
     public function __construct()
     {
         $this->template_cols1        = ["code" => "0000-00-000", "project_name"  => "1.โครงการที่หนึ่งลดภาระครู"];
@@ -79,7 +79,7 @@ class StartegyProjectScreen extends Screen
     {
         return [];
     }
-    
+
     /**
      * @return string|null
      */
@@ -99,10 +99,10 @@ class StartegyProjectScreen extends Screen
             Layout::view('Forms.contex_output'),
         ];
     }
-    
+
     public function getArea(Request $request)
     {
-        #todo bug when change inspection_id
+        #TODO bug when change inspection_id
         $area_id = $request->area_id;
         $inspection_id = $this->inspection_id;
         if ($inspection_id != $request->inspection_id) {
@@ -113,8 +113,8 @@ class StartegyProjectScreen extends Screen
         }
         $this->areaData = Area::where('id', $area_id)->where('inspection_id', $request->inspection_id)->first();
     }
-    
-    
+
+
     function push_goal()
     {
         return back();

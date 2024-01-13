@@ -2,7 +2,7 @@
     x-data='{"inspections" : {{ $inspections }}, "areas": {{ $areas }}, "areaData" : {{ $areaData }}, "inspection_id" : {{ $inspection_id }}, "area_id" : {{ $areaData->id }} }'>
     <div class="bg-white rounded shadow-sm p-4 py-4 d-flex flex-column">
         <div class="row px-2">
-            {{-- #todo lock when change inspection and reload areas --}}
+            {{-- #TODO lock when change inspection and reload areas --}}
             <div class="col-md-6 px-1">
                 <div class="input-group">
                     <select class="form-select bg-white" x-model="inspection_id" name="inspection_id">
@@ -52,7 +52,7 @@
                 <tbody>
             @php($count_goal = count($goals))
             @foreach ($goals as $i_goal => $goal)
-                
+
                 @php($count_rows = count($goal['rows']))
                 @foreach ($goal['rows'] as $i_rows => $rows)
                 <tr>
@@ -64,7 +64,7 @@
                     @endforeach
                 </tr>
                 @endforeach
-                
+
             @endforeach
                 </tbody>
             </table>

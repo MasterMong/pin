@@ -14,10 +14,10 @@ class AreaTarget extends Model
         'area_id',
         'area_startegy_id',
         'budget_year_id',
-        'name',
         'indicator',
-        'unit',
+        'name',
         'target_value',
+        'unit',
     ];
 
     public function scopeByYear(Builder $query, int $budget_year_id) {

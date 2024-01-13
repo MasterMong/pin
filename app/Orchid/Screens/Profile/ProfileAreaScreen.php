@@ -109,11 +109,11 @@ class ProfileAreaScreen extends Screen
             ])->title('ข้อมูลทั่วไป'),
             Layout::rows([
                 Group::make([
-                    #todo neste from region
+                    #TODO neste from region
                     Relation::make('area.province_id')
                         ->fromModel(Province::class, 'name_in_thai')
                         ->title('จังหวัด'),
-                    #todo neste from province
+                    #TODO neste from province
                     Relation::make('area.district_id')
                         ->fromModel(District::class, 'name_in_thai')
                         ->title('อำเภอ'),

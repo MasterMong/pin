@@ -98,7 +98,7 @@ class UserEditScreen extends Screen
     public function layout(): iterable
     {
         return [
-            #todo assign area to area user type
+            #TODO assign area to area user type
             Layout::block(UserEditLayout::class)
                 ->title(__('Profile Information'))
                 ->description(__('Update your account\'s profile information and email address.'))
