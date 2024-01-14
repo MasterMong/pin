@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('area_missions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('area_vision_id')->references('id')->on('area_visions');
+            // $table->foreignId('area_vision_id')->references('id')->on('area_visions');
             $table->foreignId('area_id')->references('id')->on('areas');
             $table->foreignId('budget_year_id')->references('id')->on('budget_years');
             $table->longText('detail');

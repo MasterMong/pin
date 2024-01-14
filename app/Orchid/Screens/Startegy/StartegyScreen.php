@@ -2,18 +2,22 @@
 
 namespace App\Orchid\Screens\Startegy;
 
-use Illuminate\Support\Facades\Auth;
-use Orchid\Screen\Actions\Link;
-use Orchid\Screen\Screen;
-use Orchid\Support\Facades\Toast;
+use App\Http\Controllers\SettingsController;
+use App\Models\Area;
 use Orchid\Screen\Actions\Button;
-use Orchid\Screen\Fields\Select;
-use Orchid\Screen\Actions\DropDown;
 use Orchid\Screen\Fields\Input;
+use Orchid\Screen\Layouts\Table;
+use Orchid\Screen\Screen;
+use Orchid\Screen\TD;
 use Orchid\Support\Facades\Layout;
+use Orchid\Support\Facades\Toast;
 
 class StartegyScreen extends Screen
 {
+    public $budget_year_id;
+    public function __construct() {
+        $this->budget_year_id = SettingsController::getSetting('budget_year');
+    }
     /**
      * Fetch data to be displayed on the screen.
      *
@@ -21,7 +25,27 @@ class StartegyScreen extends Screen
      */
     public function query(): iterable
     {
-        return [];
+        $areas = Area::with([
+            'type' => function ($q) {
+                $q->select(['id', 'name']);
+            },
+            'vision' => function($q) {
+                $q->byYear($this->budget_year_id)->select(['id', 'area_id']);
+            }
+        ])
+            ->select([
+                'id',
+                'name',
+                'area_type_id',
+            ])
+            ->orderBy('name')
+            ->filters()
+            // ->where('id', 50)
+            ->get();
+        // dd($areas->toArray());
+        return [
+            'areas' => $areas,
+        ];
     }
     /**
      * Permission
@@ -72,6 +96,21 @@ class StartegyScreen extends Screen
     public function layout(): iterable
     {
         return [
+            Layout::columns([
+                Layout::table('areas', [
+                    TD::make('type.name', 'สังกัด')
+                        ->align(TD::ALIGN_CENTER)
+                        ->width('50px'),
+                    TD::make('name', 'ชื่อ สพท.')
+                        ->filter(Input::make()),
+                    TD::make('ส่งแผน')
+                    ->render(fn($area) => view('Components.badge', [
+                        'text' => isset($area->vision) ? 'ส่งแล้ว' : 'ยังไม่ส่ง',
+                        'type' => isset($area->vision) ? 'success' : 'warning'
+                    ]))
+                ])
+                ,
+            ]),
             Layout::rows([
 
             ])

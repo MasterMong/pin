@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class AreaAttchmentType extends Model
 {
     use HasFactory;
+    protected $fillable = [];
+
+    protected $casts = [
+        'req_attr' => 'array'
+];
 }

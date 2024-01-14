@@ -20,10 +20,13 @@ use App\Orchid\Layouts\AreaContextTabMenu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Orchid\Screen\Actions\Button;
+use Orchid\Screen\Fields\Upload;
 use Orchid\Screen\Screen;
 use Orchid\Support\Color;
 use Orchid\Support\Facades\Layout;
 use Orchid\Support\Facades\Toast;
+use Orchid\Screen\Fields\Group;
+use Orchid\Screen\Fields\Input;
 
 class StartegyFormContexScreen extends Screen
 {
@@ -38,6 +41,7 @@ class StartegyFormContexScreen extends Screen
     public $push_goal;
     public $push_startegy;
     public $push_target;
+    public $push_attr;
 
     public function __construct()
     {
@@ -47,6 +51,10 @@ class StartegyFormContexScreen extends Screen
         $this->push_goal = false;
         $this->push_startegy = false;
         $this->push_target = false;
+        $this->push_attr = [
+            'kg' => 0,
+            'ks' => 0,
+        ];
     }
     /**
      * Fetch data to be displayed on the screen.
@@ -56,7 +64,7 @@ class StartegyFormContexScreen extends Screen
     public function query(): iterable
     {
         # TODO Dev only
-        $null_value = (Auth::user()->hasAccess('userType.isArea') ? '?' : '-');
+        $null_value = (Auth::user()->hasAccess('userType.isArea') ? '' : '-');
 
         $this->budget_year_id = SettingsController::getSetting('budget_year');
 
@@ -146,6 +154,23 @@ class StartegyFormContexScreen extends Screen
         return [
             AreaContextTabMenu::class,
             Layout::view('Forms.contex'),
+            Layout::columns([
+                Layout::rows([
+                    Upload::make('docs')
+                    ->groups('area_contex')
+                    // ->media()
+                    ->acceptedFiles('application/pdf'),
+                ])->title('กรอบแนวคิดการบริหารและการนำนโยบายสู่การปฏิบัติ'),
+                Layout::rows([
+                    Upload::make('docss')
+                    ->groups('area_contex')
+                    ->acceptedFiles('application/pdf'),
+                    // Group::make([
+                    //     Input::make('first_name'),
+                    //     Input::make('last_name'),
+                    // ]),
+                ])->title('แผนปฏิบัติราชการของ สพท.')
+            ])
         ];
     }
 
@@ -181,7 +206,7 @@ class StartegyFormContexScreen extends Screen
             // วิสัยทัศน์
             $area_vision = VisionCU::run(Auth::user()->area_id, $this->budget_year_id, $data->vision);
             // พันธกิจ
-            $area_mission = MissionCU::run(Auth::user()->area_id, $this->budget_year_id, $area_vision->id, $data->mission);
+            $area_mission = MissionCU::run(Auth::user()->area_id, $this->budget_year_id, $data->mission);
             // เป้าประสงค์
             foreach ($data['goal'] as $kg => $goal) {
                 $goalCU = GoalCU::run(Auth::user()->area_id, $this->budget_year_id, $goal);
@@ -201,7 +226,21 @@ class StartegyFormContexScreen extends Screen
         return back();
     }
 
-
+    public function push(Request $request) {
+        if($request->type == 'goal') {
+            $this->push_goal = true;
+        }
+        if($request->type == 'startegy') {
+            $this->push_startegy = true;
+            $this->push_attr['kg'] = $request->kg;
+        }
+        if($request->type == 'target') {
+            $this->push_target = true;
+            $this->push_attr['kg'] = $request->kg;
+            $this->push_attr['ks'] = $request->ks;
+        }
+        // dd($request->toArray());
+    }
     public function parse_goals(): array {
         $template = [
             [
@@ -250,7 +289,7 @@ class StartegyFormContexScreen extends Screen
                             }
                         }
 
-                        if($this->push_target and $kg == 0 and $ks == 0) {
+                        if($this->push_target and $this->push_attr['kg'] == $goal['id'] and $this->push_attr['ks'] == $startegy['id']) {
                             # TODO next
                             $r_target[] = $this->template_target;
                         }
@@ -259,7 +298,7 @@ class StartegyFormContexScreen extends Screen
                         $r_startegy[] = $startegy;
                     }
                 }
-                if($this->push_startegy and $kg == 0) {
+                if($this->push_startegy and $this->push_attr['kg'] == $goal['id']) {
                     # TODO next
                     $r_startegy[] = $this->template_startegy;
                 }
@@ -268,6 +307,7 @@ class StartegyFormContexScreen extends Screen
             }
             // dd($r_goal);
             if($this->push_goal) {
+                Toast::info('เพิ่มเป้าประสงค์');
                 $r_goal[] = $this->template_goal;
             }
 

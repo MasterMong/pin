@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class AreaVision extends Model
 {
-    use HasFactory;
+    use HasFactory, \Awobaz\Compoships\Compoships;
 
     protected $fillable = [
         'area_id',

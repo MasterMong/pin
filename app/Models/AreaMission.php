@@ -11,7 +11,7 @@ class AreaMission extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'area_vision_id',
+        // 'area_vision_id',
         'area_id',
         'budget_year_id',
         'detail',

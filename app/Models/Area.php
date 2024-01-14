@@ -4,11 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Orchid\Attachment\Attachable;
 use Orchid\Filters\Filterable;
 use Orchid\Screen\AsSource;
+use Orchid\Filters\Types\Like;
 
 class Area extends Model
 {
@@ -39,6 +41,10 @@ class Area extends Model
         'name'
     ];
 
+    protected $allowedFilters = [
+        'name'        => Like::class,
+    ];
+
     public function scopeByInspection($query, $inspection_id)
     {
         return $query->where('inspection_id', $inspection_id);
@@ -50,5 +56,13 @@ class Area extends Model
 
     public function vision() : HasOne {
         return $this->hasOne(AreaVision::class);
+    }
+
+    // public function hasVision() : bool {
+    //     return $this->vision()->exists();
+    // }
+
+    function type(): BelongsTo {
+        return $this->belongsTo(AreaType::class, 'area_type_id', 'id');
     }
 }

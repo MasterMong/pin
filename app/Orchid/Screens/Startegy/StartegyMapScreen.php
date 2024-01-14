@@ -2,12 +2,24 @@
 
 namespace App\Orchid\Screens\Startegy;
 
+use App\Http\Controllers\SettingsController;
+use App\Models\AreaGoal;
+use App\Models\AreaMission;
+use App\Models\AreaStartegy;
+use App\Models\AreaTarget;
+use App\Models\AreaVision;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Layout;
+use Illuminate\Support\Facades\Auth;
+
 
 class StartegyMapScreen extends Screen
 {
+    public $budget_year_id;
+    public function __construct() {
+        $this->budget_year_id = SettingsController::getSetting('budget_year');
+    }
     /**
      * Fetch data to be displayed on the screen.
      *
@@ -15,7 +27,16 @@ class StartegyMapScreen extends Screen
      */
     public function query(): iterable
     {
-        return [];
+        $area_id = Auth::user()->area_id;
+
+        return [
+            'area' => Auth::user()->area,
+            'vision' => AreaVision::byAreaAndYear($area_id, $this->budget_year_id)->first(),
+            'mission' => AreaMission::byAreaAndYear($area_id, $this->budget_year_id)->first(),
+            'goals' => AreaGoal::byAreaAndYear($area_id, $this->budget_year_id)->get(),
+            'startegies' => AreaStartegy::byAreaAndYear($area_id, $this->budget_year_id)->get(),
+            'targets' => AreaTarget::byAreaAndYear($area_id, $this->budget_year_id)->get(),
+        ];
     }
 
     /**
@@ -46,30 +67,7 @@ class StartegyMapScreen extends Screen
     public function layout(): iterable
     {
         return [
-            Layout::tabs([
-                'Personal Information' => [
-                    Layout::rows([
-                        Input::make('user.name')
-                            ->type('text')
-                            ->required()
-                            ->title('Name')
-                            ->placeholder('Name'),
-
-                        Input::make('user.email')
-                            ->type('email')
-                            ->required()
-                            ->title('Email')
-                            ->placeholder('Email'),
-                    ]),
-                ],
-                'Billing Address'      => [
-                    Layout::rows([
-                        Input::make('address')
-                            ->type('text')
-                            ->required(),
-                    ]),
-                ],
-            ]),
+            Layout::view('Pages.StartegyMap')
         ];
     }
 }

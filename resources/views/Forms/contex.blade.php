@@ -9,7 +9,7 @@
         "disabled" : {{ $disabled ? 'true' : 'false' }},
     }
     '>
-    <div class="bg-white rounded shadow-sm p-4 py-4 d-flex flex-column">
+    <div class="bg-white rounded shadow-sm mb-3 p-4 py-4 d-flex flex-column">
         <div class="row px-2">
             {{-- #TODO lock when change inspection and reload areas --}}
             <div class="col-md-6 px-1">
@@ -40,7 +40,6 @@
                         x-show="inspection_id == current_area.inspection_id">
                         <span>ตกลง</span>
                     </button>
-                    {{-- <span class="btn btn-primary">ตกลง</span> --}}
                 </div>
             </div>
         </div>
@@ -71,52 +70,79 @@
                     </div>
                     <div class="col-md-10">
                         <div class="col-12">
-                            <div class="input-group"><input class="form-control" type="text"
-                                    name="goal[{{ $i_goal }}][detail]" placeholder="ระบุเป้าประสงค์"
-                                    style="display: inline-block !important;" required value="{{ $goal['detail'] }}"
-                                    @disabled($disabled) /><button class="btn btn-info btn-sm" type="button"
-                                    x-show="!disabled"><span> เพิ่มเป้าประสงค์</span></button><button
-                                    class="btn btn-danger" type="button" x-show="!disabled">ลบ</button>
+                            <div class="input-group">
+                                <input class="form-control" type="text" name="goal[{{ $i_goal }}][detail]"
+                                    placeholder="ระบุเป้าประสงค์" style="display: inline-block !important;" required
+                                    value="{{ $goal['detail'] }}" @disabled($disabled) />
+                                @if ($count_goal == $i_goal + 1)
+                                    <button data-controller="button" data-turbo="true" class="btn btn-primary"
+                                        type="submit" form="post-form"
+                                        formaction="{{ route('startegy.contex.form') }}/push?type=goal"
+                                        x-show="!disabled">เพิ่มเป้าประสงค์ {{ $i_goal + 2 }}</button>
+                                @endif
+                                <button class="btn btn-danger" data-controller="button" data-turbo="true" type="submit"
+                                    form="post-form" formaction="{{ route('startegy.contex.form') }}/del"
+                                    x-show="!disabled">ลบ</button>
                             </div>
                             <input type="hidden" value="{{ $goal['id'] }}" name="goal[{{ $i_goal }}][id]">
                         </div>
                         @php($count_startegy = count($goal['startegy']))
                         @foreach ($goal['startegy'] as $i_startegy => $startegy)
                             <div class="row py-1">
-                                <div class="col-md-2 pt-2 text-center"><span>กลยุทธ์ {{ $i_goal + 1 }}.{{ $i_startegy + 1 }}.</span></div>
+                                <div class="col-md-2 pt-2 text-center"><span>กลยุทธ์
+                                        {{ $i_goal + 1 }}.{{ $i_startegy + 1 }}.</span></div>
                                 <div class="col-md-10">
                                     <div class="input-group"><input class="form-control" type="text"
                                             placeholder="รายละเอียดกลยุทธ์"
                                             name="goal[{{ $i_goal }}][startegy][{{ $i_startegy }}][detail]"
-                                            required value="{{ $startegy['detail'] }}"
-                                            @disabled($disabled) /><button class="btn btn-info" type="button"
-                                            x-show="!disabled">เพิ่ม</button><button class="btn btn-danger"
-                                            type="button" x-show="!disabled">ลบ</button></div>
+                                            required value="{{ $startegy['detail'] }}" @disabled($disabled) />
+                                        @if ($count_startegy == $i_startegy + 1)
+                                            <button data-controller="button" data-turbo="true" class="btn btn-info"
+                                                type="submit" form="post-form"
+                                                formaction="{{ route('startegy.contex.form') }}/push?type=startegy&kg={{ $goal['id'] }}"
+                                                x-show="!disabled">เพิ่มกลยุทธ์
+                                                {{ $i_goal + 1 }}.{{ $i_startegy + 2 }}.</button>
+                                        @endif
+                                        <button class="btn btn-danger" data-controller="button" data-turbo="true"
+                                            type="submit" form="post-form"
+                                            formaction="{{ route('startegy.contex.form') }}/del"
+                                            x-show="!disabled">ลบ</button>
+                                    </div>
                                     <input type="hidden" value="{{ $startegy['id'] }}"
                                         name="goal[{{ $i_goal }}][startegy][{{ $i_startegy }}][id]">
                                 </div>
                                 @php($count_target = count($startegy['target']))
                                 @foreach ($startegy['target'] as $i_target => $target)
-                                    <div class="col-12 py-1">
+                                    <div class="col-12 py-0">
                                         <div class="row">
                                             <div class="col-md-1 text-center px-md-1">
-                                                <div style="padding: 12px;"></div>
-                                                <div class="py-2"><span id="noLabel" class="d-md-none">เป้าหมายที่
-                                                    </span><span id="no">{{ $i_goal + 1 }}.{{ $i_startegy + 1 }}.{{ $i_startegy + 1 }}.</span>
+                                                @if ($i_target == 0)
+                                                    <div style="padding: 12px;"></div>
+                                                @else
+                                                    <div style="padding: 0px;"></div>
+                                                @endif
+                                                <div class="py-2">
+                                                    <span id="noLabel" class="d-md-none">เป้าหมายที่</span>
+                                                    <span
+                                                        id="no">{{ $i_goal + 1 }}.{{ $i_startegy + 1 }}.{{ $i_target + 1 }}.
+                                                    </span>
                                                 </div>
                                             </div>
                                             <div class="col-md-5 px-md-1">
-                                                <div class="text-md-center"><span class=".target_target">เป้าหมาย</span>
-                                                </div>
+                                                @if ($i_target == 0)
+                                                    <div class="text-md-center"><span
+                                                            class=".target_target">เป้าหมาย</span></div>
+                                                @endif
                                                 <input class="form-control" type="text" placeholder="ระบุเป้าหมาย"
                                                     name="goal[{{ $i_goal }}][startegy][{{ $i_startegy }}][target][{{ $i_target }}][name]"
                                                     value="{{ $target['name'] }}" required
                                                     @disabled($disabled) />
                                             </div>
                                             <div class="col-md-2 px-md-1">
-                                                <div class="text-md-center"><span
-                                                        class="target_pointer">ตัวชี้วัด</span>
-                                                </div>
+                                                @if ($i_target == 0)
+                                                    <div class="text-md-center"><span
+                                                            class="target_pointer">ตัวชี้วัด</span></div>
+                                                @endif
                                                 <input class="form-control text-center" type="text"
                                                     placeholder="ระบุตัวชี้วัด"
                                                     name="goal[{{ $i_goal }}][startegy][{{ $i_startegy }}][target][{{ $i_target }}][indicator]"
@@ -124,8 +150,10 @@
                                                     @disabled($disabled) />
                                             </div>
                                             <div class="col-md-2 px-md-1">
-                                                <div class="text-md-center"><span class="target_unit">หน่วยนับ</span>
-                                                </div>
+                                                @if ($i_target == 0)
+                                                    <div class="text-md-center"><span
+                                                            class="target_unit">หน่วยนับ</span></div>
+                                                @endif
                                                 <input class="form-control text-center" type="text"
                                                     placeholder="ระบุหน่วยนับ"
                                                     name="goal[{{ $i_goal }}][startegy][{{ $i_startegy }}][target][{{ $i_target }}][unit]"
@@ -133,24 +161,39 @@
                                                     @disabled($disabled) />
                                             </div>
                                             <div class="col-md-2 px-md-1" style="padding-right: 12px !important;">
-                                                <div class="text-md-center"><span
-                                                        class=".target_targetScore">ค่าเป้าหมาย</span>
-                                                </div><input class="form-control text-center" type="text"
-                                                    placeholder="ระบุค่าเป้าหมาย"
-                                                    name="goal[{{ $i_goal }}][startegy][{{ $i_startegy }}][target][{{ $i_target }}][target_value]"
-                                                    value="{{ $target['target_value'] }}" required
-                                                    @disabled($disabled) />
+                                                @if ($i_target == 0)
+                                                    <div class="text-md-center"><span
+                                                            class=".target_targetScore">ค่าเป้าหมาย</span>
+                                                    </div>
+                                                @endif
+                                                <div class="input-group">
+                                                    <input class="form-control text-center" type="text"
+                                                        placeholder="ระบุค่าเป้าหมาย"
+                                                        name="goal[{{ $i_goal }}][startegy][{{ $i_startegy }}][target][{{ $i_target }}][target_value]"
+                                                        value="{{ $target['target_value'] }}" required
+                                                        @disabled($disabled) />
+                                                    <button class="btn btn-danger" data-controller="button"
+                                                        data-turbo="true" type="submit" form="post-form"
+                                                        formaction="{{ route('startegy.contex.form') }}/del"
+                                                        x-show="!disabled">ลบ</button>
+                                                </div>
                                             </div>
                                             <input type="hidden" value="{{ $target['id'] }}"
                                                 name="goal[{{ $i_goal }}][startegy][{{ $i_startegy }}][target][{{ $i_target }}][id]">
-                                            <div class="py-1" x-show="!disabled">
-                                                <div class="text-end">
-                                                    <div class="btn-group">
-                                                        <span class="d-inline-block btn btn-info"> เพิ่มเป้าหมาย</span>
-                                                        <span class="d-inline-block btn btn-danger"> ลบ</span>
+                                            @if ($count_target == $i_target + 1)
+                                                <div class="py-1" x-show="!disabled">
+                                                    <div class="text-end">
+                                                        <div class="btn-group">
+                                                            <button data-controller="button" data-turbo="true"
+                                                                class="btn btn-warning" type="submit"
+                                                                form="post-form"
+                                                                formaction="{{ route('startegy.contex.form') }}/push?type=target&kg={{ $goal['id'] }}&ks={{ $startegy['id'] }}"
+                                                                x-show="!disabled">เพิ่มเป้าหมาย
+                                                                {{ $i_goal + 1 }}.{{ $i_startegy + 2 }}.{{ $i_target + 2 }}.</button>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            @endif
                                         </div>
                                     </div>
                                 @endforeach

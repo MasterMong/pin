@@ -51,6 +51,10 @@ class DatabaseSeeder extends Seeder
         foreach ($jsonSettings as $key => $value) {
             self::createIfEmpty($value, 'settings', 'key');
         }
+        $jsonAttchmentType = json_decode(File::get(base_path('data/attchmentTypes.json')), true);
+        foreach ($jsonAttchmentType as $key => $value) {
+            self::createIfEmpty($value, 'area_attchment_types', 'name');
+        }
 
         // user
 
@@ -130,6 +134,10 @@ class DatabaseSeeder extends Seeder
         $data['created_at'] = now();
         $data['updated_at'] = now();
         if (empty($exits)) {
+            $keys = array_keys($data);
+            foreach ($keys as $i => $key) {
+                $data[$key] = is_array($data[$key]) == true ? json_encode($data[$key]) : $data[$key];
+            }
             DB::table($table)->insert($data);
         }
     }
