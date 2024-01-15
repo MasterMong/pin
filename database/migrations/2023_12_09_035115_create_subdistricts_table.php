@@ -15,7 +15,10 @@ return new class extends Migration
             $table->id();
             $table->integer('code');
             $table->string('name_in_thai');
-            $table->string('name_in_english');
+            $table->string('name_in_english')->nullable();
+            $table->string('zip_code')->nullable();
+            $table->string('latitude')->nullable();
+            $table->string('longitude')->nullable();
             $table->foreignId('province_id')->references('id')->on('provinces');
             $table->foreignId('district_id')->references('id')->on('districts');
             $table->timestamps();

@@ -35,6 +35,10 @@ class DatabaseSeeder extends Seeder
         foreach ($jsonDistricts as $key => $value) {
             self::createIfEmpty($value, 'districts');
         }
+        $jsonSubdistricts = json_decode(File::get(base_path('data/dataSubdistricts.json')), true);
+        foreach ($jsonSubdistricts as $key => $value) {
+            self::createIfEmpty($value, 'subdistricts');
+        }
         $jsonAreaTypes = json_decode(File::get(base_path('data/areaType.json')), true);
         foreach ($jsonAreaTypes as $key => $value) {
             self::createIfEmpty($value, 'area_types');
