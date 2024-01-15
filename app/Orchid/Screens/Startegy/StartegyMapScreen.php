@@ -28,14 +28,19 @@ class StartegyMapScreen extends Screen
     public function query(): iterable
     {
         $area_id = Auth::user()->area_id;
+        $vision = AreaVision::byAreaAndYear($area_id, $this->budget_year_id)->first();
+        $mission = AreaMission::byAreaAndYear($area_id, $this->budget_year_id)->first();
+        $goals = AreaGoal::byAreaAndYear($area_id, $this->budget_year_id)->get();
+        $startegies = AreaStartegy::byAreaAndYear($area_id, $this->budget_year_id)->get();
+        $targets = AreaTarget::byAreaAndYear($area_id, $this->budget_year_id)->get();
 
         return [
             'area' => Auth::user()->area,
-            'vision' => AreaVision::byAreaAndYear($area_id, $this->budget_year_id)->first(),
-            'mission' => AreaMission::byAreaAndYear($area_id, $this->budget_year_id)->first(),
-            'goals' => AreaGoal::byAreaAndYear($area_id, $this->budget_year_id)->get(),
-            'startegies' => AreaStartegy::byAreaAndYear($area_id, $this->budget_year_id)->get(),
-            'targets' => AreaTarget::byAreaAndYear($area_id, $this->budget_year_id)->get(),
+            'vision' => $vision->detail ?? '-',
+            'mission' => $mission ?? '-',
+            'goals' => $goals,
+            'startegies' => $startegies,
+            'targets' => $targets,
         ];
     }
 
