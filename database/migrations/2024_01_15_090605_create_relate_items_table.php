@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('area_targets', function (Blueprint $table) {
+        Schema::create('relate_items', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('area_startegy_id')->references('id')->on('area_startegies');
             $table->foreignId('budget_year_id')->references('id')->on('budget_years');
-            $table->foreignId('area_id')->references('id')->on('areas');
-            $table->string('name');
-            $table->string('indicator');
-            $table->string('unit');
-            $table->string('target_value');
+            $table->string('label');
+            $table->string('ref');
+            $table->string('parent_item_ref');
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('area_targets');
+        Schema::dropIfExists('relate_items');
     }
 };
