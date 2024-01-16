@@ -25,6 +25,7 @@ class Area extends Model
         'address',
         'district_id',
         'province_id',
+        'region_id',
         'zip_code',
         'tel',
         'num_school',

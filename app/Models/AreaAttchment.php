@@ -12,6 +12,7 @@ class AreaAttchment extends Model
         'area_id',
         'area_attchment_type_id',
         'budget_year_id',
-        'attchment_id'
+        'attchment_id',
+        'attr'
     ];
 }
