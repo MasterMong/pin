@@ -1,6 +1,6 @@
 [
     {
-        "title": "qp",
+        "label": "qp",
         "name": "Quick Policy",
         "budget_year_id": 3,
         "items": [
@@ -16,7 +16,7 @@
         "parent_name": null
     },
     {
-        "title": "ยุทธศาสตร์ชาติ",
+        "label": "qp sub",
         "name": "national_startegy",
         "budget_year_id": 3,
         "items": [
