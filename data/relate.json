@@ -38,37 +38,42 @@
                     "label": "1. ยุทธศาสตร์ชาติด้านความมั่นคง",
                     "ref": "st201",
                     "parent_item_ref": null,
-                    "req_value" : false
-                },{
+                    "req_value": false
+                },
+                {
                     "budget_year_id": 3,
                     "label": "2. ยุทธศาสตร์ชาติด้านการสร้างความสามารถในการแข่งขัน",
                     "ref": "st202",
                     "parent_item_ref": null,
-                    "req_value" : false
-                },{
+                    "req_value": false
+                },
+                {
                     "budget_year_id": 3,
                     "label": "3. ยุทธศาสตร์ชาติด้านการพัฒนาและเสริมสร้างศักยภาพทรัพยากรมนุษย์",
                     "ref": "st203",
                     "parent_item_ref": null,
-                    "req_value" : false
-                },{
+                    "req_value": false
+                },
+                {
                     "budget_year_id": 3,
                     "label": "4. ยุทธศาสตร์ชาติด้านการสร้างโอกาสและความเสมอภาคทางสังคม",
                     "ref": "st204",
                     "parent_item_ref": null,
-                    "req_value" : false
-                },{
+                    "req_value": false
+                },
+                {
                     "budget_year_id": 3,
                     "label": "5. ยุทธศาสตร์ชาติด้านการสร้างการเติบโตบนคุณภาพชีวิตที่เป็นมิตรต่อสิ่งแวดล้อม",
                     "ref": "st205",
                     "parent_item_ref": null,
-                    "req_value" : false
-                },{
+                    "req_value": false
+                },
+                {
                     "budget_year_id": 3,
                     "label": "6. ยุทธศาสตร์ชาติด้านการปรับสมดุลและพัฒนาระบบการบริหารจัดการภาครัฐ",
                     "ref": "st206",
                     "parent_item_ref": null,
-                    "req_value" : false
+                    "req_value": false
                 }
             ],
             "is_parent": true,
@@ -86,43 +91,49 @@
                     "label": "ประเด็นที่ 12 การพัฒนาการเรียนรู้ (หลัก)",
                     "ref": "chapter1",
                     "parent_item_ref": null,
-                    "req_value" : false
-                },{
+                    "req_value": false
+                },
+                {
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 11 การพัฒนาคนตลอดช่วงชีวิต (หลัก)",
                     "ref": "chapter2",
                     "parent_item_ref": null,
-                    "req_value" : false
-                },{
+                    "req_value": false
+                },
+                {
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 17 ความเสมอภาคและหลักประกันทางสังคม (รอง)",
                     "ref": "chapter3",
                     "parent_item_ref": null,
-                    "req_value" : false
-                },{
+                    "req_value": false
+                },
+                {
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 1 ความมั่นคง (รอง)",
                     "ref": "chapter4",
                     "parent_item_ref": null,
-                    "req_value" : false
-                },{
+                    "req_value": false
+                },
+                {
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 10 การปรับเปลี่ยนค่านิยมและวัฒนธรรม (รอง)",
                     "ref": "chapter5",
                     "parent_item_ref": null,
-                    "req_value" : false
-                },{
+                    "req_value": false
+                },
+                {
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 20 การบริการประชาชนและประสิทธิภาพภาครัฐ (รอง)",
                     "ref": "chapter6",
                     "parent_item_ref": null,
-                    "req_value" : false
-                },{
+                    "req_value": false
+                },
+                {
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 21 การต่อต้านทุจริตและประพฤติมิชอบ (รอง)",
                     "ref": "chapter7",
                     "parent_item_ref": null,
-                    "req_value" : false
+                    "req_value": false
                 }
             ],
             "is_parent": true,
@@ -140,66 +151,100 @@
                     "label": "1) ปลูกฝังความรักในสถาบันหลักของชาติ และน้อมนำพระบรมราโชบายด้านการศึกษาสู่การปฏิบัติ",
                     "ref": "qp1",
                     "parent_item_ref": null,
-                    "req_value" : false
-                },{
+                    "req_value": false
+                },
+                {
                     "budget_year_id": 3,
                     "label": "2) จัดการเรียนรู้ประวัติศาสตร์ หน้าที่พลเมือง ศีลธรรม และประชาธิปไตย",
                     "ref": "qp2",
                     "parent_item_ref": null,
-                    "req_value" : false
-                },{
+                    "req_value": false
+                },
+                {
                     "budget_year_id": 3,
                     "label": "3) ปรับกระบวนการจัดการเรียนรู้ให้ทันสมัยและหลากหลาย",
                     "ref": "qp3",
                     "parent_item_ref": null,
-                    "req_value" : false
-                },{
+                    "req_value": false
+                },
+                {
                     "budget_year_id": 3,
                     "label": "4) ส่งเสริมการอ่าน เพื่อเป็นวิถีในการค้นหาความรู้และต่อยอดองค์ความรู้ที่สูงขึ้น",
                     "ref": "qp4",
                     "parent_item_ref": null,
-                    "req_value" : false
-                },{
+                    "req_value": false
+                },
+                {
                     "budget_year_id": 3,
                     "label": "5) ส่งเสริม สนับสนุนกิจกรรมพัฒนาผู้เรียน",
                     "ref": "qp5",
                     "parent_item_ref": null,
-                    "req_value" : false
-                },{
+                    "req_value": false
+                },
+                {
                     "budget_year_id": 3,
                     "label": "6) จัดการศึกษาแบบเรียนรวม",
                     "ref": "qp6",
                     "parent_item_ref": null,
-                    "req_value" : false
-                },{
+                    "req_value": false
+                },
+                {
                     "budget_year_id": 3,
                     "label": "7) จัดการศึกษาเพื่อความเป็นเลิศ",
                     "ref": "qp7",
                     "parent_item_ref": null,
-                    "req_value" : false
-                },{
+                    "req_value": false
+                },
+                {
                     "budget_year_id": 3,
                     "label": "8) เสริมสร้างความปลอดภัยของสถานศึกษา",
                     "ref": "qp8",
                     "parent_item_ref": null,
-                    "req_value" : false
-                },{
+                    "req_value": false
+                },
+                {
                     "budget_year_id": 3,
                     "label": "9) เพิ่มโอกาสและสร้างความเสมอภาคทางการศึกษา",
                     "ref": "qp9",
                     "parent_item_ref": null,
-                    "req_value" : false
-                },{
+                    "req_value": false
+                },
+                {
                     "budget_year_id": 3,
                     "label": "10) พัฒนาครูและบุคลากรทางการศึกษา",
                     "ref": "qp10",
                     "parent_item_ref": null,
-                    "req_value" : false
+                    "req_value": false
                 }
             ],
             "is_parent": true,
             "is_single": true,
             "parent_name": null
+        },
+        {
+            "label": "",
+            "name": "qp_sub1",
+            "budget_year_id": 3,
+            "relate_group_id": 2,
+            "items": [
+                {
+                    "budget_year_id": 3,
+                    "label": "10) พัฒนาครูและบุคลากรทางการศึกษา",
+                    "ref": "qp10",
+                    "parent_item_ref": null,
+                    "req_value": false
+                },
+                {
+                    "budget_year_id": 3,
+                    "label": "1.1) ขับเคลื่อนหลักปรัชญาของเศรษฐกิจพอเพียงสู่สถานศึกษา เพื่อการบรรลุเป้าหมายการพัฒนาที่ยั่งยืน",
+                    "ref": "qp10",
+                    "parent_item_ref": null,
+                    "req_value": false
+                }
+            ],
+            "is_parent": false,
+            "is_single": true,
+            "parent_name": "qp"
         }
     ]
 }
