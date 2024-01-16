@@ -13,6 +13,7 @@ class RelateItem extends Model
         'label',
         'ref',
         'parent_item_ref',
+        'relate_type_id',
         'req_value'
     ];
 }

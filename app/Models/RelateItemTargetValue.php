@@ -13,6 +13,5 @@ class RelateItemTargetValue extends Model
         'area_id',
         'budget_year_id',
         'relate_item_id',
-        'value'
     ];
 }

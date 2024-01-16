@@ -1,24 +1,29 @@
 {
     "group": [
         {
-            "id" : 1,
-            "label":"ยุธศาสตร์ชาติ"
+            "id": 1,
+            "label": "ยุธศาสตร์ชาติ",
+            "budget_year_id": 3
         },
         {
-            "id" : 2,
-            "label":"นโยบายและจุดเน้น สพฐ."
+            "id": 2,
+            "label": "นโยบายและจุดเน้น สพฐ.",
+            "budget_year_id": 3
         },
         {
-            "id" : 3,
-            "label":"กลยุทธ์ สพท."
+            "id": 3,
+            "label": "กลยุทธ์ สพท.",
+            "budget_year_id": 3
         },
         {
-            "id" : 4,
-            "label":"นวPA ผู้อำนวยการ สพท."
+            "id": 4,
+            "label": "นวPA ผู้อำนวยการ สพท.",
+            "budget_year_id": 3
         },
         {
-            "id" : 5,
-            "label":"xxxx"
+            "id": 5,
+            "label": "xxxx",
+            "budget_year_id": 3
         }
     ],
     "relate": [
@@ -33,7 +38,13 @@
                     "label": "label",
                     "ref": "qp1",
                     "parent_item_ref": null,
-                    "req_value" : false
+                    "req_value": false                },
+                {
+                    "budget_year_id": 3,
+                    "label": "label",
+                    "ref": "qp1",
+                    "parent_item_ref": null,
+                    "req_value": false
                 }
             ],
             "is_parent": true,
@@ -51,7 +62,7 @@
                     "label": "label",
                     "ref": "qp1_1",
                     "parent_item_ref": "qp1",
-                    "req_value" : true
+                    "req_value": true
                 }
             ],
             "is_parent": false,

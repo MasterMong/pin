@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('relate_items', function (Blueprint $table) {
             $table->id();
             $table->foreignId('budget_year_id')->references('id')->on('budget_years');
-            $table->string('label');
+            $table->foreignId('relate_type_id')->references('id')->on('budget_years');
+            $table->string('label', 2000);
             $table->string('ref');
-            $table->string('parent_item_ref');
+            $table->string('parent_item_ref')->nullable();
             $table->boolean('req_value')->default(false);
             $table->timestamps();
         });

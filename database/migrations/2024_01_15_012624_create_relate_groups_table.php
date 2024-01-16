@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('relate_groups', function (Blueprint $table) {
             $table->id();
-            $table->string('label');
+            $table->foreignId('budget_year_id')->references('id')->on('budget_years');
+            $table->string('label', 2000);
+            $table->integer('order')->default(0);
             $table->timestamps();
         });
     }

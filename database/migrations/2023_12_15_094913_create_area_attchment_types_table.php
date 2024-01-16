@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('area_attchment_types', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('label');
+            $table->string('label', 2000);
             $table->boolean('is_single')->default(true);
             $table->string('file_types');
             $table->json('req_attr');

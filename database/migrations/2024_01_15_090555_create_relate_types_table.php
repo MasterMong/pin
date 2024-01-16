@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('relate_types', function (Blueprint $table) {
             $table->id();
-            $table->string('label');
+            $table->string('label', 2000);
             $table->string('name');
             $table->foreignId('budget_year_id')->references('id')->on('budget_years');
             $table->foreignId('relate_group_id')->references('id')->on('relate_groups');
             $table->boolean('is_parent')->default(False);
             $table->boolean('is_single')->default(True);
-            $table->string('parent_name');
+            $table->string('parent_name')->nullable();
             $table->timestamps();
         });
     }

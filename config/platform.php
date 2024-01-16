@@ -127,8 +127,14 @@ return [
      */
 
     'resource' => [
-        'stylesheets' => [],
-        'scripts'     => [],
+        'stylesheets' => [
+            '/vendor/bootstrap-datepicker.css'
+        ],
+        'scripts'     => [
+            'https://code.jquery.com/jquery-3.7.1.min.js',
+            '/vendor/bootstrap-datepicker.js',
+            '/vendor/bootstrap-datepicker.th.min.js'
+        ],
     ],
 
     /*

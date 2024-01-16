@@ -35,10 +35,10 @@ class DatabaseSeeder extends Seeder
         foreach ($jsonDistricts as $key => $value) {
             self::createIfEmpty($value, 'districts');
         }
-        $jsonSubdistricts = json_decode(File::get(base_path('data/dataSubdistricts.json')), true);
-        foreach ($jsonSubdistricts as $key => $value) {
-            self::createIfEmpty($value, 'subdistricts');
-        }
+        // $jsonSubdistricts = json_decode(File::get(base_path('data/dataSubdistricts.json')), true);
+        // foreach ($jsonSubdistricts as $key => $value) {
+        //     self::createIfEmpty($value, 'subdistricts');
+        // }
         $jsonAreaTypes = json_decode(File::get(base_path('data/areaType.json')), true);
         foreach ($jsonAreaTypes as $key => $value) {
             self::createIfEmpty($value, 'area_types');
@@ -58,6 +58,24 @@ class DatabaseSeeder extends Seeder
         $jsonAttchmentType = json_decode(File::get(base_path('data/attchmentTypes.json')), true);
         foreach ($jsonAttchmentType as $key => $value) {
             self::createIfEmpty($value, 'area_attchment_types', 'name');
+        }
+        $jsonRelate = json_decode(File::get(base_path('data/relate.json')), true);
+        foreach ($jsonRelate['group'] as $key => $value) {
+            self::createIfEmpty($value, 'relate_groups', 'id');
+        }
+        foreach ($jsonRelate['relate'] as $i => $relate_type) {
+            $keys = array_keys($relate_type);
+            $type = [];
+            foreach ($keys as $j => $key) {
+                if ($key !== 'items') {
+                    $type[$key] = $relate_type[$key];
+                }
+            }
+            $type_id = self::createIfEmpty($type, 'relate_types', 'name');
+            foreach ($relate_type['items'] as $k => $item) {
+                $item['relate_type_id'] = $type_id;
+                self::createIfEmpty($item, 'relate_items', 'ref');
+            }
         }
 
         // user
@@ -142,7 +160,8 @@ class DatabaseSeeder extends Seeder
             foreach ($keys as $i => $key) {
                 $data[$key] = is_array($data[$key]) == true ? json_encode($data[$key]) : $data[$key];
             }
-            DB::table($table)->insert($data);
+            return DB::table($table)->insertGetId($data);
         }
+        return $exits->id;
     }
 }

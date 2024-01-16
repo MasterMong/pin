@@ -2,8 +2,10 @@
 
 namespace App\Orchid\Screens\Startegy;
 
+use App\Http\Controllers\SettingsController;
 use App\Models\Area;
 use App\Models\InspectionArea;
+use App\Models\RelateGroup;
 use App\Models\User;
 use App\Orchid\Layouts\AreaContextTabMenu;
 use Illuminate\Http\Request;
@@ -22,18 +24,35 @@ class StartegyFormProjectScreen extends Screen
     public $areaData;
     public $inspection_id;
     public $areas;
+    public $budget_year_id;
+
     /**
      * Fetch data to be displayed on the screen.
      *
      * @return array
      */
+
+     public function __construct() {
+        $this->budget_year_id = SettingsController::getSetting('budget_year');
+     }
     public function query(): iterable
     {
+        $relates = RelateGroup::where('budget_year_id', $this->budget_year_id)
+        ->with([
+            'types' => function($q) {
+                $q->with('items');
+            }
+        ])
+        ->orderBy('order')
+        ->get();
+
+        // dd(json_decode(json_encode($relates, JSON_UNESCAPED_UNICODE)));
         return [
             'inspections' => InspectionArea::all(),
             'areaData' => $this->areaData ?? Auth::user()->area,
             'areas' => $this->areas ?? Auth::user()->area->byInspection(Auth::user()->area->inspection_id)->select(['id', 'name', 'inspection_id'])->get(),
             'inspection_id'  => $this->inspection_id ?? Auth::user()->area->inspection_id,
+            'relates' => $relates
         ];
     }
     /**
