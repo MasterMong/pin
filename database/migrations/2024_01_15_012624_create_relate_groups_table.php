@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('relate_items', function (Blueprint $table) {
+        Schema::create('relate_groups', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('budget_year_id')->references('id')->on('budget_years');
             $table->string('label');
-            $table->string('ref');
-            $table->string('parent_item_ref');
-            $table->boolean('req_value')->default(false);
             $table->timestamps();
         });
     }
@@ -27,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('relate_items');
+        Schema::dropIfExists('relate_groups');
     }
 };

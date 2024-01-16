@@ -109,7 +109,8 @@ class StartegyFormProjectScreen extends Screen
         $this->areaData = Area::where('id', $area_id)->where('inspection_id', $request->inspection_id)->first();
     }
 
-    function createOrUpdate() {
+    function createOrUpdate(Request $request) {
+        dd($request->toArray());
         Toast::success('saved!');
         return back();
     }

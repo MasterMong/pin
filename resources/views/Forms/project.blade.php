@@ -70,10 +70,10 @@
                             <div class="col-md-9">
                                 <div class="row">
                                     <div class="col">
-                                        <div class="input-group"><span class="input-group-text">วันที่เริ่ม</span><input class="form-control" type="date" name="project_start" /></div>
+                                        <div class="input-group"><span class="input-group-text">วันที่เริ่ม</span><input class="form-control" type="date" placeholder="dd-mm-yyyy" name="project_start" /></div>
                                     </div>
                                     <div class="col">
-                                        <div class="input-group"><span class="input-group-text">วันสิ้นสุด</span><input class="form-control" type="date" name="project_end" /></div>
+                                        <div class="input-group"><span class="input-group-text">วันสิ้นสุด</span><input class="form-control" type="date" placeholder="dd-mm-yyyy" name="project_end" /></div>
                                     </div>
                                 </div>
                             </div>
