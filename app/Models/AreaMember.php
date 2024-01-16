@@ -11,6 +11,8 @@ class AreaMember extends Model
 
     protected $fillable = [
         'attachment_id',
-        'name'
+        'name',
+        'member_type_id',
+        'area_id'
     ];
 }

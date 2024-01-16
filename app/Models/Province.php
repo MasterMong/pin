@@ -16,6 +16,6 @@ class Province extends Model
         'code',
         'name_in_thai',
         'name_in_english',
-        'regionID'
+        'region_id'
     ];
 }

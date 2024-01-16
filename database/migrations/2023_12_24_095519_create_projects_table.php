@@ -28,6 +28,8 @@ return new class extends Migration
             $table->longText('problem');
             $table->longText('suggestions');
             $table->integer('progress');
+            $table->integer('relate_type_id');
+            $table->integer('relate_item_id');
             $table->string('handler_name');
             $table->timestamps();
         });
