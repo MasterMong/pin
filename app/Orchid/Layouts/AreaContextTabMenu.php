@@ -16,9 +16,9 @@ class AreaContextTabMenu extends TabMenu
     {
         return [
             Menu::make('สภาพบริบท / แนวทางพัฒนาเชิงกลยุทธ์')
-                ->route("startegy.contex.form"),
+                ->route("strategy.contex.form"),
             Menu::make('โครงการ')
-                ->route("startegy.project.form"),
+                ->route("strategy.project.form"),
         ];
     }
 }

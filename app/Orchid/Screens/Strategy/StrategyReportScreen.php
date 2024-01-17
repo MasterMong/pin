@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Orchid\Screens\Startegy;
+namespace App\Orchid\Screens\Strategy;
 
 use Orchid\Screen\Screen;
 
-class StartegyReportScreen extends Screen
+class StrategyReportScreen extends Screen
 {
     /**
      * Fetch data to be displayed on the screen.
@@ -35,7 +35,7 @@ class StartegyReportScreen extends Screen
      */
     public function name(): ?string
     {
-        return 'StartegyReportScreen';
+        return 'StrategyReportScreen';
     }
 
     /**

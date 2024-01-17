@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Orchid\Screens\Startegy;
+namespace App\Orchid\Screens\Strategy;
 
 use App\Http\Controllers\SettingsController;
 use App\Models\AreaGoal;
 use App\Models\AreaMission;
-use App\Models\AreaStartegy;
+use App\Models\AreaStrategy;
 use App\Models\AreaTarget;
 use App\Models\AreaVision;
 use Orchid\Screen\Fields\Input;
@@ -14,7 +14,7 @@ use Orchid\Support\Facades\Layout;
 use Illuminate\Support\Facades\Auth;
 
 
-class StartegyMapScreen extends Screen
+class StrategyMapScreen extends Screen
 {
     public $budget_year_id;
     public function __construct() {
@@ -31,7 +31,7 @@ class StartegyMapScreen extends Screen
         $vision = AreaVision::byAreaAndYear($area_id, $this->budget_year_id)->first();
         $mission = AreaMission::byAreaAndYear($area_id, $this->budget_year_id)->first();
         $goals = AreaGoal::byAreaAndYear($area_id, $this->budget_year_id)->get();
-        $startegies = AreaStartegy::byAreaAndYear($area_id, $this->budget_year_id)->get();
+        $startegies = AreaStrategy::byAreaAndYear($area_id, $this->budget_year_id)->get();
         $targets = AreaTarget::byAreaAndYear($area_id, $this->budget_year_id)->get();
 
         return [
@@ -51,7 +51,7 @@ class StartegyMapScreen extends Screen
      */
     public function name(): ?string
     {
-        return 'Startegy Map';
+        return 'Strategy Map';
     }
 
     /**
@@ -72,7 +72,7 @@ class StartegyMapScreen extends Screen
     public function layout(): iterable
     {
         return [
-            Layout::view('Pages.StartegyMap')
+            Layout::view('Pages.StrategyMap')
         ];
     }
 }

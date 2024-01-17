@@ -49,10 +49,10 @@
             </div>
             <div class="col-md-10 px-1 py-2">
                 <div class="row">
-                    @forelse ($startegies as $startegy)
+                    @forelse ($startegies as $strategy)
                         <div class="col px-2">
                             <div class="text-bg-warning bg-gradient p-2">
-                                {{ $startegy['detail'] }}
+                                {{ $strategy['detail'] }}
                             </div>
                         </div>
                     @empty

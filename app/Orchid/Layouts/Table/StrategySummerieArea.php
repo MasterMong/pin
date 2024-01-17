@@ -5,7 +5,7 @@ namespace App\Orchid\Layouts\Table;
 use Orchid\Screen\Layouts\Table;
 use Orchid\Screen\TD;
 
-class StartegySummerieArea extends Table
+class StrategySummerieArea extends Table
 {
     /**
      * Data source.

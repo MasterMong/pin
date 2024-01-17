@@ -19,14 +19,14 @@ use App\Orchid\Screens\Info\InfoAreaScreen;
 use App\Orchid\Screens\Info\InfoNationalScreen;
 use App\Orchid\Screens\PlatformScreen;
 use App\Orchid\Screens\Profile\ProfileAreaScreen;
-use App\Orchid\Screens\Report\ReportStartegyYear;
+use App\Orchid\Screens\Report\ReportStrategyYear;
 use App\Orchid\Screens\Role\RoleEditScreen;
 use App\Orchid\Screens\Role\RoleListScreen;
-use App\Orchid\Screens\Startegy\StartegyFormContexScreen;
-use App\Orchid\Screens\Startegy\StartegyFormProjectScreen;
-use App\Orchid\Screens\Startegy\StartegyMapScreen;
-use App\Orchid\Screens\Startegy\StartegyProjectScreen;
-use App\Orchid\Screens\Startegy\StartegyScreen;
+use App\Orchid\Screens\Strategy\StrategyFormContexScreen;
+use App\Orchid\Screens\Strategy\StrategyFormProjectScreen;
+use App\Orchid\Screens\Strategy\StrategyMapScreen;
+use App\Orchid\Screens\Strategy\StrategyProjectScreen;
+use App\Orchid\Screens\Strategy\StrategyScreen;
 use App\Orchid\Screens\Supervise\Area\SuperviseAreaAPScreen;
 use App\Orchid\Screens\Supervise\Area\SuperviseAreaAreaStandardScreen;
 use App\Orchid\Screens\Supervise\Area\SuperviseAreaQPScreen;
@@ -153,37 +153,37 @@ Route::prefix('/users')->name('users.')->group(function () {
             ->push(__('Users'), route('users.users')));
 });
 
-Route::prefix('/startegy')->name('startegy.')->group(function () {
-    Route::screen('/main', StartegyScreen::class)
+Route::prefix('/strategy')->name('strategy.')->group(function () {
+    Route::screen('/main', StrategyScreen::class)
         ->name('index')
         ->breadcrumbs(fn (Trail $trail) => $trail
             ->parent('platform.index')
-            ->push("แผนการดำเนินงาน", route('startegy.index')));
-    Route::screen('/map', StartegyMapScreen::class)
+            ->push("แผนการดำเนินงาน", route('strategy.index')));
+    Route::screen('/map', StrategyMapScreen::class)
         ->name('map')
         ->breadcrumbs(fn (Trail $trail) => $trail
-            ->parent('startegy.index')
-            ->push("Startegy map", route('startegy.map')));
-    Route::screen('/project', StartegyProjectScreen::class)
+            ->parent('strategy.index')
+            ->push("Strategy map", route('strategy.map')));
+    Route::screen('/project', StrategyProjectScreen::class)
         ->name('project')
         ->breadcrumbs(fn (Trail $trail) => $trail
-            ->parent('startegy.index')
-            ->push("โครงการ", route('startegy.project')));
-    Route::screen('/contex/form', StartegyFormContexScreen::class)
+            ->parent('strategy.index')
+            ->push("โครงการ", route('strategy.project')));
+    Route::screen('/contex/form', StrategyFormContexScreen::class)
         ->name('contex.form')
         ->breadcrumbs(fn (Trail $trail) => $trail
-            ->parent('startegy.index')
-            ->push("สภาพบริบท/แนวทางพัฒนาเชิงกลยุทธ์", route('startegy.contex.form')));
-    Route::screen('/project/form', StartegyFormProjectScreen::class)
+            ->parent('strategy.index')
+            ->push("สภาพบริบท/แนวทางพัฒนาเชิงกลยุทธ์", route('strategy.contex.form')));
+    Route::screen('/project/form', StrategyFormProjectScreen::class)
         ->name('project.form')
         ->breadcrumbs(fn (Trail $trail) => $trail
-            ->parent('startegy.index')
-            ->push("โครงการ", route('startegy.project.form')));
-    Route::screen('/report', ReportStartegyYear::class)
+            ->parent('strategy.index')
+            ->push("โครงการ", route('strategy.project.form')));
+    Route::screen('/report', ReportStrategyYear::class)
         ->name('report')
         ->breadcrumbs(fn (Trail $trail) => $trail
             ->parent('platform.index')
-            ->push("รายงานผลการดำเนินงาน รอบ 12 เดือน", route('startegy.report')));
+            ->push("รายงานผลการดำเนินงาน รอบ 12 เดือน", route('strategy.report')));
 });
 
 Route::prefix('/roles')->name('roles.')->group(function () {

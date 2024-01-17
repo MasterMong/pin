@@ -9,7 +9,7 @@
         }
     },
     {
-        "name": "area_startegy_plan",
+        "name": "area_strategy_plan",
         "label": "แผนปฏิบัติราชการของ สพท.",
         "is_single": true,
         "file_types": "application/pdf",

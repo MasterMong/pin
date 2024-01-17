@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Orchid\Screens\Startegy;
+namespace App\Orchid\Screens\Strategy;
 
 use App\Actions\Area\GoalCU;
 use App\Actions\Area\MissionCU;
-use App\Actions\Area\StartegyCU;
+use App\Actions\Area\StrategyCU;
 use App\Actions\Area\TargetCU;
 use App\Actions\Area\VisionCU;
 use App\Http\Controllers\SettingsController;
 use App\Models\Area;
 use App\Models\AreaGoal;
 use App\Models\AreaMission;
-use App\Models\AreaStartegy;
+use App\Models\AreaStrategy;
 use App\Models\AreaTarget;
 use App\Models\AreaVision;
 use App\Models\InspectionArea;
@@ -28,18 +28,18 @@ use Orchid\Support\Facades\Toast;
 use Orchid\Screen\Fields\Group;
 use Orchid\Screen\Fields\Input;
 
-class StartegyFormContexScreen extends Screen
+class StrategyFormContexScreen extends Screen
 {
     public $current_area;
     public $inspection_id;
     public $areas;
     public $template_target;
-    public $template_startegy;
+    public $template_strategy;
     public $template_goal;
     public $budget_year_id;
     public $goals;
     public $push_goal;
-    public $push_startegy;
+    public $push_strategy;
     public $push_target;
     public $push_attr;
 
@@ -49,7 +49,7 @@ class StartegyFormContexScreen extends Screen
         $this->inspection_id = $this->current_area->inspection_id;
         $this->areas = Area::byInspection($this->current_area->inspection_id)->select(['id', 'name', 'inspection_id'])->get();
         $this->push_goal = false;
-        $this->push_startegy = false;
+        $this->push_strategy = false;
         $this->push_target = false;
         $this->push_attr = [
             'kg' => 0,
@@ -83,8 +83,8 @@ class StartegyFormContexScreen extends Screen
 
         # เรียงจากล่างไปบน
         $this->template_target = ["id" => 0, "name" => $null_value, "indicator" => $null_value, "unit" => $null_value, "target_value" => $null_value];
-        $this->template_startegy = ["id" => 0, "detail" => $null_value, "target" => [$this->template_target]];
-        $this->template_goal = ["id" => 0, "detail" => $null_value, "startegy" => [$this->template_startegy]];
+        $this->template_strategy = ["id" => 0, "detail" => $null_value, "target" => [$this->template_target]];
+        $this->template_goal = ["id" => 0, "detail" => $null_value, "strategy" => [$this->template_strategy]];
 
         $this->goals = $this->parse_goals();
         return [
@@ -211,11 +211,11 @@ class StartegyFormContexScreen extends Screen
             foreach ($data['goal'] as $kg => $goal) {
                 $goalCU = GoalCU::run(Auth::user()->area_id, $this->budget_year_id, $goal);
                 // กลยุทธ์
-                foreach ($goal['startegy'] as $ks => $startegy) {
-                    $startegyCU = StartegyCU::run(Auth::user()->area_id, $this->budget_year_id, $goalCU->id, $startegy);
+                foreach ($goal['strategy'] as $ks => $strategy) {
+                    $strategyCU = StrategyCU::run(Auth::user()->area_id, $this->budget_year_id, $goalCU->id, $strategy);
                     // เป้าหมาย
-                    foreach ($startegy['target'] as $kt => $target) {
-                        $targetCU = TargetCU::run(Auth::user()->area_id, $this->budget_year_id, $startegyCU->id, $target);
+                    foreach ($strategy['target'] as $kt => $target) {
+                        $targetCU = TargetCU::run(Auth::user()->area_id, $this->budget_year_id, $strategyCU->id, $target);
                     }
                 }
             }
@@ -230,8 +230,8 @@ class StartegyFormContexScreen extends Screen
         if($request->type == 'goal') {
             $this->push_goal = true;
         }
-        if($request->type == 'startegy') {
-            $this->push_startegy = true;
+        if($request->type == 'strategy') {
+            $this->push_strategy = true;
             $this->push_attr['kg'] = $request->kg;
         }
         if($request->type == 'target') {
@@ -246,7 +246,7 @@ class StartegyFormContexScreen extends Screen
             [
                 "id" => 0,
                 "detail" => "cc",
-                "startegy" => [
+                "strategy" => [
                     ["id" => 0,
                         "detail" => "bb",
                         "target" => [
@@ -273,14 +273,14 @@ class StartegyFormContexScreen extends Screen
         } else {
             $r_goal = [];
             foreach ($goals as $kg => $goal) {
-                $r_startegy = [];
-                $startegies = AreaStartegy::where('area_goal_id', $goal->id)->get();
+                $r_strategy = [];
+                $startegies = AreaStrategy::where('area_goal_id', $goal->id)->get();
                 if (count($startegies) == 0) {
-                    $r_startegy = [$this->template_startegy];
+                    $r_strategy = [$this->template_strategy];
                 } else {
-                    foreach ($startegies as $ks => $startegy) {
+                    foreach ($startegies as $ks => $strategy) {
                         $r_target = [];
-                        $targets = AreaTarget::where('area_startegy_id', $startegy->id)->get();
+                        $targets = AreaTarget::where('area_strategy_id', $strategy->id)->get();
                         if (count($targets) == 0) {
                             $r_target = [$this->template_target];
                         } else {
@@ -289,20 +289,20 @@ class StartegyFormContexScreen extends Screen
                             }
                         }
 
-                        if($this->push_target and $this->push_attr['kg'] == $goal['id'] and $this->push_attr['ks'] == $startegy['id']) {
+                        if($this->push_target and $this->push_attr['kg'] == $goal['id'] and $this->push_attr['ks'] == $strategy['id']) {
                             # TODO next
                             $r_target[] = $this->template_target;
                         }
-                        $startegy['target'] = $r_target;
+                        $strategy['target'] = $r_target;
 
-                        $r_startegy[] = $startegy;
+                        $r_strategy[] = $strategy;
                     }
                 }
-                if($this->push_startegy and $this->push_attr['kg'] == $goal['id']) {
+                if($this->push_strategy and $this->push_attr['kg'] == $goal['id']) {
                     # TODO next
-                    $r_startegy[] = $this->template_startegy;
+                    $r_strategy[] = $this->template_strategy;
                 }
-                $goal['startegy'] = $r_startegy;
+                $goal['strategy'] = $r_strategy;
                 $r_goal[] = $goal;
             }
             // dd($r_goal);

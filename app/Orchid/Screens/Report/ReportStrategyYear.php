@@ -4,7 +4,7 @@ namespace App\Orchid\Screens\Report;
 
 use Orchid\Screen\Screen;
 
-class ReportStartegyYear extends Screen
+class ReportStrategyYear extends Screen
 {
     /**
      * Fetch data to be displayed on the screen.
@@ -35,7 +35,7 @@ class ReportStartegyYear extends Screen
      */
     public function name(): ?string
     {
-        return 'ReportStartegyYear';
+        return 'ReportStrategyYear';
     }
 
     /**

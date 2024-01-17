@@ -144,53 +144,53 @@ class PlatformProvider extends OrchidServiceProvider
             Menu::make('รายงานแผน')
                 ->title("รายงานแผน/ความก้าวหน้า")
                 ->icon('bs.card-text')
-                ->route('startegy.index')
+                ->route('strategy.index')
                 // ->permission(['userType.isArea', 'userType.isManager', 'userType.isEva'])
                 ->list([
-                    Menu::make('Startegy map')
+                    Menu::make('Strategy map')
                         ->icon('bs.card-text')
-                        ->route('startegy.map'),
+                        ->route('strategy.map'),
                     Menu::make('โครงการ')
                         ->icon('bs.card-text')
                         ->active([
-                            'startegy.project'
+                            'strategy.project'
                         ])
-                        ->route('startegy.project'),
+                        ->route('strategy.project'),
                     Menu::make('ส่งแผน')
                         ->icon('bs.card-text')
-                        ->route('startegy.contex.form')
+                        ->route('strategy.contex.form')
                         ->active([
-                            'startegy.contex.form',
-                            'startegy.project.form'
+                            'strategy.contex.form',
+                            'strategy.project.form'
                         ])
                         ->list([
                             Menu::make('สภาพบริบท')
                                 ->icon('bs.card-text')
-                                ->route('startegy.contex.form'),
+                                ->route('strategy.contex.form'),
                             Menu::make('โครงการ')
                                 ->icon('bs.card-text')
-                                ->route('startegy.project.form'),
+                                ->route('strategy.project.form'),
                         ]),
                 ]),
             Menu::make('รายงานความก้าวหน้า real time')
                 ->icon('bs.card-text')
-                ->route('startegy.index')
+                ->route('strategy.index')
                 // ->permission(['userType.isArea', 'userType.isManager', 'userType.isEva'])
                 ->list([
                     Menu::make('โครงการ')
                         ->icon('bs.card-text')
                         ->active([
-                            'startegy.project'
+                            'strategy.project'
                         ])
-                        ->route('startegy.project'),
+                        ->route('strategy.project'),
                     Menu::make('รายงานความก้าวหน้า')
                         ->icon('bs.card-text')
-                        ->route('startegy.report'),
+                        ->route('strategy.report'),
                 ]),
             Menu::make('รายงานผล รอบ 12 เดือน')
                 ->icon('bs.card-text')
                 // ->permission(['userType.isArea', 'userType.isManager', 'userType.isEva'])
-                ->route('startegy.report'),
+                ->route('strategy.report'),
 
 
             Menu::make(__('Users'))

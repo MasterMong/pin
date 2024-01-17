@@ -23,7 +23,7 @@ return new class extends Migration
             $table->date("date_start");
             $table->date("date_end");
             $table->float('budget');
-            $table->foreignId('area_startegy_id')->references('id')->on('area_startegies');
+            $table->foreignId('area_strategy_id')->references('id')->on('area_startegies');
             $table->boolean('is_pa_of_manager')->default(false);
             $table->longText('problem');
             $table->longText('suggestions');

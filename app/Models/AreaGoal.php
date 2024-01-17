@@ -31,7 +31,7 @@ class AreaGoal extends Model
         return $this->belongsTo(AreaMission::class);
     }
 
-    public function startegy(): HasMany {
-        return $this->hasMany(AreaStartegy::class);
+    public function strategy(): HasMany {
+        return $this->hasMany(AreaStrategy::class);
     }
 }

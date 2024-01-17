@@ -9,14 +9,14 @@ class TargetCU
 {
     use AsAction;
 
-    public function handle(int $area_id, int $budget_year_id, int $startegy_id, $target)
+    public function handle(int $area_id, int $budget_year_id, int $strategy_id, $target)
     {
         $model = AreaTarget::where('id', $target['id'])->where('area_id', $area_id)->first();
         if (empty($model)) {
             if ($target['id'] == 0) {
                 return AreaTarget::create([
                     'area_id' => $area_id,
-                    'area_startegy_id' => $startegy_id,
+                    'area_strategy_id' => $strategy_id,
                     'budget_year_id' => $budget_year_id,
                     'indicator' => $target['indicator'],
                     'name' => $target['name'],

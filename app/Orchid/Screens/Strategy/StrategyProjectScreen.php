@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Orchid\Screens\Startegy;
+namespace App\Orchid\Screens\Strategy;
 
 use App\Models\Area;
 use App\Models\InspectionArea;
 use App\Models\User;
-use App\Orchid\Layouts\AreaContextTabMenu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Orchid\Screen\Actions\Button;
@@ -17,11 +16,22 @@ use Orchid\Support\Color;
 use Orchid\Screen\Fields\Label;
 use Orchid\Support\Facades\Toast;
 
-class StartegyFormProjectScreen extends Screen
+class StrategyProjectScreen extends Screen
 {
     public $areaData;
     public $inspection_id;
     public $areas;
+    public $template_project;
+    public $template_rows;
+    public $template_cols;
+
+    public function __construct()
+    {
+        $this->template_cols1        = ["code" => "0000-00-000", "project_name"  => "1.โครงการที่หนึ่งลดภาระครู"];
+        $this->template_cols2        = ["code" => "0000-00-001", "project_name"  => "1.โครงการที่หนึ่งลดภาระครู"];
+        $this->template_rows        = ["cols1" => [$this->template_cols1], "cols2"  => [$this->template_cols2]];
+        $this->template_project        = ["rows"  => [$this->template_rows]];
+    }
     /**
      * Fetch data to be displayed on the screen.
      *
@@ -34,6 +44,7 @@ class StartegyFormProjectScreen extends Screen
             'areaData' => $this->areaData ?? Auth::user()->area,
             'areas' => $this->areas ?? Auth::user()->area->byInspection(Auth::user()->area->inspection_id)->select(['id', 'name', 'inspection_id'])->get(),
             'inspection_id'  => $this->inspection_id ?? Auth::user()->area->inspection_id,
+            'goals' => $this->goals(),
         ];
     }
     /**
@@ -56,7 +67,7 @@ class StartegyFormProjectScreen extends Screen
      */
     public function name(): ?string
     {
-        return 'ส่งแผน : โครงการ';
+        return 'แผนงาน / โครงการ';
     }
 
     /**
@@ -66,12 +77,7 @@ class StartegyFormProjectScreen extends Screen
      */
     public function commandBar(): iterable
     {
-        return [
-            Button::make("บันทึก")
-            ->icon('save')
-            ->type(Color::SUCCESS)
-            ->method('createOrUpdate')
-        ];
+        return [];
     }
 
     /**
@@ -90,8 +96,7 @@ class StartegyFormProjectScreen extends Screen
     public function layout(): iterable
     {
         return [
-            AreaContextTabMenu::class,
-            Layout::view('Forms.project'),
+            Layout::view('Forms.contex_output'),
         ];
     }
 
@@ -109,8 +114,13 @@ class StartegyFormProjectScreen extends Screen
         $this->areaData = Area::where('id', $area_id)->where('inspection_id', $request->inspection_id)->first();
     }
 
-    function createOrUpdate() {
-        Toast::success('saved!');
+
+    function push_goal()
+    {
         return back();
+    }
+    public function goals(): array
+    {
+        return $goals = [$this->template_project];
     }
 }

@@ -12,7 +12,7 @@ class AreaTarget extends Model
     use HasFactory;
     protected $fillable = [
         'area_id',
-        'area_startegy_id',
+        'area_strategy_id',
         'budget_year_id',
         'indicator',
         'name',
@@ -31,6 +31,6 @@ class AreaTarget extends Model
     }
 
     public function mission(): BelongsTo {
-        return $this->belongsTo(AreaStartegy::class);
+        return $this->belongsTo(AreaStrategy::class);
     }
 }

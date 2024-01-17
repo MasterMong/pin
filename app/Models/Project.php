@@ -19,7 +19,7 @@ class Project extends Model
         'date_start',
         'date_end',
         'budget',
-        'area_startegy_id',
+        'area_strategy_id',
         'is_pa_of_manager',
         'problem',
         'suggestions',

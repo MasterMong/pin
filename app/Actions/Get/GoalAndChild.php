@@ -12,7 +12,7 @@ class GoalAndChild
     public function handle(int $area_id, int $budget_year_id)
     {
         return AreaGoal::where('area_id', $area_id)->where('budget_year_id', $budget_year_id)->with([
-            'startegy' => function($q) {
+            'strategy' => function($q) {
                 $q->with([
                     'target'
                 ]);

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Orchid\Screens\Startegy;
+namespace App\Orchid\Screens\Strategy;
 
 use App\Http\Controllers\SettingsController;
 use App\Models\Area;
@@ -12,7 +12,7 @@ use Orchid\Screen\TD;
 use Orchid\Support\Facades\Layout;
 use Orchid\Support\Facades\Toast;
 
-class StartegyScreen extends Screen
+class StrategyScreen extends Screen
 {
     public $budget_year_id;
     public function __construct() {

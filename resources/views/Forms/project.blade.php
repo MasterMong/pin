@@ -11,7 +11,7 @@
                         </template>
                     </select>
                     <button data-controller="button" data-turbo="true" class="btn btn-primary" type="submit"
-                        form="post-form" formaction="{{ route('startegy.contex.form') }}/getArea"
+                        form="post-form" formaction="{{ route('strategy.contex.form') }}/getArea"
                         x-show="inspection_id !== areaData.inspection_id">
                         <span>ตกลง</span>
                     </button>
@@ -26,7 +26,7 @@
                         </template>
                     </select>
                     <button data-controller="button" data-turbo="true" class="btn btn-primary" type="submit"
-                        form="post-form" formaction="{{ route('startegy.contex.form') }}/getArea"
+                        form="post-form" formaction="{{ route('strategy.contex.form') }}/getArea"
                         x-show="inspection_id == areaData.inspection_id">
                         <span>ตกลง</span>
                     </button>
@@ -112,12 +112,16 @@
                         <div>
                             <span>{{$ri + 1}}. {{$relate->label}}</span>
                             @foreach ($relate->types as $rti => $type)
+                            @if ($type->is_parent)
                             <div class="row">
                                 <div class="text-end col-4 py-2"><span>{{$type->label}}</span></div>
                                 <div class="col-8"><select class="form-select" name="ac[national]ns">
-                                        <option value="x">x</option>
+                                    @foreach ($type->items as $item)
+                                        <option value="{{$item->ref}}">{{$item->label}}</option>
+                                    @endforeach
                                     </select></div>
                             </div>
+                            @endif
                             @endforeach
                         </div>
                     @endforeach
