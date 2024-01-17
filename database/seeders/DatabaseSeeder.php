@@ -160,7 +160,14 @@ class DatabaseSeeder extends Seeder
             foreach ($keys as $i => $key) {
                 $data[$key] = is_array($data[$key]) == true ? json_encode($data[$key]) : $data[$key];
             }
-            return DB::table($table)->insertGetId($data);
+            try {
+                return DB::table($table)->insertGetId($data);
+            } catch (\Throwable $th) {
+                $json_parse = json_decode(json_encode($data, JSON_UNESCAPED_UNICODE), true);
+                $json_parse['error'] = $th->getMessage();
+                // return DB::table($table)->insertGetId($json_parse);
+                dd(json_decode(json_encode($json_parse)));
+            }
         }
         return $exits->id;
     }

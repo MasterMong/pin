@@ -20,6 +20,7 @@ return new class extends Migration
             $table->boolean('is_parent')->default(False);
             $table->boolean('is_single')->default(True);
             $table->string('parent_name')->nullable();
+            $table->string('order')->default(0);
             $table->timestamps();
         });
     }

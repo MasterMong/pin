@@ -17,6 +17,7 @@ class RelateType extends Model
         'relate_group_id',
         'is_parent',
         'is_single',
+        'order',
         'parent_name'
     ];
 

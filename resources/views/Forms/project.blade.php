@@ -38,7 +38,7 @@
         <div>
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="row py-1">
                         <div class="col-md-3">
                             <p class="text-end m-0 py-2">ชื่อโครงการ</p>
@@ -105,23 +105,42 @@
                                 placeholder="ระบุงบประมาณ" /></div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <h5>ความสอดคล้อง</h5>
                     <hr />
                     @foreach ($relates as $ri => $relate)
                         <div>
-                            <span>{{$ri + 1}}. {{$relate->label}}</span>
+                            <span>{{ $ri + 1 }}. {{ $relate->label }}</span>
                             @foreach ($relate->types as $rti => $type)
-                            @if ($type->is_parent)
-                            <div class="row">
-                                <div class="text-end col-4 py-2"><span>{{$type->label}}</span></div>
-                                <div class="col-8"><select class="form-select" name="ac[national]ns">
-                                    @foreach ($type->items as $item)
-                                        <option value="{{$item->ref}}">{{$item->label}}</option>
-                                    @endforeach
-                                    </select></div>
-                            </div>
-                            @endif
+                                <div class="row" x-data="{ {{ $type->name }}: '{{$type->items[0]->ref}}' }">
+                                    <div class="text-end col-3 py-2"><span>{{ $type->label }}</span></div>
+                                    <div class="col-9">
+                                        <select class="form-select" x-model="{{ $type->name }}"
+                                            name="relate_type[{{ $type->name }}]">
+                                            @foreach ($type->items as $i => $item)
+                                                <option value="{{ $item->ref }}" {{$i == 1 ? ' selcted' : ''}}>{{ $item->label }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    @isset($relate_sub_group[$type->name]->items)
+                                        <div class="col-md-3"></div>
+                                        <div class="col-md-9 py-2">
+                                            @foreach ($relate_sub_group[$type->name]->items as $item)
+                                                <template x-if="{{ $type->name }} == '{{ $item->parent_item_ref }}'">
+                                                    <div class="form-check">
+                                                        <input id="formCheck-{{ $item->ref }}"
+                                                            class="form-check-input"
+                                                            name="relate_item[{{ $item->parent_item_ref }}][items][{{ $item->ref }}]"
+                                                            type="checkbox" />
+                                                        <div class="form-check-label"
+                                                            for="formCheck-{{ $item->ref }}">
+                                                            {{ $item->label }}</div>
+                                                    </div>
+                                                </template>
+                                            @endforeach
+                                        </div>
+                                    @endisset
+                                </div>
                             @endforeach
                         </div>
                     @endforeach

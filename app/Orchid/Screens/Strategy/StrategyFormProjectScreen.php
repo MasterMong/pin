@@ -6,17 +6,15 @@ use App\Http\Controllers\SettingsController;
 use App\Models\Area;
 use App\Models\InspectionArea;
 use App\Models\RelateGroup;
+use App\Models\RelateType;
 use App\Models\User;
 use App\Orchid\Layouts\AreaContextTabMenu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Orchid\Screen\Actions\Button;
-use Orchid\Screen\Fields\Group;
-use Orchid\Screen\Fields\Relation;
 use Orchid\Screen\Screen;
-use Orchid\Support\Facades\Layout;
 use Orchid\Support\Color;
-use Orchid\Screen\Fields\Label;
+use Orchid\Support\Facades\Layout;
 use Orchid\Support\Facades\Toast;
 
 class StrategyFormProjectScreen extends Screen
@@ -32,27 +30,52 @@ class StrategyFormProjectScreen extends Screen
      * @return array
      */
 
-     public function __construct() {
+    public function __construct()
+    {
         $this->budget_year_id = SettingsController::getSetting('budget_year');
-     }
+    }
     public function query(): iterable
     {
         $relates = RelateGroup::where('budget_year_id', $this->budget_year_id)
-        ->with([
-            'types' => function($q) {
-                $q->with('items');
-            }
-        ])
-        ->orderBy('order')
-        ->get();
+            ->with([
+                'types' => function ($q) {
+                    $q->where('is_parent', true)
+                        ->where('budget_year_id', $this->budget_year_id)
+                        ->with([
+                            'items' => function ($q) {
+                                $q->where('budget_year_id', $this->budget_year_id);
+                            },
+                        ])->orderBy('order');
+                },
+            ])
+            ->orderBy('order')
+            ->get();
+        $relate_sub_group = collect(RelateType::where('budget_year_id', $this->budget_year_id)
+                ->where('is_parent', false)
+                ->where('budget_year_id', $this->budget_year_id)
+                ->with([
+                    'items' => function ($q) {
+                        $q->where('budget_year_id', $this->budget_year_id)->orderBy('order');
+                    },
+                ])->orderBy('order')
+                ->get())->mapWithKeys(function ($item, int $key) {
+            return [$item['parent_name'] => $item];
+        });
+        // dd($relate_sub_group->toArray());
 
+        /*
+        ->mapWithKeys(function ($item, int $key) {
+        return [$item['parent_name'] => $item];
+        })
+         */
         // dd(json_decode(json_encode($relates, JSON_UNESCAPED_UNICODE)));
         return [
             'inspections' => InspectionArea::all(),
             'areaData' => $this->areaData ?? Auth::user()->area,
             'areas' => $this->areas ?? Auth::user()->area->byInspection(Auth::user()->area->inspection_id)->select(['id', 'name', 'inspection_id'])->get(),
-            'inspection_id'  => $this->inspection_id ?? Auth::user()->area->inspection_id,
-            'relates' => $relates
+            'inspection_id' => $this->inspection_id ?? Auth::user()->area->inspection_id,
+            'relates' => $relates,
+            'relate_sub_group' => $relate_sub_group
         ];
     }
     /**
@@ -87,9 +110,9 @@ class StrategyFormProjectScreen extends Screen
     {
         return [
             Button::make("บันทึก")
-            ->icon('save')
-            ->type(Color::SUCCESS)
-            ->method('createOrUpdate')
+                ->icon('save')
+                ->type(Color::SUCCESS)
+                ->method('createOrUpdate'),
         ];
     }
 
@@ -128,7 +151,8 @@ class StrategyFormProjectScreen extends Screen
         $this->areaData = Area::where('id', $area_id)->where('inspection_id', $request->inspection_id)->first();
     }
 
-    function createOrUpdate(Request $request) {
+    public function createOrUpdate(Request $request)
+    {
         dd($request->toArray());
         Toast::success('saved!');
         return back();

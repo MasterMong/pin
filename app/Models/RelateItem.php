@@ -14,6 +14,7 @@ class RelateItem extends Model
         'ref',
         'parent_item_ref',
         'relate_type_id',
+        'order',
         'req_value'
     ];
 }
