@@ -37,7 +37,7 @@ class StartegyMapScreen extends Screen
         return [
             'area' => Auth::user()->area,
             'vision' => $vision->detail ?? '-',
-            'mission' => $mission ?? '-',
+            'mission' => $mission->detail ?? '-',
             'goals' => $goals,
             'startegies' => $startegies,
             'targets' => $targets,
