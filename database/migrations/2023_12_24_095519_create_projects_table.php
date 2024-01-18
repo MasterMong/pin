@@ -23,14 +23,14 @@ return new class extends Migration
             $table->date("date_start");
             $table->date("date_end");
             $table->float('budget');
-            $table->foreignId('area_strategy_id')->references('id')->on('area_startegies');
+            $table->foreignId('area_strategy_ids')->references('id')->on('area_strategies');
             $table->boolean('is_pa_of_manager')->default(false);
-            $table->longText('problem');
-            $table->longText('suggestions');
-            $table->integer('progress');
-            $table->integer('relate_type_id');
-            $table->integer('relate_item_id');
-            $table->string('handler_name');
+            $table->longText('problem')->nullable();
+            $table->longText('suggestions')->nullable();
+            $table->integer('progress')->nullable();
+            $table->json('relate_type_id')->nullable();
+            $table->json('relate_item_id')->nullable();
+            $table->string('handler_name')->nullable();
             $table->timestamps();
         });
     }

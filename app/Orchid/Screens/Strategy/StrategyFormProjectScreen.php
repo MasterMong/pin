@@ -5,6 +5,7 @@ namespace App\Orchid\Screens\Strategy;
 use App\Http\Controllers\SettingsController;
 use App\Models\Area;
 use App\Models\InspectionArea;
+use App\Models\Project;
 use App\Models\RelateGroup;
 use App\Models\RelateType;
 use App\Models\User;
@@ -23,6 +24,7 @@ class StrategyFormProjectScreen extends Screen
     public $inspection_id;
     public $areas;
     public $budget_year_id;
+    public $cont_sub_relate;
 
     /**
      * Fetch data to be displayed on the screen.
@@ -61,19 +63,12 @@ class StrategyFormProjectScreen extends Screen
                 ->get())->mapWithKeys(function ($item, int $key) {
             return [$item['parent_name'] => $item];
         });
-        // dd($relate_sub_group->toArray());
 
-        /*
-        ->mapWithKeys(function ($item, int $key) {
-        return [$item['parent_name'] => $item];
-        })
-         */
-        // dd(json_decode(json_encode($relates, JSON_UNESCAPED_UNICODE)));
         return [
-            'inspections' => InspectionArea::all(),
+            // 'inspections' => InspectionArea::all(),
             'areaData' => $this->areaData ?? Auth::user()->area,
-            'areas' => $this->areas ?? Auth::user()->area->byInspection(Auth::user()->area->inspection_id)->select(['id', 'name', 'inspection_id'])->get(),
-            'inspection_id' => $this->inspection_id ?? Auth::user()->area->inspection_id,
+            // 'areas' => $this->areas ?? Auth::user()->area->byInspection(Auth::user()->area->inspection_id)->select(['id', 'name', 'inspection_id'])->get(),
+            // 'inspection_id' => $this->inspection_id ?? Auth::user()->area->inspection_id,
             'relates' => $relates,
             'relate_sub_group' => $relate_sub_group
         ];
@@ -109,7 +104,7 @@ class StrategyFormProjectScreen extends Screen
     public function commandBar(): iterable
     {
         return [
-            Button::make("บันทึก")
+            Button::make("บันทึกโครงการ")
                 ->icon('save')
                 ->type(Color::SUCCESS)
                 ->method('createOrUpdate'),
@@ -119,10 +114,10 @@ class StrategyFormProjectScreen extends Screen
     /**
      * @return string|null
      */
-    public function description(): ?string
-    {
-        return $this->areaData->name ?? Auth::user()->area->name;
-    }
+    // public function description(): ?string
+    // {
+
+    // }
 
     /**
      * The screen's layout elements.
@@ -153,8 +148,31 @@ class StrategyFormProjectScreen extends Screen
 
     public function createOrUpdate(Request $request)
     {
+        if(!isset($request->relate_items)) {
+            Toast::warning('xxx');
+        }
         dd($request->toArray());
-        Toast::success('saved!');
+        $project = Project::create([
+            'area_id' => Auth::user()->area_id,
+            'budget_year_id' => $this->budget_year_id,
+            'name', $request->project_name,
+            'code', $request->project_code,
+            'objective', $request->project_objective,
+            'indicator', $request->project_indicator,
+            'duration', $request->project_duration,
+            'date_start', $request->project_start,
+            'date_end', $request->project_end,
+            'budget', $request->project_budget,
+            'area_strategy_id',
+            'is_pa_of_manager',
+            'problem',
+            'suggestions',
+            'progress',
+            'relate_type_id',
+            'relate_item_id',
+            'handler_name'
+        ]);
+        // Toast::success('saved!');
         return back();
     }
 }

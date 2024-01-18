@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('area_startegies', function (Blueprint $table) {
+        Schema::create('area_strategies', function (Blueprint $table) {
             $table->id();
             $table->foreignId('area_goal_id')->references('id')->on('area_goals');
             $table->foreignId('area_id')->references('id')->on('areas');
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('area_startegies');
+        Schema::dropIfExists('area_strategies');
     }
 };

@@ -66,4 +66,8 @@ class Area extends Model
     function type(): BelongsTo {
         return $this->belongsTo(AreaType::class, 'area_type_id', 'id');
     }
+
+    function inspection() : BelongsTo {
+        return $this->belongsTo(InspectionArea::class);
+    }
 }
