@@ -10,38 +10,8 @@
     }
     '>
     <div class="bg-white rounded shadow-sm mb-3 p-4 py-4 d-flex flex-column">
-        <div class="row px-2">
-            {{-- #TODO lock when change inspection and reload areas --}}
-            <div class="col-md-6 px-1">
-                <div class="input-group">
-                    <select class="form-select bg-white" x-model="inspection_id" name="inspection_id"
-                        :disabled="inspections.length == 1">
-                        <template x-for="i in inspections">
-                            <option :value="i.id" :selected="i.id == inspection_id" x-html="i.name"></option>
-                        </template>
-                    </select>
-                    <button data-controller="button" data-turbo="true" class="btn btn-primary" type="submit"
-                        form="post-form" formaction="{{ route('strategy.contex.form') }}/getArea"
-                        x-show="inspection_id !== current_area.inspection_id && inspections.length > 1">
-                        <span>ตกลง</span>
-                    </button>
-                </div>
-            </div>
-            <div class="col-md-6 px-1">
-                <div class="input-group">
-                    <select class="form-select bg-white" name="area_id"
-                        :disabled="inspection_id !== current_area.inspection_id">
-                        <template x-for="i in areas">
-                            <option :value="i.id" :selected="i.id == area_id" x-html="i.name"></option>
-                        </template>
-                    </select>
-                    <button data-controller="button" data-turbo="true" class="btn btn-primary" type="submit"
-                        form="post-form" formaction="{{ route('strategy.contex.form') }}/getArea"
-                        x-show="inspection_id == current_area.inspection_id">
-                        <span>ตกลง</span>
-                    </button>
-                </div>
-            </div>
+        <div class="row">
+            <h4> {{$current_area->inspection->name}} {{$current_area->type->name}} {{$current_area->name}}</h4>
         </div>
         <hr>
         <div>

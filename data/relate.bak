@@ -13,6 +13,18 @@
             "order": 2
         },
         {
+            "id": 3,
+            "label": "กลยุทธ์ สพท.",
+            "budget_year_id": 3,
+            "order": 5
+        },
+        {
+            "id": 4,
+            "label": "วPA ผู้อำนวยการ สพท.",
+            "budget_year_id": 3,
+            "order": 5
+        },
+        {
             "id": 5,
             "label": "นโยบาย 4 ด้าน 23 ประเด็น",
             "budget_year_id": 3,
@@ -899,6 +911,34 @@
             "is_parent": false,
             "is_single": true,
             "parent_name": "qw"
+        },
+        {
+            "label": "วPA ผู้อำนวยการ สพท",
+            "name": "ssopa",
+            "budget_year_id": 3,
+            "relate_group_id": 4,
+            "order" : 5,
+            "items": [
+                {
+                    "budget_year_id": 3,
+                    "label": "ใช่",
+                    "ref": "ssopa1",
+                    "parent_item_ref": null,
+                    "req_value": false,
+                    "order": 0
+                },
+                {
+                    "budget_year_id": 3,
+                    "label": "ไม่ใช่",
+                    "ref": "ssopa2",
+                    "parent_item_ref": null,
+                    "req_value": false,
+                    "order": 1
+                }
+            ],
+            "is_parent": true,
+            "is_single": true,
+            "parent_name": null
         },
         {
             "label": "นโยบาย 4 ด้าน 23 ประเด็น",

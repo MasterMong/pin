@@ -69,7 +69,7 @@ Route::prefix('/info')->name('info.')->group(function () {
             ->push('ภาพรวม สพท.', route('info.area')));
 });
 
-Route::prefix('/supervise')->name('supervise.')->group(function () {
+Route::prefix('/supervise')->name('supervise.')->middleware(['auth'])->group(function () {
     // การติดตามและประเมินผล ทั่วประเทศ
     Route::screen('/national', SuperviseNationalScreen::class)
         ->name('national')
@@ -115,7 +115,7 @@ Route::prefix('/supervise')->name('supervise.')->group(function () {
         ->push('มาตรฐาน สพท', route('supervise.area.areaStandard')));
 });
 
-Route::prefix('/profile')->name('profile.')->group(function () {
+Route::prefix('/profile')->name('profile.')->middleware(['auth'])->group(function () {
     // Profile
     Route::screen('/account', UserProfileScreen::class)
         ->name('account')
@@ -130,7 +130,7 @@ Route::prefix('/profile')->name('profile.')->group(function () {
             ->push("ปรับปรุงข้อมูล สพท", route('profile.area')));
 });
 
-Route::prefix('/users')->name('users.')->group(function () {
+Route::prefix('/users')->name('users.')->middleware(['auth'])->group(function () {
     // Users > User
     Route::screen('users/{user}/edit', UserEditScreen::class)
         ->name('edit')
@@ -153,7 +153,7 @@ Route::prefix('/users')->name('users.')->group(function () {
             ->push(__('Users'), route('users.users')));
 });
 
-Route::prefix('/strategy')->name('strategy.')->group(function () {
+Route::prefix('/strategy')->name('strategy.')->middleware(['auth'])->group(function () {
     Route::screen('/main', StrategyScreen::class)
         ->name('index')
         ->breadcrumbs(fn (Trail $trail) => $trail
@@ -186,7 +186,7 @@ Route::prefix('/strategy')->name('strategy.')->group(function () {
             ->push("รายงานผลการดำเนินงาน รอบ 12 เดือน", route('strategy.report')));
 });
 
-Route::prefix('/roles')->name('roles.')->group(function () {
+Route::prefix('/roles')->name('roles.')->middleware(['auth'])->group(function () {
     // Platform > System > Roles > Role
     Route::screen('roles/{role}/edit', RoleEditScreen::class)
         ->name('edit')

@@ -87,6 +87,7 @@ class StrategyFormContexScreen extends Screen
         $this->template_goal = ["id" => 0, "detail" => $null_value, "strategy" => [$this->template_strategy]];
 
         $this->goals = $this->parse_goals();
+
         return [
             'inspections' => $inspections,
             'areas' => $this->areas ?? Auth::user()->area->byInspection(Auth::user()->area->inspection_id)->select(['id', 'name', 'inspection_id'])->get(),
@@ -139,10 +140,10 @@ class StrategyFormContexScreen extends Screen
     /**
      * @return string|null
      */
-    public function description(): ?string
-    {
-        return $this->current_area->name ?? Auth::user()->area->name;
-    }
+    // public function description(): ?string
+    // {
+    //     return $this->current_area->name ?? Auth::user()->area->name;
+    // }
 
     /**
      * The screen's layout elements.
