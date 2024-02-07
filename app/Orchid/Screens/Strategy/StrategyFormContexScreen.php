@@ -155,7 +155,7 @@ class StrategyFormContexScreen extends Screen
         return [
             AreaContextTabMenu::class,
             Layout::view('Forms.contex'),
-            Layout::columns([
+
                 Layout::rows([
                     Upload::make('docs')
                     ->groups('area_contex')
@@ -171,7 +171,7 @@ class StrategyFormContexScreen extends Screen
                     //     Input::make('last_name'),
                     // ]),
                 ])->title('แผนปฏิบัติราชการของ สพท.')
-            ])
+
         ];
     }
 

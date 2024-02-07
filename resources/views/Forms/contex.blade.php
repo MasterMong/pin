@@ -47,11 +47,11 @@
                                 @if ($count_goal == $i_goal + 1)
                                     <button data-controller="button" data-turbo="true" class="btn btn-primary"
                                         type="submit" form="post-form"
-                                        formaction="{{ route('strategy.contex.form') }}/push?type=goal"
+                                        formaction="{{ route('strategy.form_contex') }}/push?type=goal"
                                         x-show="!disabled">เพิ่มเป้าประสงค์ {{ $i_goal + 2 }}</button>
                                 @endif
                                 <button class="btn btn-danger" data-controller="button" data-turbo="true" type="submit"
-                                    form="post-form" formaction="{{ route('strategy.contex.form') }}/del"
+                                    form="post-form" formaction="{{ route('strategy.form_contex') }}/del"
                                     x-show="!disabled">ลบ</button>
                             </div>
                             <input type="hidden" value="{{ $goal['id'] }}" name="goal[{{ $i_goal }}][id]">
@@ -69,13 +69,13 @@
                                         @if ($count_strategy == $i_strategy + 1)
                                             <button data-controller="button" data-turbo="true" class="btn btn-info"
                                                 type="submit" form="post-form"
-                                                formaction="{{ route('strategy.contex.form') }}/push?type=strategy&kg={{ $goal['id'] }}"
+                                                formaction="{{ route('strategy.form_contex') }}/push?type=strategy&kg={{ $goal['id'] }}"
                                                 x-show="!disabled">เพิ่มกลยุทธ์
                                                 {{ $i_goal + 1 }}.{{ $i_strategy + 2 }}.</button>
                                         @endif
                                         <button class="btn btn-danger" data-controller="button" data-turbo="true"
                                             type="submit" form="post-form"
-                                            formaction="{{ route('strategy.contex.form') }}/del"
+                                            formaction="{{ route('strategy.form_contex') }}/del"
                                             x-show="!disabled">ลบ</button>
                                     </div>
                                     <input type="hidden" value="{{ $strategy['id'] }}"
@@ -144,7 +144,7 @@
                                                         @disabled($disabled) />
                                                     <button class="btn btn-danger" data-controller="button"
                                                         data-turbo="true" type="submit" form="post-form"
-                                                        formaction="{{ route('strategy.contex.form') }}/del"
+                                                        formaction="{{ route('strategy.form_contex') }}/del"
                                                         x-show="!disabled">ลบ</button>
                                                 </div>
                                             </div>
@@ -157,7 +157,7 @@
                                                             <button data-controller="button" data-turbo="true"
                                                                 class="btn btn-warning" type="submit"
                                                                 form="post-form"
-                                                                formaction="{{ route('strategy.contex.form') }}/push?type=target&kg={{ $goal['id'] }}&ks={{ $strategy['id'] }}"
+                                                                formaction="{{ route('strategy.form_contex') }}/push?type=target&kg={{ $goal['id'] }}&ks={{ $strategy['id'] }}"
                                                                 x-show="!disabled">เพิ่มเป้าหมาย
                                                                 {{ $i_goal + 1 }}.{{ $i_strategy + 2 }}.{{ $i_target + 2 }}.</button>
                                                         </div>

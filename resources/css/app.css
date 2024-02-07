@@ -1,3 +1,11 @@
 .bootstrap-tagsinput, .chosen-choices, .chosen-single, .form-control, .form-range, .input-group {
     max-width: unset !important;
 }
+.pintable td {
+    border: 1px solid black !important;
+    padding: 0 !important;
+}
+.pintable table tbody tr:first-child {
+    background-color: blue !important;
+    padding-left: 0 !important;
+}

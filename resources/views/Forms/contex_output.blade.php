@@ -11,7 +11,7 @@
                         </template>
                     </select>
                     <button data-controller="button" data-turbo="true" class="btn btn-primary" type="submit"
-                        form="post-form" formaction="{{ route('strategy.contex.form') }}/getArea"
+                        form="post-form" formaction="{{ route('strategy.form_contex') }}/getArea"
                         x-show="inspection_id !== areaData.inspection_id">
                         <span>ตกลง</span>
                     </button>
@@ -26,12 +26,12 @@
                         </template>
                     </select>
                     <button data-controller="button" data-turbo="true" class="btn btn-primary" type="submit"
-                        form="post-form" formaction="{{ route('strategy.contex.form') }}/getArea"
+                        form="post-form" formaction="{{ route('strategy.form_contex') }}/getArea"
                         x-show="inspection_id == areaData.inspection_id">
                         <span>ตกลง</span>
                     </button>
                     {{-- <button data-controller="button" data-turbo="true" class="btn btn-primary" type="submit"
-                        form="post-form" formaction="{{ route('strategy.contex.form') }}/getArea"
+                        form="post-form" formaction="{{ route('strategy.form_contex') }}/getArea"
                         x-show="inspection_id == areaData.inspection_id">
                         <span>ตกลง</span>
                     </button> --}}

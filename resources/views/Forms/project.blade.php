@@ -18,7 +18,7 @@
                         <p class="text-end m-0 py-2">รหัสโครงการ</p>
                     </div>
                     <div class="col-md-9"><input class="form-control" type="text" name="project_code"
-                            placeholder="ระบุรหัสโครงการ" value="{{ $form['code'] }}" required /></div>
+                            placeholder="ระบุรหัสโครงการ" value="{{ $form['code'] }}" required {{ $mode !== 'edit' ? '' : 'disabled' }} /></div>
                 </div>
                 <div class="row py-1">
                     <div class="col-md-3">
@@ -68,10 +68,17 @@
                 </div>
                 <div class="row py-1">
                     <div class="col-md-3">
-                        <p class="text-end m-0 py-2">งบประมาณ</p>
+                        <p class="text-end m-0 py-2">งบประมาณ (บาท)</p>
                     </div>
                     <div class="col-md-9"><input class="form-control" type="number" name="project_budget"
                             placeholder="ระบุงบประมาณ" value="{{ $form['budget'] }}" required /></div>
+                </div>
+                <div class="row py-1">
+                    <div class="col-md-3">
+                        <p class="text-end m-0 py-2">ผู้รับผิดชอบโครงการ</p>
+                    </div>
+                    <div class="col-md-9"><input class="form-control" type="text" name="project_handler_name"
+                            placeholder="ระบุชื่อผู้รับผิดชอบโครงการ" value="{{ $form['handler_name'] }}" required /></div>
                 </div>
             </div>
             <div class="col-md-12">
@@ -103,7 +110,7 @@
                                             <template x-if="{{ $type['name'] }} == '{{ $item['parent_item_ref'] }}'">
                                                 <div class="form-check">
                                                     <input id="formCheck-{{ $item['ref'] }}" class="form-check-input"
-                                                        name="relate_item[{{ $item['parent_item_ref'] }}][items][{{ $item['ref'] }}]"
+                                                        name="relate_item[{{ $item['parent_item_ref'] }}][{{ $item['ref'] }}]"
                                                         type="checkbox" />
                                                     <div class="form-check-label" for="formCheck-{{ $item['ref'] }}">
                                                         {{ $item['label'] }}</div>

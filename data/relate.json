@@ -901,7 +901,7 @@
             "parent_name": "qw"
         },
         {
-            "label": "นโยบาย 4 ด้าน 23 ประเด็น",
+            "label": "นโยบาย 4 ด้าน 24 ประเด็น",
             "name": "policy423",
             "budget_year_id": 3,
             "relate_group_id": 5,
@@ -960,7 +960,7 @@
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "สร้างความเข้มแข็งระบบแนะแนว การชี้แนะ (Coaching) และการดูแลสุขภาพกาย และสุขภาพจิตของผู้เรียน ",
+                    "label": "สร้างความเข้มแข็งระบบแนะแนว การชี้แนะ (Coaching) และการดูแลสุขภาพกาย และสุขภาพจิตของผู้เรียน",
                     "ref": "policy_sub_2",
                     "parent_item_ref": "policy423_1",
                     "req_value": true,
@@ -968,7 +968,7 @@
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "ผู้พิการ ผู้ด้อยโอกาส ได้รับการศึกษาที่เหมาะสม",
+                    "label": "ผู้พิการและผู้ด้อยโอกาส ได้รับการศึกษาที่เหมาะสม",
                     "ref": "policy_sub_3",
                     "parent_item_ref": "policy423_2",
                     "req_value": true,
@@ -976,7 +976,7 @@
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "การเสริมสร้างทักษะอาชีพและการมีรายได้ระหว่างเรียน",
+                    "label": "เด็กออกกลางคัน",
                     "ref": "policy_sub_4",
                     "parent_item_ref": "policy423_2",
                     "req_value": true,
@@ -984,15 +984,15 @@
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "คุณลักษณะอันพึงประสงค์",
+                    "label": "การเสริมสร้างทักษะอาชีพและการมีรายได้ระหว่างเรียน",
                     "ref": "policy_sub_5",
-                    "parent_item_ref": "policy423_3",
+                    "parent_item_ref": "policy423_2",
                     "req_value": true,
                     "order": 5
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "พัฒนาการเด็กปฐมวัย",
+                    "label": "คุณลักษณะอันพึงประสงค์",
                     "ref": "policy_sub_6",
                     "parent_item_ref": "policy423_3",
                     "req_value": true,
@@ -1000,7 +1000,7 @@
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "ทักษะในศตวรรษที่ 21",
+                    "label": "พัฒนาการเด็กปฐมวัย",
                     "ref": "policy_sub_7",
                     "parent_item_ref": "policy423_3",
                     "req_value": true,
@@ -1008,7 +1008,7 @@
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "พหุปัญญา",
+                    "label": "ทักษะในศตวรรษที่ 21",
                     "ref": "policy_sub_8",
                     "parent_item_ref": "policy423_3",
                     "req_value": true,
@@ -1016,7 +1016,7 @@
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "PISA",
+                    "label": "พหุปัญญา",
                     "ref": "policy_sub_9",
                     "parent_item_ref": "policy423_3",
                     "req_value": true,
@@ -1024,7 +1024,7 @@
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "การพัฒนาหลักสูตร",
+                    "label": "PISA",
                     "ref": "policy_sub_10",
                     "parent_item_ref": "policy423_3",
                     "req_value": true,
@@ -1032,7 +1032,7 @@
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "การจัดการเรียนรู้เชิงรุกและการวัดผลด้วยวิธีการที่หลากหลาย",
+                    "label": "การพัฒนาหลักสูตร",
                     "ref": "policy_sub_11",
                     "parent_item_ref": "policy423_3",
                     "req_value": true,
@@ -1040,7 +1040,7 @@
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "พัฒนาครูและบุคลากรทางการศึกษา ",
+                    "label": "การจัดการเรียนรู้เชิงรุกและการวัดผลด้วยวิธีการที่หลากหลาย",
                     "ref": "policy_sub_12",
                     "parent_item_ref": "policy423_3",
                     "req_value": true,
@@ -1048,7 +1048,7 @@
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "การจัดการเรียนรู้ประวัติศาสตร์ หน้าที่พลเมือง ศีลธรรม และประชาธิปไตย ",
+                    "label": "การประกันคุณภาพ",
                     "ref": "policy_sub_13",
                     "parent_item_ref": "policy423_3",
                     "req_value": true,
@@ -1056,7 +1056,7 @@
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "ส่งเสริม สนับสนุนกิจกรรมพัฒนาผู้เรียน ",
+                    "label": "พัฒนาครูและบุคลากรทางการศึกษา ",
                     "ref": "policy_sub_14",
                     "parent_item_ref": "policy423_3",
                     "req_value": true,
@@ -1064,23 +1064,23 @@
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "การบริหารจัดการที่เป็นดิจิทัล",
+                    "label": "การจัดการเรียนรู้ประวัติศาสตร์ หน้าที่พลเมือง ศีลธรรม และประชาธิปไตย ",
                     "ref": "policy_sub_15",
-                    "parent_item_ref": "policy423_4",
+                    "parent_item_ref": "policy423_3",
                     "req_value": true,
                     "order": 15
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "การพัฒนาสู่องค์การแห่งการเรียนรู้",
+                    "label": "ส่งเสริมสนับสนุนกิจกรรมพัฒนาผู้เรียน ",
                     "ref": "policy_sub_16",
-                    "parent_item_ref": "policy423_4",
+                    "parent_item_ref": "policy423_3",
                     "req_value": true,
                     "order": 16
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "การติดตาม ตรวจสอบ ประเมินผล และนิเทศการจัดการศึกษาที่มีประสิทธิภาพ",
+                    "label": "การบริหารจัดการที่เป็นดิจิทัล",
                     "ref": "policy_sub_17",
                     "parent_item_ref": "policy423_4",
                     "req_value": true,
@@ -1088,7 +1088,7 @@
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "ผลงานที่เป็นแบบอย่างได้ของ สพท.",
+                    "label": "การพัฒนาสู่องค์การแห่งการเรียนรู้",
                     "ref": "policy_sub_18",
                     "parent_item_ref": "policy423_4",
                     "req_value": true,
@@ -1096,7 +1096,7 @@
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "ยกย่องเชิดชูเกียรติครู",
+                    "label": "การติดตาม ตรวจสอบ ประเมินผล และนิเทศการจัดการศึกษาที่มีประสิทธิภาพ",
                     "ref": "policy_sub_19",
                     "parent_item_ref": "policy423_4",
                     "req_value": true,
@@ -1104,7 +1104,7 @@
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "ความพึงพอใจ",
+                    "label": "ผลงานที่เป็นแบบอย่างได้ของสำนักงานเขตพื้นที่การศึกษา",
                     "ref": "policy_sub_20",
                     "parent_item_ref": "policy423_4",
                     "req_value": true,
@@ -1112,7 +1112,7 @@
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "การะประเมิน ITA",
+                    "label": "ยกย่องเชิดชูเกียรติครู",
                     "ref": "policy_sub_21",
                     "parent_item_ref": "policy423_4",
                     "req_value": true,
@@ -1120,7 +1120,7 @@
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "ลดภาระการประเมินของสถานศึกษา",
+                    "label": "ความพึงพอใจ",
                     "ref": "policy_sub_22",
                     "parent_item_ref": "policy423_4",
                     "req_value": true,
@@ -1128,11 +1128,19 @@
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "การสื่อสารและประชาสัมพันธ์องค์กร",
+                    "label": "การะประเมิน ITA",
                     "ref": "policy_sub_23",
                     "parent_item_ref": "policy423_4",
                     "req_value": true,
                     "order": 23
+                },
+                {
+                    "budget_year_id": 3,
+                    "label": "ลดภาระการประเมินของสถานศึกษา",
+                    "ref": "policy_sub_24",
+                    "parent_item_ref": "policy423_4",
+                    "req_value": true,
+                    "order": 24
                 }
             ],
             "is_parent": false,

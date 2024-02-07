@@ -128,12 +128,14 @@ return [
 
     'resource' => [
         'stylesheets' => [
-            '/vendor/bootstrap-datepicker.css'
+            '/vendor/bootstrap-datepicker.css',
+            '/vendor/datatables.min.css'
         ],
         'scripts'     => [
             'https://code.jquery.com/jquery-3.7.1.min.js',
             '/vendor/bootstrap-datepicker.js',
-            '/vendor/bootstrap-datepicker.th.min.js'
+            '/vendor/bootstrap-datepicker.th.min.js',
+            '/vendor/datatables.min.js'
         ],
     ],
 

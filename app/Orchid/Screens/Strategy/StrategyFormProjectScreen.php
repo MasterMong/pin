@@ -14,6 +14,7 @@ use App\Orchid\Layouts\AreaContextTabMenu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Orchid\Screen\Actions\Button;
+use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Screen;
 use Orchid\Support\Color;
 use Orchid\Support\Facades\Layout;
@@ -39,18 +40,44 @@ class StrategyFormProjectScreen extends Screen
         $this->budget_year_id = SettingsController::getSetting('budget_year');
         $this->mode = 'new';
     }
-    public function query(): iterable
+    public function query(Request $request): iterable
     {
         // TODO Project_code, Edit mode, error page
         $projects = Project::where('area_id', Auth::user()->area_id)
             ->where('budget_year_id', $this->budget_year_id)
             ->select(['id'])
             ->get();
+
+
         $project_no = '-';
         if ($this->mode == 'new') {
             $project_no = date_format(now(), 'Y') + 543 . '-' . Auth::user()->area->name . '-' . count($projects) + 1;
-            // dd($project_no);
         }
+
+        $form = [];
+        $form['name'] = 'name';
+        $form['budget_year_id'] = $this->budget_year_id;
+        $form['code'] = $project_no;
+        $form['objective'] = 'name';
+        $form['indicator'] = 'name';
+        $form['duration'] = 'name';
+        $form['date_start'] = 'name';
+        $form['date_end'] = 'name';
+        $form['budget'] = 300;
+        $form['handler_name'] = 'name';
+
+        if (isset($request->id)) {
+            $this->mode = 'edit';
+            $project = Project::where('id', $request->id)
+                ->where('area_id', Auth::user()->area_id)
+                ->where('budget_year_id', $this->budget_year_id)
+                ->first();
+            $form_keys = array_keys($form);
+            foreach ($form_keys as $key) {
+                $form[$key] = $project[$key];
+            }
+        }
+
         $this->vision = AreaVision::where('area_id', Auth::user()->area_id)
             ->where('budget_year_id', $this->budget_year_id)
             ->first();
@@ -100,27 +127,16 @@ class StrategyFormProjectScreen extends Screen
             ],
         ];
         $relate_sub_group = collect(RelateType::where('budget_year_id', $this->budget_year_id)
-                ->where('is_parent', false)
-                ->where('budget_year_id', $this->budget_year_id)
-                ->with([
-                    'items' => function ($q) {
-                        $q->where('budget_year_id', $this->budget_year_id)->orderBy('order');
-                    },
-                ])->orderBy('order')
-                ->get())->mapWithKeys(function ($item, int $key) {
-            return [$item['parent_name'] => $item];
-        });
-
-        $form = [];
-        $form['name'] = 'name';
-        $form['budget_year_id'] = $this->budget_year_id;
-        $form['code'] = $project_no;
-        $form['objective'] = 'name';
-        $form['indicator'] = 'name';
-        $form['duration'] = 'name';
-        $form['date_start'] = 'name';
-        $form['date_end'] = 'name';
-        $form['budget'] = 'name';
+            ->where('is_parent', false)
+            ->where('budget_year_id', $this->budget_year_id)
+            ->with([
+                'items' => function ($q) {
+                    $q->where('budget_year_id', $this->budget_year_id)->orderBy('order');
+                },
+            ])->orderBy('order')
+            ->get())->mapWithKeys(function ($item, int $key) {
+                return [$item['parent_name'] => $item];
+            });
 
         return [
             // 'inspections' => InspectionArea::all(),
@@ -131,6 +147,7 @@ class StrategyFormProjectScreen extends Screen
             'relate_sub_group' => $relate_sub_group,
             'fix_relate' => $fix_relate,
             'form' => $form,
+            'mode' => $this->mode
         ];
     }
     /**
@@ -153,7 +170,7 @@ class StrategyFormProjectScreen extends Screen
      */
     public function name(): ?string
     {
-        return 'ส่งแผน : โครงการ';
+        return ($this->mode == 'edit' ? 'แก้ไข' : 'เพิ่ม') . 'โครงการ';
     }
 
     /**
@@ -165,15 +182,15 @@ class StrategyFormProjectScreen extends Screen
     {
         if ($this->vision == null) {
             return [
-                Button::make("บันทึกโครงการ 00")
-                    ->icon('save')
-                    ->type(Color::SUCCESS)
-                    ->method('createOrUpdate'),
+                Link::make('กรอกสภาพบริบท')
+                    ->type(Color::PRIMARY)
+                    ->route('strategy.form_contex')
+                    ->icon('plus')
             ];
         } else {
 
             return [
-                Button::make("บันทึกโครงการ")
+                Button::make(($this->mode == 'edit' ? 'ปรับปรุง' : 'บันทึก') . "โครงการ")
                     ->icon('save')
                     ->type(Color::SUCCESS)
                     ->method('createOrUpdate'),
@@ -197,14 +214,13 @@ class StrategyFormProjectScreen extends Screen
     public function layout(): iterable
     {
         if ($this->vision == null) {
-            Toast::error('กรุณาบันทึกข่อมูลสภาพบริบท / แนวทางพัฒนาเชิงกลยุทธ์ก่อน');
-            return [Layout::columns([
-                Layout::rows([
-
+            return [
+                Layout::view('Error', [
+                    'code' => 403,
+                    'message' => 'กรุณาบันทึกข่อมูลสภาพบริบท / แนวทางพัฒนาเชิงกลยุทธ์ก่อน'
                 ])
-            ])];
+            ];
         } else {
-
             return [
                 AreaContextTabMenu::class,
                 Layout::view('Forms.project'),
@@ -231,23 +247,56 @@ class StrategyFormProjectScreen extends Screen
         if (!isset($request->relate_items)) {
             Toast::warning('xxx');
         }
-        // dd($request->toArray());
-        $project = Project::create([
-            'area_id' => Auth::user()->area_id,
-            'budget_year_id' => $request->budget_year_id,
-            'name'=> $request->project_name,
-            'code'=> $request->project_code,
-            'objective'=> $request->project_objective,
-            'indicator'=> $request->project_indicator,
-            'duration'=> $request->project_duration,
-            'date_start'=> $request->project_start,
-            'date_end'=> $request->project_end,
-            'budget'=> $request->project_budget,
-            'area_strategy_id'=> $request->fix_relate_type['area_strategy_id'],
-            'is_pa_of_manager'=> $request->fix_relate_type['is_pa_of_manager'],
-            'relate_items' => json_encode($request->relate_type),
-        ]);
-        // Toast::success('saved!');
-        return back();
+        try {
+            // dd($request->toArray());
+            $relate_item_keys = array_keys($request->relate_item);
+            $relate_items = [];
+            $relate_ref = [];
+            foreach ($relate_item_keys as $key) {
+                $x = array_keys($request->relate_item[$key]);
+                $relate_items[$key] = $x;
+                $relate_ref = array_merge($relate_ref, $x);
+            }
+            foreach ($request->relate_type as $value) {
+                array_push($relate_ref, $value);
+            }
+            // dd($relate_items);
+            $project = Project::create([
+                'area_id' => Auth::user()->area_id,
+                'budget_year_id' => $request->budget_year_id,
+                'name' => $request->project_name,
+                'code' => $request->project_code,
+                'objective' => $request->project_objective,
+                'indicator' => $request->project_indicator,
+                'duration' => $request->project_duration,
+                'date_start' => $request->project_start,
+                'date_end' => $request->project_end,
+                'budget' => $request->project_budget,
+                'handler_name' => $request->project_handler_name,
+                'area_strategy_id' => $request->fix_relate_type['area_strategy_id'],
+                'is_pa_of_manager' => $request->fix_relate_type['is_pa_of_manager'],
+                'relate_items' => json_encode([
+                    'by_type' => $request->relate_type,
+                    'by_item' => $relate_items,
+                    'by_ref' => $relate_ref,
+                ]),
+            ]);
+            // dd($project->id);
+            if($project->id > 0) {
+                $relate_parent_keys = array_keys($request->relate_type);
+            }
+            Toast::success('บันทึกโครงการ ' . $project->name . 'แล้ว');
+            return redirect()->route('strategy.project_view', [
+                'id' => $project->id
+            ]);
+        } catch (\Throwable $th) {
+            dd($th->getMessage());
+            // return [
+            //     Layout::view('Error', [
+            //         'code' => 500,
+            //         'message' => $th->getMessage()
+            //     ])
+            // ];
+        }
     }
 }

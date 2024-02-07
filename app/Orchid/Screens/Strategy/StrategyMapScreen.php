@@ -72,7 +72,7 @@ class StrategyMapScreen extends Screen
     public function layout(): iterable
     {
         return [
-            Layout::view('Pages.StrategyMap')
+            Layout::view('Pages.Strategy.StrategyMap')
         ];
     }
 }

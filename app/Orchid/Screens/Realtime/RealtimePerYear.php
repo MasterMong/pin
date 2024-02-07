@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Orchid\Screens\Report;
+namespace App\Orchid\Screens\Realtime;
 
 use Orchid\Screen\Screen;
 
-class ReportStrategyYear extends Screen
+class RealtimePerYear extends Screen
 {
     /**
      * Fetch data to be displayed on the screen.
@@ -15,19 +15,7 @@ class ReportStrategyYear extends Screen
     {
         return [];
     }
-    /**
-     * Permission
-     *
-     * @return iterable|null
-     */
-    public function permission(): ?iterable
-    {
-        return [
-            // 'userType.isArea',
-            // 'userType.isEVA',
-            // 'userType.isManager',
-        ];
-    }
+
     /**
      * The name of the screen displayed in the header.
      *
@@ -35,7 +23,7 @@ class ReportStrategyYear extends Screen
      */
     public function name(): ?string
     {
-        return 'ReportStrategyYear';
+        return 'รายงานผลการดำเนินงาน รอบ 12 เดือน';
     }
 
     /**

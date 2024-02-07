@@ -31,6 +31,11 @@ return new class extends Migration
             // $table->json('relate_type_id')->nullable();
             $table->json('relate_items')->nullable();
             $table->string('handler_name')->nullable();
+            $table->enum('status', [
+                'รออนุมัติ',
+                'อนุมัติแล้ว',
+                'ไม่อนุมัติ',
+            ])->default('รออนุมัติ');
             $table->timestamps();
         });
     }

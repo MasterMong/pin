@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Orchid\Filters\Filterable;
+use Orchid\Screen\AsSource;
 
 class Project extends Model
 {
-    use HasFactory;
+    use HasFactory, AsSource, Filterable;
     protected $fillable = [
         'area_id',
         'budget_year_id',
@@ -26,6 +29,15 @@ class Project extends Model
         'progress',
         'relate_type_id',
         'relate_item_id',
-        'handler_name'
+        'handler_name',
+        'relate_items'
     ];
+
+    protected $casts = [
+        'relate_items' => 'array'
+    ];
+
+    public function strategy() :HasOne {
+        return $this->hasOne(AreaStrategy::class, 'id', 'area_strategy_id');
+    }
 }

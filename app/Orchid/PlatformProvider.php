@@ -44,7 +44,7 @@ class PlatformProvider extends OrchidServiceProvider
                     Menu::make('Sample Screen')
                         ->icon('bs.collection')
                         ->route('platform.example')
-                        ->badge(fn () => 6),
+                        ->badge(fn() => 6),
 
                     Menu::make('Form Elements')
                         ->icon('bs.card-list')
@@ -150,47 +150,38 @@ class PlatformProvider extends OrchidServiceProvider
                     Menu::make('Strategy map')
                         ->icon('bs.card-text')
                         ->route('strategy.map'),
+                    Menu::make('สภาพบริบท')
+                        ->icon('bs.card-text')
+                        ->route('strategy.form_contex'),
                     Menu::make('โครงการ')
                         ->icon('bs.card-text')
                         ->active([
-                            'strategy.project'
+                            'strategy.projects',
+                            'strategy.project_view',
+                            'strategy.from_project'
                         ])
-                        ->route('strategy.project'),
-                    Menu::make('ส่งแผน')
-                        ->icon('bs.card-text')
-                        ->route('strategy.contex.form')
-                        ->active([
-                            'strategy.contex.form',
-                            'strategy.project.form'
-                        ])
-                        ->list([
-                            Menu::make('สภาพบริบท')
-                                ->icon('bs.card-text')
-                                ->route('strategy.contex.form'),
-                            Menu::make('โครงการ')
-                                ->icon('bs.card-text')
-                                ->route('strategy.project.form'),
-                        ]),
+                        ->route('strategy.projects'),
+
                 ]),
-            Menu::make('รายงานความก้าวหน้า real time')
+            Menu::make('รายงานความก้าวหน้า Realtime')
                 ->icon('bs.card-text')
-                ->route('strategy.index')
+                ->route('realtime.index')
                 // ->permission(['userType.isArea', 'userType.isManager', 'userType.isEva'])
                 ->list([
                     Menu::make('โครงการ')
                         ->icon('bs.card-text')
                         ->active([
-                            'strategy.project'
+                            'realtime.index'
                         ])
-                        ->route('strategy.project'),
+                        ->route('realtime.index'),
                     Menu::make('รายงานความก้าวหน้า')
                         ->icon('bs.card-text')
-                        ->route('strategy.report'),
+                        ->route('realtime.index'),
                 ]),
             Menu::make('รายงานผล รอบ 12 เดือน')
                 ->icon('bs.card-text')
                 // ->permission(['userType.isArea', 'userType.isManager', 'userType.isEva'])
-                ->route('strategy.report'),
+                ->route('realtime.perYear'),
 
 
             Menu::make(__('Users'))
