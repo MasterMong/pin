@@ -40,7 +40,7 @@
             <tbody>
                 @foreach ($projects as $project)
                 <tr>
-                    <td class="text-left">{{$project->name}}</td>
+                    <td class="text-left"><a href="{{route('realtime.project', ['id' => $project->id])}}">{{$project->name}}</a></td>
                     <td>-</td>
                     <td>-</td>
                     <td>-</td>

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Orchid\Filters\Filterable;
 use Orchid\Screen\AsSource;
@@ -39,5 +40,11 @@ class Project extends Model
 
     public function strategy() :HasOne {
         return $this->hasOne(AreaStrategy::class, 'id', 'area_strategy_id');
+    }
+    public function activity() :HasMany {
+        return $this->hasMany(ProjectActivity::class, 'project_id', 'id');
+    }
+    public function innovation() :HasMany {
+        return $this->hasMany(ProjectInnovation::class, 'project_id', 'id');
     }
 }

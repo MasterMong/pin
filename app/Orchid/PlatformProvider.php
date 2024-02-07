@@ -39,7 +39,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('bs.book')
                 ->title('Navigation')
                 ->route(config('platform.index'))
-                ->permission('userType.isAdmin')
+                // ->permission('userType.isAdmin')
                 ->list([
                     Menu::make('Sample Screen')
                         ->icon('bs.collection')
@@ -166,20 +166,24 @@ class PlatformProvider extends OrchidServiceProvider
             Menu::make('รายงานความก้าวหน้า Realtime')
                 ->icon('bs.card-text')
                 ->route('realtime.index')
-                // ->permission(['userType.isArea', 'userType.isManager', 'userType.isEva'])
-                ->list([
-                    Menu::make('โครงการ')
-                        ->icon('bs.card-text')
-                        ->active([
-                            'realtime.index'
-                        ])
-                        ->route('realtime.index'),
-                    Menu::make('รายงานความก้าวหน้า')
-                        ->icon('bs.card-text')
-                        ->route('realtime.index'),
-                ]),
+            // ->permission(['userType.isArea', 'userType.isManager', 'userType.isEva'])
+            // ->list([
+            //     Menu::make('โครงการ')
+            //         ->icon('bs.card-text')
+            //         ->active([
+            //             'realtime.project'
+            //         ])
+            //         ->route('realtime.index'),
+            //         Menu::make('รายงานความก้าวหน้า')
+            //         ->icon('bs.card-text')
+            //         ->route('realtime.index'),
+            // ]),
+            ,
             Menu::make('รายงานผล รอบ 12 เดือน')
                 ->icon('bs.card-text')
+                ->active([
+                    'realtime.perYear'
+                ])
                 // ->permission(['userType.isArea', 'userType.isManager', 'userType.isEva'])
                 ->route('realtime.perYear'),
 

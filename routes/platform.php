@@ -21,6 +21,7 @@ use App\Orchid\Screens\PlatformScreen;
 use App\Orchid\Screens\Profile\ProfileAreaScreen;
 use App\Orchid\Screens\Realtime\RealtimeIndex;
 use App\Orchid\Screens\Realtime\RealtimePerYear;
+use App\Orchid\Screens\Realtime\RealtimeProjectView;
 use App\Orchid\Screens\Role\RoleEditScreen;
 use App\Orchid\Screens\Role\RoleListScreen;
 use App\Orchid\Screens\Strategy\StrategyFormContexScreen;
@@ -193,7 +194,13 @@ Route::prefix('/realtime')->name('realtime.')->middleware(['auth'])->group(funct
         ->name('index')
         ->breadcrumbs(fn(Trail $trail) => $trail
             ->parent('platform.index')
-            ->push("Real time", route('realtime.index')));
+            ->push("ความก้าวหน้า", route('realtime.index')));
+    Route::screen('/form', RealtimeProjectView::class)
+        ->name('project')
+        ->breadcrumbs(fn(Trail $trail) => $trail
+            ->parent('realtime.index')
+            ->push("รายงานความก้าวหน้า", route('realtime.project')));
+
     Route::screen('/peryear', RealtimePerYear::class)
         ->name('perYear')
         ->breadcrumbs(fn(Trail $trail) => $trail
