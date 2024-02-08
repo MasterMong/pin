@@ -20,3 +20,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/test', [ServicesController::class, 'test']);
 Route::post('/reflex', [ServicesController::class, 'reflex'])->name('reflex');
+
+if (config('app.env') == 'production') {
+    URL::forceScheme('https');
+} else {
+    URL::forceScheme('http');
+}
