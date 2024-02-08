@@ -171,6 +171,7 @@ return [
      */
 
     'template' => [
+        'app' => 'app',
         'header' => 'brand.header',
         'footer' => 'brand.footer',
     ],
