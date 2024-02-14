@@ -89,7 +89,7 @@
             "items": [
                 {
                     "budget_year_id": 3,
-                    "label": "ประเด็นที่ 12 การพัฒนาการเรียนรู้ (หลัก)",
+                    "label": "ประเด็นที่ 1 ความมั่นคง (รอง)",
                     "ref": "chapter1",
                     "parent_item_ref": null,
                     "req_value": false,
@@ -97,7 +97,7 @@
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "ประเด็นที่ 11 การพัฒนาคนตลอดช่วงชีวิต (หลัก)",
+                    "label": "ประเด็นที่ 10 การปรับเปลี่ยนค่านิยมและวัฒนธรรม (รอง)",
                     "ref": "chapter2",
                     "parent_item_ref": null,
                     "req_value": false,
@@ -105,7 +105,7 @@
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "ประเด็นที่ 17 ความเสมอภาคและหลักประกันทางสังคม (รอง)",
+                    "label": "ประเด็นที่ 11 การพัฒนาคนตลอดช่วงชีวิต (หลัก)",
                     "ref": "chapter3",
                     "parent_item_ref": null,
                     "req_value": false,
@@ -113,7 +113,7 @@
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "ประเด็นที่ 1 ความมั่นคง (รอง)",
+                    "label": "ประเด็นที่ 12 การพัฒนาการเรียนรู้ (หลัก)",
                     "ref": "chapter4",
                     "parent_item_ref": null,
                     "req_value": false,
@@ -121,7 +121,7 @@
                 },
                 {
                     "budget_year_id": 3,
-                    "label": "ประเด็นที่ 10 การปรับเปลี่ยนค่านิยมและวัฒนธรรม (รอง)",
+                    "label": "ประเด็นที่ 17 ความเสมอภาคและหลักประกันทางสังคม (รอง)",
                     "ref": "chapter5",
                     "parent_item_ref": null,
                     "req_value": false,
