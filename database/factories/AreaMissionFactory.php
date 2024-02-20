@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\Area;
 use App\Models\AreaMission;
+use App\Models\AreaVision;
 use App\Models\BudgetYear;
 
 class AreaMissionFactory extends Factory
@@ -25,6 +26,7 @@ class AreaMissionFactory extends Factory
         return [
             'area_id' => Area::factory(),
             'budget_year_id' => BudgetYear::factory(),
+            'area_vision_id' => AreaVision::factory(),
             'detail' => $this->faker->regexify('[A-Za-z0-9]{2000}'),
         ];
     }

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class AreaMission extends Model
 {
@@ -18,6 +19,7 @@ class AreaMission extends Model
     protected $fillable = [
         'area_id',
         'budget_year_id',
+        'area_vision_id',
         'detail',
     ];
 
@@ -30,6 +32,7 @@ class AreaMission extends Model
         'id' => 'integer',
         'area_id' => 'integer',
         'budget_year_id' => 'integer',
+        'area_vision_id' => 'integer',
     ];
 
     public function area(): BelongsTo
@@ -40,5 +43,15 @@ class AreaMission extends Model
     public function budgetYear(): BelongsTo
     {
         return $this->belongsTo(BudgetYear::class);
+    }
+
+    public function areaVision(): BelongsTo
+    {
+        return $this->belongsTo(AreaVision::class);
+    }
+
+    public function areaGoals(): HasMany
+    {
+        return $this->hasMany(AreaGoal::class);
     }
 }

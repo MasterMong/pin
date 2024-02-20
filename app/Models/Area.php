@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Area extends Model
 {
@@ -74,5 +75,60 @@ class Area extends Model
     public function areaType(): BelongsTo
     {
         return $this->belongsTo(AreaType::class);
+    }
+
+    public function areaMembers(): HasMany
+    {
+        return $this->hasMany(AreaMember::class);
+    }
+
+    public function areaAttachments(): HasMany
+    {
+        return $this->hasMany(AreaAttachment::class);
+    }
+
+    public function areaVisions(): HasMany
+    {
+        return $this->hasMany(AreaVision::class);
+    }
+
+    public function areaMissions(): HasMany
+    {
+        return $this->hasMany(AreaMission::class);
+    }
+
+    public function areaGoals(): HasMany
+    {
+        return $this->hasMany(AreaGoal::class);
+    }
+
+    public function areaStrategies(): HasMany
+    {
+        return $this->hasMany(AreaStrategy::class);
+    }
+
+    public function areaTargets(): HasMany
+    {
+        return $this->hasMany(AreaTarget::class);
+    }
+
+    public function areaPaOfManagers(): HasMany
+    {
+        return $this->hasMany(AreaPaOfManager::class);
+    }
+
+    public function projects(): HasMany
+    {
+        return $this->hasMany(Project::class);
+    }
+
+    public function projectActivities(): HasMany
+    {
+        return $this->hasMany(ProjectActivity::class);
+    }
+
+    public function projectInnovations(): HasMany
+    {
+        return $this->hasMany(ProjectInnovation::class);
     }
 }

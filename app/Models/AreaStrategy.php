@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class AreaStrategy extends Model
 {
@@ -47,5 +48,10 @@ class AreaStrategy extends Model
     public function budgetYear(): BelongsTo
     {
         return $this->belongsTo(BudgetYear::class);
+    }
+
+    public function areaTargets(): HasMany
+    {
+        return $this->hasMany(AreaTarget::class);
     }
 }

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class AreaMember extends Model
 {
@@ -41,5 +42,10 @@ class AreaMember extends Model
     public function areaMemberType(): BelongsTo
     {
         return $this->belongsTo(AreaMemberType::class);
+    }
+
+    public function areaMembers(): HasMany
+    {
+        return $this->hasMany(AreaMember::class);
     }
 }

@@ -18,7 +18,9 @@ class AreaGoal extends Model
     protected $fillable = [
         'area_id',
         'budget_year_id',
+        'area_vision_id',
         'detail',
+        'area_mission_id',
     ];
 
     /**
@@ -30,6 +32,8 @@ class AreaGoal extends Model
         'id' => 'integer',
         'area_id' => 'integer',
         'budget_year_id' => 'integer',
+        'area_vision_id' => 'integer',
+        'area_mission_id' => 'integer',
     ];
 
     public function area(): BelongsTo
@@ -40,5 +44,15 @@ class AreaGoal extends Model
     public function budgetYear(): BelongsTo
     {
         return $this->belongsTo(BudgetYear::class);
+    }
+
+    public function areaMission(): BelongsTo
+    {
+        return $this->belongsTo(AreaMission::class);
+    }
+
+    public function areaVision(): BelongsTo
+    {
+        return $this->belongsTo(AreaVision::class);
     }
 }

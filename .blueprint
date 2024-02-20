@@ -25,32 +25,32 @@ created:
     - database/factories/ProvinceFactory.php
     - database/factories/DistrictFactory.php
     - database/factories/SubDistrictFactory.php
-    - database/migrations/2024_02_20_063556_create_settings_table.php
-    - database/migrations/2024_02_20_063557_create_budget_years_table.php
-    - database/migrations/2024_02_20_063558_create_areas_table.php
-    - database/migrations/2024_02_20_063559_create_area_types_table.php
-    - database/migrations/2024_02_20_063600_create_area_member_types_table.php
-    - database/migrations/2024_02_20_063601_create_area_members_table.php
-    - database/migrations/2024_02_20_063602_create_area_attachment_types_table.php
-    - database/migrations/2024_02_20_063603_create_area_attachments_table.php
-    - database/migrations/2024_02_20_063604_create_area_visions_table.php
-    - database/migrations/2024_02_20_063605_create_area_missions_table.php
-    - database/migrations/2024_02_20_063606_create_area_goals_table.php
-    - database/migrations/2024_02_20_063607_create_area_strategies_table.php
-    - database/migrations/2024_02_20_063608_create_area_targets_table.php
-    - database/migrations/2024_02_20_063609_create_area_pa_of_managers_table.php
-    - database/migrations/2024_02_20_063610_create_projects_table.php
-    - database/migrations/2024_02_20_063611_create_project_activities_table.php
-    - database/migrations/2024_02_20_063612_create_project_innovations_table.php
-    - database/migrations/2024_02_20_063613_create_relate_groups_table.php
-    - database/migrations/2024_02_20_063614_create_relate_types_table.php
-    - database/migrations/2024_02_20_063615_create_relate_items_table.php
-    - database/migrations/2024_02_20_063616_create_relate_item_target_values_table.php
-    - database/migrations/2024_02_20_063617_create_regions_table.php
-    - database/migrations/2024_02_20_063618_create_inspection_areas_table.php
-    - database/migrations/2024_02_20_063619_create_provinces_table.php
-    - database/migrations/2024_02_20_063620_create_districts_table.php
-    - database/migrations/2024_02_20_063621_create_sub_districts_table.php
+    - database/migrations/2024_02_20_134528_create_settings_table.php
+    - database/migrations/2024_02_20_134529_create_budget_years_table.php
+    - database/migrations/2024_02_20_134530_create_areas_table.php
+    - database/migrations/2024_02_20_134531_create_area_types_table.php
+    - database/migrations/2024_02_20_134532_create_area_member_types_table.php
+    - database/migrations/2024_02_20_134533_create_area_members_table.php
+    - database/migrations/2024_02_20_134534_create_area_attachment_types_table.php
+    - database/migrations/2024_02_20_134535_create_area_attachments_table.php
+    - database/migrations/2024_02_20_134536_create_area_visions_table.php
+    - database/migrations/2024_02_20_134537_create_area_missions_table.php
+    - database/migrations/2024_02_20_134538_create_area_goals_table.php
+    - database/migrations/2024_02_20_134539_create_area_strategies_table.php
+    - database/migrations/2024_02_20_134540_create_area_targets_table.php
+    - database/migrations/2024_02_20_134541_create_area_pa_of_managers_table.php
+    - database/migrations/2024_02_20_134542_create_projects_table.php
+    - database/migrations/2024_02_20_134543_create_project_activities_table.php
+    - database/migrations/2024_02_20_134544_create_project_innovations_table.php
+    - database/migrations/2024_02_20_134545_create_relate_groups_table.php
+    - database/migrations/2024_02_20_134546_create_relate_types_table.php
+    - database/migrations/2024_02_20_134547_create_relate_items_table.php
+    - database/migrations/2024_02_20_134548_create_relate_item_target_values_table.php
+    - database/migrations/2024_02_20_134549_create_regions_table.php
+    - database/migrations/2024_02_20_134550_create_inspection_areas_table.php
+    - database/migrations/2024_02_20_134551_create_provinces_table.php
+    - database/migrations/2024_02_20_134552_create_districts_table.php
+    - database/migrations/2024_02_20_134553_create_sub_districts_table.php
     - app/Models/Setting.php
     - app/Models/BudgetYear.php
     - app/Models/Area.php
@@ -81,16 +81,16 @@ models:
     User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, area_id: 'biginteger unsigned nullable', remember_token: 'string:100 nullable' }
     Setting: { key: 'string:100 unique', des: 'string:300 nullable', is_toggle: 'boolean default:false', value: 'string:100' }
     BudgetYear: { name: 'string:4' }
-    Area: { code: 'string:100 unique', name: 'string:300', address: 'string:600 nullable', zip_code: 'string:5 nullable', tel: 'string:20', num_person: 'integer default:0', num_school: 'integer default:0', num_teacher: 'integer default:0', num_student: 'integer default:0', website: 'string:600', latitude: 'string:30', longitude: 'string:30', inspection_area_id: 'id foreign', area_type_id: 'id foreign', district_id: 'id foreign', province_id: 'id foreign', region_id: 'id foreign', etc: 'json nullable', relationships: { belongsTo: 'InspectionArea, Region, Province, District' } }
-    AreaType: { name: 'string:300', des: 'string:600' }
+    Area: { code: 'string:100 unique', name: 'string:300', address: 'string:600 nullable', zip_code: 'string:5 nullable', tel: 'string:20', num_person: 'integer default:0', num_school: 'integer default:0', num_teacher: 'integer default:0', num_student: 'integer default:0', website: 'string:600', latitude: 'string:30', longitude: 'string:30', inspection_area_id: 'id foreign', area_type_id: 'id foreign', district_id: 'id foreign', province_id: 'id foreign', region_id: 'id foreign', etc: 'json nullable', relationships: { belongsTo: 'InspectionArea, Region, Province, District', hasMany: 'AreaMember, AreaAttachment, AreaVision, AreaMission, AreaGoal, AreaStrategy, AreaTarget, AreaPaOfManager, Project, ProjectActivity, ProjectInnovation' } }
+    AreaType: { name: 'string:300', des: 'string:600', relationships: { hasMany: Area } }
     AreaMemberType: { name: 'string:300', des: 'string:600' }
-    AreaMember: { area_member_type_id: 'id foreign', area_id: 'id foreign', cover_image: 'string:1000', name: 'string:300', relationships: { belongsTo: 'Area, AreaMemberType' } }
-    AreaAttachmentTypes: { name: 'string:100', label: 'string:1000', is_single: 'boolean default:True', file_types: 'string:100', req_attr: json }
+    AreaMember: { area_member_type_id: 'id foreign', area_id: 'id foreign', cover_image: 'string:1000', name: 'string:300', relationships: { belongsTo: 'Area, AreaMemberType', hasMany: AreaMember } }
+    AreaAttachmentTypes: { name: 'string:100', label: 'string:1000', is_single: 'boolean default:True', file_types: 'string:100', req_attr: json, relationships: { hasMany: AreaAttachment } }
     AreaAttachment: { area_id: 'id foreign', area_attachment_type_id: 'id foreign', budget_year_id: 'id foreign', attr: json, relationships: { belongsTo: 'Area, AreaAttachmentTypes, BudgetYear' } }
-    AreaVision: { area_id: 'id foreign', budget_year_id: 'id foreign', detail: 'string:2000', relationships: { belongsTo: 'Area, BudgetYear' } }
-    AreaMission: { area_id: 'id foreign', budget_year_id: 'id foreign', detail: 'string:2000', relationships: { belongsTo: 'Area, BudgetYear' } }
-    AreaGoal: { area_id: 'id foreign', budget_year_id: 'id foreign', detail: 'string:2000', relationships: { belongsTo: 'Area, BudgetYear' } }
-    AreaStrategy: { area_id: 'id foreign', area_goal_id: 'id foreign', budget_year_id: 'id foreign', detail: 'string:2000', relationships: { belongsTo: 'Area, AreaGoal, BudgetYear' } }
+    AreaVision: { area_id: 'id foreign', budget_year_id: 'id foreign', detail: 'string:2000', relationships: { belongsTo: 'Area, BudgetYear', hasOne: AreaMission } }
+    AreaMission: { area_id: 'id foreign', budget_year_id: 'id foreign', area_vision_id: 'id foreign', detail: 'string:2000', relationships: { belongsTo: 'Area, BudgetYear, AreaVision', hasMany: AreaGoal } }
+    AreaGoal: { area_id: 'id foreign', budget_year_id: 'id foreign', area_vision_id: 'id foreign', detail: 'string:2000', relationships: { belongsTo: 'Area, BudgetYear, AreaMission' } }
+    AreaStrategy: { area_id: 'id foreign', area_goal_id: 'id foreign', budget_year_id: 'id foreign', detail: 'string:2000', relationships: { belongsTo: 'Area, AreaGoal, BudgetYear', hasMany: AreaTarget } }
     AreaTarget: { area_id: 'id foreign', area_strategy_id: 'id foreign', budget_year_id: 'id foreign', detail: 'string:2000', indicator: 'string:1000', unit: 'string:1000', target_value: 'string:1000', relationships: { belongsTo: 'Area, AreaStrategy, BudgetYear' } }
     AreaPaOfManager: { area_id: 'id foreign', budget_year_id: 'id foreign', name: 'string:1000', relationships: { belongsTo: 'Area, BudgetYear' } }
     Project: { area_id: 'id foreign', budget_year_id: 'id foreign', name: 'string:300', code: 'string:50', objective: 'string:1000', indicator: longText, duration: 'string:100 nullable', date_start: 'string:50', date_end: 'string:50', budget: float, area_strategy_id: 'id foreign', is_pa_of_manager: 'boolean default:false', problem: 'longText nullable', suggestions: 'longText nullable', progress: 'integer nullable', relate_items: json, handler_name: 'string nullable', status: 'string:50', relationships: { belongsTo: 'Area, BudgetYear, AreaStrategy' } }

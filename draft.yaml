@@ -29,10 +29,13 @@ models:
     etc: json nullable
     relationships:
       belongsTo: InspectionArea, Region, Province, District
+      hasMany: AreaMember, AreaAttachment, AreaVision, AreaMission, AreaGoal, AreaStrategy, AreaTarget, AreaPaOfManager, Project, ProjectActivity, ProjectInnovation
 
   AreaType:
     name: string:300
     des: string:600
+    relationships:
+      hasMany: Area
 
   AreaMemberType:
     name: string:300
@@ -45,6 +48,7 @@ models:
     name: string:300
     relationships:
       belongsTo: Area, AreaMemberType
+      hasMany: AreaMember
 
   AreaAttachmentTypes:
     name: string:100
@@ -52,6 +56,8 @@ models:
     is_single: boolean default:True
     file_types: string:100
     req_attr: json
+    relationships:
+      hasMany: AreaAttachment
 
   AreaAttachment:
     area_id: id foreign
@@ -67,20 +73,24 @@ models:
     detail: string:2000
     relationships:
       belongsTo: Area, BudgetYear
+      hasOne: AreaMission
 
   AreaMission:
     area_id: id foreign
     budget_year_id: id foreign
+    area_vision_id: id foreign
     detail: string:2000
     relationships:
-      belongsTo: Area, BudgetYear
+      belongsTo: Area, BudgetYear, AreaVision
+      hasMany:  AreaGoal
 
   AreaGoal:
     area_id: id foreign
     budget_year_id: id foreign
+    area_vision_id: id foreign
     detail: string:2000
     relationships:
-      belongsTo: Area, BudgetYear
+      belongsTo: Area, BudgetYear, AreaMission
 
   AreaStrategy:
     area_id: id foreign
@@ -89,6 +99,7 @@ models:
     detail: string:2000
     relationships:
       belongsTo: Area, AreaGoal, BudgetYear
+      hasMany: AreaTarget
 
   AreaTarget:
     area_id: id foreign

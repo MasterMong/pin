@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class AreaAttachmentTypes extends Model
 {
@@ -32,4 +33,9 @@ class AreaAttachmentTypes extends Model
         'is_single' => 'boolean',
         'req_attr' => 'array',
     ];
+
+    public function areaAttachments(): HasMany
+    {
+        return $this->hasMany(AreaAttachment::class);
+    }
 }

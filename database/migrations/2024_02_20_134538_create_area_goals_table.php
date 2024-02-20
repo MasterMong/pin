@@ -17,7 +17,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('area_id')->constrained();
             $table->foreignId('budget_year_id')->constrained();
+            $table->foreignId('area_vision_id')->constrained();
             $table->string('detail', 2000);
+            $table->foreignId('area_mission_id');
             $table->timestamps();
         });
 
