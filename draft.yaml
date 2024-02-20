@@ -128,7 +128,7 @@ models:
     handler_name: string nullable
     status: string:50
     relationships:
-      belongsTo: Area, BudgetYear, AreaStrategy, BudgetYear
+      belongsTo: Area, BudgetYear, AreaStrategy
 
   ProjectActivity:
     area_id: id foreign

@@ -65,9 +65,4 @@ class Project extends Model
     {
         return $this->belongsTo(AreaStrategy::class);
     }
-
-    public function budgetYear(): BelongsTo
-    {
-        return $this->belongsTo(BudgetYear::class);
-    }
 }
