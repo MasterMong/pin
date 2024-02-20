@@ -1,0 +1,2 @@
+models:
+    User: { name: 'string:191', email: 'string:191', email_verified_at: 'datetime nullable', password: 'string:191', tel: 'string:191 nullable', remember_token: 'string:100 nullable', permissions: 'json nullable', area_id: 'biginteger unsigned nullable' }
