@@ -1,5 +1,234 @@
 models:
-  # ...
+  Setting:
+    key: string:100 unique
+    des: string:300 nullable
+    is_toggle: boolean default:false
+    value: string:100
 
-controllers:
-  # ...
+  BudgetYear:
+    name: string:4
+
+  Area:
+    code: string:100 unique
+    name: string:300
+    address: string:600 nullable
+    zip_code: string:5 nullable
+    tel: string:20
+    num_person: integer default:0
+    num_school: integer default:0
+    num_teacher: integer default:0
+    num_student: integer default:0
+    website: string:600
+    latitude: string:30
+    longitude: string:30
+    inspection_area_id: id foreign
+    area_type_id: id foreign
+    district_id: id foreign
+    province_id: id foreign
+    region_id: id foreign
+    etc: json nullable
+    relationships:
+      belongsTo: InspectionArea, Region, Province, District
+
+  AreaType:
+    name: string:300
+    des: string:600
+
+  AreaMemberType:
+    name: string:300
+    des: string:600
+
+  AreaMember:
+    area_member_type_id: id foreign
+    area_id: id foreign
+    cover_image: string:1000
+    name: string:300
+    relationships:
+      belongsTo: Area, AreaMemberType
+
+  AreaAttachmentTypes:
+    name: string:100
+    label: string:1000
+    is_single: boolean default:True
+    file_types: string:100
+    req_attr: json
+
+  AreaAttachment:
+    area_id: id foreign
+    area_attachment_type_id: id foreign
+    budget_year_id: id foreign
+    attr: json
+    relationships:
+      belongsTo: Area, AreaAttachmentTypes, BudgetYear
+
+  AreaVision:
+    area_id: id foreign
+    budget_year_id: id foreign
+    detail: string:2000
+    relationships:
+      belongsTo: Area, BudgetYear
+
+  AreaMission:
+    area_id: id foreign
+    budget_year_id: id foreign
+    detail: string:2000
+    relationships:
+      belongsTo: Area, BudgetYear
+
+  AreaGoal:
+    area_id: id foreign
+    budget_year_id: id foreign
+    detail: string:2000
+    relationships:
+      belongsTo: Area, BudgetYear
+
+  AreaStrategy:
+    area_id: id foreign
+    area_goal_id: id foreign
+    budget_year_id: id foreign
+    detail: string:2000
+    relationships:
+      belongsTo: Area, AreaGoal, BudgetYear
+
+  AreaTarget:
+    area_id: id foreign
+    area_strategy_id: id foreign
+    budget_year_id: id foreign
+    detail: string:2000
+    indicator: string:1000
+    unit: string:1000
+    target_value: string:1000
+    relationships:
+      belongsTo: Area, AreaStrategy, BudgetYear
+
+  AreaPaOfManager:
+    area_id: id foreign
+    budget_year_id: id foreign
+    name: string:1000
+    relationships:
+      belongsTo: Area, BudgetYear
+
+  Project:
+    area_id: id foreign
+    budget_year_id: id foreign
+    name: string:300
+    code: string:50
+    objective: string:1000
+    indicator: longText
+    duration: string:100 nullable
+    date_start: string:50
+    date_end: string:50
+    budget: float
+    area_strategy_id: id foreign
+    is_pa_of_manager: boolean default:false
+    problem: longText nullable
+    suggestions: longText nullable
+    progress: integer nullable
+    relate_items: json
+    handler_name: string nullable
+    status: string:50
+    relationships:
+      belongsTo: Area, BudgetYear, AreaStrategy, BudgetYear
+
+  ProjectActivity:
+    area_id: id foreign
+    project_id: id foreign
+    budget_year_id: id foreign
+    name: string:300
+    process: longText
+    target_area: string:1000
+    result: longText
+    count_beneficiary: integer
+    is_success: boolean nullable
+    unsuccessful_reason: longText nullable
+    relationships:
+      belongsTo: Area, Project, BudgetYear
+
+  ProjectInnovation:
+    area_id: id foreign
+    project_id: id foreign
+    project_activity_id: id foreign
+    budget_year_id: id foreign
+    attachment: string
+    name: string:600
+    type: string:600
+    url: json
+    detail: longText
+    use: longText
+    problem: longText
+    suggest: longText
+    relationships:
+      belongsTo: Area, Project, ProjectActivity, BudgetYear
+
+  RelateGroup:
+    budget_year_id: id foreign,
+    label: string:1000
+    order: string nullable default:0
+    relationships:
+      belongsTo: BudgetYear
+
+  RelateType:
+    label: string:1000
+    name: string:100
+    budget_year_id: id foreign
+    relate_group_id: id foreign
+    is_parent: boolean default:false
+    is_single: boolean default:true
+    parent_name: string:100 nullable
+    order: string nullable default:0
+    relationships:
+      belongsTo: BudgetYear, RelateGroup
+
+  RelateItem:
+    label: string:1000
+    budget_year_id: id foreign
+    relate_type_id: id foreign
+    ref: string:100
+    parent_item_ref: string:100 nullable
+    order: string nullable default:0
+    req_value: boolean default:false
+    relationships:
+      belongsTo: BudgetYear, RelateType
+
+  RelateItemTargetValue:
+    label: string:1000
+    budget_year_id: id foreign
+    relate_item_id: id foreign
+    value: float default:0
+    relationships:
+      belongsTo: BudgetYear, RelateItem
+
+  Region:
+    name: string:300
+
+  InspectionArea:
+    name: string:300
+
+  Province:
+    code: integer
+    name_in_thai: string:300
+    name_in_english: string:300
+    region_id: id foreign
+    relationships:
+      belongsTo: Region
+
+  District:
+    code: integer
+    name_in_thai: string:300
+    name_in_english: string:300
+    province_id: id foreign
+    relationships:
+      belongsTo: Province
+
+  SubDistrict:
+    code: integer
+    name_in_thai: string:300
+    name_in_english: string:300
+    zip_code: string:5 nullable
+    latitude: string:30
+    longitude: string:30
+    province_id: id foreign
+    district_id: id foreign
+    relationships:
+      belongsTo: Province, District, AreaStrategy
+
