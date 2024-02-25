@@ -10,4 +10,6 @@ class AreaContexPage extends Page
 
     protected static string $view = 'filament.pages.area-contex-page';
 
+    // protected static ?string $navigationLabel = 'กรอบแนวคิดการบริหารและการนำนโยบายสู่การปฏิบัติ';
+
 }
