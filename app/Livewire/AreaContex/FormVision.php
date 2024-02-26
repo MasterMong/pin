@@ -2,6 +2,7 @@
 
 namespace App\Livewire\AreaContex;
 
+use App\Models\AreaMission;
 use App\Models\AreaVision;
 use Filament\Forms;
 use Filament\Forms\Components\Fieldset;
@@ -16,20 +17,29 @@ use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
 use Livewire\Component;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Auth;
 
 class FormVision extends Component implements HasForms
 {
     use InteractsWithForms;
 
     public ?array $data = [];
+    public int $area_id = 0;
+    public int $budget_year_id = 3;
 
     public function mount(): void
     {
         // $this->form->fill();
+        $this->area_id = Auth::user()->area_id;
+        $vision = AreaVision::where('area_id', $this->area_id)->pluck('detail')->first();
+//        dd($vision);
+        $null_value = '-';
         $this->form->fill([
-            'detail' => 'xxx'
+            'vision_detail' => $vision ?? $null_value,
+            'area_id' => $this->area_id,
+            'budget_year_id' => $this->budget_year_id,
         ]);
-        dd($this->form);
+        // dd($this->form);
     }
 
     public function form(Form $form): Form
@@ -38,15 +48,12 @@ class FormVision extends Component implements HasForms
             ->schema([
                 Grid::make("")
                     ->schema([
-                        TextInput::make("detail")
+                        TextInput::make("vision_detail")
                             ->label('วิสัยทัศน์'),
-                    ]),
-                Grid::make('areaMission')
-                    ->relationship('areaMission')
-                    ->columns(1)
-                    ->label('พันธกิจ')
-                    ->schema([
-                        RichEditor::make("name")
+                        Forms\Components\Hidden::make('area_id'),
+                        Forms\Components\Hidden::make('budget_year_id'),
+
+                        RichEditor::make("mission_detail")
                             ->label('พันธกิจ')
                             ->toolbarButtons([
                                 'blockquote',
@@ -63,6 +70,8 @@ class FormVision extends Component implements HasForms
                                 'underline',
                                 'undo',
                             ]),
+                        Forms\Components\Hidden::make('area_id'),
+                        Forms\Components\Hidden::make('budget_year_id'),
                     ])
 
                 //     Repeater::make('goal')
@@ -100,13 +109,36 @@ class FormVision extends Component implements HasForms
 
     public function create(): void
     {
-        // dd($this->form->getState());
+        $vision = AreaVision::where('area_id', $this->area_id)->first();
+        $mission = AreaMission::where('area_id', $this->area_id)->first();
         $data = $this->form->getState();
-        $data['area_id'] = 50;
-        $data['budget_year_id'] = 3;
-        $record = AreaVision::create($data);
+        if (empty($vision)) {
+//            $record = AreaVision::create($data);
+//            $this->form->model($record)->saveRelationships();
+            $vision = AreaVision::create(
+                [
+                    'detail' => $data['vision_detail'],
+                    'area_id' => $this->area_id,
+                    'budget_year_id' => $this->budget_year_id
+                ]
+            );
+        } else {
+            $vision->detail = $data['vision_detail'];
+            $vision->save();
+        }
+        if (empty($mission)) {
+            $mission = AreaMission::create([
+                'detail' => $data['mission_detail'],
+                'area_id' => $this->area_id,
+                'budget_year_id' => $this->budget_year_id,
+                'area_vision_id' => $vision->id
+            ]);
+            dd($mission->toArray());
+        } else {
+            $mission->detail = $data['mission_detail'];
+            $mission->save();
+        }
 
-        $this->form->model($record)->saveRelationships();
     }
 
     public function render(): View
