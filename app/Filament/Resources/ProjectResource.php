@@ -20,6 +20,10 @@ class ProjectResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    protected static ?string $navigationGroup = 'รายงานแผน/ความก้าวหน้า';
+
+    protected static ?string $navigationLabel = 'รายงานโครงการ';
+
     public static function form(Form $form): Form
     {
         return $form
