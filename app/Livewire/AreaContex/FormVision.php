@@ -32,12 +32,32 @@ class FormVision extends Component implements HasForms
         // $this->form->fill();
         $this->area_id = Auth::user()->area_id;
         $vision = AreaVision::where('area_id', $this->area_id)->pluck('detail')->first();
-//        dd($vision);
+        $mission = AreaMission::where('area_id', $this->area_id)->pluck('detail')->first();
+        //        dd($vision);
         $null_value = '-';
         $this->form->fill([
             'vision_detail' => $vision ?? $null_value,
+            'mission_detail' => $mission ?? $null_value,
             'area_id' => $this->area_id,
             'budget_year_id' => $this->budget_year_id,
+            'goal' => [
+                [
+                    "goal_name" => '',
+                    "strategy" => [
+                        [
+                            'strategy_name' => '',
+                            'target' => [
+                                [
+                                    'target_name' => '',
+                                    'target_indicator' => '',
+                                    'target_unit' => '',
+                                    'target_value' => ''
+                                ]
+                            ]
+                        ]
+                    ]
+                ],
+            ]
         ]);
         // dd($this->form);
     }
@@ -49,12 +69,14 @@ class FormVision extends Component implements HasForms
                 Grid::make("")
                     ->schema([
                         TextInput::make("vision_detail")
-                            ->label('วิสัยทัศน์'),
+                            ->label('วิสัยทัศน์')
+                            ->required(),
                         Forms\Components\Hidden::make('area_id'),
                         Forms\Components\Hidden::make('budget_year_id'),
 
                         RichEditor::make("mission_detail")
                             ->label('พันธกิจ')
+                            ->required()
                             ->toolbarButtons([
                                 'blockquote',
                                 'bold',
@@ -72,36 +94,36 @@ class FormVision extends Component implements HasForms
                             ]),
                         Forms\Components\Hidden::make('area_id'),
                         Forms\Components\Hidden::make('budget_year_id'),
+                        Repeater::make('goal')
+                            ->label('เป้าประสงค์')
+                            ->schema([
+                                TextInput::make('goal_name')
+                                    ->label('ระบุเป้าประสงค์'),
+                                Repeater::make('strategy')
+                                    ->label('กลยุทธ์')
+                                    ->schema([
+                                        TextInput::make('strategy_name')
+                                            ->label('รายละเอียดกลยุทธ์'),
+                                        Repeater::make('target')
+                                            ->label('เป้าหมาย')
+                                            ->schema([
+                                                TextInput::make('target_name')
+                                                    ->label('ระบุเป้าหมาย'),
+                                                TextInput::make('target_indicator')
+                                                    ->label('ตัวชี้วัด'),
+                                                TextInput::make('target_unit')
+                                                    ->label('ค่าเป้าหมาย'),
+                                                TextInput::make('target_value')
+                                                    ->label('ระบุเป้าหมาย'),
+                                            ])
+                                            ->columns(4)
+                                            ->disableItemMovement()
+                                    ])
+                                    ->disableItemMovement()
+                            ])
+                            ->disableItemMovement()
                     ])
 
-                //     Repeater::make('goal')
-                //         ->label('เป้าประสงค์')
-                //         ->schema([
-                //             TextInput::make('goal_name')
-                //                 ->label('ระบุเป้าประสงค์'),
-                //             Repeater::make('strategy')
-                //                 ->label('กลยุทธ์')
-                //                 ->schema([
-                //                     TextInput::make('strategy_name')
-                //                         ->label('รายละเอียดกลยุทธ์'),
-                //                     Repeater::make('target')
-                //                         ->label('เป้าหมาย')
-                //                         ->schema([
-                //                             TextInput::make('target_name')
-                //                                 ->label('ระบุเป้าหมาย'),
-                //                             TextInput::make('target_indicator')
-                //                                 ->label('ตัวชี้วัด'),
-                //                             TextInput::make('target_unit')
-                //                                 ->label('ค่าเป้าหมาย'),
-                //                             TextInput::make('target_value')
-                //                                 ->label('ระบุเป้าหมาย'),
-                //                         ])
-                //                         ->columns(4)
-                //                         ->disableItemMovement()
-                //                 ])
-                //                 ->disableItemMovement()
-                //         ])
-                //         ->disableItemMovement()
             ])
             ->statePath('data')
             ->model(AreaVision::class);
@@ -112,8 +134,9 @@ class FormVision extends Component implements HasForms
         $vision = AreaVision::where('area_id', $this->area_id)->first();
         $mission = AreaMission::where('area_id', $this->area_id)->first();
         $data = $this->form->getState();
+        dd($data);
         if (empty($vision)) {
-//            $record = AreaVision::create($data);
+            //            $record = AreaVision::create($data);
 //            $this->form->model($record)->saveRelationships();
             $vision = AreaVision::create(
                 [
