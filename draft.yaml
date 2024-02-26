@@ -1,4 +1,44 @@
 models:
+  Region:
+    name: string:300
+    relationships:
+      hasMany: Province, Area
+
+  Province:
+    code: integer
+    name_in_thai: string:300
+    name_in_english: string:300
+    region_id: id foreign
+    relationships:
+      belongsTo: Region
+      hasMany: District, SubDistrict
+
+  District:
+    code: integer
+    name_in_thai: string:300
+    name_in_english: string:300
+    province_id: id foreign
+    relationships:
+      belongsTo: Province
+      hasMany: SubDistrict
+
+  SubDistrict:
+    code: integer
+    name_in_thai: string:300
+    name_in_english: string:300
+    zip_code: string:5 nullable
+    latitude: string:30
+    longitude: string:30
+    province_id: id foreign
+    district_id: id foreign
+    relationships:
+      belongsTo: Province, District, AreaStrategy
+
+  InspectionArea:
+    name: string:300
+    relationships:
+      hasMany: Area
+
   Setting:
     key: string:100 unique
     des: string:300 nullable
@@ -7,6 +47,15 @@ models:
 
   BudgetYear:
     name: string:4
+    relationships:
+      hasMany: AreaAttachment, AreaVision, AreaMission, AreaGoal, AreaStrategy, AreaTarget, AreaPaOfManager, Project, ProjectActivity, ProjectInnovation, RelateGroup, RelateType, RelateItem, RelateItemTargetValue
+
+
+  AreaType:
+    name: string:300
+    des: string:600
+    relationships:
+      hasMany: Area
 
   Area:
     code: string:100 unique
@@ -30,12 +79,6 @@ models:
     relationships:
       belongsTo: InspectionArea, Region, Province, District
       hasMany: AreaMember, AreaAttachment, AreaVision, AreaMission, AreaGoal, AreaStrategy, AreaTarget, AreaPaOfManager, Project, ProjectActivity, ProjectInnovation
-
-  AreaType:
-    name: string:300
-    des: string:600
-    relationships:
-      hasMany: Area
 
   AreaMemberType:
     name: string:300
@@ -82,7 +125,7 @@ models:
     detail: string:2000
     relationships:
       belongsTo: Area, BudgetYear, AreaVision
-      hasMany:  AreaGoal
+      hasMany: AreaGoal
 
   AreaGoal:
     area_id: id foreign
@@ -208,38 +251,3 @@ models:
     value: float default:0
     relationships:
       belongsTo: BudgetYear, RelateItem
-
-  Region:
-    name: string:300
-
-  InspectionArea:
-    name: string:300
-
-  Province:
-    code: integer
-    name_in_thai: string:300
-    name_in_english: string:300
-    region_id: id foreign
-    relationships:
-      belongsTo: Region
-
-  District:
-    code: integer
-    name_in_thai: string:300
-    name_in_english: string:300
-    province_id: id foreign
-    relationships:
-      belongsTo: Province
-
-  SubDistrict:
-    code: integer
-    name_in_thai: string:300
-    name_in_english: string:300
-    zip_code: string:5 nullable
-    latitude: string:30
-    longitude: string:30
-    province_id: id foreign
-    district_id: id foreign
-    relationships:
-      belongsTo: Province, District, AreaStrategy
-

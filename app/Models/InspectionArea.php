@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class InspectionArea extends Model
 {
@@ -26,4 +27,9 @@ class InspectionArea extends Model
     protected $casts = [
         'id' => 'integer',
     ];
+
+    public function areas(): HasMany
+    {
+        return $this->hasMany(Area::class);
+    }
 }

@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('settings', function (Blueprint $table) {
+        Schema::disableForeignKeyConstraints();
+
+        Schema::create('budget_years', function (Blueprint $table) {
             $table->id();
-            $table->string('key', 100)->unique();
-            $table->string('des', 300)->nullable();
-            $table->boolean('is_toggle')->default(false);
-            $table->string('value', 100);
+            $table->string('name', 4);
             $table->timestamps();
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('settings');
+        Schema::dropIfExists('budget_years');
     }
 };

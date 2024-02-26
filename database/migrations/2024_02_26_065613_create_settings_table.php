@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('regions', function (Blueprint $table) {
+        Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 300);
+            $table->string('key', 100)->unique();
+            $table->string('des', 300)->nullable();
+            $table->boolean('is_toggle')->default(false);
+            $table->string('value', 100);
             $table->timestamps();
         });
 
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('regions');
+        Schema::dropIfExists('settings');
     }
 };

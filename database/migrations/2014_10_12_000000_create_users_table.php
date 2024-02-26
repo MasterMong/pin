@@ -18,6 +18,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->foreignId('area_id')->nullable();
+            $table->string('tel', 20)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
