@@ -21,6 +21,9 @@ return new class extends Migration
             $table->string('name', 300);
             $table->longText('process');
             $table->string('target_area', 1000);
+            $table->string('expect', 1000);
+            $table->string('date_start', 50)->nullable();
+            $table->string('date_end', 50)->nullable();
             $table->longText('result');
             $table->integer('count_beneficiary');
             $table->boolean('is_success')->nullable();

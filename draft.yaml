@@ -209,10 +209,13 @@ models:
     project_id: id foreign
     budget_year_id: id foreign
     name: string:300
-    process: longText
+    process: longText nullable
     target_area: string:1000
-    result: longText
-    count_beneficiary: integer
+    expect: string:1000
+    date_start: string:50 nullable
+    date_end: string:50 nullable
+    result: longText nullable
+    count_beneficiary: integer nullable
     is_success: boolean nullable
     unsuccessful_reason: longText nullable
     relationships:

@@ -4,5 +4,11 @@
         "des": "ปี งป",
         "is_toggle": false,
         "value": 3
+    },
+    {
+        "key": "date_format",
+        "des": "date forat",
+        "is_toggle": false,
+        "value": "Y/m/d"
     }
 ]
