@@ -13,14 +13,17 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('area_attachments', function (Blueprint $table) {
+        Schema::create('relate_items', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('area_id')->constrained();
-            $table->foreignId('area_attachment_type_id')->constrained();
+            $table->string('label', 1000);
             $table->foreignId('budget_year_id')->constrained();
-            $table->json('attr');
-            $table->foreignId('area_attachment_types_id');
+            $table->foreignId('relate_type_id')->constrained();
+            $table->string('ref', 100);
+            $table->string('parent_item_ref', 100)->nullable();
+            $table->string('order')->nullable()->default('0');
+            $table->boolean('req_value')->default(false);
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::enableForeignKeyConstraints();
@@ -31,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('area_attachments');
+        Schema::dropIfExists('relate_items');
     }
 };

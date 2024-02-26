@@ -34,6 +34,7 @@ return new class extends Migration
             $table->foreignId('region_id')->constrained();
             $table->json('etc')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::enableForeignKeyConstraints();

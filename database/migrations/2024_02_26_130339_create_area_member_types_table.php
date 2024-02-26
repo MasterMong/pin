@@ -13,16 +13,12 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('relate_items', function (Blueprint $table) {
+        Schema::create('area_member_types', function (Blueprint $table) {
             $table->id();
-            $table->string('label', 1000);
-            $table->foreignId('budget_year_id')->constrained();
-            $table->foreignId('relate_type_id')->constrained();
-            $table->string('ref', 100);
-            $table->string('parent_item_ref', 100)->nullable();
-            $table->string('order')->nullable()->default('0');
-            $table->boolean('req_value')->default(false);
+            $table->string('name', 300);
+            $table->string('des', 600);
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::enableForeignKeyConstraints();
@@ -33,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('relate_items');
+        Schema::dropIfExists('area_member_types');
     }
 };

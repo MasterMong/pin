@@ -13,17 +13,13 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('relate_types', function (Blueprint $table) {
+        Schema::create('area_pa_of_managers', function (Blueprint $table) {
             $table->id();
-            $table->string('label', 1000);
-            $table->string('name', 100);
+            $table->foreignId('area_id')->constrained();
             $table->foreignId('budget_year_id')->constrained();
-            $table->foreignId('relate_group_id')->constrained();
-            $table->boolean('is_parent')->default(false);
-            $table->boolean('is_single')->default(true);
-            $table->string('parent_name', 100)->nullable();
-            $table->string('order')->nullable()->default('0');
+            $table->string('name', 1000);
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::enableForeignKeyConstraints();
@@ -34,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('relate_types');
+        Schema::dropIfExists('area_pa_of_managers');
     }
 };

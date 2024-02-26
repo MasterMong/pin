@@ -9,6 +9,7 @@ use App\Models\AreaStrategy;
 use App\Models\AreaTarget;
 use App\Models\AreaVision;
 use Filament\Forms;
+use Filament\Forms\Components\Actions\Action;
 use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Group;
@@ -19,6 +20,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
+use Filament\Notifications\Notification;
 use Livewire\Component;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
@@ -120,12 +122,45 @@ class FormVision extends Component implements HasForms
                                                     ->required()
                                                     ->label('ระบุเป้าหมาย'),
                                             ])
+                                            ->deleteAction(function (Action $action): void {
+                                                $action->requiresConfirmation();
+                                                $action->before(function ($state, array $arguments) {
+                                                    $target = AreaTarget::find($state[$arguments['item']]['id']);
+                                                    $target->delete();
+                                                    Notification::make()
+                                                        ->title('ลบแล้ว')
+                                                        ->success()
+                                                        ->send();
+                                                });
+                                            })
                                             ->columns(4)
                                             ->reorderable(False)
                                     ])
                                     ->reorderable(False)
+                                    ->deleteAction(function (Action $action): void {
+                                        $action->requiresConfirmation();
+                                        $action->before(function ($state, array $arguments) {
+                                            $target = AreaStrategy::find($state[$arguments['item']]['id']);
+                                            $target->delete();
+                                            Notification::make()
+                                                ->title('ลบแล้ว')
+                                                ->success()
+                                                ->send();
+                                        });
+                                    })
                             ])
                             ->reorderable(False)
+                            ->deleteAction(function (Action $action): void {
+                                $action->requiresConfirmation();
+                                $action->before(function ($state, array $arguments) {
+                                    $target = AreaGoal::find($state[$arguments['item']]['id']);
+                                    $target->delete();
+                                    Notification::make()
+                                        ->title('ลบแล้ว')
+                                        ->success()
+                                        ->send();
+                                });
+                            })
                     ])
 
             ])
@@ -228,6 +263,11 @@ class FormVision extends Component implements HasForms
                 }
             }
         }
+
+        Notification::make()
+            ->title('บันทึกข้อมูลสำเร็จ')
+            ->success()
+            ->send();
     }
 
     public function render(): View

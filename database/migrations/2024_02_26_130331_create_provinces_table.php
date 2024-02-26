@@ -13,10 +13,14 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('inspection_areas', function (Blueprint $table) {
+        Schema::create('provinces', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 300);
+            $table->integer('code');
+            $table->string('name_in_thai', 300);
+            $table->string('name_in_english', 300);
+            $table->foreignId('region_id')->constrained();
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::enableForeignKeyConstraints();
@@ -27,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('inspection_areas');
+        Schema::dropIfExists('provinces');
     }
 };

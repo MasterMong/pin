@@ -11,11 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('regions', function (Blueprint $table) {
+        Schema::disableForeignKeyConstraints();
+
+        Schema::create('relate_groups', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 300);
+            $table->foreignId('budget_year_id');
+            $table->string('label', 1000);
+            $table->string('order')->nullable()->default('0');
             $table->timestamps();
+            $table->softDeletes();
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -23,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('regions');
+        Schema::dropIfExists('relate_groups');
     }
 };

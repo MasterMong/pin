@@ -13,12 +13,11 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('area_pa_of_managers', function (Blueprint $table) {
+        Schema::create('inspection_areas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('area_id')->constrained();
-            $table->foreignId('budget_year_id')->constrained();
-            $table->string('name', 1000);
+            $table->string('name', 300);
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::enableForeignKeyConstraints();
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('area_pa_of_managers');
+        Schema::dropIfExists('inspection_areas');
     }
 };

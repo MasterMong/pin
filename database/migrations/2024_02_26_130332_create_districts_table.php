@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('area_attachment_types', function (Blueprint $table) {
+        Schema::create('districts', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100);
-            $table->string('label', 1000);
-            $table->boolean('is_single')->default(True);
-            $table->string('file_types', 100);
-            $table->json('req_attr');
+            $table->integer('code');
+            $table->string('name_in_thai', 300);
+            $table->string('name_in_english', 300);
+            $table->foreignId('province_id')->constrained();
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::enableForeignKeyConstraints();
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('area_attachment_types');
+        Schema::dropIfExists('districts');
     }
 };

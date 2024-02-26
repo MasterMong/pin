@@ -25,6 +25,7 @@ return new class extends Migration
             $table->foreignId('district_id')->constrained();
             $table->foreignId('area_strategy_id');
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::enableForeignKeyConstraints();

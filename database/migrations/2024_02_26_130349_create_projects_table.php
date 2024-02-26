@@ -34,6 +34,7 @@ return new class extends Migration
             $table->string('handler_name')->nullable();
             $table->string('status', 50);
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::enableForeignKeyConstraints();

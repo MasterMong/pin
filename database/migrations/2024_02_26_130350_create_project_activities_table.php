@@ -13,12 +13,20 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('area_visions', function (Blueprint $table) {
+        Schema::create('project_activities', function (Blueprint $table) {
             $table->id();
             $table->foreignId('area_id')->constrained();
+            $table->foreignId('project_id')->constrained();
             $table->foreignId('budget_year_id')->constrained();
-            $table->string('detail', 2000);
+            $table->string('name', 300);
+            $table->longText('process');
+            $table->string('target_area', 1000);
+            $table->longText('result');
+            $table->integer('count_beneficiary');
+            $table->boolean('is_success')->nullable();
+            $table->longText('unsuccessful_reason')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::enableForeignKeyConstraints();
@@ -29,6 +37,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('area_visions');
+        Schema::dropIfExists('project_activities');
     }
 };

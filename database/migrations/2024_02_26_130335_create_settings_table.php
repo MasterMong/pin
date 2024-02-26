@@ -13,12 +13,14 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('relate_groups', function (Blueprint $table) {
+        Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('budget_year_id');
-            $table->string('label', 1000);
-            $table->string('order')->nullable()->default('0');
+            $table->string('key', 100)->unique();
+            $table->string('des', 300)->nullable();
+            $table->boolean('is_toggle')->default(false);
+            $table->string('value', 100);
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::enableForeignKeyConstraints();
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('relate_groups');
+        Schema::dropIfExists('settings');
     }
 };
