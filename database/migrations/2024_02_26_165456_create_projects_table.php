@@ -22,8 +22,8 @@ return new class extends Migration
             $table->string('objective', 1000);
             $table->longText('indicator');
             $table->string('duration', 100)->nullable();
-            $table->string('date_start', 50);
-            $table->string('date_end', 50);
+            $table->string('date_start', 50)->nullable();
+            $table->string('date_end', 50)->nullable();
             $table->float('budget');
             $table->foreignId('area_strategy_id')->constrained();
             $table->boolean('is_pa_of_manager')->default(false);

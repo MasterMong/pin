@@ -188,8 +188,8 @@ models:
     objective: string:1000
     indicator: longText
     duration: string:100 nullable
-    date_start: string:50
-    date_end: string:50
+    date_start: string:50 nullable
+    date_end: string:50 nullable
     budget: float
     area_strategy_id: id foreign
     is_pa_of_manager: boolean default:false
@@ -241,6 +241,7 @@ models:
     order: string nullable default:0
     relationships:
       belongsTo: BudgetYear
+      hasMany: RelateType
     softDeletes
 
   RelateType:
@@ -254,6 +255,7 @@ models:
     order: string nullable default:0
     relationships:
       belongsTo: BudgetYear, RelateGroup
+      hasMany: RelateItem
     softDeletes
 
   RelateItem:

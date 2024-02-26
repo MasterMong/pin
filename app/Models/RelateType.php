@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class RelateType extends Model
@@ -48,5 +49,10 @@ class RelateType extends Model
     public function relateGroup(): BelongsTo
     {
         return $this->belongsTo(RelateGroup::class);
+    }
+
+    public function relateItems(): HasMany
+    {
+        return $this->hasMany(RelateItem::class);
     }
 }

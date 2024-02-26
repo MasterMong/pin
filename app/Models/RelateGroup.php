@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class RelateGroup extends Model
@@ -35,5 +36,10 @@ class RelateGroup extends Model
     public function budgetYear(): BelongsTo
     {
         return $this->belongsTo(BudgetYear::class);
+    }
+
+    public function relateTypes(): HasMany
+    {
+        return $this->hasMany(RelateType::class);
     }
 }

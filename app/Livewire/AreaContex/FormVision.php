@@ -32,10 +32,10 @@ class FormVision extends Component implements HasForms
     public ?array $data = [];
     public ?int $area_id = null;
     public ?int $budget_year_id = null;
-    public array $template_target = [];
-    public array $template_strategy = [];
-    public array $template_goal = [];
     public string $null_value = '';
+    public array $template_goal = [];
+    public array $template_strategy = [];
+    public array $template_target = [];
 
     public function mount(): void
     {
@@ -74,21 +74,7 @@ class FormVision extends Component implements HasForms
                         RichEditor::make("mission_detail")
                             ->label('พันธกิจ')
                             ->required()
-                            ->toolbarButtons([
-                                'blockquote',
-                                'bold',
-                                'bulletList',
-                                'codeBlock',
-                                'h2',
-                                'h3',
-                                'italic',
-                                'link',
-                                'orderedList',
-                                'redo',
-                                'strike',
-                                'underline',
-                                'undo',
-                            ]),
+                            ->toolbarButtons(['blockquote', 'bold', 'bulletList', 'codeBlock', 'h2', 'h3', 'italic', 'link', 'orderedList', 'redo', 'strike', 'underline', 'undo']),
                         Forms\Components\Hidden::make('area_id'),
                         Forms\Components\Hidden::make('budget_year_id'),
                         Repeater::make('goal')
