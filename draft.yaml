@@ -201,6 +201,7 @@ models:
     status: string:50
     relationships:
       belongsTo: Area, BudgetYear, AreaStrategy
+      hasMany: ProjectActivity, ProjectInnovation
     softDeletes
 
   ProjectActivity:
@@ -216,6 +217,7 @@ models:
     unsuccessful_reason: longText nullable
     relationships:
       belongsTo: Area, Project, BudgetYear
+      hasMany: ProjectInnovation
     softDeletes
 
   ProjectInnovation:

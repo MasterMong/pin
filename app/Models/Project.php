@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Project extends Model
@@ -65,5 +66,15 @@ class Project extends Model
     public function areaStrategy(): BelongsTo
     {
         return $this->belongsTo(AreaStrategy::class);
+    }
+
+    public function projectActivities(): HasMany
+    {
+        return $this->hasMany(ProjectActivity::class);
+    }
+
+    public function projectInnovations(): HasMany
+    {
+        return $this->hasMany(ProjectInnovation::class);
     }
 }
