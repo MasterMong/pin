@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class AreaGoal extends Model
@@ -38,10 +39,12 @@ class AreaGoal extends Model
         'area_mission_id' => 'integer',
     ];
 
-    public function scopeByYear(Builder $query, int $budget_year_id) {
+    public function scopeByYear(Builder $query, int $budget_year_id)
+    {
         $query->where('budget_year_id', $budget_year_id);
     }
-    public function scopeByAreaAndYear(Builder $query, int $area_id, int $budget_year_id) {
+    public function scopeByAreaAndYear(Builder $query, int $area_id, int $budget_year_id)
+    {
         $query->where('area_id', $area_id)->where('budget_year_id', $budget_year_id);
     }
 
@@ -63,5 +66,10 @@ class AreaGoal extends Model
     public function areaVision(): BelongsTo
     {
         return $this->belongsTo(AreaVision::class);
+    }
+
+    public function areaStrategies(): HasMany
+    {
+        return $this->hasMany(AreaStrategy::class);
     }
 }

@@ -19,13 +19,13 @@ return new class extends Migration
             $table->foreignId('project_id')->constrained();
             $table->foreignId('budget_year_id')->constrained();
             $table->string('name', 300);
-            $table->longText('process');
+            $table->longText('process')->nullable();
             $table->string('target_area', 1000);
             $table->string('expect', 1000);
             $table->string('date_start', 50)->nullable();
             $table->string('date_end', 50)->nullable();
-            $table->longText('result');
-            $table->integer('count_beneficiary');
+            $table->longText('result')->nullable();
+            $table->integer('count_beneficiary')->nullable();
             $table->boolean('is_success')->nullable();
             $table->longText('unsuccessful_reason')->nullable();
             $table->timestamps();
