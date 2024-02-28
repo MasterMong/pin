@@ -148,6 +148,7 @@ models:
     detail: string:2000
     relationships:
       belongsTo: Area, BudgetYear, AreaMission
+      hasMany: AreaStrategy
     softDeletes
 
   AreaStrategy:
