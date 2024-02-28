@@ -80,22 +80,9 @@ class ProjectResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('area.name')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('budgetYear.name')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('areaStrategy.id')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('name')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('code')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('objective')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('duration')
+                Tables\Columns\TextColumn::make('name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('date_start')
                     ->searchable(),
@@ -103,13 +90,16 @@ class ProjectResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('budget')
                     ->numeric()
+                    ->label('งบ')
                     ->sortable(),
                 Tables\Columns\IconColumn::make('is_pa_of_manager')
+                    ->label('PA')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('progress')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('handler_name')
+                    ->hidden()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('status')
                     ->searchable(),
