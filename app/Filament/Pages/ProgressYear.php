@@ -13,4 +13,11 @@ class ProgressYear extends Page
     protected static ?string $navigationGroup = 'รายงานแผน/ความก้าวหน้า';
 
     protected static ?string $navigationLabel = 'ผลการดำเนินงานรอบ 12 เดือน';
+
+    protected static ?int $navigationSort = 5;
+
+    public function getTitle(): string
+    {
+        return 'ผลการดำเนินงานรอบ 12 เดือน ' . auth()->user()->area->areaType->name . ' ' . auth()->user()->area->name;
+    }
 }

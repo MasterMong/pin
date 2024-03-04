@@ -84,6 +84,7 @@ class FormVision extends Component implements HasForms
                 ->acceptedFileTypes($att->file_types)
                 ->label($att->label)
 //                ->multiple()
+                    ->required()
                 ->getUploadedFileNameForStorageUsing(
                     fn(TemporaryUploadedFile $file): string => (string)str($file->getClientOriginalName())
                         ->prepend($this->budget_year_id . '-' . $att->name . '-' . auth()->user()->area_id . '-'),
@@ -135,9 +136,10 @@ class FormVision extends Component implements HasForms
                                                     ->label('ค่าเป้าหมาย'),
                                                 TextInput::make('target_value')
                                                     ->required()
-                                                    ->label('ระบุเป้าหมาย'),
+                                                    ->label('ระบุหน่วยนับ'),
                                             ])
                                             ->deleteAction(function (Action $action): void {
+                                                // TODO Bug delete all (> 0)
                                                 $action->requiresConfirmation();
                                                 $action->before(function ($state, array $arguments) {
                                                     $target = AreaTarget::find($state[$arguments['item']]['id']);

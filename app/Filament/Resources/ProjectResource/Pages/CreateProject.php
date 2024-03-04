@@ -113,7 +113,7 @@ class CreateProject extends CreateRecord
                                 ->label('ระยะเวลาตลอดโครงการ')
                                 ->maxLength(100),
                             Forms\Components\TextInput::make('budget')
-                                ->label('งบประมาณ')
+                                ->label('งบประมาณ (บาท)')
                                 ->required()
                                 ->numeric(),
                             Forms\Components\Select::make('area_strategy_id')

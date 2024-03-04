@@ -13,8 +13,8 @@
             "order": 2
         },
         {
-            "id": 5,
-            "label": "นโยบาย 4 ด้าน 23 ประเด็น",
+            "id": 3,
+            "label": "นโยบาย 4 ด้าน 24 ประเด็น",
             "budget_year_id": 3,
             "order": 3
         }
@@ -237,7 +237,7 @@
                 }
             ],
             "is_parent": true,
-            "is_single": true,
+            "is_single": false,
             "parent_name": null
         },
         {
@@ -481,7 +481,7 @@
                 }
             ],
             "is_parent": false,
-            "is_single": true,
+            "is_single": false,
             "parent_name": "qp"
         },
         {
@@ -581,7 +581,7 @@
                 }
             ],
             "is_parent": true,
-            "is_single": true,
+            "is_single": false,
             "parent_name": null
         },
         {
@@ -897,14 +897,14 @@
                 }
             ],
             "is_parent": false,
-            "is_single": true,
+            "is_single": false,
             "parent_name": "qw"
         },
         {
             "label": "นโยบาย 4 ด้าน 24 ประเด็น",
             "name": "policy423",
             "budget_year_id": 3,
-            "relate_group_id": 5,
+            "relate_group_id": 3,
             "order" : 4,
             "items": [
                 {
@@ -948,7 +948,7 @@
             "label": "",
             "name": "policy_sub",
             "budget_year_id": 3,
-            "relate_group_id": 2,
+            "relate_group_id": 3,
             "items": [
                 {
                     "budget_year_id": 3,

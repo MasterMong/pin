@@ -14,4 +14,10 @@ class AreaContextPage extends Page
 
     protected static ?string $navigationLabel = 'สภาพบริบท/แนวทางพัฒนา';
 
+    protected static ?int $navigationSort = 1;
+
+    public function getTitle(): string
+    {
+        return 'สภาพบริบท/แนวทางพัฒนา ' . auth()->user()->area->areaType->name . ' ' . auth()->user()->area->name;
+    }
 }

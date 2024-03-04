@@ -13,4 +13,11 @@ class StrategyMap extends Page
     protected static ?string $navigationGroup = 'รายงานแผน/ความก้าวหน้า';
 
     protected static ?string $navigationLabel = 'Strategy Map';
+
+    protected static ?int $navigationSort = 3;
+
+    public function getTitle(): string
+    {
+        return 'Strategy Map ' . auth()->user()->area->areaType->name . ' ' . auth()->user()->area->name;
+    }
 }

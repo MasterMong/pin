@@ -66,6 +66,7 @@ models:
 
   Area:
     code: string:100 unique
+    code3d: string:100 unique
     name: string:300
     address: string:600 nullable
     zip_code: string:5 nullable
