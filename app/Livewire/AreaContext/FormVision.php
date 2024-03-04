@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Livewire\AreaContex;
+namespace App\Livewire\AreaContext;
 
 use App\Http\Controllers\SettingController;
+use App\Models\AreaAttachmentTypes;
 use App\Models\AreaGoal;
 use App\Models\AreaMission;
 use App\Models\AreaStrategy;
@@ -61,6 +62,7 @@ class FormVision extends Component implements HasForms
 
     public function form(Form $form): Form
     {
+        $att_type = AreaAttachmentTypes::all();
         return $form
             ->schema([
                 Grid::make("")
@@ -147,7 +149,12 @@ class FormVision extends Component implements HasForms
                                         ->send();
                                 });
                             })
-                    ])
+                    ]),
+                Grid::make('')
+                ->schema([
+                    Forms\Components\FileUpload::make('x'),
+                    Forms\Components\FileUpload::make('y'),
+                ])
 
             ])
             ->statePath('data')
@@ -258,7 +265,7 @@ class FormVision extends Component implements HasForms
 
     public function render(): View
     {
-        return view('livewire.area-contex.form-vision');
+        return view('livewire.area-context.form-vision');
     }
 
     public function parse_goals(): array

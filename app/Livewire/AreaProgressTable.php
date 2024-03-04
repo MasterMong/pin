@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Area;
+use App\Tables\Columns\ProgressCountProjectColumn;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Tables;
@@ -24,7 +25,12 @@ class AreaProgressTable extends Component implements HasForms, HasTable
         return $table
             ->query(Area::query())
             ->columns([
+                TextColumn::make('areaType.name')
+                    ->label('สังกัด')
+                    ->sortable(),
                 TextColumn::make('name')
+                    ->label('สพท'),
+                ProgressCountProjectColumn::make('projects')->label('การส่งแผน')
             ])
             ->filters([
                 //
@@ -36,11 +42,23 @@ class AreaProgressTable extends Component implements HasForms, HasTable
                 Tables\Actions\BulkActionGroup::make([
                     //
                 ]),
-            ]);
+            ])
+            ->selectable();
     }
 
     public function render(): View
     {
         return view('livewire.area-progress-table');
+    }
+
+    public function applySearchToTableQuery(Builder $query): Builder
+    {
+        $this->applyColumnSearchesToTableQuery($query);
+
+        if (filled($search = $this->getTableSearch())) {
+            $query->whereIn('id', Area::search($search)->keys());
+        }
+
+        return $query;
     }
 }

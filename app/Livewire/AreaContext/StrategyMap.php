@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\AreaContex;
+namespace App\Livewire\AreaContext;
 
 use App\Http\Controllers\SettingController;
 use App\Models\AreaMission;
@@ -23,7 +23,7 @@ class StrategyMap extends Component
         $contex = AreaVision::where('area_id', $this->area_id)->first();
         // $area_mission = AreaMission::where('area_id', $this->area_id)->pluck('detail')->first();
         // dd($contex->areaMission);
-        return view('livewire.area-contex.strategy-map')->with([
+        return view('livewire.area-context.strategy-map')->with([
             'contex' => $contex
         ]);
     }

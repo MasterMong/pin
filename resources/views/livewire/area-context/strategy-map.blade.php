@@ -1,7 +1,8 @@
 <div>
     @if($contex == null)
-        <div class="text-center text-xl">
-            ไม่มีข้อมูล
+        <div class="text-center">
+            <a href="{{route('filament.app.pages.area-context-page')}}"
+               class="p-2 bg-blue-400 hover:bg-blue-500 rounded text-gray-50">เพิ่มข้อมูล</a>
         </div>
     @else
         <div class="flex flex-col md:flex-row ">
@@ -84,13 +85,19 @@
                     @foreach ($contex->areaMission->areaGoals as $goal)
                         <div class="mb-3 grid grid-flow-col grid-cols-{{ count($goal->areaStrategies) }} gap-3">
                             @foreach ($goal->areaStrategies as $strategy)
-                                <ol class="shadow rounded p-4 bg-indigo-200 hover:bg-indigo-100 list-decimal">
-                                    @foreach ($strategy->project as $project)
-                                        <li class="ml-4">
-                                            {{ $project->name }}
-                                        </li>
-                                    @endforeach
-                                </ol>
+                                <div class="shadow rounded p-4 bg-indigo-200 hover:bg-indigo-100">
+                                    @if(count($strategy->project) == 0)
+                                        -
+                                    @else
+                                        <ol class="list-decimal">
+                                            @foreach ($strategy->project as $project)
+                                                <li class="ml-4">
+                                                    {{ $project->name }}
+                                                </li>
+                                            @endforeach
+                                        </ol>
+                                    @endif
+                                </div>
                             @endforeach
                         </div>
                     @endforeach

@@ -1,3 +1,3 @@
 <x-filament-panels::page>
-    <livewire:area-contex.form-vision />
+    <livewire:area-context.form-vision/>
 </x-filament-panels::page>

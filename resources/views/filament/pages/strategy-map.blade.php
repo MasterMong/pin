@@ -1,3 +1,3 @@
 <x-filament-panels::page>
-    <livewire:area-contex.strategy-map />
+    <livewire:area-context.strategy-map />
 </x-filament-panels::page>
