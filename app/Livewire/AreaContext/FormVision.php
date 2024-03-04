@@ -49,6 +49,7 @@ class FormVision extends Component implements HasForms
         $this->null_value = config('app.env') == 'production' ? '' : '-';
         // $this->null_value = config('app.env') == 'production' ? '' : fake()->text(20);
 
+
         $fill_form = [
             'vision_detail' => $area_vision ?? $this->null_value,
             'mission_detail' => $area_mission ?? $this->null_value,
@@ -62,7 +63,14 @@ class FormVision extends Component implements HasForms
 
     public function form(Form $form): Form
     {
-        $att_type = AreaAttachmentTypes::all();
+        $att_type = AreaAttachmentTypes::where('budget_year_id', $this->budget_year_id)->get();
+        $field_att = [];
+        foreach ($att_type as $att) {
+            $field_att[] = Forms\Components\FileUpload::make($att->name)
+                ->acceptedFileTypes($att->file_types)
+                ->label($att->label);
+        }
+//        dd($field_att);
         return $form
             ->schema([
                 Grid::make("")
@@ -150,11 +158,8 @@ class FormVision extends Component implements HasForms
                                 });
                             })
                     ]),
-                Grid::make('')
-                ->schema([
-                    Forms\Components\FileUpload::make('x'),
-                    Forms\Components\FileUpload::make('y'),
-                ])
+                Grid::make('attachment')
+                ->schema($field_att)
 
             ])
             ->statePath('data')

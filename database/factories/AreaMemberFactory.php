@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use App\Models\Area;
 use App\Models\AreaMember;
 use App\Models\AreaMemberType;
+use App\Models\BudgetYear;
 
 class AreaMemberFactory extends Factory
 {
@@ -27,6 +28,7 @@ class AreaMemberFactory extends Factory
             'area_id' => Area::factory(),
             'cover_image' => $this->faker->regexify('[A-Za-z0-9]{1000}'),
             'name' => $this->faker->name(),
+            'budget_year_id' => BudgetYear::factory(),
         ];
     }
 }

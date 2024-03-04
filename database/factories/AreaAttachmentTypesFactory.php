@@ -5,6 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\AreaAttachmentTypes;
+use App\Models\BudgetYear;
 
 class AreaAttachmentTypesFactory extends Factory
 {
@@ -26,6 +27,7 @@ class AreaAttachmentTypesFactory extends Factory
             'is_single' => $this->faker->boolean(),
             'file_types' => $this->faker->regexify('[A-Za-z0-9]{100}'),
             'req_attr' => '{}',
+            'budget_year_id' => BudgetYear::factory(),
         ];
     }
 }

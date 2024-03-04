@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -22,6 +23,7 @@ class AreaAttachmentTypes extends Model
         'is_single',
         'file_types',
         'req_attr',
+        'budget_year_id',
     ];
 
     /**
@@ -33,10 +35,16 @@ class AreaAttachmentTypes extends Model
         'id' => 'integer',
         'is_single' => 'boolean',
         'req_attr' => 'array',
+        'budget_year_id' => 'integer',
     ];
 
     public function areaAttachments(): HasMany
     {
         return $this->hasMany(AreaAttachment::class);
+    }
+
+    public function budgetYear(): BelongsTo
+    {
+        return $this->belongsTo(BudgetYear::class);
     }
 }

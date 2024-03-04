@@ -13,12 +13,14 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('area_members', function (Blueprint $table) {
+        Schema::create('area_attachment_types', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('area_member_type_id')->constrained();
-            $table->foreignId('area_id')->constrained();
-            $table->string('cover_image', 1000);
-            $table->string('name', 300);
+            $table->string('name', 100);
+            $table->string('label', 1000);
+            $table->boolean('is_single')->default(True);
+            $table->string('file_types', 100);
+            $table->json('req_attr');
+            $table->foreignId('budget_year_id')->constrained();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -31,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('area_members');
+        Schema::dropIfExists('area_attachment_types');
     }
 };

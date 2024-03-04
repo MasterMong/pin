@@ -98,8 +98,9 @@ models:
     area_id: id foreign
     cover_image: string:1000
     name: string:300
+    budget_year_id: id foreign
     relationships:
-      belongsTo: Area, AreaMemberType
+      belongsTo: Area, AreaMemberType, BudgetYear
       hasMany: AreaMember
     softDeletes
 
@@ -109,8 +110,10 @@ models:
     is_single: boolean default:True
     file_types: string:100
     req_attr: json
+    budget_year_id: id foreign
     relationships:
       hasMany: AreaAttachment
+      belongsTo: BudgetYear
     softDeletes
 
   AreaAttachment:
