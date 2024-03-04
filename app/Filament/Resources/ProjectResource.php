@@ -92,9 +92,9 @@ class ProjectResource extends Resource
                     ->numeric()
                     ->label('งบ')
                     ->sortable(),
-                Tables\Columns\IconColumn::make('is_pa_of_manager')
+                Tables\Columns\ToggleColumn::make('is_pa_of_manager')
                     ->label('PA')
-                    ->boolean(),
+                    ,
                 Tables\Columns\TextColumn::make('progress')
                     ->numeric()
                     ->sortable(),
@@ -133,7 +133,8 @@ class ProjectResource extends Resource
     public static function getRelations(): array
     {
         return [
-            ProjectActivityRelationManager::class
+            ProjectActivityRelationManager::class,
+            RelationManagers\ProjectInnovationsRelationManager::class
         ];
     }
 

@@ -19,6 +19,7 @@ use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Filament\Support\Facades\FilamentView;
 use Illuminate\Support\Facades\Blade;
+use Jeffgreco13\FilamentBreezy\BreezyCore;
 
 class AppPanelProvider extends PanelProvider
 {
@@ -29,6 +30,7 @@ class AppPanelProvider extends PanelProvider
             ->id('app')
             ->path('/')
             ->login()
+            ->registration()
             ->colors([
                 'primary' => Color::Amber,
             ])
@@ -58,7 +60,9 @@ class AppPanelProvider extends PanelProvider
                 Authenticate::class,
             ])
             ->plugin(
-                \Hasnayeen\Themes\ThemesPlugin::make()
+                \Hasnayeen\Themes\ThemesPlugin::make(),
+                BreezyCore::make()
+                    ->myProfile()
             );
     }
 }

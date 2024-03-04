@@ -55,4 +55,9 @@ class AreaStrategy extends Model
     {
         return $this->hasMany(AreaTarget::class);
     }
+
+    public function project(): HasMany
+    {
+        return  $this->hasMany(Project::class);
+    }
 }

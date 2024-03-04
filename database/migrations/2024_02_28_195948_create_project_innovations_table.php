@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('project_id')->constrained();
             $table->foreignId('project_activity_id')->constrained();
             $table->foreignId('budget_year_id')->constrained();
-            $table->string('attachment');
+            $table->json('attachment');
             $table->string('name', 600);
             $table->string('type', 600);
             $table->json('url');

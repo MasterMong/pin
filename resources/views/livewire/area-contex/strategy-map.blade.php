@@ -71,6 +71,28 @@
             </div>
         </div>
     </div>
+    <div class="flex flex-col md:flex-row ">
+        <div class="md:basis-48 md:mr-3 prose mb-3 items-center">
+            <h3 class="text-center rounded p-3 bg-orange-300">โครงการ</h3>
+        </div>
+        <div class="flex-auto">
+            <div class="grid grid-flow-col grid-cols-{{ count($contex->areaMission->areaGoals) }} gap-3">
+                @foreach ($contex->areaMission->areaGoals as $goal)
+                    <div class="mb-3 grid grid-flow-col grid-cols-{{ count($goal->areaStrategies) }} gap-3">
+                        @foreach ($goal->areaStrategies as $strategy)
+                            <ol class="shadow rounded p-4 bg-indigo-200 hover:bg-indigo-100 list-decimal">
+                                @foreach ($strategy->project as $project)
+                                    <li class="ml-4">
+                                        {{ $project->name }}
+                                    </li>
+                                @endforeach
+                            </ol>
+                        @endforeach
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
     {{-- Project --}}
 
 </div>
