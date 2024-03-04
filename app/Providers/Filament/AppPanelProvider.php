@@ -31,6 +31,7 @@ class AppPanelProvider extends PanelProvider
             ->path('/')
             ->login()
             ->registration()
+            ->profile()
             ->colors([
                 'primary' => Color::Amber,
             ])
@@ -61,8 +62,8 @@ class AppPanelProvider extends PanelProvider
             ])
             ->plugin(
                 \Hasnayeen\Themes\ThemesPlugin::make(),
-                BreezyCore::make()
-                    ->myProfile()
+//                BreezyCore::make()
+//                    ->myProfile()
             );
     }
 }
