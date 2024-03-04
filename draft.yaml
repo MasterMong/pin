@@ -108,7 +108,7 @@ models:
     name: string:100
     label: string:1000
     is_single: boolean default:True
-    file_types: string:100
+    file_types: json
     req_attr: json
     budget_year_id: id foreign
     relationships:

@@ -3,7 +3,9 @@
         "name": "concept_to_do",
         "label": "กรอบแนวคิดการบริหารและการนำนโยบายสู่การปฏิบัติ",
         "is_single": true,
-        "file_types": "[application/pdf]",
+        "file_types": [
+            "application/pdf"
+        ],
         "budget_year_id": "3",
         "req_attr": {
             "max_size": 1000
@@ -13,7 +15,9 @@
         "name": "area_strategy_plan",
         "label": "แผนปฏิบัติราชการของ สพท.",
         "is_single": true,
-        "file_types": "[application/pdf]",
+        "file_types": [
+            "application/pdf"
+        ],
         "budget_year_id": "3",
         "req_attr": {
             "max_size": 1000

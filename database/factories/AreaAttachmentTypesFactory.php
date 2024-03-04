@@ -25,7 +25,7 @@ class AreaAttachmentTypesFactory extends Factory
             'name' => $this->faker->name(),
             'label' => $this->faker->regexify('[A-Za-z0-9]{1000}'),
             'is_single' => $this->faker->boolean(),
-            'file_types' => $this->faker->regexify('[A-Za-z0-9]{100}'),
+            'file_types' => '{}',
             'req_attr' => '{}',
             'budget_year_id' => BudgetYear::factory(),
         ];

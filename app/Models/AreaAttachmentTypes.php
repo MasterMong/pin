@@ -34,6 +34,7 @@ class AreaAttachmentTypes extends Model
     protected $casts = [
         'id' => 'integer',
         'is_single' => 'boolean',
+        'file_types' => 'array',
         'req_attr' => 'array',
         'budget_year_id' => 'integer',
     ];

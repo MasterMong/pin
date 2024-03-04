@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name', 100);
             $table->string('label', 1000);
             $table->boolean('is_single')->default(True);
-            $table->string('file_types', 100);
+            $table->json('file_types');
             $table->json('req_attr');
             $table->foreignId('budget_year_id')->constrained();
             $table->timestamps();
