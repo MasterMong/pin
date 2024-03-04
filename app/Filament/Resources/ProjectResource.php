@@ -40,9 +40,11 @@ class ProjectResource extends Resource
                     ->relationship('areaStrategy', 'id')
                     ->required(),
                 Forms\Components\TextInput::make('name')
+                    ->label('ชื่อโครงการ')
                     ->required()
                     ->maxLength(300),
                 Forms\Components\TextInput::make('code')
+                    ->label('รหัส')
                     ->required()
                     ->maxLength(50),
                 Forms\Components\TextInput::make('objective')
@@ -68,7 +70,7 @@ class ProjectResource extends Resource
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('progress')
                     ->numeric(),
-                Forms\Components\TextInput::make('relate_items')
+                Forms\Components\Textarea::make('relate_items')
                     ->required(),
                 Forms\Components\TextInput::make('handler_name')
                     ->maxLength(255),
@@ -83,14 +85,19 @@ class ProjectResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('code')
+                    ->label('รหัส')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('name')
+                    ->label('ชื่อโครงการ')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('date_start')
+                    ->label('เริ่ม')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('date_end')
+                    ->label('สิ้นสุด')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('budget')
+                    ->label('งบประมาณ')
                     ->numeric()
                     ->label('งบ')
                     ->sortable(),
@@ -98,12 +105,15 @@ class ProjectResource extends Resource
                     ->label('PA')
                     ,
                 Tables\Columns\TextColumn::make('progress')
+                    ->label('ความคืบหน้า')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('handler_name')
+                    ->label('ผุ้รับผิดชอบ')
                     ->hidden()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('status')
+                    ->label('สภานะ')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

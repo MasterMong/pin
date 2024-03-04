@@ -5,9 +5,8 @@
         "name": "กรุงเทพมหานคร",
         "code3d": "100",
         "region_id": "1",
-        "inspection_id": "1",
+        "inspection_area_id": "1",
         "address": "304/2 ถนนศรีอยุธยา",
-        "subdistrict_id": "",
         "district_id": "37",
         "province_id": "1",
         "zip_code": "10400",
@@ -18,7 +17,7 @@
         "num_person": "0",
         "website": "www.bkkp.go.th",
         "latitude": "13.7601202",
-        "longtitude": "100.5262241"
+        "longitude": "100.5262241"
     },
     {
         "code": "1010110000",
@@ -26,9 +25,8 @@
         "name": "กรุงเทพมหานคร เขต 1",
         "code3d": "108",
         "region_id": "1",
-        "inspection_id": "1",
+        "inspection_area_id": "1",
         "address": "อาคารหอประชุมพญาไท ซ.ศรีอยุธยา 5 ถนนศรีอยุธยา",
-        "subdistrict_id": "",
         "district_id": "37",
         "province_id": "1",
         "zip_code": "10400",
@@ -39,7 +37,7 @@
         "num_person": "0",
         "website": "www.sesao1.go.th",
         "latitude": "13.7581583",
-        "longtitude": "100.5128226"
+        "longitude": "100.5128226"
     },
     {
         "code": "1010120000",
@@ -47,9 +45,8 @@
         "name": "กรุงเทพมหานคร เขต 2",
         "code3d": "109",
         "region_id": "1",
-        "inspection_id": "1",
+        "inspection_area_id": "1",
         "address": "1126 ถนนลาดพร้าว",
-        "subdistrict_id": "",
         "district_id": "17",
         "province_id": "1",
         "zip_code": "10300",
@@ -60,7 +57,7 @@
         "num_person": "0",
         "website": "www.sesao2.go.th",
         "latitude": "13.7968092",
-        "longtitude": "100.5831609"
+        "longitude": "100.5831609"
     },
     {
         "code": "1011010000",
@@ -68,9 +65,8 @@
         "name": "สมุทรปราการ เขต 1",
         "code3d": "111",
         "region_id": "4",
-        "inspection_id": "8",
+        "inspection_area_id": "8",
         "address": "34/2 ถนนสุขุมวิท",
-        "subdistrict_id": "",
         "district_id": "51",
         "province_id": "2",
         "zip_code": "10270",
@@ -81,7 +77,7 @@
         "num_person": "0",
         "website": "www.sp-area1.go.th",
         "latitude": "13.6223751",
-        "longtitude": "100.5858066"
+        "longitude": "100.5858066"
     },
     {
         "code": "1011020000",
@@ -89,9 +85,8 @@
         "name": "สมุทรปราการ เขต 2",
         "code3d": "112",
         "region_id": "4",
-        "inspection_id": "8",
+        "inspection_area_id": "8",
         "address": "1/3 หมู่ 8",
-        "subdistrict_id": "",
         "district_id": "53",
         "province_id": "2",
         "zip_code": "10540",
@@ -102,7 +97,7 @@
         "num_person": "0",
         "website": "www.spn2.go.th",
         "latitude": "13.6157763",
-        "longtitude": "100.5639366"
+        "longitude": "100.5639366"
     },
     {
         "code": "1011110000",
@@ -110,9 +105,8 @@
         "name": "สมุทรปราการ",
         "code3d": "118",
         "region_id": "4",
-        "inspection_id": "8",
+        "inspection_area_id": "8",
         "address": "34/6 อาคารวีระ รอดเรือง",
-        "subdistrict_id": "",
         "district_id": "51",
         "province_id": "2",
         "zip_code": "10270",
@@ -123,7 +117,7 @@
         "num_person": "0",
         "website": "www.sesaosp.go.th",
         "latitude": "13.6228245",
-        "longtitude": "100.5528527"
+        "longitude": "100.5528527"
     },
     {
         "code": "1012010000",
@@ -131,9 +125,8 @@
         "name": "นนทบุรี เขต 1",
         "code3d": "121",
         "region_id": "1",
-        "inspection_id": "1",
+        "inspection_area_id": "1",
         "address": "ถนนรัตนาธิเบศร์",
-        "subdistrict_id": "",
         "district_id": "57",
         "province_id": "3",
         "zip_code": "11000",
@@ -144,7 +137,7 @@
         "num_person": "0",
         "website": "www.nonedu1.org",
         "latitude": "13.8624986",
-        "longtitude": "100.5136921"
+        "longitude": "100.5136921"
     },
     {
         "code": "1012020000",
@@ -152,9 +145,8 @@
         "name": "นนทบุรี เขต 2",
         "code3d": "122",
         "region_id": "1",
-        "inspection_id": "1",
+        "inspection_area_id": "1",
         "address": "79/4 หมู่ 6 ถนนกาญจนาภิเษก",
-        "subdistrict_id": "",
         "district_id": "59",
         "province_id": "3",
         "zip_code": "11140",
@@ -165,7 +157,7 @@
         "num_person": "0",
         "website": "www.nonedu2.net",
         "latitude": "13.8784782",
-        "longtitude": "100.4012186"
+        "longitude": "100.4012186"
     },
     {
         "code": "1012110000",
@@ -173,9 +165,8 @@
         "name": "นนทบุรี",
         "code3d": "128",
         "region_id": "1",
-        "inspection_id": "1",
+        "inspection_area_id": "1",
         "address": "85 หมู่ 5 ถนนรัตนาธิเบศร์",
-        "subdistrict_id": "",
         "district_id": "57",
         "province_id": "3",
         "zip_code": "11000",
@@ -186,7 +177,7 @@
         "num_person": "0",
         "website": "www.spmnonthaburi.go.th",
         "latitude": "13.8784644",
-        "longtitude": "100.3215579"
+        "longitude": "100.3215579"
     },
     {
         "code": "1013010000",
@@ -194,9 +185,8 @@
         "name": "ปทุมธานี เขต 1",
         "code3d": "131",
         "region_id": "1",
-        "inspection_id": "2",
+        "inspection_area_id": "2",
         "address": "99/4 ถนนปทุมธานีเฉลิมพระเกียรติ",
-        "subdistrict_id": "",
         "district_id": "63",
         "province_id": "4",
         "zip_code": "12000",
@@ -207,7 +197,7 @@
         "num_person": "0",
         "website": "www.pathum1.go.th",
         "latitude": "14.0234947",
-        "longtitude": "100.4530862"
+        "longitude": "100.4530862"
     },
     {
         "code": "1013020000",
@@ -215,9 +205,8 @@
         "name": "ปทุมธานี เขต 2",
         "code3d": "132",
         "region_id": "1",
-        "inspection_id": "2",
+        "inspection_area_id": "2",
         "address": "99 หมู่ที่ 16 ถนนวิภาวดีรังสิต",
-        "subdistrict_id": "",
         "district_id": "68",
         "province_id": "4",
         "zip_code": "12130",
@@ -228,7 +217,7 @@
         "num_person": "0",
         "website": "www.ptt2.go.th",
         "latitude": "13.9534081",
-        "longtitude": "100.6189709"
+        "longitude": "100.6189709"
     },
     {
         "code": "1013110000",
@@ -236,9 +225,8 @@
         "name": "ปทุมธานี",
         "code3d": "138",
         "region_id": "1",
-        "inspection_id": "2",
+        "inspection_area_id": "2",
         "address": "17/13-14 ถนนปทุมสัมพันธ์",
-        "subdistrict_id": "",
         "district_id": "63",
         "province_id": "4",
         "zip_code": "12000",
@@ -249,7 +237,7 @@
         "num_person": "0",
         "website": "www.ssps4.go.th",
         "latitude": "14.0195771",
-        "longtitude": "100.5263093"
+        "longitude": "100.5263093"
     },
     {
         "code": "1014010000",
@@ -257,9 +245,8 @@
         "name": "พระนครศรีอยุธยา เขต 1",
         "code3d": "141",
         "region_id": "1",
-        "inspection_id": "1",
+        "inspection_area_id": "1",
         "address": "222/242 หมู่ 6",
-        "subdistrict_id": "",
         "district_id": "70",
         "province_id": "5",
         "zip_code": "13000",
@@ -270,7 +257,7 @@
         "num_person": "0",
         "website": "www.aya1.go.th",
         "latitude": "14.3771545",
-        "longtitude": "100.5388655"
+        "longitude": "100.5388655"
     },
     {
         "code": "1014020000",
@@ -278,9 +265,8 @@
         "name": "พระนครศรีอยุธยา เขต 2",
         "code3d": "142",
         "region_id": "1",
-        "inspection_id": "1",
+        "inspection_area_id": "1",
         "address": "43/20 หมู่ 2 ถนนกิตติขจร",
-        "subdistrict_id": "",
         "district_id": "81",
         "province_id": "5",
         "zip_code": "13110",
@@ -291,7 +277,7 @@
         "num_person": "0",
         "website": "www.ayutthaya2.go.th",
         "latitude": "14.3235519",
-        "longtitude": "100.4026386"
+        "longitude": "100.4026386"
     },
     {
         "code": "1014110000",
@@ -299,9 +285,8 @@
         "name": "พระนครศรีอยุธยา",
         "code3d": "148",
         "region_id": "1",
-        "inspection_id": "1",
+        "inspection_area_id": "1",
         "address": "53 หมู่ 2 ถนนป่าโทน",
-        "subdistrict_id": "",
         "district_id": "70",
         "province_id": "5",
         "zip_code": "13000",
@@ -312,7 +297,7 @@
         "num_person": "0",
         "website": "www.spmay.go.th",
         "latitude": "14.3525602",
-        "longtitude": "100.5477953"
+        "longitude": "100.5477953"
     },
     {
         "code": "1015010000",
@@ -320,9 +305,8 @@
         "name": "อ่างทอง",
         "code3d": "151",
         "region_id": "1",
-        "inspection_id": "2",
+        "inspection_area_id": "2",
         "address": "ถนนเทศบาล 4",
-        "subdistrict_id": "",
         "district_id": "86",
         "province_id": "6",
         "zip_code": "14000",
@@ -333,7 +317,7 @@
         "num_person": "0",
         "website": "www.atg.go.th",
         "latitude": "14.5895427",
-        "longtitude": "100.3125776"
+        "longitude": "100.3125776"
     },
     {
         "code": "1016010000",
@@ -341,9 +325,8 @@
         "name": "ลพบุรี เขต 1",
         "code3d": "161",
         "region_id": "1",
-        "inspection_id": "2",
+        "inspection_area_id": "2",
         "address": "111 ถนนพระปิยะ",
-        "subdistrict_id": "",
         "district_id": "93",
         "province_id": "7",
         "zip_code": "15000",
@@ -354,7 +337,7 @@
         "num_person": "0",
         "website": "www.lopburi1.go.th",
         "latitude": "14.7828416",
-        "longtitude": "100.6439924"
+        "longitude": "100.6439924"
     },
     {
         "code": "1016020000",
@@ -362,9 +345,8 @@
         "name": "ลพบุรี เขต 2",
         "code3d": "162",
         "region_id": "1",
-        "inspection_id": "2",
+        "inspection_area_id": "2",
         "address": "8/1 หมู่ 1",
-        "subdistrict_id": "",
         "district_id": "96",
         "province_id": "7",
         "zip_code": "15130",
@@ -375,7 +357,7 @@
         "num_person": "0",
         "website": "www.lopburi2.go.th",
         "latitude": "14.9941614",
-        "longtitude": "100.5676498"
+        "longitude": "100.5676498"
     },
     {
         "code": "1017010000",
@@ -383,9 +365,8 @@
         "name": "สิงห์บุรี",
         "code3d": "171",
         "region_id": "1",
-        "inspection_id": "2",
+        "inspection_area_id": "2",
         "address": "ถนนสิงห์บุรี-อ่างทอง",
-        "subdistrict_id": "",
         "district_id": "63",
         "province_id": "4",
         "zip_code": "16000",
@@ -396,7 +377,7 @@
         "num_person": "0",
         "website": "www.singprimary.go.th",
         "latitude": "14.880507",
-        "longtitude": "00.4031397"
+        "longitude": "00.4031397"
     },
     {
         "code": "1016110000",
@@ -404,9 +385,8 @@
         "name": "ลพบุรี",
         "code3d": "168",
         "region_id": "1",
-        "inspection_id": "2",
+        "inspection_area_id": "2",
         "address": "ภายในโรงเรียนพิบูลวิทยาลัย ถนนนารายณ์มหาราช",
-        "subdistrict_id": "",
         "district_id": "93",
         "province_id": "7",
         "zip_code": "15000",
@@ -417,7 +397,7 @@
         "num_person": "0",
         "website": "www.sesalop.go.th",
         "latitude": "14.8747681",
-        "longtitude": "100.5645316"
+        "longitude": "100.5645316"
     },
     {
         "code": "1017110000",
@@ -425,9 +405,8 @@
         "name": "สิงห์บุรี-อ่างทอง",
         "code3d": "178",
         "region_id": "1",
-        "inspection_id": "2",
+        "inspection_area_id": "2",
         "address": "ตั้งอยู่ในโรงเรียนสิงห์บุรี ที่อยู่ 118",
-        "subdistrict_id": "",
         "district_id": "104",
         "province_id": "8",
         "zip_code": "16000",
@@ -438,7 +417,7 @@
         "num_person": "0",
         "website": "www.sesasingthong.go.th",
         "latitude": "14.8938368",
-        "longtitude": "100.4136138"
+        "longitude": "100.4136138"
     },
     {
         "code": "1018010000",
@@ -446,9 +425,8 @@
         "name": "ชัยนาท",
         "code3d": "181",
         "region_id": "1",
-        "inspection_id": "2",
+        "inspection_area_id": "2",
         "address": "1 ถนนวิเชียรปราการ",
-        "subdistrict_id": "",
         "district_id": "110",
         "province_id": "9",
         "zip_code": "17000",
@@ -459,7 +437,7 @@
         "num_person": "0",
         "website": "www.cnt.go.th",
         "latitude": "15.1849408",
-        "longtitude": "100.1185534"
+        "longitude": "100.1185534"
     },
     {
         "code": "1019010000",
@@ -467,9 +445,8 @@
         "name": "สระบุรี เขต 1",
         "code3d": "191",
         "region_id": "1",
-        "inspection_id": "2",
+        "inspection_area_id": "2",
         "address": "437/3 ถนนมิตรภาพ",
-        "subdistrict_id": "",
         "district_id": "118",
         "province_id": "10",
         "zip_code": "18000",
@@ -480,7 +457,7 @@
         "num_person": "0",
         "website": "www.srb1.go.th",
         "latitude": "14.5297158",
-        "longtitude": "100.9376943"
+        "longitude": "100.9376943"
     },
     {
         "code": "1019020000",
@@ -488,9 +465,8 @@
         "name": "สระบุรี เขต 2",
         "code3d": "192",
         "region_id": "1",
-        "inspection_id": "2",
+        "inspection_area_id": "2",
         "address": "313 หมู่ 11",
-        "subdistrict_id": "",
         "district_id": "119",
         "province_id": "10",
         "zip_code": "18110",
@@ -501,7 +477,7 @@
         "num_person": "0",
         "website": "www.saraburi2.org",
         "latitude": "14.5763908",
-        "longtitude": "101.0130651"
+        "longitude": "101.0130651"
     },
     {
         "code": "1019110000",
@@ -509,9 +485,8 @@
         "name": "สระบุรี",
         "code3d": "198",
         "region_id": "1",
-        "inspection_id": "2",
+        "inspection_area_id": "2",
         "address": "ศูนย์ราชการจังหวัดสระบุรี ชั้น 2",
-        "subdistrict_id": "",
         "district_id": "118",
         "province_id": "10",
         "zip_code": "18000",
@@ -522,7 +497,7 @@
         "num_person": "0",
         "website": "sssb.go.th",
         "latitude": "14.5368797",
-        "longtitude": "100.9344851"
+        "longitude": "100.9344851"
     },
     {
         "code": "1020010000",
@@ -530,9 +505,8 @@
         "name": "ชลบุรี เขต 1",
         "code3d": "201",
         "region_id": "4",
-        "inspection_id": "8",
+        "inspection_area_id": "8",
         "address": "162/6 หมู่ 2 ถนนพระยาสัจจา",
-        "subdistrict_id": "",
         "district_id": "131",
         "province_id": "11",
         "zip_code": "20000",
@@ -543,7 +517,7 @@
         "num_person": "0",
         "website": "www.chon1.go.th",
         "latitude": "13.3517042",
-        "longtitude": "100.9765912"
+        "longitude": "100.9765912"
     },
     {
         "code": "1020020000",
@@ -551,9 +525,8 @@
         "name": "ชลบุรี เขต 2",
         "code3d": "202",
         "region_id": "4",
-        "inspection_id": "8",
+        "inspection_area_id": "8",
         "address": "หมู่ที่ 7",
-        "subdistrict_id": "",
         "district_id": "136",
         "province_id": "11",
         "zip_code": "",
@@ -564,7 +537,7 @@
         "num_person": "0",
         "website": "www.chon2.go.th",
         "latitude": "13.4296488",
-        "longtitude": "101.1991274"
+        "longitude": "101.1991274"
     },
     {
         "code": "1020030000",
@@ -572,9 +545,8 @@
         "name": "ชลบุรี เขต 3",
         "code3d": "203",
         "region_id": "4",
-        "inspection_id": "8",
+        "inspection_area_id": "8",
         "address": "14/42 หมู่ 4",
-        "subdistrict_id": "",
         "district_id": "134",
         "province_id": "11",
         "zip_code": "20150",
@@ -585,7 +557,7 @@
         "num_person": "0",
         "website": "www.chon3.go.th",
         "latitude": "13.0420421",
-        "longtitude": "100.9255086"
+        "longitude": "100.9255086"
     },
     {
         "code": "1020110000",
@@ -593,9 +565,8 @@
         "name": "ชลบุรี-ระยอง",
         "code3d": "208",
         "region_id": "4",
-        "inspection_id": "8",
+        "inspection_area_id": "8",
         "address": "25/11 หมู่ 5",
-        "subdistrict_id": "",
         "district_id": "131",
         "province_id": "11",
         "zip_code": "20000",
@@ -606,7 +577,7 @@
         "num_person": "0",
         "website": "www.spm18.go.th",
         "latitude": "13.3325238",
-        "longtitude": "100.9225971"
+        "longitude": "100.9225971"
     },
     {
         "code": "1021010000",
@@ -614,9 +585,8 @@
         "name": "ระยอง เขต 1",
         "code3d": "211",
         "region_id": "4",
-        "inspection_id": "8",
+        "inspection_area_id": "8",
         "address": "1/24 ถนนบางจาก",
-        "subdistrict_id": "",
         "district_id": "142",
         "province_id": "12",
         "zip_code": "21000",
@@ -627,7 +597,7 @@
         "num_person": "0",
         "website": "www.rayong1.go.th",
         "latitude": "12.6695119",
-        "longtitude": "101.2728293"
+        "longitude": "101.2728293"
     },
     {
         "code": "1021020000",
@@ -635,9 +605,8 @@
         "name": "ระยอง เขต 2",
         "code3d": "212",
         "region_id": "4",
-        "inspection_id": "8",
+        "inspection_area_id": "8",
         "address": "99/1 หมู่ 3 ถนนสุขุมวิท",
-        "subdistrict_id": "",
         "district_id": "144",
         "province_id": "12",
         "zip_code": "21110",
@@ -648,7 +617,7 @@
         "num_person": "0",
         "website": "www.rayong2.go.th",
         "latitude": "12.7686025",
-        "longtitude": "101.6323608"
+        "longitude": "101.6323608"
     },
     {
         "code": "1022010000",
@@ -656,9 +625,8 @@
         "name": "จันทบุรี เขต 1",
         "code3d": "221",
         "region_id": "4",
-        "inspection_id": "9",
+        "inspection_area_id": "9",
         "address": "1 ถนนตากสิน",
-        "subdistrict_id": "",
         "district_id": "150",
         "province_id": "13",
         "zip_code": "22000",
@@ -669,7 +637,7 @@
         "num_person": "0",
         "website": "www.chan1.go.th",
         "latitude": "12.5976791",
-        "longtitude": "102.0956954"
+        "longitude": "102.0956954"
     },
     {
         "code": "1022020000",
@@ -677,9 +645,8 @@
         "name": "จันทบุรี เขต 2",
         "code3d": "222",
         "region_id": "4",
-        "inspection_id": "9",
+        "inspection_area_id": "9",
         "address": "1051/3 ถนนท่าแฉลบ",
-        "subdistrict_id": "",
         "district_id": "150",
         "province_id": "13",
         "zip_code": "22000",
@@ -690,7 +657,7 @@
         "num_person": "0",
         "website": "www.chan2.go.th",
         "latitude": "12.5945153",
-        "longtitude": "102.0946057"
+        "longitude": "102.0946057"
     },
     {
         "code": "1022110000",
@@ -698,9 +665,8 @@
         "name": "จันทบุรี-ตราด",
         "code3d": "228",
         "region_id": "4",
-        "inspection_id": "9",
+        "inspection_area_id": "9",
         "address": "9 ถนนศรียานุสรณ์",
-        "subdistrict_id": "",
         "district_id": "150",
         "province_id": "13",
         "zip_code": "22000",
@@ -711,7 +677,7 @@
         "num_person": "0",
         "website": "www.sesact.go.th",
         "latitude": "12.6137355",
-        "longtitude": "102.110519"
+        "longitude": "102.110519"
     },
     {
         "code": "1023010000",
@@ -719,9 +685,8 @@
         "name": "ตราด",
         "code3d": "231",
         "region_id": "4",
-        "inspection_id": "9",
+        "inspection_area_id": "9",
         "address": "356 หมู่ 2 ถนนสุขุมวิท",
-        "subdistrict_id": "",
         "district_id": "160",
         "province_id": "14",
         "zip_code": "23000",
@@ -732,7 +697,7 @@
         "num_person": "0",
         "website": "www.trat-edu.go.th",
         "latitude": "12.2675132",
-        "longtitude": "102.4982036"
+        "longitude": "102.4982036"
     },
     {
         "code": "1024010000",
@@ -740,9 +705,8 @@
         "name": "ฉะเชิงเทรา เขต 1",
         "code3d": "241",
         "region_id": "4",
-        "inspection_id": "8",
+        "inspection_area_id": "8",
         "address": "หมู่ที่ 1 ถนนเลี่ยงเมือง",
-        "subdistrict_id": "",
         "district_id": "167",
         "province_id": "15",
         "zip_code": "24000",
@@ -753,7 +717,7 @@
         "num_person": "0",
         "website": "www.ccs1.go.th",
         "latitude": "13.6585646",
-        "longtitude": "101.0788993"
+        "longitude": "101.0788993"
     },
     {
         "code": "1024020000",
@@ -761,9 +725,8 @@
         "name": "ฉะเชิงเทรา เขต 2",
         "code3d": "242",
         "region_id": "4",
-        "inspection_id": "8",
+        "inspection_area_id": "8",
         "address": "209/1 หมู่ที่ 3",
-        "subdistrict_id": "",
         "district_id": "172",
         "province_id": "15",
         "zip_code": "24120",
@@ -774,7 +737,7 @@
         "num_person": "0",
         "website": "www.ccs2.go.th",
         "latitude": "13.7115179",
-        "longtitude": "101.3851205"
+        "longitude": "101.3851205"
     },
     {
         "code": "1024110000",
@@ -782,9 +745,8 @@
         "name": "ฉะเชิงเทรา",
         "code3d": "248",
         "region_id": "4",
-        "inspection_id": "8",
+        "inspection_area_id": "8",
         "address": "410/1 ถนนมรุพงษ์",
-        "subdistrict_id": "",
         "district_id": "167",
         "province_id": "15",
         "zip_code": "24000",
@@ -795,7 +757,7 @@
         "num_person": "0",
         "website": "www.ccs.go.th",
         "latitude": "13.6798809",
-        "longtitude": "101.0715397"
+        "longitude": "101.0715397"
     },
     {
         "code": "1025010000",
@@ -803,9 +765,8 @@
         "name": "ปราจีนบุรี เขต 1",
         "code3d": "251",
         "region_id": "4",
-        "inspection_id": "9",
+        "inspection_area_id": "9",
         "address": "814 ถนนปราจีนอนุสรณ์",
-        "subdistrict_id": "",
         "district_id": "178",
         "province_id": "16",
         "zip_code": "25000",
@@ -816,7 +777,7 @@
         "num_person": "0",
         "website": "www.pri1.go.th",
         "latitude": "14.0478926",
-        "longtitude": "101.3712889"
+        "longitude": "101.3712889"
     },
     {
         "code": "1025020000",
@@ -824,9 +785,8 @@
         "name": "ปราจีนบุรี เขต 2",
         "code3d": "252",
         "region_id": "4",
-        "inspection_id": "9",
+        "inspection_area_id": "9",
         "address": "998 หมู่ที่ 2 ถนนฉะเชิงเทรา - นครราชสีมา",
-        "subdistrict_id": "",
         "district_id": "179",
         "province_id": "16",
         "zip_code": "25110",
@@ -837,7 +797,7 @@
         "num_person": "0",
         "website": "www.prachinburi2.go.th",
         "latitude": "13.9451824",
-        "longtitude": "101.7113959"
+        "longitude": "101.7113959"
     },
     {
         "code": "1025110000",
@@ -845,9 +805,8 @@
         "name": "ปราจีนบุรี-นครนายก",
         "code3d": "258",
         "region_id": "4",
-        "inspection_id": "9",
+        "inspection_area_id": "9",
         "address": "60 หมู่ 14 ถนนสุวรรณศร",
-        "subdistrict_id": "",
         "district_id": "178",
         "province_id": "16",
         "zip_code": "25230",
@@ -858,7 +817,7 @@
         "num_person": "0",
         "website": "www.spm-pn.go.th",
         "latitude": "14.1375972",
-        "longtitude": "101.3979405"
+        "longitude": "101.3979405"
     },
     {
         "code": "1026010000",
@@ -866,9 +825,8 @@
         "name": "นครนายก",
         "code3d": "261",
         "region_id": "4",
-        "inspection_id": "9",
+        "inspection_area_id": "9",
         "address": "182/89 ถนนสุวรรณศร",
-        "subdistrict_id": "",
         "district_id": "185",
         "province_id": "17",
         "zip_code": "26000",
@@ -879,7 +837,7 @@
         "num_person": "0",
         "website": "www.edunayok.eduweb.in.th",
         "latitude": "14.211053",
-        "longtitude": "01.1923268"
+        "longitude": "01.1923268"
     },
     {
         "code": "1027010000",
@@ -887,9 +845,8 @@
         "name": "สระแก้ว เขต 1",
         "code3d": "271",
         "region_id": "4",
-        "inspection_id": "9",
+        "inspection_area_id": "9",
         "address": "หมู่ 3 บ้านหนองนกเขา",
-        "subdistrict_id": "",
         "district_id": "189",
         "province_id": "18",
         "zip_code": "27000",
@@ -900,7 +857,7 @@
         "num_person": "0",
         "website": "www.sk1edu.go.th",
         "latitude": "13.802188",
-        "longtitude": "02.1218498"
+        "longitude": "02.1218498"
     },
     {
         "code": "1027020000",
@@ -908,9 +865,8 @@
         "name": "สระแก้ว เขต 2",
         "code3d": "272",
         "region_id": "4",
-        "inspection_id": "9",
+        "inspection_area_id": "9",
         "address": "ถนนสุุวรรณศร",
-        "subdistrict_id": "",
         "district_id": "194",
         "province_id": "18",
         "zip_code": "27120",
@@ -921,7 +877,7 @@
         "num_person": "0",
         "website": "www.skarea2.go.th",
         "latitude": "13.6907697",
-        "longtitude": "102.5011512"
+        "longitude": "102.5011512"
     },
     {
         "code": "1027110000",
@@ -929,9 +885,8 @@
         "name": "สระแก้ว",
         "code3d": "278",
         "region_id": "4",
-        "inspection_id": "9",
+        "inspection_area_id": "9",
         "address": "1991 หมู่ 2 ถนนสุวรรณศร",
-        "subdistrict_id": "",
         "district_id": "189",
         "province_id": "18",
         "zip_code": "27000",
@@ -942,7 +897,7 @@
         "num_person": "0",
         "website": "spm-sk.go.th",
         "latitude": "13.778352",
-        "longtitude": "102.171638"
+        "longitude": "102.171638"
     },
     {
         "code": "1030010000",
@@ -950,9 +905,8 @@
         "name": "นครราชสีมา เขต 1",
         "code3d": "301",
         "region_id": "5",
-        "inspection_id": "13",
+        "inspection_area_id": "13",
         "address": "636 หมู่ 5 ถนนเพชรมาตุคลา",
-        "subdistrict_id": "",
         "district_id": "198",
         "province_id": "19",
         "zip_code": "30000",
@@ -963,7 +917,7 @@
         "num_person": "0",
         "website": "www.koratdu.info",
         "latitude": "14.9726275",
-        "longtitude": "102.1500881"
+        "longitude": "102.1500881"
     },
     {
         "code": "1030020000",
@@ -971,9 +925,8 @@
         "name": "นครราชสีมา เขต 2",
         "code3d": "302",
         "region_id": "5",
-        "inspection_id": "13",
+        "inspection_area_id": "13",
         "address": "72 หมู่ 4",
-        "subdistrict_id": "",
         "district_id": "203",
         "province_id": "19",
         "zip_code": "30230",
@@ -984,7 +937,7 @@
         "num_person": "0",
         "website": "www.korat2.go.th",
         "latitude": "15.0149405",
-        "longtitude": "102.4104652"
+        "longitude": "102.4104652"
     },
     {
         "code": "1030030000",
@@ -992,9 +945,8 @@
         "name": "นครราชสีมา เขต 3",
         "code3d": "303",
         "region_id": "5",
-        "inspection_id": "13",
+        "inspection_area_id": "13",
         "address": "ถนนสุขาภิบาล 14",
-        "subdistrict_id": "",
         "district_id": "199",
         "province_id": "19",
         "zip_code": "30250",
@@ -1005,7 +957,7 @@
         "num_person": "0",
         "website": "www.korat3.go.th",
         "latitude": "14.5234491",
-        "longtitude": "102.2495246"
+        "longitude": "102.2495246"
     },
     {
         "code": "1030040000",
@@ -1013,9 +965,8 @@
         "name": "นครราชสีมา เขต 4",
         "code3d": "304",
         "region_id": "5",
-        "inspection_id": "13",
+        "inspection_area_id": "13",
         "address": "345 หมู่ 5 ถนนมิตรภาพ",
-        "subdistrict_id": "",
         "district_id": "217",
         "province_id": "19",
         "zip_code": "30340",
@@ -1026,7 +977,7 @@
         "num_person": "0",
         "website": "www.korat4.go.th",
         "latitude": "14.8574425",
-        "longtitude": "101.6729352"
+        "longitude": "101.6729352"
     },
     {
         "code": "1030050000",
@@ -1034,9 +985,8 @@
         "name": "นครราชสีมา เขต 5",
         "code3d": "305",
         "region_id": "5",
-        "inspection_id": "13",
+        "inspection_area_id": "13",
         "address": "118 หมู่ 12",
-        "subdistrict_id": "",
         "district_id": "205",
         "province_id": "19",
         "zip_code": "30210",
@@ -1047,7 +997,7 @@
         "num_person": "0",
         "website": "www.korat5.go.th",
         "latitude": "15.2063925",
-        "longtitude": "101.7759223"
+        "longitude": "101.7759223"
     },
     {
         "code": "1030060000",
@@ -1055,9 +1005,8 @@
         "name": "นครราชสีมา เขต 6",
         "code3d": "306",
         "region_id": "5",
-        "inspection_id": "13",
+        "inspection_area_id": "13",
         "address": "666 หมู่ 5 ถนนทางหลวง 202 (นิเวศน์รัตน์)",
-        "subdistrict_id": "",
         "district_id": "209",
         "province_id": "19",
         "zip_code": "30120",
@@ -1068,7 +1017,7 @@
         "num_person": "0",
         "website": "nma6.obec.go.th/korat6",
         "latitude": "15.584224",
-        "longtitude": "02.4230141"
+        "longitude": "02.4230141"
     },
     {
         "code": "1030070000",
@@ -1076,9 +1025,8 @@
         "name": "นครราชสีมา เขต 7",
         "code3d": "307",
         "region_id": "5",
-        "inspection_id": "13",
+        "inspection_area_id": "13",
         "address": "227 หมู่ 21 ถนนพิมาย - ชุมพวง",
-        "subdistrict_id": "",
         "district_id": "214",
         "province_id": "19",
         "zip_code": "30270",
@@ -1089,7 +1037,7 @@
         "num_person": "0",
         "website": "www.korat7.go.th",
         "latitude": "15.3199145",
-        "longtitude": "102.7254048"
+        "longitude": "102.7254048"
     },
     {
         "code": "1030110000",
@@ -1097,9 +1045,8 @@
         "name": "นครราชสีมา",
         "code3d": "308",
         "region_id": "5",
-        "inspection_id": "13",
+        "inspection_area_id": "13",
         "address": "505 หมู่ 12 ถนนโคกกรวด-หนองปลิง ต.โคกกรวด",
-        "subdistrict_id": "",
         "district_id": "198",
         "province_id": "19",
         "zip_code": "30280",
@@ -1110,7 +1057,7 @@
         "num_person": "0",
         "website": "www.mattayom31.go.th",
         "latitude": "14.9088664",
-        "longtitude": "101.9790107"
+        "longitude": "101.9790107"
     },
     {
         "code": "1031010000",
@@ -1118,9 +1065,8 @@
         "name": "บุรีรัมย์ เขต 1",
         "code3d": "311",
         "region_id": "5",
-        "inspection_id": "13",
+        "inspection_area_id": "13",
         "address": "50 ถนนอิสาณ",
-        "subdistrict_id": "",
         "district_id": "230",
         "province_id": "20",
         "zip_code": "31000",
@@ -1131,7 +1077,7 @@
         "num_person": "0",
         "website": "www.brm1.go.th",
         "latitude": "14.9974473",
-        "longtitude": "103.114389"
+        "longitude": "103.114389"
     },
     {
         "code": "1031020000",
@@ -1139,9 +1085,8 @@
         "name": "บุรีรัมย์ เขต 2",
         "code3d": "312",
         "region_id": "5",
-        "inspection_id": "13",
+        "inspection_area_id": "13",
         "address": "451 หมู่ 2 ถนนอำนวยกิจ",
-        "subdistrict_id": "",
         "district_id": "236",
         "province_id": "20",
         "zip_code": "31140",
@@ -1152,7 +1097,7 @@
         "num_person": "0",
         "website": "www.br2.go.th",
         "latitude": "14.6135651",
-        "longtitude": "103.0790163"
+        "longitude": "103.0790163"
     },
     {
         "code": "1031030000",
@@ -1160,9 +1105,8 @@
         "name": "บุรีรัมย์ เขต 3",
         "code3d": "313",
         "region_id": "5",
-        "inspection_id": "13",
+        "inspection_area_id": "13",
         "address": "77 หมู่ 4",
-        "subdistrict_id": "",
         "district_id": "233",
         "province_id": "20",
         "zip_code": "31110",
@@ -1173,7 +1117,7 @@
         "num_person": "0",
         "website": "site.google.com/a/bm3.go.th/buriram3/home/",
         "latitude": "14.6313199",
-        "longtitude": "102.7646484"
+        "longitude": "102.7646484"
     },
     {
         "code": "1031040000",
@@ -1181,9 +1125,8 @@
         "name": "บุรีรัมย์ เขต 4",
         "code3d": "314",
         "region_id": "5",
-        "inspection_id": "13",
+        "inspection_area_id": "13",
         "address": "หมู่ 3",
-        "subdistrict_id": "",
         "district_id": "238",
         "province_id": "20",
         "zip_code": "31120",
@@ -1194,7 +1137,7 @@
         "num_person": "0",
         "website": "www.brm4.go.th",
         "latitude": "15.5479728",
-        "longtitude": "102.9905739"
+        "longitude": "102.9905739"
     },
     {
         "code": "1031110000",
@@ -1202,9 +1145,8 @@
         "name": "บุรีรัมย์",
         "code3d": "318",
         "region_id": "5",
-        "inspection_id": "13",
+        "inspection_area_id": "13",
         "address": "15 ถนนนิวาศ",
-        "subdistrict_id": "",
         "district_id": "230",
         "province_id": "20",
         "zip_code": "31000",
@@ -1215,7 +1157,7 @@
         "num_person": "0",
         "website": "www.ssbr.go.th",
         "latitude": "15.0033431",
-        "longtitude": "103.1051023"
+        "longitude": "103.1051023"
     },
     {
         "code": "1032010000",
@@ -1223,9 +1165,8 @@
         "name": "สุรินทร์ เขต 1",
         "code3d": "321",
         "region_id": "5",
-        "inspection_id": "13",
+        "inspection_area_id": "13",
         "address": "348 หมู่ที่ 20 ถนนสุรินทร์-ปราสาท",
-        "subdistrict_id": "",
         "district_id": "253",
         "province_id": "21",
         "zip_code": "32000",
@@ -1236,7 +1177,7 @@
         "num_person": "0",
         "website": "www.surinarea1.go.th",
         "latitude": "14.8682321",
-        "longtitude": "103.4832562"
+        "longitude": "103.4832562"
     },
     {
         "code": "1032020000",
@@ -1244,9 +1185,8 @@
         "name": "สุรินทร์ เขต 2",
         "code3d": "322",
         "region_id": "5",
-        "inspection_id": "13",
+        "inspection_area_id": "13",
         "address": "219 หมู่ 1 ถนนศรีรัตน์",
-        "subdistrict_id": "",
         "district_id": "259",
         "province_id": "21",
         "zip_code": "32130",
@@ -1257,7 +1197,7 @@
         "num_person": "0",
         "website": "www.srn2.go.th",
         "latitude": "15.3160757",
-        "longtitude": "103.8521937"
+        "longitude": "103.8521937"
     },
     {
         "code": "1032030000",
@@ -1265,9 +1205,8 @@
         "name": "สุรินทร์ เขต 3",
         "code3d": "323",
         "region_id": "5",
-        "inspection_id": "13",
+        "inspection_area_id": "13",
         "address": "ถนนโชคชัย-เดชอุดม",
-        "subdistrict_id": "",
         "district_id": "257",
         "province_id": "21",
         "zip_code": "32140",
@@ -1278,7 +1217,7 @@
         "num_person": "0",
         "website": "www.surin3.go.th",
         "latitude": "14.6313996",
-        "longtitude": "103.4067354"
+        "longitude": "103.4067354"
     },
     {
         "code": "1032110000",
@@ -1286,9 +1225,8 @@
         "name": "สุรินทร์",
         "code3d": "328",
         "region_id": "5",
-        "inspection_id": "13",
+        "inspection_area_id": "13",
         "address": "197 หมู่ 20",
-        "subdistrict_id": "",
         "district_id": "253",
         "province_id": "21",
         "zip_code": "32000",
@@ -1299,7 +1237,7 @@
         "num_person": "0",
         "website": "www.secondary33.go.th",
         "latitude": "14.87415",
-        "longtitude": "3.4879156"
+        "longitude": "3.4879156"
     },
     {
         "code": "1033010000",
@@ -1307,9 +1245,8 @@
         "name": "ศรีสะเกษ เขต 1",
         "code3d": "331",
         "region_id": "5",
-        "inspection_id": "14",
+        "inspection_area_id": "14",
         "address": "360 หมู่ 5 ถนนรัตนวงษา",
-        "subdistrict_id": "",
         "district_id": "270",
         "province_id": "22",
         "zip_code": "33000",
@@ -1320,7 +1257,7 @@
         "num_person": "0",
         "website": "www.sisaketedu1.go.th",
         "latitude": "15.1086675",
-        "longtitude": "104.3264447"
+        "longitude": "104.3264447"
     },
     {
         "code": "1033020000",
@@ -1328,9 +1265,8 @@
         "name": "ศรีสะเกษ เขต 2",
         "code3d": "332",
         "region_id": "5",
-        "inspection_id": "14",
+        "inspection_area_id": "14",
         "address": "ถนนศรีอุทุมพร",
-        "subdistrict_id": "",
         "district_id": "279",
         "province_id": "22",
         "zip_code": "33120",
@@ -1341,7 +1277,7 @@
         "num_person": "0",
         "website": "www2.osea2.go.th",
         "latitude": "15.1119909",
-        "longtitude": "104.1468693"
+        "longitude": "104.1468693"
     },
     {
         "code": "1033030000",
@@ -1349,9 +1285,8 @@
         "name": "ศรีสะเกษ เขต 3",
         "code3d": "333",
         "region_id": "5",
-        "inspection_id": "14",
+        "inspection_area_id": "14",
         "address": "69 หมู่ 8",
-        "subdistrict_id": "",
         "district_id": "274",
         "province_id": "22",
         "zip_code": "33140",
@@ -1362,7 +1297,7 @@
         "num_person": "0",
         "website": "www.ssk3.go.th",
         "latitude": "14.6930641",
-        "longtitude": "104.2012958"
+        "longitude": "104.2012958"
     },
     {
         "code": "1033040000",
@@ -1370,9 +1305,8 @@
         "name": "ศรีสะเกษ เขต 4",
         "code3d": "334",
         "region_id": "5",
-        "inspection_id": "14",
+        "inspection_area_id": "14",
         "address": "หมู่ที่ 3",
-        "subdistrict_id": "",
         "district_id": "273",
         "province_id": "22",
         "zip_code": "33110",
@@ -1383,7 +1317,7 @@
         "num_person": "0",
         "website": "www.ssk4.go.th/home",
         "latitude": "14.6713164",
-        "longtitude": "104.5957946"
+        "longitude": "104.5957946"
     },
     {
         "code": "1033110000",
@@ -1391,9 +1325,8 @@
         "name": "ศรีสะเกษ-ยโสธร",
         "code3d": "338",
         "region_id": "5",
-        "inspection_id": "14",
+        "inspection_area_id": "14",
         "address": "917/20 ถนนวันลูกเสือ",
-        "subdistrict_id": "",
         "district_id": "270",
         "province_id": "22",
         "zip_code": "33000",
@@ -1404,7 +1337,7 @@
         "num_person": "0",
         "website": "www.secondary28.go.th",
         "latitude": "15.1126952",
-        "longtitude": "104.3253383"
+        "longitude": "104.3253383"
     },
     {
         "code": "1034010000",
@@ -1412,9 +1345,8 @@
         "name": "อุบลราชธานี เขต 1",
         "code3d": "341",
         "region_id": "5",
-        "inspection_id": "14",
+        "inspection_area_id": "14",
         "address": "199 ถนนสุรศักดิ์",
-        "subdistrict_id": "",
         "district_id": "292",
         "province_id": "23",
         "zip_code": "34000",
@@ -1425,7 +1357,7 @@
         "num_person": "0",
         "website": "www.ubn1.go.th",
         "latitude": "15.2296392",
-        "longtitude": "104.8539855"
+        "longitude": "104.8539855"
     },
     {
         "code": "1034020000",
@@ -1433,9 +1365,8 @@
         "name": "อุบลราชธานี เขต 2",
         "code3d": "342",
         "region_id": "5",
-        "inspection_id": "14",
+        "inspection_area_id": "14",
         "address": "201 หมู่ 5 ถนนตระการ-พนา",
-        "subdistrict_id": "",
         "district_id": "301",
         "province_id": "23",
         "zip_code": "34130",
@@ -1446,7 +1377,7 @@
         "num_person": "0",
         "website": "www.ubon2-ed.go.th",
         "latitude": "15.6152288",
-        "longtitude": "105.0169134"
+        "longitude": "105.0169134"
     },
     {
         "code": "1034030000",
@@ -1454,9 +1385,8 @@
         "name": "อุบลราชธานี เขต 3",
         "code3d": "343",
         "region_id": "5",
-        "inspection_id": "14",
+        "inspection_area_id": "14",
         "address": "ถนนสถิตย์นิมานกาล",
-        "subdistrict_id": "",
         "district_id": "305",
         "province_id": "23",
         "zip_code": "34110",
@@ -1467,7 +1397,7 @@
         "num_person": "0",
         "website": "www.ubon3.go.th",
         "latitude": "15.2278234",
-        "longtitude": "105.1803828"
+        "longitude": "105.1803828"
     },
     {
         "code": "1034040000",
@@ -1475,9 +1405,8 @@
         "name": "อุบลราชธานี เขต 4",
         "code3d": "344",
         "region_id": "5",
-        "inspection_id": "14",
+        "inspection_area_id": "14",
         "address": "ถนนคำน้ำแซบ",
-        "subdistrict_id": "",
         "district_id": "304",
         "province_id": "23",
         "zip_code": "34190",
@@ -1488,7 +1417,7 @@
         "num_person": "0",
         "website": "www.ubn4.go.th",
         "latitude": "15.2001788",
-        "longtitude": "104.8652061"
+        "longitude": "104.8652061"
     },
     {
         "code": "1034050000",
@@ -1496,9 +1425,8 @@
         "name": "อุบลราชธานี เขต 5",
         "code3d": "345",
         "region_id": "5",
-        "inspection_id": "14",
+        "inspection_area_id": "14",
         "address": "ถนนสถิลมาร์ค",
-        "subdistrict_id": "",
         "district_id": "297",
         "province_id": "23",
         "zip_code": "34160",
@@ -1509,7 +1437,7 @@
         "num_person": "0",
         "website": "web.ubon5.go.th",
         "latitude": "14.9415829",
-        "longtitude": "105.0333744"
+        "longitude": "105.0333744"
     },
     {
         "code": "1034110000",
@@ -1517,9 +1445,8 @@
         "name": "อุบลราชธานี-อำนาจเจริญ",
         "code3d": "348",
         "region_id": "5",
-        "inspection_id": "14",
+        "inspection_area_id": "14",
         "address": "298 หมู่ 9 ถนนเลี่ยงเมือง",
-        "subdistrict_id": "",
         "district_id": "292",
         "province_id": "23",
         "zip_code": "34000",
@@ -1530,7 +1457,7 @@
         "num_person": "0",
         "website": "www.secondary29.go.th",
         "latitude": "15.2663954",
-        "longtitude": "104.9257041"
+        "longitude": "104.9257041"
     },
     {
         "code": "1035010000",
@@ -1538,9 +1465,8 @@
         "name": "ยโสธร เขต 1",
         "code3d": "351",
         "region_id": "5",
-        "inspection_id": "14",
+        "inspection_area_id": "14",
         "address": "166 หมู่ 1 ถนนแจ้งสนิท",
-        "subdistrict_id": "",
         "district_id": "317",
         "province_id": "24",
         "zip_code": "35000",
@@ -1551,7 +1477,7 @@
         "num_person": "0",
         "website": "www.yst1.go.th",
         "latitude": "15.8166757",
-        "longtitude": "104.1281361"
+        "longitude": "104.1281361"
     },
     {
         "code": "1035020000",
@@ -1559,9 +1485,8 @@
         "name": "ยโสธร เขต 2",
         "code3d": "352",
         "region_id": "5",
-        "inspection_id": "14",
+        "inspection_area_id": "14",
         "address": "382 หมู่ 2 ถนนวารีราชเดช",
-        "subdistrict_id": "",
         "district_id": "319",
         "province_id": "24",
         "zip_code": "35140",
@@ -1572,7 +1497,7 @@
         "num_person": "0",
         "website": "www.yst2.go.th",
         "latitude": "16.0333404",
-        "longtitude": "104.3379287"
+        "longitude": "104.3379287"
     },
     {
         "code": "1036010000",
@@ -1580,9 +1505,8 @@
         "name": "ชัยภูมิ เขต 1",
         "code3d": "361",
         "region_id": "5",
-        "inspection_id": "13",
+        "inspection_area_id": "13",
         "address": "",
-        "subdistrict_id": "",
         "district_id": "326",
         "province_id": "25",
         "zip_code": "36000",
@@ -1593,7 +1517,7 @@
         "num_person": "0",
         "website": "",
         "latitude": "15.8096944",
-        "longtitude": "102.0254441"
+        "longitude": "102.0254441"
     },
     {
         "code": "1036020000",
@@ -1601,9 +1525,8 @@
         "name": "ชัยภูมิ เขต 2",
         "code3d": "362",
         "region_id": "5",
-        "inspection_id": "13",
+        "inspection_area_id": "13",
         "address": "333 หมู่ 4",
-        "subdistrict_id": "",
         "district_id": "335",
         "province_id": "25",
         "zip_code": "36110",
@@ -1614,7 +1537,7 @@
         "num_person": "0",
         "website": "www.chaiyaphum2.go.th",
         "latitude": "16.3751077",
-        "longtitude": "102.1227885"
+        "longitude": "102.1227885"
     },
     {
         "code": "1036030000",
@@ -1622,9 +1545,8 @@
         "name": "ชัยภูมิ เขต 3",
         "code3d": "363",
         "region_id": "5",
-        "inspection_id": "13",
+        "inspection_area_id": "13",
         "address": "หมู่ที่ 1 ถนนชัยภูมิ-สี่คิ้ว",
-        "subdistrict_id": "",
         "district_id": "331",
         "province_id": "25",
         "zip_code": "36130",
@@ -1635,7 +1557,7 @@
         "num_person": "0",
         "website": "www.chaiyaphum3.go.th",
         "latitude": "15.5734199",
-        "longtitude": "101.8586544"
+        "longitude": "101.8586544"
     },
     {
         "code": "1036110000",
@@ -1643,9 +1565,8 @@
         "name": "ชัยภูมิ",
         "code3d": "368",
         "region_id": "5",
-        "inspection_id": "13",
+        "inspection_area_id": "13",
         "address": "393/2 หมู่ที่ 9 ชุมชนขี้เหล็กใหญ่",
-        "subdistrict_id": "",
         "district_id": "326",
         "province_id": "25",
         "zip_code": "36000",
@@ -1656,7 +1577,7 @@
         "num_person": "0",
         "website": "www.sesao30.go.th",
         "latitude": "15.7913205",
-        "longtitude": "102.0122128"
+        "longitude": "102.0122128"
     },
     {
         "code": "1037010000",
@@ -1664,9 +1585,8 @@
         "name": "อำนาจเจริญ",
         "code3d": "371",
         "region_id": "5",
-        "inspection_id": "14",
+        "inspection_area_id": "14",
         "address": "230 ถนนสุขาภิบาล 1 หมู่ 7 บ้านแสนสวาสดิ์",
-        "subdistrict_id": "",
         "district_id": "342",
         "province_id": "26",
         "zip_code": "37000",
@@ -1677,7 +1597,7 @@
         "num_person": "0",
         "website": "www.amnat-ed.go.th",
         "latitude": "15.877832",
-        "longtitude": "04.6214556"
+        "longitude": "04.6214556"
     },
     {
         "code": "1038010000",
@@ -1685,9 +1605,8 @@
         "name": "บึงกาฬ",
         "code3d": "381",
         "region_id": "5",
-        "inspection_id": "10",
+        "inspection_area_id": "10",
         "address": "511 หมู่ที่ 7",
-        "subdistrict_id": "",
         "district_id": "349",
         "province_id": "27",
         "zip_code": "38000",
@@ -1698,7 +1617,7 @@
         "num_person": "0",
         "website": "www.ictbk.net/smart/",
         "latitude": "18.373374",
-        "longtitude": "03.6378867"
+        "longitude": "03.6378867"
     },
     {
         "code": "1038110000",
@@ -1706,9 +1625,8 @@
         "name": "บึงกาฬ",
         "code3d": "388",
         "region_id": "5",
-        "inspection_id": "10",
+        "inspection_area_id": "10",
         "address": "211 หมู่ 1",
-        "subdistrict_id": "",
         "district_id": "349",
         "province_id": "27",
         "zip_code": "38000",
@@ -1719,7 +1637,7 @@
         "num_person": "0",
         "website": "www.sesaobk.go.th",
         "latitude": "18.3634335",
-        "longtitude": "103.6504829"
+        "longitude": "103.6504829"
     },
     {
         "code": "1039010000",
@@ -1727,9 +1645,8 @@
         "name": "หนองบัวลำภู เขต 1",
         "code3d": "391",
         "region_id": "5",
-        "inspection_id": "10",
+        "inspection_area_id": "10",
         "address": "113/4 หมู่ 2 ถนนหนองบัวลำภู-เลย",
-        "subdistrict_id": "",
         "district_id": "357",
         "province_id": "28",
         "zip_code": "39000",
@@ -1740,7 +1657,7 @@
         "num_person": "0",
         "website": "www.nb1.go.th",
         "latitude": "17.2173075",
-        "longtitude": "102.4270739"
+        "longitude": "102.4270739"
     },
     {
         "code": "1039020000",
@@ -1748,9 +1665,8 @@
         "name": "หนองบัวลำภู เขต 2",
         "code3d": "392",
         "region_id": "5",
-        "inspection_id": "10",
+        "inspection_area_id": "10",
         "address": "ถนนอุดร-เลย",
-        "subdistrict_id": "",
         "district_id": "358",
         "province_id": "28",
         "zip_code": "39170",
@@ -1761,7 +1677,7 @@
         "num_person": "0",
         "website": "www.nb2.go.th",
         "latitude": "17.3093616",
-        "longtitude": "102.1860468"
+        "longitude": "102.1860468"
     },
     {
         "code": "1040010000",
@@ -1769,9 +1685,8 @@
         "name": "ขอนแก่น เขต 1",
         "code3d": "401",
         "region_id": "5",
-        "inspection_id": "12",
+        "inspection_area_id": "12",
         "address": "264 หมู่ที่ 132 ถนนศูนย์ราชการ",
-        "subdistrict_id": "",
         "district_id": "363",
         "province_id": "29",
         "zip_code": "40000",
@@ -1782,7 +1697,7 @@
         "num_person": "0",
         "website": "www.kkzon1.go.th",
         "latitude": "16.4432927",
-        "longtitude": "102.833877"
+        "longitude": "102.833877"
     },
     {
         "code": "1040020000",
@@ -1790,9 +1705,8 @@
         "name": "ขอนแก่น เขต 2",
         "code3d": "402",
         "region_id": "5",
-        "inspection_id": "12",
+        "inspection_area_id": "12",
         "address": "11 หมู่ที่ 22 ถนนมิตรภาพ",
-        "subdistrict_id": "",
         "district_id": "372",
         "province_id": "29",
         "zip_code": "40110",
@@ -1803,7 +1717,7 @@
         "num_person": "0",
         "website": "",
         "latitude": "16.0540826",
-        "longtitude": "102.7114404"
+        "longitude": "102.7114404"
     },
     {
         "code": "1040030000",
@@ -1811,9 +1725,8 @@
         "name": "ขอนแก่น เขต 3",
         "code3d": "403",
         "region_id": "5",
-        "inspection_id": "12",
+        "inspection_area_id": "12",
         "address": "ถนนเมืองพล - ชัยภูมิ",
-        "subdistrict_id": "",
         "district_id": "374",
         "province_id": "29",
         "zip_code": "40120",
@@ -1824,7 +1737,7 @@
         "num_person": "0",
         "website": "www.kkn3.go.th",
         "latitude": "15.8098349",
-        "longtitude": "102.5853016"
+        "longitude": "102.5853016"
     },
     {
         "code": "1040040000",
@@ -1832,9 +1745,8 @@
         "name": "ขอนแก่น เขต 4",
         "code3d": "404",
         "region_id": "5",
-        "inspection_id": "12",
+        "inspection_area_id": "12",
         "address": "86 หมู่ 5 ถนนมิตรภาพ",
-        "subdistrict_id": "",
         "district_id": "369",
         "province_id": "29",
         "zip_code": "40310",
@@ -1845,7 +1757,7 @@
         "num_person": "0",
         "website": "www.khonkaen4.go.th",
         "latitude": "16.7294372",
-        "longtitude": "102.8030854"
+        "longitude": "102.8030854"
     },
     {
         "code": "1040050000",
@@ -1853,9 +1765,8 @@
         "name": "ขอนแก่น เขต 5",
         "code3d": "405",
         "region_id": "5",
-        "inspection_id": "12",
+        "inspection_area_id": "12",
         "address": "120 หมู่ 9 ถนนมลิวรรณ",
-        "subdistrict_id": "",
         "district_id": "367",
         "province_id": "29",
         "zip_code": "40130",
@@ -1866,7 +1777,7 @@
         "num_person": "0",
         "website": "www.kkn5.go.th",
         "latitude": "16.5521308",
-        "longtitude": "102.0834254"
+        "longitude": "102.0834254"
     },
     {
         "code": "1040110000",
@@ -1874,9 +1785,8 @@
         "name": "ขอนแก่น",
         "code3d": "408",
         "region_id": "5",
-        "inspection_id": "12",
+        "inspection_area_id": "12",
         "address": "473 หมู่ที่ 2 ถนนมลิวรรณ",
-        "subdistrict_id": "",
         "district_id": "363",
         "province_id": "29",
         "zip_code": "40000",
@@ -1887,7 +1797,7 @@
         "num_person": "0",
         "website": "www.kksec.go.th",
         "latitude": "16.4507658",
-        "longtitude": "102.7292855"
+        "longitude": "102.7292855"
     },
     {
         "code": "1041010000",
@@ -1895,9 +1805,8 @@
         "name": "อุดรธานี เขต 1",
         "code3d": "411",
         "region_id": "5",
-        "inspection_id": "10",
+        "inspection_area_id": "10",
         "address": "7/7 ถนนโพศรี",
-        "subdistrict_id": "",
         "district_id": "389",
         "province_id": "30",
         "zip_code": "41000",
@@ -1908,7 +1817,7 @@
         "num_person": "0",
         "website": "www.udn1.go.th",
         "latitude": "17.4125356",
-        "longtitude": "102.7812605"
+        "longitude": "102.7812605"
     },
     {
         "code": "1041020000",
@@ -1916,9 +1825,8 @@
         "name": "อุดรธานี เขต 2",
         "code3d": "412",
         "region_id": "5",
-        "inspection_id": "10",
+        "inspection_area_id": "10",
         "address": "505 หมู่ 9",
-        "subdistrict_id": "",
         "district_id": "392",
         "province_id": "30",
         "zip_code": "41110",
@@ -1929,7 +1837,7 @@
         "num_person": "0",
         "website": "udesa2.go.th",
         "latitude": "17.1130425",
-        "longtitude": "103.0156188"
+        "longitude": "103.0156188"
     },
     {
         "code": "1041030000",
@@ -1937,9 +1845,8 @@
         "name": "อุดรธานี เขต 3",
         "code3d": "413",
         "region_id": "5",
-        "inspection_id": "10",
+        "inspection_area_id": "10",
         "address": "256/1 หมู่ 11",
-        "subdistrict_id": "",
         "district_id": "394",
         "province_id": "30",
         "zip_code": "41130",
@@ -1950,7 +1857,7 @@
         "num_person": "0",
         "website": "www.udn3.org",
         "latitude": "17.3610001",
-        "longtitude": "103.1081006"
+        "longitude": "103.1081006"
     },
     {
         "code": "1041040000",
@@ -1958,9 +1865,8 @@
         "name": "อุดรธานี เขต 4",
         "code3d": "414",
         "region_id": "5",
-        "inspection_id": "10",
+        "inspection_area_id": "10",
         "address": "25 หมู่ 8 ถนนชนบทบำรุง",
-        "subdistrict_id": "",
         "district_id": "400",
         "province_id": "30",
         "zip_code": "41160",
@@ -1971,7 +1877,7 @@
         "num_person": "0",
         "website": "www.udon4.go.th",
         "latitude": "17.6875672",
-        "longtitude": "102.4738453"
+        "longitude": "102.4738453"
     },
     {
         "code": "1041110000",
@@ -1979,9 +1885,8 @@
         "name": "อุดรธานี",
         "code3d": "418",
         "region_id": "5",
-        "inspection_id": "10",
+        "inspection_area_id": "10",
         "address": "79 หมู่ 6",
-        "subdistrict_id": "",
         "district_id": "389",
         "province_id": "30",
         "zip_code": "41000",
@@ -1992,7 +1897,7 @@
         "num_person": "0",
         "website": "www.sesa.ud.go.th",
         "latitude": "17.3445631",
-        "longtitude": "102.7813628"
+        "longitude": "102.7813628"
     },
     {
         "code": "1042010000",
@@ -2000,9 +1905,8 @@
         "name": "เลย เขต 1",
         "code3d": "421",
         "region_id": "5",
-        "inspection_id": "10",
+        "inspection_area_id": "10",
         "address": "ถนนเลย-เชียงคาน",
-        "subdistrict_id": "",
         "district_id": "409",
         "province_id": "31",
         "zip_code": "42000",
@@ -2013,7 +1917,7 @@
         "num_person": "0",
         "website": "www.loei1.go.th",
         "latitude": "17.5540117",
-        "longtitude": "101.7273296"
+        "longitude": "101.7273296"
     },
     {
         "code": "1042020000",
@@ -2021,9 +1925,8 @@
         "name": "เลย เขต 2",
         "code3d": "422",
         "region_id": "5",
-        "inspection_id": "10",
+        "inspection_area_id": "10",
         "address": "256 หมู่ 3",
-        "subdistrict_id": "",
         "district_id": "409",
         "province_id": "31",
         "zip_code": "42130",
@@ -2034,7 +1937,7 @@
         "num_person": "0",
         "website": "www.loei2.go.th",
         "latitude": "17.2895091",
-        "longtitude": "101.7751262"
+        "longitude": "101.7751262"
     },
     {
         "code": "1042030000",
@@ -2042,9 +1945,8 @@
         "name": "เลย เขต 3",
         "code3d": "423",
         "region_id": "5",
-        "inspection_id": "10",
+        "inspection_area_id": "10",
         "address": "439 หมู่ที่ 1",
-        "subdistrict_id": "",
         "district_id": "413",
         "province_id": "31",
         "zip_code": "42120",
@@ -2055,7 +1957,7 @@
         "num_person": "0",
         "website": "www.loei3.go.th",
         "latitude": "17.3530063",
-        "longtitude": "101.2307115"
+        "longitude": "101.2307115"
     },
     {
         "code": "1042110000",
@@ -2063,9 +1965,8 @@
         "name": "เลย-หนองบัวลำภู",
         "code3d": "428",
         "region_id": "5",
-        "inspection_id": "10",
+        "inspection_area_id": "10",
         "address": "334 หมู่ 4",
-        "subdistrict_id": "",
         "district_id": "409",
         "province_id": "31",
         "zip_code": "42000",
@@ -2076,7 +1977,7 @@
         "num_person": "0",
         "website": "www.sesao19.go.th",
         "latitude": "17.4615967",
-        "longtitude": "101.7128152"
+        "longitude": "101.7128152"
     },
     {
         "code": "1043010000",
@@ -2084,9 +1985,8 @@
         "name": "หนองคาย เขต 1",
         "code3d": "431",
         "region_id": "5",
-        "inspection_id": "10",
+        "inspection_area_id": "10",
         "address": "250 หมู่ที่ 1",
-        "subdistrict_id": "",
         "district_id": "423",
         "province_id": "32",
         "zip_code": "43000",
@@ -2097,7 +1997,7 @@
         "num_person": "0",
         "website": "www.nkedu1.go.th",
         "latitude": "17.8653091",
-        "longtitude": "102.7408128"
+        "longitude": "102.7408128"
     },
     {
         "code": "1043020000",
@@ -2105,9 +2005,8 @@
         "name": "หนองคาย เขต 2",
         "code3d": "432",
         "region_id": "5",
-        "inspection_id": "10",
+        "inspection_area_id": "10",
         "address": "444 หมู่ 2",
-        "subdistrict_id": "",
         "district_id": "425",
         "province_id": "32",
         "zip_code": "43120",
@@ -2118,7 +2017,7 @@
         "num_person": "0",
         "website": "www.nongkhai2.go.th",
         "latitude": "18.0349656",
-        "longtitude": "103.0826207"
+        "longitude": "103.0826207"
     },
     {
         "code": "1043110000",
@@ -2126,9 +2025,8 @@
         "name": "หนองคาย",
         "code3d": "438",
         "region_id": "5",
-        "inspection_id": "10",
+        "inspection_area_id": "10",
         "address": "393 หมู่ 6 ถนนมิตรภาพ",
-        "subdistrict_id": "",
         "district_id": "423",
         "province_id": "32",
         "zip_code": "43000",
@@ -2139,7 +2037,7 @@
         "num_person": "0",
         "website": "",
         "latitude": "17.8384066",
-        "longtitude": "102.7519393"
+        "longitude": "102.7519393"
     },
     {
         "code": "1044010000",
@@ -2147,9 +2045,8 @@
         "name": "มหาสารคาม เขต 1",
         "code3d": "441",
         "region_id": "5",
-        "inspection_id": "12",
+        "inspection_area_id": "12",
         "address": "85 ถนนศรีสวัสดิ์ดำเนิน",
-        "subdistrict_id": "",
         "district_id": "432",
         "province_id": "33",
         "zip_code": "44000",
@@ -2160,7 +2057,7 @@
         "num_person": "0",
         "website": "www.mkarea1.go.th",
         "latitude": "16.1850703",
-        "longtitude": "103.2989746"
+        "longitude": "103.2989746"
     },
     {
         "code": "1044020000",
@@ -2168,9 +2065,8 @@
         "name": "มหาสารคาม เขต 2",
         "code3d": "442",
         "region_id": "5",
-        "inspection_id": "12",
+        "inspection_area_id": "12",
         "address": "417 หมู่ 1 ถนนสมารักษ์",
-        "subdistrict_id": "",
         "district_id": "440",
         "province_id": "33",
         "zip_code": "44120",
@@ -2181,7 +2077,7 @@
         "num_person": "0",
         "website": "www.mkarea2.go.th",
         "latitude": "15.8454774",
-        "longtitude": "103.3751388"
+        "longitude": "103.3751388"
     },
     {
         "code": "1044030000",
@@ -2189,9 +2085,8 @@
         "name": "มหาสารคาม เขต 3",
         "code3d": "443",
         "region_id": "5",
-        "inspection_id": "12",
+        "inspection_area_id": "12",
         "address": "354 หมู่ที่ 2",
-        "subdistrict_id": "",
         "district_id": "434",
         "province_id": "33",
         "zip_code": "44140",
@@ -2202,7 +2097,7 @@
         "num_person": "0",
         "website": "www.mkarea3.go.th",
         "latitude": "16.2463961",
-        "longtitude": "103.0667549"
+        "longitude": "103.0667549"
     },
     {
         "code": "1044110000",
@@ -2210,9 +2105,8 @@
         "name": "มหาสารคาม",
         "code3d": "448",
         "region_id": "5",
-        "inspection_id": "12",
+        "inspection_area_id": "12",
         "address": "ถนนเลี่ยงเมืองมหาสารคาม - ร้อยเอ็ด",
-        "subdistrict_id": "",
         "district_id": "432",
         "province_id": "33",
         "zip_code": "44000",
@@ -2223,7 +2117,7 @@
         "num_person": "0",
         "website": "www.ses26.go.th",
         "latitude": "16.1579502",
-        "longtitude": "103.310211"
+        "longitude": "103.310211"
     },
     {
         "code": "1045010000",
@@ -2231,9 +2125,8 @@
         "name": "ร้อยเอ็ด เขต 1",
         "code3d": "451",
         "region_id": "5",
-        "inspection_id": "12",
+        "inspection_area_id": "12",
         "address": "103/1 ถนนรณชัยชาญยุทธ",
-        "subdistrict_id": "",
         "district_id": "445",
         "province_id": "34",
         "zip_code": "45000",
@@ -2244,7 +2137,7 @@
         "num_person": "0",
         "website": "www.roiet1.go.th",
         "latitude": "16.0469773",
-        "longtitude": "103.649069"
+        "longitude": "103.649069"
     },
     {
         "code": "1045020000",
@@ -2252,9 +2145,8 @@
         "name": "ร้อยเอ็ด เขต 2",
         "code3d": "452",
         "region_id": "5",
-        "inspection_id": "12",
+        "inspection_area_id": "12",
         "address": "123 หมู่ 2",
-        "subdistrict_id": "",
         "district_id": "455",
         "province_id": "34",
         "zip_code": "45130",
@@ -2265,7 +2157,7 @@
         "num_person": "0",
         "website": "www.ret2.go.th",
         "latitude": "15.640356",
-        "longtitude": "03.7823257"
+        "longitude": "03.7823257"
     },
     {
         "code": "1045030000",
@@ -2273,9 +2165,8 @@
         "name": "ร้อยเอ็ด เขต 3",
         "code3d": "453",
         "region_id": "5",
-        "inspection_id": "12",
+        "inspection_area_id": "12",
         "address": "664 หมู่ที่ 3 ถนนโพนทอง-หนองพอก",
-        "subdistrict_id": "",
         "district_id": "451",
         "province_id": "34",
         "zip_code": "45110",
@@ -2286,7 +2177,7 @@
         "num_person": "0",
         "website": "www.roiet3.go.th",
         "latitude": "16.2986322",
-        "longtitude": "103.9898873"
+        "longitude": "103.9898873"
     },
     {
         "code": "1045110000",
@@ -2294,9 +2185,8 @@
         "name": "ร้อยเอ็ด",
         "code3d": "458",
         "region_id": "5",
-        "inspection_id": "12",
+        "inspection_area_id": "12",
         "address": "ถนนเทวาภิบาล",
-        "subdistrict_id": "",
         "district_id": "445",
         "province_id": "34",
         "zip_code": "45000",
@@ -2307,7 +2197,7 @@
         "num_person": "0",
         "website": "www.secondary27.go.th",
         "latitude": "16.0534412",
-        "longtitude": "103.6573936"
+        "longitude": "103.6573936"
     },
     {
         "code": "1046010000",
@@ -2315,9 +2205,8 @@
         "name": "กาฬสินธุ์ เขต 1",
         "code3d": "461",
         "region_id": "5",
-        "inspection_id": "12",
+        "inspection_area_id": "12",
         "address": "99/7 ถนนสนามบิน",
-        "subdistrict_id": "",
         "district_id": "465",
         "province_id": "35",
         "zip_code": "46000",
@@ -2328,7 +2217,7 @@
         "num_person": "0",
         "website": "www.ksn1.go.th",
         "latitude": "16.4164442",
-        "longtitude": "103.5168369"
+        "longitude": "103.5168369"
     },
     {
         "code": "1046020000",
@@ -2336,9 +2225,8 @@
         "name": "กาฬสินธุ์ เขต 2",
         "code3d": "462",
         "region_id": "5",
-        "inspection_id": "12",
+        "inspection_area_id": "12",
         "address": "312 หมู่ 4 ถนนกระนวน - ฮ่องฮี",
-        "subdistrict_id": "",
         "district_id": "472",
         "province_id": "35",
         "zip_code": "46170",
@@ -2349,7 +2237,7 @@
         "num_person": "0",
         "website": "www.kalasin2.go.th",
         "latitude": "16.5983816",
-        "longtitude": "103.2280283"
+        "longitude": "103.2280283"
     },
     {
         "code": "1046030000",
@@ -2357,9 +2245,8 @@
         "name": "กาฬสินธุ์ เขต 3",
         "code3d": "463",
         "region_id": "5",
-        "inspection_id": "12",
+        "inspection_area_id": "12",
         "address": "ถนนห้วยผึ้ง-นาคู",
-        "subdistrict_id": "",
         "district_id": "478",
         "province_id": "35",
         "zip_code": "46240",
@@ -2370,7 +2257,7 @@
         "num_person": "0",
         "website": "www.kalasin3.go.th",
         "latitude": "16.6474673",
-        "longtitude": "103.9085261"
+        "longitude": "103.9085261"
     },
     {
         "code": "1046110000",
@@ -2378,9 +2265,8 @@
         "name": "กาฬสินธุ์",
         "code3d": "468",
         "region_id": "5",
-        "inspection_id": "12",
+        "inspection_area_id": "12",
         "address": "ถนนถีนานน์",
-        "subdistrict_id": "",
         "district_id": "465",
         "province_id": "35",
         "zip_code": "46000",
@@ -2391,7 +2277,7 @@
         "num_person": "0",
         "website": "www.sesa.24.go.th",
         "latitude": "16.4655009",
-        "longtitude": "103.5507498"
+        "longitude": "103.5507498"
     },
     {
         "code": "1047010000",
@@ -2399,9 +2285,8 @@
         "name": "สกลนคร เขต 1",
         "code3d": "471",
         "region_id": "5",
-        "inspection_id": "11",
+        "inspection_area_id": "11",
         "address": "ถนนนิตโย",
-        "subdistrict_id": "",
         "district_id": "483",
         "province_id": "36",
         "zip_code": "47000",
@@ -2412,7 +2297,7 @@
         "num_person": "0",
         "website": "www.sakonarea1.go.th",
         "latitude": "17.1960252",
-        "longtitude": "104.0814417"
+        "longitude": "104.0814417"
     },
     {
         "code": "1047020000",
@@ -2420,9 +2305,8 @@
         "name": "สกลนคร เขต 2",
         "code3d": "472",
         "region_id": "5",
-        "inspection_id": "11",
+        "inspection_area_id": "11",
         "address": "917 หมู่ 11",
-        "subdistrict_id": "",
         "district_id": "494",
         "province_id": "36",
         "zip_code": "47110",
@@ -2433,7 +2317,7 @@
         "num_person": "0",
         "website": "www.sakon2.go.th",
         "latitude": "17.4808716",
-        "longtitude": "103.4598663"
+        "longitude": "103.4598663"
     },
     {
         "code": "1047030000",
@@ -2441,9 +2325,8 @@
         "name": "สกลนคร เขต 3",
         "code3d": "473",
         "region_id": "5",
-        "inspection_id": "11",
+        "inspection_area_id": "11",
         "address": "530 หมู่ที่ 5 ถนนเดื่อเจริญ",
-        "subdistrict_id": "",
         "district_id": "490",
         "province_id": "36",
         "zip_code": "47120",
@@ -2454,7 +2337,7 @@
         "num_person": "0",
         "website": "www.sakonnakhon3.go.th",
         "latitude": "17.6307284",
-        "longtitude": "103.7518566"
+        "longitude": "103.7518566"
     },
     {
         "code": "1047110000",
@@ -2462,9 +2345,8 @@
         "name": "สกลนคร",
         "code3d": "478",
         "region_id": "5",
-        "inspection_id": "11",
+        "inspection_area_id": "11",
         "address": "ถนนไอทียู",
-        "subdistrict_id": "",
         "district_id": "483",
         "province_id": "36",
         "zip_code": "47000",
@@ -2475,7 +2357,7 @@
         "num_person": "0",
         "website": "www.sesarea23.go.th/home/",
         "latitude": "17.1465539",
-        "longtitude": "104.1550185"
+        "longitude": "104.1550185"
     },
     {
         "code": "1048010000",
@@ -2483,9 +2365,8 @@
         "name": "นครพนม เขต 1",
         "code3d": "481",
         "region_id": "5",
-        "inspection_id": "11",
+        "inspection_area_id": "11",
         "address": "35 ถนนกลางเมือง",
-        "subdistrict_id": "",
         "district_id": "501",
         "province_id": "37",
         "zip_code": "48000",
@@ -2496,7 +2377,7 @@
         "num_person": "0",
         "website": "www.nkpedu1.go.th",
         "latitude": "17.4173865",
-        "longtitude": "104.7711494"
+        "longitude": "104.7711494"
     },
     {
         "code": "1048020000",
@@ -2504,9 +2385,8 @@
         "name": "นครพนม เขต 2",
         "code3d": "482",
         "region_id": "5",
-        "inspection_id": "11",
+        "inspection_area_id": "11",
         "address": "10 หมู่ 9 ถนนศรีสงคราม-ท่าดอกแก้ว",
-        "subdistrict_id": "",
         "district_id": "508",
         "province_id": "37",
         "zip_code": "48150",
@@ -2517,7 +2397,7 @@
         "num_person": "0",
         "website": "web.nkp2.go.th",
         "latitude": "17.6212139",
-        "longtitude": "104.2792625"
+        "longitude": "104.2792625"
     },
     {
         "code": "1048110000",
@@ -2525,9 +2405,8 @@
         "name": "นครพนม",
         "code3d": "488",
         "region_id": "5",
-        "inspection_id": "11",
+        "inspection_area_id": "11",
         "address": "42 ถนนปิยะมหาราชาลัย",
-        "subdistrict_id": "",
         "district_id": "501",
         "province_id": "37",
         "zip_code": "48000",
@@ -2538,7 +2417,7 @@
         "num_person": "0",
         "website": "",
         "latitude": "17.4040203",
-        "longtitude": "104.7818871"
+        "longitude": "104.7818871"
     },
     {
         "code": "1049010000",
@@ -2546,9 +2425,8 @@
         "name": "มุกดาหาร",
         "code3d": "491",
         "region_id": "5",
-        "inspection_id": "11",
+        "inspection_area_id": "11",
         "address": "17 ถนนวิวิธสุรการ",
-        "subdistrict_id": "",
         "district_id": "513",
         "province_id": "38",
         "zip_code": "49000",
@@ -2559,7 +2437,7 @@
         "num_person": "0",
         "website": "www.mdh.go.th",
         "latitude": "16.5465846",
-        "longtitude": "104.7265655"
+        "longitude": "104.7265655"
     },
     {
         "code": "1049110000",
@@ -2567,9 +2445,8 @@
         "name": "มุกดาหาร",
         "code3d": "498",
         "region_id": "5",
-        "inspection_id": "11",
+        "inspection_area_id": "11",
         "address": "147 โรงเรียนมุกดาหาร (อาคารเกษตร) ถนนมุกดาหาร",
-        "subdistrict_id": "",
         "district_id": "513",
         "province_id": "38",
         "zip_code": "49000",
@@ -2580,7 +2457,7 @@
         "num_person": "0",
         "website": "www.sesaomuk.go.th",
         "latitude": "16.5360643",
-        "longtitude": "104.7156827"
+        "longitude": "104.7156827"
     },
     {
         "code": "1050010000",
@@ -2588,9 +2465,8 @@
         "name": "เชียงใหม่ เขต 1",
         "code3d": "501",
         "region_id": "6",
-        "inspection_id": "15",
+        "inspection_area_id": "15",
         "address": "อาคารอำนวยการกลาง ศาลากลางจังหวัดเชียงใหม่ (ชั้น 4 ) ถนนโชตนา",
-        "subdistrict_id": "",
         "district_id": "520",
         "province_id": "39",
         "zip_code": "50300",
@@ -2601,7 +2477,7 @@
         "num_person": "0",
         "website": "www.chiangmaiareal.go.th",
         "latitude": "18.8368324",
-        "longtitude": "98.9711466"
+        "longitude": "98.9711466"
     },
     {
         "code": "1050020000",
@@ -2609,9 +2485,8 @@
         "name": "เชียงใหม่ เขต 2",
         "code3d": "502",
         "region_id": "6",
-        "inspection_id": "15",
+        "inspection_area_id": "15",
         "address": "",
-        "subdistrict_id": "",
         "district_id": "526",
         "province_id": "39",
         "zip_code": "50180",
@@ -2622,7 +2497,7 @@
         "num_person": "0",
         "website": "www.cme2.go.th",
         "latitude": "18.9659094",
-        "longtitude": "98.9449547"
+        "longitude": "98.9449547"
     },
     {
         "code": "1050030000",
@@ -2630,9 +2505,8 @@
         "name": "เชียงใหม่ เขต 3",
         "code3d": "503",
         "region_id": "6",
-        "inspection_id": "15",
+        "inspection_area_id": "15",
         "address": "177 ถนนโชตนา หมู่ที่ 12",
-        "subdistrict_id": "",
         "district_id": "528",
         "province_id": "39",
         "zip_code": "50110",
@@ -2643,7 +2517,7 @@
         "num_person": "0",
         "website": "www.cmarea3.go.th",
         "latitude": "19.8458389",
-        "longtitude": "99.1728246"
+        "longitude": "99.1728246"
     },
     {
         "code": "1050040000",
@@ -2651,9 +2525,8 @@
         "name": "เชียงใหม่ เขต 4",
         "code3d": "504",
         "region_id": "6",
-        "inspection_id": "15",
+        "inspection_area_id": "15",
         "address": "134 หมู่ที่ 8 ถนนเชียงใหม่ - ฮอด",
-        "subdistrict_id": "",
         "district_id": "531",
         "province_id": "39",
         "zip_code": "50120",
@@ -2664,7 +2537,7 @@
         "num_person": "0",
         "website": "cmi4.go.th/web/",
         "latitude": "18.6464047",
-        "longtitude": "98.9029628"
+        "longitude": "98.9029628"
     },
     {
         "code": "1050050000",
@@ -2672,9 +2545,8 @@
         "name": "เชียงใหม่ เขต 5",
         "code3d": "505",
         "region_id": "6",
-        "inspection_id": "15",
+        "inspection_area_id": "15",
         "address": "404 หมู่ 10",
-        "subdistrict_id": "",
         "district_id": "535",
         "province_id": "39",
         "zip_code": "50240",
@@ -2685,7 +2557,7 @@
         "num_person": "0",
         "website": "",
         "latitude": "18.1847751",
-        "longtitude": "98.6120092"
+        "longitude": "98.6120092"
     },
     {
         "code": "1050060000",
@@ -2693,9 +2565,8 @@
         "name": "เชียงใหม่ เขต 6",
         "code3d": "506",
         "region_id": "6",
-        "inspection_id": "15",
+        "inspection_area_id": "15",
         "address": "190 หมู่ 15",
-        "subdistrict_id": "",
         "district_id": "521",
         "province_id": "39",
         "zip_code": "50160",
@@ -2706,7 +2577,7 @@
         "num_person": "0",
         "website": "www.chiangmaiarea6.go.th/cma6/",
         "latitude": "18.4617218",
-        "longtitude": "98.6730598"
+        "longitude": "98.6730598"
     },
     {
         "code": "1050110000",
@@ -2714,9 +2585,8 @@
         "name": "เชียงใหม่",
         "code3d": "508",
         "region_id": "6",
-        "inspection_id": "15",
+        "inspection_area_id": "15",
         "address": "อาคารอำนวยการ ชั้น 4,5 ศาลากลางจังหวัดเชียงใหม่",
-        "subdistrict_id": "",
         "district_id": "520",
         "province_id": "39",
         "zip_code": "50300",
@@ -2727,7 +2597,7 @@
         "num_person": "0",
         "website": "www.secondarycm.go.th/web",
         "latitude": "18.8375973",
-        "longtitude": "98.9713529"
+        "longitude": "98.9713529"
     },
     {
         "code": "1051010000",
@@ -2735,9 +2605,8 @@
         "name": "ลำพูน เขต 1",
         "code3d": "511",
         "region_id": "6",
-        "inspection_id": "15",
+        "inspection_area_id": "15",
         "address": "65/2 หมู่ 4 ถนนลำพูน-ป่าซาง",
-        "subdistrict_id": "",
         "district_id": "545",
         "province_id": "40",
         "zip_code": "51000",
@@ -2748,7 +2617,7 @@
         "num_person": "0",
         "website": "http://lamphun1.go.th",
         "latitude": "18.5480334",
-        "longtitude": "98.9708017"
+        "longitude": "98.9708017"
     },
     {
         "code": "1051020000",
@@ -2756,9 +2625,8 @@
         "name": "ลำพูน เขต 2",
         "code3d": "512",
         "region_id": "6",
-        "inspection_id": "15",
+        "inspection_area_id": "15",
         "address": "165 หมู่ 6 บ้านดอยก้อม",
-        "subdistrict_id": "",
         "district_id": "547",
         "province_id": "40",
         "zip_code": "51130",
@@ -2769,7 +2637,7 @@
         "num_person": "0",
         "website": "www.lp2.go.th",
         "latitude": "18.319198",
-        "longtitude": "98.816094"
+        "longitude": "98.816094"
     },
     {
         "code": "1052010000",
@@ -2777,9 +2645,8 @@
         "name": "ลำปาง เขต 1",
         "code3d": "521",
         "region_id": "6",
-        "inspection_id": "15",
+        "inspection_area_id": "15",
         "address": "หมู่ที่ 12",
-        "subdistrict_id": "",
         "district_id": "553",
         "province_id": "41",
         "zip_code": "52000",
@@ -2790,7 +2657,7 @@
         "num_person": "0",
         "website": "http://lpg1.go.th",
         "latitude": "18.3432421",
-        "longtitude": "99.5424055"
+        "longitude": "99.5424055"
     },
     {
         "code": "1052020000",
@@ -2798,9 +2665,8 @@
         "name": "ลำปาง เขต 2",
         "code3d": "522",
         "region_id": "6",
-        "inspection_id": "15",
+        "inspection_area_id": "15",
         "address": "376 หมู่ 3 ถนนพหลโยธิน",
-        "subdistrict_id": "",
         "district_id": "555",
         "province_id": "41",
         "zip_code": "52130",
@@ -2811,7 +2677,7 @@
         "num_person": "0",
         "website": "http://lpg2.obec.go.th",
         "latitude": "18.1979495",
-        "longtitude": "99.4026666"
+        "longitude": "99.4026666"
     },
     {
         "code": "1052030000",
@@ -2819,9 +2685,8 @@
         "name": "ลำปาง เขต 3",
         "code3d": "523",
         "region_id": "6",
-        "inspection_id": "15",
+        "inspection_area_id": "15",
         "address": "359 หมู่ 1 ถนนวิเชตวัฒนา",
-        "subdistrict_id": "",
         "district_id": "558",
         "province_id": "41",
         "zip_code": "52120",
@@ -2832,7 +2697,7 @@
         "num_person": "0",
         "website": "www.lpg3.go.th",
         "latitude": "18.7026803",
-        "longtitude": "99.5673967"
+        "longitude": "99.5673967"
     },
     {
         "code": "1052110000",
@@ -2840,9 +2705,8 @@
         "name": "ลำปาง-ลำพูน",
         "code3d": "528",
         "region_id": "6",
-        "inspection_id": "15",
+        "inspection_area_id": "15",
         "address": "409/1 ถนนพระเจ้าทันใจ",
-        "subdistrict_id": "",
         "district_id": "553",
         "province_id": "41",
         "zip_code": "52000",
@@ -2853,7 +2717,7 @@
         "num_person": "0",
         "website": "www.sesalpglpn.go.th",
         "latitude": "18.3092561",
-        "longtitude": "99.4969424"
+        "longitude": "99.4969424"
     },
     {
         "code": "1053010000",
@@ -2861,9 +2725,8 @@
         "name": "อุตรดิตถ์ เขต 1",
         "code3d": "531",
         "region_id": "6",
-        "inspection_id": "17",
+        "inspection_area_id": "17",
         "address": "91/7 หมู่ 3 ถนนเฉลิมราชย์พาดวารี",
-        "subdistrict_id": "",
         "district_id": "566",
         "province_id": "42",
         "zip_code": "53000",
@@ -2874,7 +2737,7 @@
         "num_person": "0",
         "website": "www.utdone.net",
         "latitude": "17.6091289",
-        "longtitude": "100.1133193"
+        "longitude": "100.1133193"
     },
     {
         "code": "1053020000",
@@ -2882,9 +2745,8 @@
         "name": "อุตรดิตถ์ เขต 2",
         "code3d": "532",
         "region_id": "6",
-        "inspection_id": "17",
+        "inspection_area_id": "17",
         "address": "12 หมู่ 4",
-        "subdistrict_id": "",
         "district_id": "569",
         "province_id": "42",
         "zip_code": "53110",
@@ -2895,7 +2757,7 @@
         "num_person": "0",
         "website": "www.utd2.go.th",
         "latitude": "17.7248582",
-        "longtitude": "100.6818939"
+        "longitude": "100.6818939"
     },
     {
         "code": "1054010000",
@@ -2903,9 +2765,8 @@
         "name": "แพร่ เขต 1",
         "code3d": "541",
         "region_id": "6",
-        "inspection_id": "16",
+        "inspection_area_id": "16",
         "address": "52 หมู่ที่ 6 ถนนยันตรกิจโกศล",
-        "subdistrict_id": "",
         "district_id": "575",
         "province_id": "43",
         "zip_code": "54000",
@@ -2916,7 +2777,7 @@
         "num_person": "0",
         "website": "www.phrae1.go.th",
         "latitude": "18.1534077",
-        "longtitude": "100.1594705"
+        "longitude": "100.1594705"
     },
     {
         "code": "1054020000",
@@ -2924,9 +2785,8 @@
         "name": "แพร่ เขต 2",
         "code3d": "542",
         "region_id": "6",
-        "inspection_id": "16",
+        "inspection_area_id": "16",
         "address": "234 หมู่ที่ 14",
-        "subdistrict_id": "",
         "district_id": "577",
         "province_id": "43",
         "zip_code": "54150",
@@ -2937,7 +2797,7 @@
         "num_person": "0",
         "website": "www.ictphrae2.com",
         "latitude": "18.0835106",
-        "longtitude": "699.845559"
+        "longitude": "699.845559"
     },
     {
         "code": "1054110000",
@@ -2945,9 +2805,8 @@
         "name": "แพร่",
         "code3d": "548",
         "region_id": "6",
-        "inspection_id": "16",
+        "inspection_area_id": "16",
         "address": "2 ถนนแพร่ - ลอง",
-        "subdistrict_id": "",
         "district_id": "575",
         "province_id": "43",
         "zip_code": "54000",
@@ -2958,7 +2817,7 @@
         "num_person": "0",
         "website": "sesaphrae.sesa37.go.th",
         "latitude": "18.1361045",
-        "longtitude": "100.1336593"
+        "longitude": "100.1336593"
     },
     {
         "code": "1055010000",
@@ -2966,9 +2825,8 @@
         "name": "น่าน เขต 1",
         "code3d": "551",
         "region_id": "6",
-        "inspection_id": "16",
+        "inspection_area_id": "16",
         "address": "114 หมู่ 6 บ้านพญาวัด ถนนยันตรกิจโกศล",
-        "subdistrict_id": "",
         "district_id": "583",
         "province_id": "44",
         "zip_code": "55000",
@@ -2979,7 +2837,7 @@
         "num_person": "0",
         "website": "www.ednan1.go.th",
         "latitude": "18.7679318",
-        "longtitude": "100.7633684"
+        "longitude": "100.7633684"
     },
     {
         "code": "1055020000",
@@ -2987,9 +2845,8 @@
         "name": "น่าน เขต 2",
         "code3d": "552",
         "region_id": "6",
-        "inspection_id": "16",
+        "inspection_area_id": "16",
         "address": "418 หมู่ 8",
-        "subdistrict_id": "",
         "district_id": "587",
         "province_id": "44",
         "zip_code": "55120",
@@ -3000,7 +2857,7 @@
         "num_person": "0",
         "website": "www.nan2.go.th",
         "latitude": "19.1808475",
-        "longtitude": "100.9077169"
+        "longitude": "100.9077169"
     },
     {
         "code": "1055110000",
@@ -3008,9 +2865,8 @@
         "name": "น่าน",
         "code3d": "558",
         "region_id": "6",
-        "inspection_id": "16",
+        "inspection_area_id": "16",
         "address": "281 หมู่ที่ 2",
-        "subdistrict_id": "",
         "district_id": "596",
         "province_id": "44",
         "zip_code": "",
@@ -3021,7 +2877,7 @@
         "num_person": "0",
         "website": "www.spmnan.go.th",
         "latitude": "18.7688229",
-        "longtitude": "100.7818955"
+        "longitude": "100.7818955"
     },
     {
         "code": "1056010000",
@@ -3029,9 +2885,8 @@
         "name": "พะเยา เขต 1",
         "code3d": "561",
         "region_id": "6",
-        "inspection_id": "16",
+        "inspection_area_id": "16",
         "address": "598 หมู่ 11 ถนนสนามกีฬา",
-        "subdistrict_id": "",
         "district_id": "598",
         "province_id": "45",
         "zip_code": "56000",
@@ -3042,7 +2897,7 @@
         "num_person": "0",
         "website": "",
         "latitude": "19.2048612",
-        "longtitude": "99.8909269"
+        "longitude": "99.8909269"
     },
     {
         "code": "1056020000",
@@ -3050,9 +2905,8 @@
         "name": "พะเยา เขต 2",
         "code3d": "562",
         "region_id": "6",
-        "inspection_id": "16",
+        "inspection_area_id": "16",
         "address": "หมู่ที่ 17",
-        "subdistrict_id": "",
         "district_id": "599",
         "province_id": "45",
         "zip_code": "56150",
@@ -3063,7 +2917,7 @@
         "num_person": "0",
         "website": "www.phayao2.go.th/th",
         "latitude": "19.3113642",
-        "longtitude": "100.1678313"
+        "longitude": "100.1678313"
     },
     {
         "code": "1056110000",
@@ -3071,9 +2925,8 @@
         "name": "พะเยา",
         "code3d": "568",
         "region_id": "6",
-        "inspection_id": "16",
+        "inspection_area_id": "16",
         "address": "23/26 ถนนประตูกลอง",
-        "subdistrict_id": "",
         "district_id": "598",
         "province_id": "45",
         "zip_code": "56000",
@@ -3084,7 +2937,7 @@
         "num_person": "0",
         "website": "www.sesapy.go.th",
         "latitude": "19.1732295",
-        "longtitude": "99.9016411"
+        "longitude": "99.9016411"
     },
     {
         "code": "1057010000",
@@ -3092,9 +2945,8 @@
         "name": "เชียงราย เขต 1",
         "code3d": "571",
         "region_id": "6",
-        "inspection_id": "16",
+        "inspection_area_id": "16",
         "address": "1036/36 ถนนสนามบิน",
-        "subdistrict_id": "",
         "district_id": "607",
         "province_id": "46",
         "zip_code": "57000",
@@ -3105,7 +2957,7 @@
         "num_person": "0",
         "website": "http://110.78.114.130/main01.php",
         "latitude": "19.9005137",
-        "longtitude": "99.8279824"
+        "longitude": "99.8279824"
     },
     {
         "code": "1057020000",
@@ -3113,9 +2965,8 @@
         "name": "เชียงราย เขต 2",
         "code3d": "572",
         "region_id": "6",
-        "inspection_id": "16",
+        "inspection_area_id": "16",
         "address": "361 หมู่ 3 บ้านร่องศาลา ถนนพหลโยธิน",
-        "subdistrict_id": "",
         "district_id": "622",
         "province_id": "46",
         "zip_code": "57250",
@@ -3126,7 +2977,7 @@
         "num_person": "0",
         "website": "www.cri2.go.th",
         "latitude": "19.7443551",
-        "longtitude": "99.7255886"
+        "longitude": "99.7255886"
     },
     {
         "code": "1057030000",
@@ -3134,9 +2985,8 @@
         "name": "เชียงราย เขต 3",
         "code3d": "573",
         "region_id": "6",
-        "inspection_id": "16",
+        "inspection_area_id": "16",
         "address": "บ้านศาลา หมู่ 8",
-        "subdistrict_id": "",
         "district_id": "613",
         "province_id": "46",
         "zip_code": "57110",
@@ -3147,7 +2997,7 @@
         "num_person": "0",
         "website": "cr3.go.th",
         "latitude": "20.1634521",
-        "longtitude": "99.8669127"
+        "longitude": "99.8669127"
     },
     {
         "code": "1057040000",
@@ -3155,9 +3005,8 @@
         "name": "เชียงราย เขต 4",
         "code3d": "574",
         "region_id": "6",
-        "inspection_id": "16",
+        "inspection_area_id": "16",
         "address": "17 หมู่ที่ 20",
-        "subdistrict_id": "",
         "district_id": "610",
         "province_id": "46",
         "zip_code": "57160",
@@ -3168,7 +3017,7 @@
         "num_person": "0",
         "website": "cri4@cri4.go.th",
         "latitude": "19.6878529",
-        "longtitude": "100.1851155"
+        "longitude": "100.1851155"
     },
     {
         "code": "1057110000",
@@ -3176,9 +3025,8 @@
         "name": "เชียงราย",
         "code3d": "578",
         "region_id": "6",
-        "inspection_id": "16",
+        "inspection_area_id": "16",
         "address": "1115/23 ไกรสรสิทธิ์",
-        "subdistrict_id": "",
         "district_id": "607",
         "province_id": "46",
         "zip_code": "57000",
@@ -3189,7 +3037,7 @@
         "num_person": "0",
         "website": "www.sesaocr.go.th",
         "latitude": "19.9158506",
-        "longtitude": "699.826224"
+        "longitude": "699.826224"
     },
     {
         "code": "1058010000",
@@ -3197,9 +3045,8 @@
         "name": "แม่ฮ่องสอน เขต 1",
         "code3d": "581",
         "region_id": "6",
-        "inspection_id": "15",
+        "inspection_area_id": "15",
         "address": "98 ถนนขุนลุมประพาส",
-        "subdistrict_id": "",
         "district_id": "625",
         "province_id": "47",
         "zip_code": "58000",
@@ -3210,7 +3057,7 @@
         "num_person": "0",
         "website": "www.mhs1.go.th/2021",
         "latitude": "19.2977851",
-        "longtitude": "97.9602948"
+        "longitude": "97.9602948"
     },
     {
         "code": "1058020000",
@@ -3218,9 +3065,8 @@
         "name": "แม่ฮ่องสอน เขต 2",
         "code3d": "582",
         "region_id": "6",
-        "inspection_id": "15",
+        "inspection_area_id": "15",
         "address": "178 ถนนเวียงใหม่",
-        "subdistrict_id": "",
         "district_id": "628",
         "province_id": "47",
         "zip_code": "58110",
@@ -3231,7 +3077,7 @@
         "num_person": "0",
         "website": "www1.mhs2.go.th",
         "latitude": "18.1589926",
-        "longtitude": "97.9140861"
+        "longitude": "97.9140861"
     },
     {
         "code": "1058110000",
@@ -3239,9 +3085,8 @@
         "name": "แม่ฮ่องสอน",
         "code3d": "588",
         "region_id": "6",
-        "inspection_id": "15",
+        "inspection_area_id": "15",
         "address": "1/17 ถนนขุนลุมประพาส",
-        "subdistrict_id": "",
         "district_id": "625",
         "province_id": "47",
         "zip_code": "58000",
@@ -3252,7 +3097,7 @@
         "num_person": "0",
         "website": "",
         "latitude": "19.3113958",
-        "longtitude": "97.9641055"
+        "longitude": "97.9641055"
     },
     {
         "code": "1060010000",
@@ -3260,9 +3105,8 @@
         "name": "นครสวรรค์ เขต 1",
         "code3d": "601",
         "region_id": "6",
-        "inspection_id": "18",
+        "inspection_area_id": "18",
         "address": "347/1 ถนนสวรรค์วิถี",
-        "subdistrict_id": "",
         "district_id": "632",
         "province_id": "48",
         "zip_code": "60000",
@@ -3273,7 +3117,7 @@
         "num_person": "0",
         "website": "www.nsw1.go.th",
         "latitude": "15.6931447",
-        "longtitude": "100.1212228"
+        "longitude": "100.1212228"
     },
     {
         "code": "1060020000",
@@ -3281,9 +3125,8 @@
         "name": "นครสวรรค์ เขต 2",
         "code3d": "602",
         "region_id": "6",
-        "inspection_id": "18",
+        "inspection_area_id": "18",
         "address": "289/4 หมู่ 5",
-        "subdistrict_id": "",
         "district_id": "642",
         "province_id": "48",
         "zip_code": "60150",
@@ -3294,7 +3137,7 @@
         "num_person": "0",
         "website": "www.nsw2.go.th",
         "latitude": "15.7643335",
-        "longtitude": "599.798589"
+        "longitude": "599.798589"
     },
     {
         "code": "1060030000",
@@ -3302,9 +3145,8 @@
         "name": "นครสวรรค์ เขต 3",
         "code3d": "603",
         "region_id": "6",
-        "inspection_id": "18",
+        "inspection_area_id": "18",
         "address": "504 หมู่ที่ 3",
-        "subdistrict_id": "",
         "district_id": "640",
         "province_id": "48",
         "zip_code": "60220",
@@ -3315,7 +3157,7 @@
         "num_person": "0",
         "website": "www.nsw3.go.th",
         "latitude": "15.595954",
-        "longtitude": "100.641444"
+        "longitude": "100.641444"
     },
     {
         "code": "1060110000",
@@ -3323,9 +3165,8 @@
         "name": "นครสวรรค์",
         "code3d": "608",
         "region_id": "6",
-        "inspection_id": "18",
+        "inspection_area_id": "18",
         "address": "105/30 ม.10",
-        "subdistrict_id": "",
         "district_id": "632",
         "province_id": "48",
         "zip_code": "60000",
@@ -3336,7 +3177,7 @@
         "num_person": "0",
         "website": "www.spmnw.obec.go.th",
         "latitude": "15.7214441",
-        "longtitude": "100.1182099"
+        "longitude": "100.1182099"
     },
     {
         "code": "1061010000",
@@ -3344,9 +3185,8 @@
         "name": "อุทัยธานี เขต 1",
         "code3d": "611",
         "region_id": "1",
-        "inspection_id": "2",
+        "inspection_area_id": "2",
         "address": "87 หมู่ที่ 2",
-        "subdistrict_id": "",
         "district_id": "647",
         "province_id": "49",
         "zip_code": "61000",
@@ -3357,7 +3197,7 @@
         "num_person": "0",
         "website": "www.utt1.go.th",
         "latitude": "15.3921379",
-        "longtitude": "100.0227608"
+        "longitude": "100.0227608"
     },
     {
         "code": "1061020000",
@@ -3365,9 +3205,8 @@
         "name": "อุทัยธานี เขต 2",
         "code3d": "612",
         "region_id": "1",
-        "inspection_id": "2",
+        "inspection_area_id": "2",
         "address": "505 หมู่ 5",
-        "subdistrict_id": "",
         "district_id": "647",
         "province_id": "49",
         "zip_code": "61110",
@@ -3378,7 +3217,7 @@
         "num_person": "0",
         "website": "www.utt2.go.th",
         "latitude": "15.3895809",
-        "longtitude": "99.8429924"
+        "longitude": "99.8429924"
     },
     {
         "code": "1061110000",
@@ -3386,9 +3225,8 @@
         "name": "อุทัยธานี-ชัยนาท",
         "code3d": "618",
         "region_id": "1",
-        "inspection_id": "2",
+        "inspection_area_id": "2",
         "address": "268 ถนนมณรัตน์",
-        "subdistrict_id": "",
         "district_id": "647",
         "province_id": "49",
         "zip_code": "61000",
@@ -3399,7 +3237,7 @@
         "num_person": "0",
         "website": "spmuncn.obec.go.th",
         "latitude": "15.3772906",
-        "longtitude": "100.0194139"
+        "longitude": "100.0194139"
     },
     {
         "code": "1062010000",
@@ -3407,9 +3245,8 @@
         "name": "กำแพงเพชร เขต 1",
         "code3d": "621",
         "region_id": "6",
-        "inspection_id": "18",
+        "inspection_area_id": "18",
         "address": "328 หมู่ 7",
-        "subdistrict_id": "",
         "district_id": "655",
         "province_id": "50",
         "zip_code": "62000",
@@ -3420,7 +3257,7 @@
         "num_person": "0",
         "website": "www.kpt1.go.th",
         "latitude": "16.555964",
-        "longtitude": "99.5180847"
+        "longitude": "99.5180847"
     },
     {
         "code": "1062020000",
@@ -3428,9 +3265,8 @@
         "name": "กำแพงเพชร เขต 2",
         "code3d": "622",
         "region_id": "6",
-        "inspection_id": "18",
+        "inspection_area_id": "18",
         "address": "299 หมู่ที่ 10",
-        "subdistrict_id": "",
         "district_id": "659",
         "province_id": "50",
         "zip_code": "62120",
@@ -3441,7 +3277,7 @@
         "num_person": "0",
         "website": "www.kpp2.go.th",
         "latitude": "16.2174896",
-        "longtitude": "99.7021119"
+        "longitude": "99.7021119"
     },
     {
         "code": "1062110000",
@@ -3449,9 +3285,8 @@
         "name": "กำแพงเพชร",
         "code3d": "628",
         "region_id": "6",
-        "inspection_id": "18",
+        "inspection_area_id": "18",
         "address": "41 ถนนเทศา 1",
-        "subdistrict_id": "",
         "district_id": "655",
         "province_id": "50",
         "zip_code": "62000",
@@ -3462,7 +3297,7 @@
         "num_person": "0",
         "website": "www.sesaokpp.go.th",
         "latitude": "16.4791155",
-        "longtitude": "99.5256655"
+        "longitude": "99.5256655"
     },
     {
         "code": "1063010000",
@@ -3470,9 +3305,8 @@
         "name": "ตาก เขต 1",
         "code3d": "631",
         "region_id": "6",
-        "inspection_id": "17",
+        "inspection_area_id": "17",
         "address": "10/1 ถนนพหลโยธิน",
-        "subdistrict_id": "",
         "district_id": "666",
         "province_id": "51",
         "zip_code": "63000",
@@ -3483,7 +3317,7 @@
         "num_person": "0",
         "website": "www.takesa1.go.th",
         "latitude": "16.8851356",
-        "longtitude": "99.1239554"
+        "longitude": "99.1239554"
     },
     {
         "code": "1063020000",
@@ -3491,9 +3325,8 @@
         "name": "ตาก เขต 2",
         "code3d": "632",
         "region_id": "6",
-        "inspection_id": "17",
+        "inspection_area_id": "17",
         "address": "35/4 ถนนประสาทวิถี",
-        "subdistrict_id": "",
         "district_id": "671",
         "province_id": "51",
         "zip_code": "63110",
@@ -3504,7 +3337,7 @@
         "num_person": "0",
         "website": "www.takesa2.go.th",
         "latitude": "16.7141042",
-        "longtitude": "98.5772478"
+        "longitude": "98.5772478"
     },
     {
         "code": "1063110000",
@@ -3512,9 +3345,8 @@
         "name": "ตาก",
         "code3d": "638",
         "region_id": "6",
-        "inspection_id": "17",
+        "inspection_area_id": "17",
         "address": "4 ถนนท่าเรือ",
-        "subdistrict_id": "",
         "district_id": "666",
         "province_id": "51",
         "zip_code": "63000",
@@ -3525,7 +3357,7 @@
         "num_person": "0",
         "website": "www.secondarytak.go.th",
         "latitude": "16.8691667",
-        "longtitude": "99.1314655"
+        "longitude": "99.1314655"
     },
     {
         "code": "1064010000",
@@ -3533,9 +3365,8 @@
         "name": "สุโขทัย เขต 1",
         "code3d": "641",
         "region_id": "6",
-        "inspection_id": "17",
+        "inspection_area_id": "17",
         "address": "37 หมู่ 1 ถนนจรดวิถีถ่อง",
-        "subdistrict_id": "",
         "district_id": "675",
         "province_id": "52",
         "zip_code": "64000",
@@ -3546,7 +3377,7 @@
         "num_person": "0",
         "website": "www.sukhothai1.go.th",
         "latitude": "17.0098378",
-        "longtitude": "99.7900596"
+        "longitude": "99.7900596"
     },
     {
         "code": "1064020000",
@@ -3554,9 +3385,8 @@
         "name": "สุโขทัย เขต 2",
         "code3d": "642",
         "region_id": "6",
-        "inspection_id": "17",
+        "inspection_area_id": "17",
         "address": "126/1 ถนนจรดวิถีถ่อง",
-        "subdistrict_id": "",
         "district_id": "681",
         "province_id": "52",
         "zip_code": "64110",
@@ -3567,7 +3397,7 @@
         "num_person": "0",
         "website": "www.sukhothai2.go.th",
         "latitude": "17.3071134",
-        "longtitude": "99.8313774"
+        "longitude": "99.8313774"
     },
     {
         "code": "1064110000",
@@ -3575,9 +3405,8 @@
         "name": "สุโขทัย",
         "code3d": "648",
         "region_id": "6",
-        "inspection_id": "17",
+        "inspection_area_id": "17",
         "address": "138 ถนนสิงหวัฒน์",
-        "subdistrict_id": "",
         "district_id": "675",
         "province_id": "52",
         "zip_code": "64000",
@@ -3588,7 +3417,7 @@
         "num_person": "0",
         "website": "www.sesaoskt.go.th",
         "latitude": "17.0094603",
-        "longtitude": "99.8308804"
+        "longitude": "99.8308804"
     },
     {
         "code": "1065010000",
@@ -3596,9 +3425,8 @@
         "name": "พิษณุโลก เขต 1",
         "code3d": "651",
         "region_id": "6",
-        "inspection_id": "17",
+        "inspection_area_id": "17",
         "address": "ถนนพุทธบูชา",
-        "subdistrict_id": "",
         "district_id": "684",
         "province_id": "53",
         "zip_code": "65000",
@@ -3609,7 +3437,7 @@
         "num_person": "0",
         "website": "new.phitsanulok1.go.th",
         "latitude": "16.8210213",
-        "longtitude": "100.2600023"
+        "longitude": "100.2600023"
     },
     {
         "code": "1065020000",
@@ -3617,9 +3445,8 @@
         "name": "พิษณุโลก เขต 2",
         "code3d": "652",
         "region_id": "6",
-        "inspection_id": "17",
+        "inspection_area_id": "17",
         "address": "หมู่ 3",
-        "subdistrict_id": "",
         "district_id": "691",
         "province_id": "53",
         "zip_code": "65130",
@@ -3630,7 +3457,7 @@
         "num_person": "0",
         "website": "www.phitsanulok2.go.th",
         "latitude": "16.7831428",
-        "longtitude": "100.436319"
+        "longitude": "100.436319"
     },
     {
         "code": "1065030000",
@@ -3638,9 +3465,8 @@
         "name": "พิษณุโลก เขต 3",
         "code3d": "653",
         "region_id": "6",
-        "inspection_id": "17",
+        "inspection_area_id": "17",
         "address": "889 หมู่ 6",
-        "subdistrict_id": "",
         "district_id": "690",
         "province_id": "53",
         "zip_code": "65160",
@@ -3651,7 +3477,7 @@
         "num_person": "0",
         "website": "www.phitsanulok3.go.th",
         "latitude": "16.9513585",
-        "longtitude": "100.3423097"
+        "longitude": "100.3423097"
     },
     {
         "code": "1065110000",
@@ -3659,9 +3485,8 @@
         "name": "พิษณุโลก-อุตรดิตถ์",
         "code3d": "658",
         "region_id": "6",
-        "inspection_id": "17",
+        "inspection_area_id": "17",
         "address": "ถนนเลี่ยงเมืองพิษณุโลก - สุโขทัย",
-        "subdistrict_id": "",
         "district_id": "684",
         "province_id": "53",
         "zip_code": "65000",
@@ -3672,7 +3497,7 @@
         "num_person": "0",
         "website": "sec-plkutt.go.th",
         "latitude": "16.8031333",
-        "longtitude": "100.2012542"
+        "longitude": "100.2012542"
     },
     {
         "code": "1066010000",
@@ -3680,9 +3505,8 @@
         "name": "พิจิตร เขต 1",
         "code3d": "661",
         "region_id": "6",
-        "inspection_id": "18",
+        "inspection_area_id": "18",
         "address": "31/26 ถนนคลองคะเชนทร์",
-        "subdistrict_id": "",
         "district_id": "693",
         "province_id": "54",
         "zip_code": "66000",
@@ -3693,7 +3517,7 @@
         "num_person": "0",
         "website": "www.phichit1.go.th",
         "latitude": "16.4439096",
-        "longtitude": "100.3267917"
+        "longitude": "100.3267917"
     },
     {
         "code": "1066020000",
@@ -3701,9 +3525,8 @@
         "name": "พิจิตร เขต 2",
         "code3d": "662",
         "region_id": "6",
-        "inspection_id": "18",
+        "inspection_area_id": "18",
         "address": "390 หมู่ 3 ถนน ตะพานหิน - บางมูลนาท",
-        "subdistrict_id": "",
         "district_id": "696",
         "province_id": "54",
         "zip_code": "66110",
@@ -3714,7 +3537,7 @@
         "num_person": "0",
         "website": "site.phichit2.go.th",
         "latitude": "16.2161119",
-        "longtitude": "100.4091749"
+        "longitude": "100.4091749"
     },
     {
         "code": "1066110000",
@@ -3722,9 +3545,8 @@
         "name": "พิจิตร",
         "code3d": "668",
         "region_id": "6",
-        "inspection_id": "18",
+        "inspection_area_id": "18",
         "address": "31/26 ถนนคลองคะเชนทร์",
-        "subdistrict_id": "",
         "district_id": "693",
         "province_id": "54",
         "zip_code": "66000",
@@ -3735,7 +3557,7 @@
         "num_person": "0",
         "website": "www.sesaop.go.th",
         "latitude": "16.4432579",
-        "longtitude": "100.3262317"
+        "longitude": "100.3262317"
     },
     {
         "code": "1067010000",
@@ -3743,9 +3565,8 @@
         "name": "เพชรบูรณ์ เขต 1",
         "code3d": "671",
         "region_id": "6",
-        "inspection_id": "17",
+        "inspection_area_id": "17",
         "address": "126 หมู่ 11",
-        "subdistrict_id": "",
         "district_id": "705",
         "province_id": "55",
         "zip_code": "67000",
@@ -3756,7 +3577,7 @@
         "num_person": "0",
         "website": "www.phetchabun1.go.th",
         "latitude": "16.4494486",
-        "longtitude": "101.1523201"
+        "longitude": "101.1523201"
     },
     {
         "code": "1067020000",
@@ -3764,9 +3585,8 @@
         "name": "เพชรบูรณ์ เขต 2",
         "code3d": "672",
         "region_id": "6",
-        "inspection_id": "17",
+        "inspection_area_id": "17",
         "address": "158/1 หมู่ 1",
-        "subdistrict_id": "",
         "district_id": "707",
         "province_id": "55",
         "zip_code": "67110",
@@ -3777,7 +3597,7 @@
         "num_person": "0",
         "website": "www.phetchabun2.go.th",
         "latitude": "16.8071191",
-        "longtitude": "101.2486742"
+        "longitude": "101.2486742"
     },
     {
         "code": "1067030000",
@@ -3785,9 +3605,8 @@
         "name": "เพชรบูรณ์ เขต 3",
         "code3d": "673",
         "region_id": "6",
-        "inspection_id": "17",
+        "inspection_area_id": "17",
         "address": "54/2 หมู่ 4",
-        "subdistrict_id": "",
         "district_id": "712",
         "province_id": "55",
         "zip_code": "67160",
@@ -3798,7 +3617,7 @@
         "num_person": "0",
         "website": "www.pbn3.go.th",
         "latitude": "15.827312",
-        "longtitude": "01.0093485"
+        "longitude": "01.0093485"
     },
     {
         "code": "1067110000",
@@ -3806,9 +3625,8 @@
         "name": "เพชรบูรณ์",
         "code3d": "678",
         "region_id": "6",
-        "inspection_id": "17",
+        "inspection_area_id": "17",
         "address": "151 หมู่ 9",
-        "subdistrict_id": "",
         "district_id": "705",
         "province_id": "55",
         "zip_code": "",
@@ -3819,7 +3637,7 @@
         "num_person": "0",
         "website": "www.sec40.go.th",
         "latitude": "16.3244065",
-        "longtitude": "101.1235639"
+        "longitude": "101.1235639"
     },
     {
         "code": "1070010000",
@@ -3827,9 +3645,8 @@
         "name": "ราชบุรี เขต 1",
         "code3d": "701",
         "region_id": "1",
-        "inspection_id": "3",
+        "inspection_area_id": "3",
         "address": "หมู่ 10 ถนนเสือป่า",
-        "subdistrict_id": "",
         "district_id": "716",
         "province_id": "56",
         "zip_code": "70000",
@@ -3840,7 +3657,7 @@
         "num_person": "0",
         "website": "www.ratchaburi1.org",
         "latitude": "13.5223408",
-        "longtitude": "99.8097084"
+        "longitude": "99.8097084"
     },
     {
         "code": "1070020000",
@@ -3848,9 +3665,8 @@
         "name": "ราชบุรี เขต 2",
         "code3d": "702",
         "region_id": "1",
-        "inspection_id": "3",
+        "inspection_area_id": "3",
         "address": "56 หมู่ 4",
-        "subdistrict_id": "",
         "district_id": "722",
         "province_id": "56",
         "zip_code": "70120",
@@ -3861,7 +3677,7 @@
         "num_person": "0",
         "website": "www.rb2.go.th",
         "latitude": "13.7036988",
-        "longtitude": "99.8737804"
+        "longitude": "99.8737804"
     },
     {
         "code": "1070110000",
@@ -3869,9 +3685,8 @@
         "name": "ราชบุรี",
         "code3d": "708",
         "region_id": "1",
-        "inspection_id": "3",
+        "inspection_area_id": "3",
         "address": "421 อาคาร 6 ชั้น 6 โรงเรียนราชโบริกานุเคราะห์ ถนนเสือป่า",
-        "subdistrict_id": "",
         "district_id": "716",
         "province_id": "56",
         "zip_code": "70000",
@@ -3882,7 +3697,7 @@
         "num_person": "0",
         "website": "www.sesao8.go.th/sesao/",
         "latitude": "13.530012",
-        "longtitude": "99.8107818"
+        "longitude": "99.8107818"
     },
     {
         "code": "1071010000",
@@ -3890,9 +3705,8 @@
         "name": "กาญจนบุรี เขต 1",
         "code3d": "711",
         "region_id": "1",
-        "inspection_id": "3",
+        "inspection_area_id": "3",
         "address": "8/6 หมู่ที่ 12",
-        "subdistrict_id": "",
         "district_id": "726",
         "province_id": "57",
         "zip_code": "71000",
@@ -3903,7 +3717,7 @@
         "num_person": "0",
         "website": "www.kan1.go.th",
         "latitude": "14.0012763",
-        "longtitude": "99.5444116"
+        "longitude": "99.5444116"
     },
     {
         "code": "1071020000",
@@ -3911,9 +3725,8 @@
         "name": "กาญจนบุรี เขต 2",
         "code3d": "712",
         "region_id": "1",
-        "inspection_id": "3",
+        "inspection_area_id": "3",
         "address": "",
-        "subdistrict_id": "",
         "district_id": "734",
         "province_id": "57",
         "zip_code": "71140",
@@ -3924,7 +3737,7 @@
         "num_person": "0",
         "website": "www.kan2.go.th",
         "latitude": "14.1085616",
-        "longtitude": "99.6660828"
+        "longitude": "99.6660828"
     },
     {
         "code": "1071030000",
@@ -3932,9 +3745,8 @@
         "name": "กาญจนบุรี เขต 3",
         "code3d": "713",
         "region_id": "1",
-        "inspection_id": "3",
+        "inspection_area_id": "3",
         "address": "777 หมู่ 1",
-        "subdistrict_id": "",
         "district_id": "727",
         "province_id": "57",
         "zip_code": "71150",
@@ -3945,7 +3757,7 @@
         "num_person": "0",
         "website": "www.kaned3.go.th",
         "latitude": "14.1167078",
-        "longtitude": "99.1435165"
+        "longitude": "99.1435165"
     },
     {
         "code": "1071040000",
@@ -3953,9 +3765,8 @@
         "name": "กาญจนบุรี เขต 4",
         "code3d": "714",
         "region_id": "1",
-        "inspection_id": "3",
+        "inspection_area_id": "3",
         "address": "123/6 หมู่ที่ 1",
-        "subdistrict_id": "",
         "district_id": "728",
         "province_id": "57",
         "zip_code": "71160",
@@ -3966,7 +3777,7 @@
         "num_person": "0",
         "website": "www.kan4.go.th",
         "latitude": "14.3120035",
-        "longtitude": "99.5287502"
+        "longitude": "99.5287502"
     },
     {
         "code": "1071110000",
@@ -3974,9 +3785,8 @@
         "name": "กาญจนบุรี",
         "code3d": "718",
         "region_id": "1",
-        "inspection_id": "3",
+        "inspection_area_id": "3",
         "address": "65 ถนนหลักเมือง",
-        "subdistrict_id": "",
         "district_id": "726",
         "province_id": "57",
         "zip_code": "71000",
@@ -3987,7 +3797,7 @@
         "num_person": "0",
         "website": "www.sesaok.go.th",
         "latitude": "14.0208753",
-        "longtitude": "399.531336"
+        "longitude": "399.531336"
     },
     {
         "code": "1072010000",
@@ -3995,9 +3805,8 @@
         "name": "สุพรรณบุรี เขต 1",
         "code3d": "721",
         "region_id": "1",
-        "inspection_id": "3",
+        "inspection_area_id": "3",
         "address": "249/1 ถนนมาลัยแมน",
-        "subdistrict_id": "",
         "district_id": "739",
         "province_id": "58",
         "zip_code": "72000",
@@ -4008,7 +3817,7 @@
         "num_person": "0",
         "website": "www.suphan1.go.th",
         "latitude": "14.4743261",
-        "longtitude": "100.0969835"
+        "longitude": "100.0969835"
     },
     {
         "code": "1072020000",
@@ -4016,9 +3825,8 @@
         "name": "สุพรรณบุรี เขต 2",
         "code3d": "722",
         "region_id": "1",
-        "inspection_id": "3",
+        "inspection_area_id": "3",
         "address": "หมู่ 4 ถนนมาลัยแมน",
-        "subdistrict_id": "",
         "district_id": "747",
         "province_id": "58",
         "zip_code": "72160",
@@ -4029,7 +3837,7 @@
         "num_person": "0",
         "website": "www.sp2.go.th",
         "latitude": "14.381075",
-        "longtitude": "99.9075782"
+        "longitude": "99.9075782"
     },
     {
         "code": "1072030000",
@@ -4037,9 +3845,8 @@
         "name": "สุพรรณบุรี เขต 3",
         "code3d": "723",
         "region_id": "1",
-        "inspection_id": "3",
+        "inspection_area_id": "3",
         "address": "121 หมู่ 1",
-        "subdistrict_id": "",
         "district_id": "740",
         "province_id": "58",
         "zip_code": "72120",
@@ -4050,7 +3857,7 @@
         "num_person": "0",
         "website": "www.spb3.go.th/spb3/index.php",
         "latitude": "14.8455695",
-        "longtitude": "100.0954302"
+        "longitude": "100.0954302"
     },
     {
         "code": "1072110000",
@@ -4058,9 +3865,8 @@
         "name": "สุพรรณบุรี",
         "code3d": "728",
         "region_id": "1",
-        "inspection_id": "3",
+        "inspection_area_id": "3",
         "address": "ถนนสุพรรณบุรี - ชัยนาท",
-        "subdistrict_id": "",
         "district_id": "739",
         "province_id": "58",
         "zip_code": "72000",
@@ -4071,7 +3877,7 @@
         "num_person": "0",
         "website": "www.mathayomspb.go.th",
         "latitude": "14.5142301",
-        "longtitude": "100.1299926"
+        "longitude": "100.1299926"
     },
     {
         "code": "1073010000",
@@ -4079,9 +3885,8 @@
         "name": "นครปฐม เขต 1",
         "code3d": "731",
         "region_id": "1",
-        "inspection_id": "3",
+        "inspection_area_id": "3",
         "address": "161/4 ถนนเพชรเกษม",
-        "subdistrict_id": "",
         "district_id": "749",
         "province_id": "59",
         "zip_code": "73000",
@@ -4092,7 +3897,7 @@
         "num_person": "0",
         "website": "www.nptedu.go.th",
         "latitude": "13.8139099",
-        "longtitude": "100.0987215"
+        "longitude": "100.0987215"
     },
     {
         "code": "1073020000",
@@ -4100,9 +3905,8 @@
         "name": "นครปฐม เขต 2",
         "code3d": "732",
         "region_id": "1",
-        "inspection_id": "3",
+        "inspection_area_id": "3",
         "address": "1 หมู่ 1",
-        "subdistrict_id": "",
         "district_id": "751",
         "province_id": "59",
         "zip_code": "73120",
@@ -4113,7 +3917,7 @@
         "num_person": "0",
         "website": "www.npt2.go.th",
         "latitude": "13.8006741",
-        "longtitude": "100.1876358"
+        "longitude": "100.1876358"
     },
     {
         "code": "1073110000",
@@ -4121,9 +3925,8 @@
         "name": "นครปฐม",
         "code3d": "738",
         "region_id": "1",
-        "inspection_id": "3",
+        "inspection_area_id": "3",
         "address": "50/1 หมู่ 6 (โรงเรียนแหลมบัววิทยา)",
-        "subdistrict_id": "",
         "district_id": "751",
         "province_id": "59",
         "zip_code": "73120",
@@ -4134,7 +3937,7 @@
         "num_person": "0",
         "website": "mathayomnpt.go.th",
         "latitude": "13.8668456",
-        "longtitude": "100.1474021"
+        "longitude": "100.1474021"
     },
     {
         "code": "1074010000",
@@ -4142,9 +3945,8 @@
         "name": "สมุทรสาคร",
         "code3d": "741",
         "region_id": "1",
-        "inspection_id": "4",
+        "inspection_area_id": "4",
         "address": "2/3 หมู่ 8",
-        "subdistrict_id": "",
         "district_id": "756",
         "province_id": "60",
         "zip_code": "74000",
@@ -4155,7 +3957,7 @@
         "num_person": "0",
         "website": "www.skn.go.th",
         "latitude": "13.574748",
-        "longtitude": "00.2735472"
+        "longitude": "00.2735472"
     },
     {
         "code": "1074110000",
@@ -4163,9 +3965,8 @@
         "name": "สมุทรสาคร-สมุทรสงคราม",
         "code3d": "748",
         "region_id": "1",
-        "inspection_id": "4",
+        "inspection_area_id": "4",
         "address": "1200 ถนนเอกชัย",
-        "subdistrict_id": "",
         "district_id": "756",
         "province_id": "60",
         "zip_code": "74000",
@@ -4176,7 +3977,7 @@
         "num_person": "0",
         "website": "www.sesaskss.go.th",
         "latitude": "13.5497221",
-        "longtitude": "100.264374"
+        "longitude": "100.264374"
     },
     {
         "code": "1075010000",
@@ -4184,9 +3985,8 @@
         "name": "สมุทรสงคราม",
         "code3d": "751",
         "region_id": "1",
-        "inspection_id": "4",
+        "inspection_area_id": "4",
         "address": "140 ถนนเอกชัย",
-        "subdistrict_id": "",
         "district_id": "759",
         "province_id": "61",
         "zip_code": "",
@@ -4197,7 +3997,7 @@
         "num_person": "0",
         "website": "www.skm.go.th",
         "latitude": "13.42246",
-        "longtitude": "0.0133819"
+        "longitude": "0.0133819"
     },
     {
         "code": "1076010000",
@@ -4205,9 +4005,8 @@
         "name": "เพชรบุรี เขต 1",
         "code3d": "761",
         "region_id": "1",
-        "inspection_id": "4",
+        "inspection_area_id": "4",
         "address": "264 หมู่ 2 ถนนคีรีรัถยา",
-        "subdistrict_id": "",
         "district_id": "762",
         "province_id": "62",
         "zip_code": "76000",
@@ -4218,7 +4017,7 @@
         "num_person": "0",
         "website": "www.petburi.go.th",
         "latitude": "13.121987",
-        "longtitude": "99.936232"
+        "longitude": "99.936232"
     },
     {
         "code": "1076020000",
@@ -4226,9 +4025,8 @@
         "name": "เพชรบุรี เขต 2",
         "code3d": "762",
         "region_id": "1",
-        "inspection_id": "4",
+        "inspection_area_id": "4",
         "address": "ถนนเพชรเกษม",
-        "subdistrict_id": "",
         "district_id": "766",
         "province_id": "62",
         "zip_code": "76130",
@@ -4239,7 +4037,7 @@
         "num_person": "0",
         "website": "",
         "latitude": "12.7967785",
-        "longtitude": "99.9749176"
+        "longitude": "99.9749176"
     },
     {
         "code": "1076110000",
@@ -4247,9 +4045,8 @@
         "name": "เพชรบุรี",
         "code3d": "768",
         "region_id": "1",
-        "inspection_id": "4",
+        "inspection_area_id": "4",
         "address": "300 ถนนดำเนินเกษม",
-        "subdistrict_id": "",
         "district_id": "762",
         "province_id": "62",
         "zip_code": "76000",
@@ -4260,7 +4057,7 @@
         "num_person": "0",
         "website": "sesa10.go.th",
         "latitude": "13.1018201",
-        "longtitude": "99.9470389"
+        "longitude": "99.9470389"
     },
     {
         "code": "1077010000",
@@ -4268,9 +4065,8 @@
         "name": "ประจวบคีรีขันธ์ เขต 1",
         "code3d": "771",
         "region_id": "1",
-        "inspection_id": "4",
+        "inspection_area_id": "4",
         "address": "239/1 หมู่ที่ 2 บ้านหนองหิน",
-        "subdistrict_id": "",
         "district_id": "770",
         "province_id": "63",
         "zip_code": "77000",
@@ -4281,7 +4077,7 @@
         "num_person": "0",
         "website": "www.pck1.go.th",
         "latitude": "11.7369207",
-        "longtitude": "99.7637994"
+        "longitude": "99.7637994"
     },
     {
         "code": "1077020000",
@@ -4289,9 +4085,8 @@
         "name": "ประจวบคีรีขันธ์ เขต 2",
         "code3d": "772",
         "region_id": "1",
-        "inspection_id": "4",
+        "inspection_area_id": "4",
         "address": "9/1 หมู่ที่ 12 ถนนเพชรเกษม",
-        "subdistrict_id": "",
         "district_id": "775",
         "province_id": "63",
         "zip_code": "77120",
@@ -4302,7 +4097,7 @@
         "num_person": "0",
         "website": "www.pkn2.go.th",
         "latitude": "12.3673131",
-        "longtitude": "99.8846372"
+        "longitude": "99.8846372"
     },
     {
         "code": "1077110000",
@@ -4310,9 +4105,8 @@
         "name": "ประจวบคีรีขันธ์",
         "code3d": "778",
         "region_id": "1",
-        "inspection_id": "4",
+        "inspection_area_id": "4",
         "address": "304 โรงเรียนประจวบวิทยาลัย ถนนสละชีพ",
-        "subdistrict_id": "",
         "district_id": "770",
         "province_id": "63",
         "zip_code": "77000",
@@ -4323,7 +4117,7 @@
         "num_person": "0",
         "website": "www.sesaopkn.go.th",
         "latitude": "11.7993889",
-        "longtitude": "99.7985645"
+        "longitude": "99.7985645"
     },
     {
         "code": "1080010000",
@@ -4331,9 +4125,8 @@
         "name": "นครศรีธรรมราช เขต 1",
         "code3d": "801",
         "region_id": "2",
-        "inspection_id": "5",
+        "inspection_area_id": "5",
         "address": "138 หมู่ 8 ถนนศรีธรรมราช",
-        "subdistrict_id": "",
         "district_id": "778",
         "province_id": "64",
         "zip_code": "80000",
@@ -4344,7 +4137,7 @@
         "num_person": "0",
         "website": "www.nst1.go.th",
         "latitude": "8.4164974",
-        "longtitude": "99.9620183"
+        "longitude": "99.9620183"
     },
     {
         "code": "1080020000",
@@ -4352,9 +4145,8 @@
         "name": "นครศรีธรรมราช เขต 2",
         "code3d": "802",
         "region_id": "2",
-        "inspection_id": "5",
+        "inspection_area_id": "5",
         "address": "101 ถนนชัยชุมพล",
-        "subdistrict_id": "",
         "district_id": "786",
         "province_id": "64",
         "zip_code": "80110",
@@ -4365,7 +4157,7 @@
         "num_person": "0",
         "website": "www.nst2.go.th",
         "latitude": "8.1649761",
-        "longtitude": "99.6802519"
+        "longitude": "99.6802519"
     },
     {
         "code": "1080030000",
@@ -4373,9 +4165,8 @@
         "name": "นครศรีธรรมราช เขต 3",
         "code3d": "803",
         "region_id": "2",
-        "inspection_id": "5",
+        "inspection_area_id": "5",
         "address": "99 หมู่ที่ 9 ถนนบ่อล้อ - เชียรใหญ่",
-        "subdistrict_id": "",
         "district_id": "783",
         "province_id": "64",
         "zip_code": "80190",
@@ -4386,7 +4177,7 @@
         "num_person": "0",
         "website": "www.nst3.go.th",
         "latitude": "8.1326758",
-        "longtitude": "00.1213871"
+        "longitude": "00.1213871"
     },
     {
         "code": "1080040000",
@@ -4394,9 +4185,8 @@
         "name": "นครศรีธรรมราช เขต 4",
         "code3d": "804",
         "region_id": "2",
-        "inspection_id": "5",
+        "inspection_area_id": "5",
         "address": "160/4 หมู่ที่ 1",
-        "subdistrict_id": "",
         "district_id": "785",
         "province_id": "64",
         "zip_code": "80160",
@@ -4407,7 +4197,7 @@
         "num_person": "0",
         "website": "www.pnst4.go.th",
         "latitude": "8.6672113",
-        "longtitude": "99.931361"
+        "longitude": "99.931361"
     },
     {
         "code": "1080110000",
@@ -4415,9 +4205,8 @@
         "name": "นครศรีธรรมราช",
         "code3d": "808",
         "region_id": "2",
-        "inspection_id": "5",
+        "inspection_area_id": "5",
         "address": "12/13 หมู่ที่ 2 ถนนกะโรม",
-        "subdistrict_id": "",
         "district_id": "778",
         "province_id": "64",
         "zip_code": "",
@@ -4428,7 +4217,7 @@
         "num_person": "0",
         "website": "www.sea12.go.th",
         "latitude": "8.4358519",
-        "longtitude": "99.9392771"
+        "longitude": "99.9392771"
     },
     {
         "code": "1081010000",
@@ -4436,9 +4225,8 @@
         "name": "กระบี่",
         "code3d": "811",
         "region_id": "2",
-        "inspection_id": "6",
+        "inspection_area_id": "6",
         "address": "ถนนกระบี่",
-        "subdistrict_id": "",
         "district_id": "801",
         "province_id": "65",
         "zip_code": "81000",
@@ -4449,7 +4237,7 @@
         "num_person": "0",
         "website": "www.krabiedu.net",
         "latitude": "8.0567074",
-        "longtitude": "98.914655"
+        "longitude": "98.914655"
     },
     {
         "code": "1082010000",
@@ -4457,9 +4245,8 @@
         "name": "พังงา",
         "code3d": "821",
         "region_id": "2",
-        "inspection_id": "6",
+        "inspection_area_id": "6",
         "address": "14 ซอยชุมนุมราษฎร์ ถนนเพชรเกษม",
-        "subdistrict_id": "",
         "district_id": "809",
         "province_id": "66",
         "zip_code": "82000",
@@ -4470,7 +4257,7 @@
         "num_person": "0",
         "website": "www.phangngaedarea.go.th",
         "latitude": "8.4609595",
-        "longtitude": "98.533126"
+        "longitude": "98.533126"
     },
     {
         "code": "1082110000",
@@ -4478,9 +4265,8 @@
         "name": "พังงา-ภูเก็ต-ระนอง",
         "code3d": "828",
         "region_id": "2",
-        "inspection_id": "6",
+        "inspection_area_id": "6",
         "address": "702 ถนนเพชรเกษม",
-        "subdistrict_id": "",
         "district_id": "809",
         "province_id": "66",
         "zip_code": "82000",
@@ -4491,7 +4277,7 @@
         "num_person": "0",
         "website": "",
         "latitude": "8.4386317",
-        "longtitude": "98.5182569"
+        "longitude": "98.5182569"
     },
     {
         "code": "1083010000",
@@ -4499,9 +4285,8 @@
         "name": "ภูเก็ต",
         "code3d": "831",
         "region_id": "2",
-        "inspection_id": "6",
+        "inspection_area_id": "6",
         "address": "4/4 ถนนแม่หลวน",
-        "subdistrict_id": "",
         "district_id": "817",
         "province_id": "67",
         "zip_code": "83000",
@@ -4512,7 +4297,7 @@
         "num_person": "0",
         "website": "phuketarea.go.th",
         "latitude": "7.889281",
-        "longtitude": "8.3848836"
+        "longitude": "8.3848836"
     },
     {
         "code": "1084010000",
@@ -4520,9 +4305,8 @@
         "name": "สุราษฎร์ธานี เขต 1",
         "code3d": "841",
         "region_id": "2",
-        "inspection_id": "5",
+        "inspection_area_id": "5",
         "address": "389/5 ถนนดอนนก",
-        "subdistrict_id": "",
         "district_id": "820",
         "province_id": "68",
         "zip_code": "84000",
@@ -4533,7 +4317,7 @@
         "num_person": "0",
         "website": "www.surat1.go.th",
         "latitude": "9.1328443",
-        "longtitude": "99.3468419"
+        "longitude": "99.3468419"
     },
     {
         "code": "1084020000",
@@ -4541,9 +4325,8 @@
         "name": "สุราษฎร์ธานี เขต 2",
         "code3d": "842",
         "region_id": "2",
-        "inspection_id": "5",
+        "inspection_area_id": "5",
         "address": "109/1 ถนนธราธิบดี",
-        "subdistrict_id": "",
         "district_id": "836",
         "province_id": "68",
         "zip_code": "84130",
@@ -4554,7 +4337,7 @@
         "num_person": "0",
         "website": "www.surat2.go.th",
         "latitude": "9.1081293",
-        "longtitude": "99.2340023"
+        "longitude": "99.2340023"
     },
     {
         "code": "1084030000",
@@ -4562,9 +4345,8 @@
         "name": "สุราษฎร์ธานี เขต 3",
         "code3d": "843",
         "region_id": "2",
-        "inspection_id": "5",
+        "inspection_area_id": "5",
         "address": "หมู่ที่ 1",
-        "subdistrict_id": "",
         "district_id": "834",
         "province_id": "68",
         "zip_code": "84190",
@@ -4575,7 +4357,7 @@
         "num_person": "0",
         "website": "www.surat3.go.th",
         "latitude": "8.6432058",
-        "longtitude": "99.3483034"
+        "longitude": "99.3483034"
     },
     {
         "code": "1084110000",
@@ -4583,9 +4365,8 @@
         "name": "สุราษฎร์ธานี-ชุมพร",
         "code3d": "848",
         "region_id": "2",
-        "inspection_id": "5",
+        "inspection_area_id": "5",
         "address": "261/29 ถนน",
-        "subdistrict_id": "",
         "district_id": "820",
         "province_id": "68",
         "zip_code": "84000",
@@ -4596,7 +4377,7 @@
         "num_person": "0",
         "website": "",
         "latitude": "9.1219765",
-        "longtitude": "99.3507858"
+        "longitude": "99.3507858"
     },
     {
         "code": "1085010000",
@@ -4604,9 +4385,8 @@
         "name": "ระนอง",
         "code3d": "851",
         "region_id": "2",
-        "inspection_id": "6",
+        "inspection_area_id": "6",
         "address": "2/10 หมู่ 3",
-        "subdistrict_id": "",
         "district_id": "839",
         "province_id": "69",
         "zip_code": "85000",
@@ -4617,7 +4397,7 @@
         "num_person": "0",
         "website": "www.rnedu.go.th",
         "latitude": "9.8795191",
-        "longtitude": "98.6279442"
+        "longitude": "98.6279442"
     },
     {
         "code": "1086010000",
@@ -4625,9 +4405,8 @@
         "name": "ชุมพร เขต 1",
         "code3d": "861",
         "region_id": "2",
-        "inspection_id": "5",
+        "inspection_area_id": "5",
         "address": "60/1 หมู่ที่ 5",
-        "subdistrict_id": "",
         "district_id": "844",
         "province_id": "70",
         "zip_code": "86190",
@@ -4638,7 +4417,7 @@
         "num_person": "0",
         "website": "www.cpn.1.go.th",
         "latitude": "10.4911514",
-        "longtitude": "499.127723"
+        "longitude": "499.127723"
     },
     {
         "code": "1086020000",
@@ -4646,9 +4425,8 @@
         "name": "ชุมพร เขต 2",
         "code3d": "862",
         "region_id": "2",
-        "inspection_id": "5",
+        "inspection_area_id": "5",
         "address": "27 ซอย 2 ถนนประชาราษฏร์",
-        "subdistrict_id": "",
         "district_id": "847",
         "province_id": "70",
         "zip_code": "86110",
@@ -4659,7 +4437,7 @@
         "num_person": "0",
         "website": "www.cpn2.go.th",
         "latitude": "9.9464988",
-        "longtitude": "99.0766306"
+        "longitude": "99.0766306"
     },
     {
         "code": "1090010000",
@@ -4667,9 +4445,8 @@
         "name": "สงขลา เขต 1",
         "code3d": "901",
         "region_id": "2",
-        "inspection_id": "5",
+        "inspection_area_id": "5",
         "address": "176 หมู่ที่ 4 ถนนสงขลา - นาทวี",
-        "subdistrict_id": "",
         "district_id": "852",
         "province_id": "71",
         "zip_code": "90000",
@@ -4680,7 +4457,7 @@
         "num_person": "0",
         "website": "www.ska1.go.th",
         "latitude": "7.096315",
-        "longtitude": "00.569061"
+        "longitude": "00.569061"
     },
     {
         "code": "1090020000",
@@ -4688,9 +4465,8 @@
         "name": "สงขลา เขต 2",
         "code3d": "902",
         "region_id": "2",
-        "inspection_id": "5",
+        "inspection_area_id": "5",
         "address": "2 ถนนสาครมงคล",
-        "subdistrict_id": "",
         "district_id": "862",
         "province_id": "71",
         "zip_code": "90110",
@@ -4701,7 +4477,7 @@
         "num_person": "0",
         "website": "www.ska2.go.th/home",
         "latitude": "7.004972",
-        "longtitude": "0.4550864"
+        "longitude": "0.4550864"
     },
     {
         "code": "1090030000",
@@ -4709,9 +4485,8 @@
         "name": "สงขลา เขต 3",
         "code3d": "903",
         "region_id": "3",
-        "inspection_id": "5",
+        "inspection_area_id": "5",
         "address": "192 หมู่ 2",
-        "subdistrict_id": "",
         "district_id": "855",
         "province_id": "71",
         "zip_code": "90160",
@@ -4722,7 +4497,7 @@
         "num_person": "0",
         "website": "www.sk3.go.th",
         "latitude": "6.7452683",
-        "longtitude": "00.6594691"
+        "longitude": "00.6594691"
     },
     {
         "code": "1090110000",
@@ -4730,9 +4505,8 @@
         "name": "สงขลา-สตูล",
         "code3d": "908",
         "region_id": "3",
-        "inspection_id": "5",
+        "inspection_area_id": "5",
         "address": "174 ถนนสงขลา - นาทวี",
-        "subdistrict_id": "",
         "district_id": "852",
         "province_id": "71",
         "zip_code": "90000",
@@ -4743,7 +4517,7 @@
         "num_person": "0",
         "website": "www.spmsongkhlasatun.go.th",
         "latitude": "7.1656372",
-        "longtitude": "00.6161567"
+        "longitude": "00.6161567"
     },
     {
         "code": "1091010000",
@@ -4751,9 +4525,8 @@
         "name": "สตูล",
         "code3d": "911",
         "region_id": "3",
-        "inspection_id": "5",
+        "inspection_area_id": "5",
         "address": "884 หมู่ 4",
-        "subdistrict_id": "",
         "district_id": "868",
         "province_id": "72",
         "zip_code": "91000",
@@ -4764,7 +4537,7 @@
         "num_person": "0",
         "website": "www.sesao.go.th",
         "latitude": "6.6493934",
-        "longtitude": "00.0774303"
+        "longitude": "00.0774303"
     },
     {
         "code": "1092010000",
@@ -4772,9 +4545,8 @@
         "name": "ตรัง เขต 1",
         "code3d": "921",
         "region_id": "2",
-        "inspection_id": "6",
+        "inspection_area_id": "6",
         "address": "193 หมู่ที่ 12 ถนนตรัง - ปะเหลียน",
-        "subdistrict_id": "",
         "district_id": "875",
         "province_id": "73",
         "zip_code": "92000",
@@ -4785,7 +4557,7 @@
         "num_person": "0",
         "website": "www.trang1.go.th",
         "latitude": "7.5057757",
-        "longtitude": "799.63076"
+        "longitude": "799.63076"
     },
     {
         "code": "1092020000",
@@ -4793,9 +4565,8 @@
         "name": "ตรัง เขต 2",
         "code3d": "922",
         "region_id": "2",
-        "inspection_id": "6",
+        "inspection_area_id": "6",
         "address": "359 ถนนเพชรเกษม",
-        "subdistrict_id": "",
         "district_id": "880",
         "province_id": "73",
         "zip_code": "92130",
@@ -4806,7 +4577,7 @@
         "num_person": "0",
         "website": "www.trang2.go.th",
         "latitude": "7.7924067",
-        "longtitude": "99.6306824"
+        "longitude": "99.6306824"
     },
     {
         "code": "1092110000",
@@ -4814,9 +4585,8 @@
         "name": "ตรัง-กระบี่",
         "code3d": "928",
         "region_id": "2",
-        "inspection_id": "6",
+        "inspection_area_id": "6",
         "address": "2 หมู่ 3 ถนนตรัง-สิเกา",
-        "subdistrict_id": "",
         "district_id": "875",
         "province_id": "73",
         "zip_code": "92000",
@@ -4827,7 +4597,7 @@
         "num_person": "0",
         "website": "www.matthayom13.go.th",
         "latitude": "7.5575525",
-        "longtitude": "99.5867062"
+        "longitude": "99.5867062"
     },
     {
         "code": "1093010000",
@@ -4835,9 +4605,8 @@
         "name": "พัทลุง เขต 1",
         "code3d": "931",
         "region_id": "2",
-        "inspection_id": "5",
+        "inspection_area_id": "5",
         "address": "14 หมู่ 1 ถนนเอเชีย",
-        "subdistrict_id": "",
         "district_id": "885",
         "province_id": "74",
         "zip_code": "93000",
@@ -4848,7 +4617,7 @@
         "num_person": "0",
         "website": "",
         "latitude": "7.6170286",
-        "longtitude": "00.0496734"
+        "longitude": "00.0496734"
     },
     {
         "code": "1093020000",
@@ -4856,9 +4625,8 @@
         "name": "พัทลุง เขต 2",
         "code3d": "932",
         "region_id": "2",
-        "inspection_id": "5",
+        "inspection_area_id": "5",
         "address": "2/8 หมู่ 1",
-        "subdistrict_id": "",
         "district_id": "888",
         "province_id": "74",
         "zip_code": "93160",
@@ -4869,7 +4637,7 @@
         "num_person": "0",
         "website": "www.phatthalung2.go.th",
         "latitude": "7.351468",
-        "longtitude": "00.131782"
+        "longitude": "00.131782"
     },
     {
         "code": "1093110000",
@@ -4877,9 +4645,8 @@
         "name": "พัทลุง",
         "code3d": "938",
         "region_id": "2",
-        "inspection_id": "5",
+        "inspection_area_id": "5",
         "address": "อาคารอุทยานการศึกษาอุดมปัญญา หมู่ที่ 9",
-        "subdistrict_id": "",
         "district_id": "889",
         "province_id": "74",
         "zip_code": "93110",
@@ -4890,7 +4657,7 @@
         "num_person": "0",
         "website": "seapt.go.th",
         "latitude": "7.7093148",
-        "longtitude": "99.9934643"
+        "longitude": "99.9934643"
     },
     {
         "code": "1094010000",
@@ -4898,9 +4665,8 @@
         "name": "ปัตตานี เขต 1",
         "code3d": "941",
         "region_id": "3",
-        "inspection_id": "7",
+        "inspection_area_id": "7",
         "address": "หมู่ที่ 6 ถนนปากน้ำ",
-        "subdistrict_id": "",
         "district_id": "896",
         "province_id": "75",
         "zip_code": "94000",
@@ -4911,7 +4677,7 @@
         "num_person": "0",
         "website": "www.pattani1.go.th",
         "latitude": "6.8924031",
-        "longtitude": "01.2496142"
+        "longitude": "01.2496142"
     },
     {
         "code": "1094020000",
@@ -4919,9 +4685,8 @@
         "name": "ปัตตานี เขต 2",
         "code3d": "942",
         "region_id": "3",
-        "inspection_id": "7",
+        "inspection_area_id": "7",
         "address": "35/16 หมู่ที่ 7 ถนนเพชรเกษม",
-        "subdistrict_id": "",
         "district_id": "897",
         "province_id": "75",
         "zip_code": "94120",
@@ -4932,7 +4697,7 @@
         "num_person": "0",
         "website": "wwwpattani2.go.th",
         "latitude": "6.7299136",
-        "longtitude": "01.0977531"
+        "longitude": "01.0977531"
     },
     {
         "code": "1094030000",
@@ -4940,9 +4705,8 @@
         "name": "ปัตตานี เขต 3",
         "code3d": "943",
         "region_id": "3",
-        "inspection_id": "7",
+        "inspection_area_id": "7",
         "address": "83 หมู่ที่ 3 ถนนเพชรเกษม",
-        "subdistrict_id": "",
         "district_id": "902",
         "province_id": "75",
         "zip_code": "94190",
@@ -4953,7 +4717,7 @@
         "num_person": "0",
         "website": "www.pattani3.go.th",
         "latitude": "6.7143882",
-        "longtitude": "01.5206006"
+        "longitude": "01.5206006"
     },
     {
         "code": "1094110000",
@@ -4961,9 +4725,8 @@
         "name": "ปัตตานี",
         "code3d": "948",
         "region_id": "3",
-        "inspection_id": "7",
+        "inspection_area_id": "7",
         "address": "2 ถนนสะบารัง",
-        "subdistrict_id": "",
         "district_id": "896",
         "province_id": "75",
         "zip_code": "94000",
@@ -4974,7 +4737,7 @@
         "num_person": "0",
         "website": "sesaopn.go.th",
         "latitude": "6.8701056",
-        "longtitude": "01.2518641"
+        "longitude": "01.2518641"
     },
     {
         "code": "1095010000",
@@ -4982,9 +4745,8 @@
         "name": "ยะลา เขต 1",
         "code3d": "951",
         "region_id": "3",
-        "inspection_id": "7",
+        "inspection_area_id": "7",
         "address": "12 ถนนสุขยางค์",
-        "subdistrict_id": "",
         "district_id": "908",
         "province_id": "76",
         "zip_code": "95000",
@@ -4995,7 +4757,7 @@
         "num_person": "0",
         "website": "www.yala1.go.th/2019",
         "latitude": "6.5468435",
-        "longtitude": "01.2835998"
+        "longitude": "01.2835998"
     },
     {
         "code": "1095020000",
@@ -5003,9 +4765,8 @@
         "name": "ยะลา เขต 2",
         "code3d": "952",
         "region_id": "3",
-        "inspection_id": "7",
+        "inspection_area_id": "7",
         "address": "หมู่ที่ 2 โรงเรียนบันนังสตาอินทรฉัตรฯ ถนนสุขยางค์",
-        "subdistrict_id": "",
         "district_id": "910",
         "province_id": "76",
         "zip_code": "95130",
@@ -5016,7 +4777,7 @@
         "num_person": "0",
         "website": "www.yala2.go.th",
         "latitude": "6.268015",
-        "longtitude": "1.2661245"
+        "longitude": "1.2661245"
     },
     {
         "code": "1095030000",
@@ -5024,9 +4785,8 @@
         "name": "ยะลา เขต 3",
         "code3d": "953",
         "region_id": "3",
-        "inspection_id": "7",
+        "inspection_area_id": "7",
         "address": "34 หมู่ 7 ถนนรัตนกิจ",
-        "subdistrict_id": "",
         "district_id": "909",
         "province_id": "76",
         "zip_code": "95110",
@@ -5037,7 +4797,7 @@
         "num_person": "0",
         "website": "www.yala3.go.th",
         "latitude": "5.7734598",
-        "longtitude": "01.0844323"
+        "longitude": "01.0844323"
     },
     {
         "code": "1095110000",
@@ -5045,9 +4805,8 @@
         "name": "ยะลา",
         "code3d": "958",
         "region_id": "3",
-        "inspection_id": "7",
+        "inspection_area_id": "7",
         "address": "125 ถนนพิพิธภักดี",
-        "subdistrict_id": "",
         "district_id": "908",
         "province_id": "76",
         "zip_code": "95000",
@@ -5058,7 +4817,7 @@
         "num_person": "0",
         "website": "sesaoyala.org",
         "latitude": "6.5540579",
-        "longtitude": "01.2886163"
+        "longitude": "01.2886163"
     },
     {
         "code": "1096010000",
@@ -5066,9 +4825,8 @@
         "name": "นราธิวาส เขต 1",
         "code3d": "961",
         "region_id": "3",
-        "inspection_id": "7",
+        "inspection_area_id": "7",
         "address": "222 หมู่ 10",
-        "subdistrict_id": "",
         "district_id": "916",
         "province_id": "77",
         "zip_code": "96000",
@@ -5079,7 +4837,7 @@
         "num_person": "0",
         "website": "www.narathiwat1.go.th",
         "latitude": "6.4147247",
-        "longtitude": "01.7987877"
+        "longitude": "01.7987877"
     },
     {
         "code": "1096020000",
@@ -5087,9 +4845,8 @@
         "name": "นราธิวาส เขต 2",
         "code3d": "962",
         "region_id": "3",
-        "inspection_id": "7",
+        "inspection_area_id": "7",
         "address": "38/4 หมู่ที่ 3",
-        "subdistrict_id": "",
         "district_id": "925",
         "province_id": "77",
         "zip_code": "96120",
@@ -5100,7 +4857,7 @@
         "num_person": "0",
         "website": "www.nara2.go.th",
         "latitude": "6.0450935",
-        "longtitude": "01.9935573"
+        "longitude": "01.9935573"
     },
     {
         "code": "1096030000",
@@ -5108,9 +4865,8 @@
         "name": "นราธิวาส เขต 3",
         "code3d": "963",
         "region_id": "3",
-        "inspection_id": "7",
+        "inspection_area_id": "7",
         "address": "167 ม.1 ถนนระแงะมรรคา",
-        "subdistrict_id": "",
         "district_id": "920",
         "province_id": "77",
         "zip_code": "96130",
@@ -5121,7 +4877,7 @@
         "num_person": "0",
         "website": "www.narathiwat3.go.th",
         "latitude": "6.2953843",
-        "longtitude": "01.7220696"
+        "longitude": "01.7220696"
     },
     {
         "code": "1096110000",
@@ -5129,9 +4885,8 @@
         "name": "นราธิวาส",
         "code3d": "968",
         "region_id": "3",
-        "inspection_id": "7",
+        "inspection_area_id": "7",
         "address": "789 หมู่ 8",
-        "subdistrict_id": "",
         "district_id": "916",
         "province_id": "77",
         "zip_code": "96000",
@@ -5142,6 +4897,6 @@
         "num_person": "0",
         "website": "www.sesao15.go.th/web15/",
         "latitude": "6.4273221",
-        "longtitude": "01.7892597"
+        "longitude": "01.7892597"
     }
 ]

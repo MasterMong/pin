@@ -15,6 +15,6 @@ class Realtime extends Page
 
     public function getTitle(): string
     {
-        return 'รายงานความก้าวหน้าแบบ Realtime ' . auth()->user()->area->areaType->name . ' ' . auth()->user()->area->name;
+        return 'รายงานความก้าวหน้าแบบ Realtime ' . auth()->user()->area->areaType->name . ' ' . auth()->user()->area->name . ' [ซ้ำกับรายงานโครงการ]';
     }
 }

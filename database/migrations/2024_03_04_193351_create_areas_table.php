@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('areas', function (Blueprint $table) {
             $table->id();
             $table->string('code', 100)->unique();
+            $table->string('code3d', 100)->unique();
             $table->string('name', 300);
             $table->string('address', 600)->nullable();
             $table->string('zip_code', 5)->nullable();

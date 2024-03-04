@@ -20,6 +20,7 @@ class Area extends Model
      */
     protected $fillable = [
         'code',
+        'code3d',
         'name',
         'address',
         'zip_code',

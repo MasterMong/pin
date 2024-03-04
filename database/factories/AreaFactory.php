@@ -27,6 +27,7 @@ class AreaFactory extends Factory
     {
         return [
             'code' => $this->faker->regexify('[A-Za-z0-9]{100}'),
+            'code3d' => $this->faker->regexify('[A-Za-z0-9]{100}'),
             'name' => $this->faker->name(),
             'address' => $this->faker->regexify('[A-Za-z0-9]{600}'),
             'zip_code' => $this->faker->regexify('[A-Za-z0-9]{5}'),

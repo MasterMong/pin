@@ -4,6 +4,7 @@ namespace App\Filament\Resources\ProjectResource\Pages;
 
 use App\Filament\Resources\ProjectResource;
 use App\Http\Controllers\SettingController;
+use App\Models\BudgetYear;
 use App\Models\Project;
 use App\Models\RelateGroup;
 use App\Models\RelateItem;
@@ -42,13 +43,12 @@ class CreateProject extends CreateRecord
                 ]);
             }
         ])->get()->toArray();
-        // dd($this->relate_groups->toArray());
 
         $this->form->fill([
             'name' => $this->null_value,
             'area_id' => $this->area_id,
             'budget_year_id' => $this->budget_year_id,
-            'code' => $this->null_value,
+//            'code' => $this->null_value,
             'objective' => $this->null_value,
             'indicator' => $this->null_value,
             'duration' => $this->null_value,
@@ -93,10 +93,10 @@ class CreateProject extends CreateRecord
                                 ->label('ชื่อโครงการ')
                                 ->required()
                                 ->maxLength(300),
-                            Forms\Components\TextInput::make('code')
-                                ->label('รหัสโครงการ')
-                                ->required()
-                                ->maxLength(50),
+//                            Forms\Components\TextInput::make('code')
+//                                ->label('รหัสโครงการ')
+//                                ->required()
+//                                ->maxLength(50),
                             Forms\Components\RichEditor::make('objective')
                                 ->label('วัตถุประสงค์โครงการ')
                                 ->columnSpanFull()
@@ -109,6 +109,16 @@ class CreateProject extends CreateRecord
                                 ->toolbarButtons(['blockquote', 'bold', 'bulletList', 'codeBlock', 'h2', 'h3', 'italic', 'link', 'orderedList', 'redo', 'strike', 'underline', 'undo'])
                                 ->columnSpanFull()
                                 ->maxLength(1000),
+                            Forms\Components\Group::make()->schema([
+                                Forms\Components\DatePicker::make('date_start')
+                                    ->native(false)
+                                    ->required()
+                                    ->label('วันเริ่มโครงการ'),
+                                Forms\Components\DatePicker::make('date_end')
+                                    ->native(false)
+                                    ->required()
+                                    ->label('วันสิ้นสุดโครงการ'),
+                            ])->columns(2),
                             Forms\Components\TextInput::make('duration')
                                 ->label('ระยะเวลาตลอดโครงการ')
                                 ->maxLength(100),
@@ -140,7 +150,12 @@ class CreateProject extends CreateRecord
 
     public function create(bool $another = false): void
     {
+        $project_count = Project::where('area_id', auth()->user()->area_id)->count();
+        $year = BudgetYear::where('id', $this->budget_year_id)->pluck('name')->first();
+        $project_code = $year . '.' . auth()->user()->area->code3d . '.' . $project_count + 1;
+
         $data = $this->form->getState();
+        $data['code'] = $project_code;
         $data['relate_items'] = $data['relate_items'][0];
         $data['status'] = 'pending';
         Project::create($data);
