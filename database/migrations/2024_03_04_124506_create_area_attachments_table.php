@@ -16,10 +16,9 @@ return new class extends Migration
         Schema::create('area_attachments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('area_id')->constrained();
-            $table->foreignId('area_attachment_type_id')->constrained();
+            $table->foreignId('area_attachment_types_id')->constrained('area_attachment_types');
             $table->foreignId('budget_year_id')->constrained();
             $table->json('attr');
-            $table->foreignId('area_attachment_types_id');
             $table->timestamps();
             $table->softDeletes();
         });

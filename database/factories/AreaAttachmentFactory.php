@@ -7,7 +7,6 @@ use Illuminate\Support\Str;
 use App\Models\Area;
 use App\Models\AreaAttachment;
 use App\Models\AreaAttachmentType;
-use App\Models\AreaAttachmentTypes;
 use App\Models\BudgetYear;
 
 class AreaAttachmentFactory extends Factory
@@ -26,10 +25,9 @@ class AreaAttachmentFactory extends Factory
     {
         return [
             'area_id' => Area::factory(),
-            'area_attachment_type_id' => AreaAttachmentType::factory(),
+            'area_attachment_types_id' => AreaAttachmentType::factory(),
             'budget_year_id' => BudgetYear::factory(),
             'attr' => '{}',
-            'area_attachment_types_id' => AreaAttachmentTypes::factory(),
         ];
     }
 }

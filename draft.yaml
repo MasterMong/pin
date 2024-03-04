@@ -118,7 +118,7 @@ models:
 
   AreaAttachment:
     area_id: id foreign
-    area_attachment_type_id: id foreign
+    area_attachment_types_id: id foreign
     budget_year_id: id foreign
     attr: json
     relationships:

@@ -3,6 +3,7 @@
 namespace App\Livewire\AreaContext;
 
 use App\Http\Controllers\SettingController;
+use App\Models\AreaAttachment;
 use App\Models\AreaAttachmentTypes;
 use App\Models\AreaGoal;
 use App\Models\AreaMission;
@@ -22,9 +23,12 @@ use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
 use Filament\Notifications\Notification;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
 class FormVision extends Component implements HasForms
 {
@@ -37,6 +41,7 @@ class FormVision extends Component implements HasForms
     public array $template_goal = [];
     public array $template_strategy = [];
     public array $template_target = [];
+    public array $att_type = [];
 
     public function mount(): void
     {
@@ -49,13 +54,22 @@ class FormVision extends Component implements HasForms
         $this->null_value = config('app.env') == 'production' ? '' : '-';
         // $this->null_value = config('app.env') == 'production' ? '' : fake()->text(20);
 
+        $this->att_type = array_fill_keys(AreaAttachmentTypes::where('budget_year_id', $this->budget_year_id)->get()->pluck('name')->toArray(), null);
+        $files = AreaAttachment::where('area_id', auth()->user()->area_id)->where('budget_year_id', $this->budget_year_id)->get();
+
+//        dd($files->toArray());
+        foreach ($files as $file) {
+//            dd($file->areaAttachmentTypes);
+            $this->att_type[$file->areaAttachmentTypes->name] = $file->attr['files'];
+        }
 
         $fill_form = [
             'vision_detail' => $area_vision ?? $this->null_value,
             'mission_detail' => $area_mission ?? $this->null_value,
             'area_id' => $this->area_id,
             'budget_year_id' => $this->budget_year_id,
-            'goal' => $this->parse_goals()
+            'goal' => $this->parse_goals(),
+            'attachment' => [$this->att_type]
         ];
         // dd($fill_form);
         $this->form->fill($fill_form);
@@ -68,7 +82,12 @@ class FormVision extends Component implements HasForms
         foreach ($att_type as $att) {
             $field_att[] = Forms\Components\FileUpload::make($att->name)
                 ->acceptedFileTypes($att->file_types)
-                ->label($att->label);
+                ->label($att->label)
+//                ->multiple()
+                ->getUploadedFileNameForStorageUsing(
+                    fn(TemporaryUploadedFile $file): string => (string)str($file->getClientOriginalName())
+                        ->prepend($this->budget_year_id . '-' . $att->name . '-' . auth()->user()->area_id . '-'),
+                );
         }
 //        dd($field_att);
         return $form
@@ -158,8 +177,11 @@ class FormVision extends Component implements HasForms
                                 });
                             })
                     ]),
-                Grid::make('attachment')
-                ->schema($field_att)
+                Repeater::make('attachment')
+                    ->reorderable(False)
+                    ->deletable(False)
+                    ->addable(False)
+                    ->schema($field_att)
 
             ])
             ->statePath('data')
@@ -173,6 +195,32 @@ class FormVision extends Component implements HasForms
         $area_mission = AreaMission::where('area_id', $this->area_id)->first();
         $data = $this->form->getState();
 
+        // attachment
+        foreach ($data['attachment'] as $att) {
+            foreach (array_keys($att) as $file_type) {
+                $file_type_id = AreaAttachmentTypes::where('name', $file_type)
+                    ->where('budget_year_id', $this->budget_year_id)->pluck('id')->first();
+                $exits = AreaAttachment::where('area_id', auth()->user()->area_id)->where('budget_year_id', $this->budget_year_id)->where('area_attachment_types_id', $file_type_id)->first();
+                $filename = $att[$file_type];
+                $attr_template = [
+                    'files' => $filename
+                ];
+                if (empty($exits)) {
+                    AreaAttachment::create([
+                        'area_id' => auth()->user()->area_id,
+                        'budget_year_id' => $this->budget_year_id,
+                        'area_attachment_types_id' => $file_type_id,
+                        'attr' => $attr_template
+                    ]);
+                } else {
+//                    dd(File::delete($exits->attr['files']));
+//                    dd($exits->attr['files'] = 1);
+                    // TODO Bug delete old data
+                    $exits->attr = $attr_template;
+                    $exits->save();
+                }
+            }
+        }
         // วิสัยทัศน์
         if (empty($area_vision)) {
             $area_vision = AreaVision::create(

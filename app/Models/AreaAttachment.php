@@ -18,10 +18,9 @@ class AreaAttachment extends Model
      */
     protected $fillable = [
         'area_id',
-        'area_attachment_type_id',
+        'area_attachment_types_id',
         'budget_year_id',
         'attr',
-        'area_attachment_types_id',
     ];
 
     /**
@@ -32,10 +31,9 @@ class AreaAttachment extends Model
     protected $casts = [
         'id' => 'integer',
         'area_id' => 'integer',
-        'area_attachment_type_id' => 'integer',
+        'area_attachment_types_id' => 'integer',
         'budget_year_id' => 'integer',
         'attr' => 'array',
-        'area_attachment_types_id' => 'integer',
     ];
 
     public function area(): BelongsTo
@@ -51,10 +49,5 @@ class AreaAttachment extends Model
     public function budgetYear(): BelongsTo
     {
         return $this->belongsTo(BudgetYear::class);
-    }
-
-    public function areaAttachmentType(): BelongsTo
-    {
-        return $this->belongsTo(\App\Models\AreaAttachmentTypes::class);
     }
 }
