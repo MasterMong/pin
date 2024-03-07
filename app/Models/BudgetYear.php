@@ -64,19 +64,14 @@ class BudgetYear extends Model
         return $this->hasMany(AreaPaOfManager::class);
     }
 
-    public function projects(): HasMany
+    public function activities(): HasMany
     {
-        return $this->hasMany(Project::class);
+        return $this->hasMany(Activity::class);
     }
 
-    public function projectActivities(): HasMany
+    public function activityInnovations(): HasMany
     {
-        return $this->hasMany(ProjectActivity::class);
-    }
-
-    public function projectInnovations(): HasMany
-    {
-        return $this->hasMany(ProjectInnovation::class);
+        return $this->hasMany(ActivityInnovation::class);
     }
 
     public function relateGroups(): HasMany

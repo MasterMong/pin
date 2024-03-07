@@ -54,7 +54,7 @@ models:
   BudgetYear:
     name: string:4
     relationships:
-      hasMany: AreaAttachment, AreaVision, AreaMission, AreaGoal, AreaStrategy, AreaTarget, AreaPaOfManager,  ActivityInnovation, RelateGroup, RelateType, RelateItem, RelateItemTargetValue
+      hasMany: AreaAttachment, AreaVision, AreaMission, AreaGoal, AreaStrategy, AreaTarget, AreaPaOfManager, Activity, ActivityInnovation, RelateGroup, RelateType, RelateItem, RelateItemTargetValue
     softDeletes
 
   AreaType:

@@ -7,8 +7,14 @@
     },
     {
         "key": "date_format",
-        "des": "date forat",
+        "des": "date date format",
         "is_toggle": false,
         "value": "Y/m/d"
+    },
+    {
+        "key": "regis_token",
+        "des": "register code",
+        "is_toggle": false,
+        "value": "oi53h"
     }
 ]

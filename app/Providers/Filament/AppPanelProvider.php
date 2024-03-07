@@ -2,6 +2,9 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Pages\Auth\EditProfile;
+use App\Filament\Pages\Auth\Login;
+use App\Filament\Pages\Auth\Register;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -26,12 +29,12 @@ class AppPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->default()
+            ->default(True)
             ->id('app')
             ->path('/')
-            ->login()
-            ->registration()
-            ->profile()
+            ->login(Login::class)
+            ->registration(Register::class)
+            ->profile(EditProfile::class)
             ->colors([
                 'primary' => Color::Amber,
             ])

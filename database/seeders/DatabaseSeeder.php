@@ -115,6 +115,8 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+//        $this->run(BlogCategoriesTableSeeder::class);
+//        $this->run(BlogPostsTableSeeder::class);
     }
 
 //    public static function createRole($data)

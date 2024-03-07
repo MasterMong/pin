@@ -24,31 +24,31 @@ created:
     - database/factories/RelateTypeFactory.php
     - database/factories/RelateItemFactory.php
     - database/factories/RelateItemTargetValueFactory.php
-    - database/migrations/2024_03_07_113738_create_regions_table.php
-    - database/migrations/2024_03_07_113739_create_provinces_table.php
-    - database/migrations/2024_03_07_113740_create_districts_table.php
-    - database/migrations/2024_03_07_113741_create_sub_districts_table.php
-    - database/migrations/2024_03_07_113742_create_inspection_areas_table.php
-    - database/migrations/2024_03_07_113743_create_settings_table.php
-    - database/migrations/2024_03_07_113744_create_budget_years_table.php
-    - database/migrations/2024_03_07_113745_create_area_types_table.php
-    - database/migrations/2024_03_07_113746_create_areas_table.php
-    - database/migrations/2024_03_07_113747_create_area_member_types_table.php
-    - database/migrations/2024_03_07_113748_create_area_members_table.php
-    - database/migrations/2024_03_07_113749_create_area_attachment_types_table.php
-    - database/migrations/2024_03_07_113750_create_area_attachments_table.php
-    - database/migrations/2024_03_07_113751_create_area_visions_table.php
-    - database/migrations/2024_03_07_113752_create_area_missions_table.php
-    - database/migrations/2024_03_07_113753_create_area_goals_table.php
-    - database/migrations/2024_03_07_113754_create_area_strategies_table.php
-    - database/migrations/2024_03_07_113755_create_area_targets_table.php
-    - database/migrations/2024_03_07_113756_create_area_pa_of_managers_table.php
-    - database/migrations/2024_03_07_113757_create_activities_table.php
-    - database/migrations/2024_03_07_113758_create_activity_innovations_table.php
-    - database/migrations/2024_03_07_113759_create_relate_groups_table.php
-    - database/migrations/2024_03_07_113800_create_relate_types_table.php
-    - database/migrations/2024_03_07_113801_create_relate_items_table.php
-    - database/migrations/2024_03_07_113802_create_relate_item_target_values_table.php
+    - database/migrations/2024_03_07_163159_create_regions_table.php
+    - database/migrations/2024_03_07_163200_create_provinces_table.php
+    - database/migrations/2024_03_07_163201_create_districts_table.php
+    - database/migrations/2024_03_07_163202_create_sub_districts_table.php
+    - database/migrations/2024_03_07_163203_create_inspection_areas_table.php
+    - database/migrations/2024_03_07_163204_create_settings_table.php
+    - database/migrations/2024_03_07_163205_create_budget_years_table.php
+    - database/migrations/2024_03_07_163206_create_area_types_table.php
+    - database/migrations/2024_03_07_163207_create_areas_table.php
+    - database/migrations/2024_03_07_163208_create_area_member_types_table.php
+    - database/migrations/2024_03_07_163209_create_area_members_table.php
+    - database/migrations/2024_03_07_163210_create_area_attachment_types_table.php
+    - database/migrations/2024_03_07_163211_create_area_attachments_table.php
+    - database/migrations/2024_03_07_163212_create_area_visions_table.php
+    - database/migrations/2024_03_07_163213_create_area_missions_table.php
+    - database/migrations/2024_03_07_163214_create_area_goals_table.php
+    - database/migrations/2024_03_07_163215_create_area_strategies_table.php
+    - database/migrations/2024_03_07_163216_create_area_targets_table.php
+    - database/migrations/2024_03_07_163217_create_area_pa_of_managers_table.php
+    - database/migrations/2024_03_07_163218_create_activities_table.php
+    - database/migrations/2024_03_07_163219_create_activity_innovations_table.php
+    - database/migrations/2024_03_07_163220_create_relate_groups_table.php
+    - database/migrations/2024_03_07_163221_create_relate_types_table.php
+    - database/migrations/2024_03_07_163222_create_relate_items_table.php
+    - database/migrations/2024_03_07_163223_create_relate_item_target_values_table.php
     - app/Models/Region.php
     - app/Models/Province.php
     - app/Models/District.php
@@ -75,6 +75,8 @@ created:
     - app/Models/RelateItem.php
     - app/Models/RelateItemTargetValue.php
 models:
+    Blog\Category: {  }
+    Blog\Post: {  }
     User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, area_id: 'biginteger unsigned nullable', tel: 'string:20 nullable', remember_token: 'string:100 nullable' }
     Region: { name: 'string:300', relationships: { hasMany: 'Province, Area' }, softdeletes: softDeletes }
     Province: { code: integer, name_in_thai: 'string:300', name_in_english: 'string:300', region_id: 'id foreign', relationships: { belongsTo: Region, hasMany: 'District, SubDistrict' }, softdeletes: softDeletes }
@@ -82,7 +84,7 @@ models:
     SubDistrict: { code: integer, name_in_thai: 'string:300', name_in_english: 'string:300', zip_code: 'string:5 nullable', latitude: 'string:30', longitude: 'string:30', province_id: 'id foreign', district_id: 'id foreign', relationships: { belongsTo: 'Province, District, AreaStrategy' }, softdeletes: softDeletes }
     InspectionArea: { name: 'string:300', relationships: { hasMany: Area }, softdeletes: softDeletes }
     Setting: { key: 'string:100 unique', des: 'string:300 nullable', is_toggle: 'boolean default:false', value: 'string:100', softdeletes: softDeletes }
-    BudgetYear: { name: 'string:4', relationships: { hasMany: 'AreaAttachment, AreaVision, AreaMission, AreaGoal, AreaStrategy, AreaTarget, AreaPaOfManager,  ActivityInnovation, RelateGroup, RelateType, RelateItem, RelateItemTargetValue' }, softdeletes: softDeletes }
+    BudgetYear: { name: 'string:4', relationships: { hasMany: 'AreaAttachment, AreaVision, AreaMission, AreaGoal, AreaStrategy, AreaTarget, AreaPaOfManager, Activity, ActivityInnovation, RelateGroup, RelateType, RelateItem, RelateItemTargetValue' }, softdeletes: softDeletes }
     AreaType: { name: 'string:300', des: 'string:600', relationships: { hasMany: Area }, softdeletes: softDeletes }
     Area: { code: 'string:100 unique', code3d: 'string:100 unique', name: 'string:300', address: 'string:600 nullable', zip_code: 'string:5 nullable', tel: 'string:20', num_person: 'integer default:0', num_school: 'integer default:0', num_teacher: 'integer default:0', num_student: 'integer default:0', website: 'string:600', latitude: 'string:30', longitude: 'string:30', inspection_area_id: 'id foreign', area_type_id: 'id foreign', district_id: 'id foreign', province_id: 'id foreign', region_id: 'id foreign', etc: 'json nullable', relationships: { belongsTo: 'InspectionArea, Region, Province, District', hasMany: 'AreaMember, AreaAttachment, AreaVision, AreaMission, AreaGoal, AreaStrategy, AreaTarget, AreaPaOfManager,  ActivityInnovation' }, softdeletes: softDeletes }
     AreaMemberType: { name: 'string:300', des: 'string:600', softdeletes: softDeletes }
