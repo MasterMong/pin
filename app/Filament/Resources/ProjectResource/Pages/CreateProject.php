@@ -4,6 +4,7 @@ namespace App\Filament\Resources\ProjectResource\Pages;
 
 use App\Filament\Resources\ProjectResource;
 use App\Http\Controllers\SettingController;
+use App\Models\Activity;
 use App\Models\BudgetYear;
 use App\Models\Project;
 use App\Models\RelateGroup;
@@ -150,7 +151,7 @@ class CreateProject extends CreateRecord
 
     public function create(bool $another = false): void
     {
-        $project_count = Project::where('area_id', auth()->user()->area_id)->count();
+        $project_count = Activity::where('area_id', auth()->user()->area_id)->count();
         $year = BudgetYear::where('id', $this->budget_year_id)->pluck('name')->first();
         $project_code = $year . '.' . auth()->user()->area->code3d . '.' . $project_count + 1;
 
@@ -158,7 +159,7 @@ class CreateProject extends CreateRecord
         $data['code'] = $project_code;
         $data['relate_items'] = $data['relate_items'][0];
         $data['status'] = 'pending';
-        Project::create($data);
+        Activity::create($data);
         Notification::make()
             ->title('บันทึกข้อมูลแล้ว')
             ->success()

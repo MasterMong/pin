@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ProjectInnovationsRelationManager extends RelationManager
 {
-    protected static string $relationship = 'projectInnovations';
+    protected static string $relationship = 'activityInnovations';
 
     public function isReadOnly(): bool
     {
@@ -27,13 +27,10 @@ class ProjectInnovationsRelationManager extends RelationManager
             ->schema([
                 Forms\Components\Hidden::make('area_id')
                     ->default(auth()->user()->id),
-                Forms\Components\Hidden::make('project_id')
+                Forms\Components\Hidden::make('activity_id')
                     ->default($this->ownerRecord->id),
                 Forms\Components\Hidden::make('budget_year_id')
                     ->default($budget_year),
-                Forms\Components\Select::make('project_activity_id')
-                    ->columnSpanFull()
-                    ->options($this->ownerRecord->projectActivities->pluck('name', 'id')),
                 Forms\Components\TextInput::make('name')
                     ->columnSpanFull()
                     ->required()
@@ -67,7 +64,7 @@ class ProjectInnovationsRelationManager extends RelationManager
             ->recordTitleAttribute('name')
             ->columns([
                 Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('projectActivity.name'),
+                Tables\Columns\TextColumn::make('activityInnovations.name'),
                 Tables\Columns\TextColumn::make('type'),
             ])
             ->filters([

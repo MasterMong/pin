@@ -86,13 +86,13 @@
                         <div class="mb-3 grid grid-flow-col grid-cols-{{ count($goal->areaStrategies) }} gap-3">
                             @foreach ($goal->areaStrategies as $strategy)
                                 <div class="shadow rounded p-4 bg-indigo-200 hover:bg-indigo-100">
-                                    @if(count($strategy->project) == 0)
+                                    @if(count($strategy->activity) == 0)
                                         -
                                     @else
                                         <ol class="list-decimal">
-                                            @foreach ($strategy->project as $project)
+                                            @foreach ($strategy->activity as $activity)
                                                 <li class="ml-4">
-                                                    {{ $project->name }}
+                                                    {{ $activity->name }}
                                                 </li>
                                             @endforeach
                                         </ol>

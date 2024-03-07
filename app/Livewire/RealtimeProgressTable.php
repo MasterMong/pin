@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Activity;
 use App\Models\Project;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
@@ -21,7 +22,7 @@ class RealtimeProgressTable extends Component implements HasForms, HasTable
     public function table(Table $table): Table
     {
         return $table
-            ->query(Project::query())
+            ->query(Activity::query())
             ->columns([
                 Tables\Columns\TextColumn::make('name')
             ])

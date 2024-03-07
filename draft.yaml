@@ -54,7 +54,7 @@ models:
   BudgetYear:
     name: string:4
     relationships:
-      hasMany: AreaAttachment, AreaVision, AreaMission, AreaGoal, AreaStrategy, AreaTarget, AreaPaOfManager, Project, ProjectActivity, ProjectInnovation, RelateGroup, RelateType, RelateItem, RelateItemTargetValue
+      hasMany: AreaAttachment, AreaVision, AreaMission, AreaGoal, AreaStrategy, AreaTarget, AreaPaOfManager,  ActivityInnovation, RelateGroup, RelateType, RelateItem, RelateItemTargetValue
     softDeletes
 
   AreaType:
@@ -86,7 +86,7 @@ models:
     etc: json nullable
     relationships:
       belongsTo: InspectionArea, Region, Province, District
-      hasMany: AreaMember, AreaAttachment, AreaVision, AreaMission, AreaGoal, AreaStrategy, AreaTarget, AreaPaOfManager, Project, ProjectActivity, ProjectInnovation
+      hasMany: AreaMember, AreaAttachment, AreaVision, AreaMission, AreaGoal, AreaStrategy, AreaTarget, AreaPaOfManager,  ActivityInnovation
     softDeletes
 
   AreaMemberType:
@@ -185,7 +185,7 @@ models:
       belongsTo: Area, BudgetYear
     softDeletes
 
-  Project:
+  Activity:
     area_id: id foreign
     budget_year_id: id foreign
     name: string:300
@@ -206,32 +206,31 @@ models:
     status: string:50
     relationships:
       belongsTo: Area, BudgetYear, AreaStrategy
-      hasMany: ProjectActivity, ProjectInnovation
+      hasMany: ActivityInnovation
     softDeletes
 
-  ProjectActivity:
-    area_id: id foreign
-    project_id: id foreign
-    budget_year_id: id foreign
-    name: string:300
-    process: longText nullable
-    target_area: string:1000
-    expect: string:1000
-    date_start: string:50 nullable
-    date_end: string:50 nullable
-    result: longText nullable
-    count_beneficiary: integer nullable
-    is_success: boolean nullable
-    unsuccessful_reason: longText nullable
-    relationships:
-      belongsTo: Area, Project, BudgetYear
-      hasMany: ProjectInnovation
-    softDeletes
+#  ProjectActivity:
+#    area_id: id foreign
+#    project_id: id foreign
+#    budget_year_id: id foreign
+#    name: string:300
+#    process: longText nullable
+#    target_area: string:1000
+#    expect: string:1000
+#    date_start: string:50 nullable
+#    date_end: string:50 nullable
+#    result: longText nullable
+#    count_beneficiary: integer nullable
+#    is_success: boolean nullable
+#    unsuccessful_reason: longText nullable
+#    relationships:
+#      belongsTo: Area,  BudgetYear
+#      hasMany: ActivityInnovation
+#    softDeletes
 
-  ProjectInnovation:
+  ActivityInnovation:
     area_id: id foreign
-    project_id: id foreign
-    project_activity_id: id foreign
+    activity_id: id foreign
     budget_year_id: id foreign
     attachment: string
     name: string:600
@@ -242,7 +241,7 @@ models:
     problem: longText
     suggest: longText
     relationships:
-      belongsTo: Area, Project, ProjectActivity, BudgetYear
+      belongsTo: Area,  Activity, BudgetYear
     softDeletes
 
   RelateGroup:

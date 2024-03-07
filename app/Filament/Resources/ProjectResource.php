@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\ProjectResource\Pages;
 use App\Filament\Resources\ProjectResource\RelationManagers;
 use App\Filament\Resources\ProjectResource\RelationManagers\ProjectActivityRelationManager;
+use App\Models\Activity;
 use App\Models\Project;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -16,7 +17,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ProjectResource extends Resource
 {
-    protected static ?string $model = Project::class;
+    protected static ?string $model = Activity::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -145,7 +146,6 @@ class ProjectResource extends Resource
     public static function getRelations(): array
     {
         return [
-            ProjectActivityRelationManager::class,
             RelationManagers\ProjectInnovationsRelationManager::class
         ];
     }
