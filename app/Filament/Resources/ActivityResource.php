@@ -6,7 +6,6 @@ use App\Filament\Resources\ProjectResource\Pages;
 use App\Filament\Resources\ProjectResource\RelationManagers;
 use App\Filament\Resources\ProjectResource\RelationManagers\ProjectActivityRelationManager;
 use App\Models\Activity;
-use App\Models\Project;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -15,7 +14,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class ProjectResource extends Resource
+class ActivityResource extends Resource
 {
     protected static ?string $model = Activity::class;
 
@@ -23,7 +22,7 @@ class ProjectResource extends Resource
 
     protected static ?string $navigationGroup = 'รายงานแผน/ความก้าวหน้า';
 
-    protected static ?string $navigationLabel = 'รายงานโครงการ';
+    protected static ?string $navigationLabel = 'การขับเคลื่อนนโยบาย';
 
     protected static ?int $navigationSort = 2;
 
@@ -146,17 +145,17 @@ class ProjectResource extends Resource
     public static function getRelations(): array
     {
         return [
-            RelationManagers\ProjectInnovationsRelationManager::class
+            RelationManagers\ActivityInnovationsRelationManager::class
         ];
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListProjects::route('/'),
+            'index' => Pages\ListActivities::route('/'),
             'create' => Pages\CreateProject::route('/create'),
-            'view' => Pages\ViewProject::route('/{record}'),
-            'edit' => Pages\EditProject::route('/{record}/edit'),
+            'view' => Pages\ViewActivity::route('/{record}'),
+            'edit' => Pages\EditActivity::route('/{record}/edit'),
         ];
     }
 }

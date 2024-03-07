@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources\ProjectResource\Pages;
 
-use App\Filament\Resources\ProjectResource;
+use App\Filament\Resources\ActivityResource;
 use Filament\Actions;
 use Filament\Infolists\Components\Grid;
 use Filament\Infolists\Components\Section;
@@ -11,9 +11,9 @@ use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Infolist;
 use Filament\Resources\Pages\ViewRecord;
 
-class ViewProject extends ViewRecord
+class ViewActivity extends ViewRecord
 {
-    protected static string $resource = ProjectResource::class;
+    protected static string $resource = ActivityResource::class;
 
     protected function getHeaderActions(): array
     {

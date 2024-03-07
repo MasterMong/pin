@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources\ProjectResource\Pages;
 
-use App\Filament\Resources\ProjectResource;
+use App\Filament\Resources\ActivityResource;
 use App\Http\Controllers\SettingController;
 use App\Models\Activity;
 use App\Models\BudgetYear;
@@ -25,7 +25,7 @@ use function PHPSTORM_META\type;
 
 class CreateProject extends CreateRecord
 {
-    protected static string $resource = ProjectResource::class;
+    protected static string $resource = ActivityResource::class;
     public ?int $area_id = null;
     public ?int $budget_year_id = null;
     public string $null_value = '';
