@@ -10,7 +10,7 @@ class AreaContextPage extends Page
 
     protected static string $view = 'filament.pages.area-context-paget';
 
-    protected static ?string $navigationGroup = 'รายงานแผน/ความก้าวหน้า';
+    protected static ?string $navigationGroup = 'รายงานผลการขับเคลื่อนนโยบาย';
 
     protected static ?string $navigationLabel = 'สภาพบริบท/แนวทางพัฒนา';
 

@@ -91,15 +91,15 @@ class CreateProject extends CreateRecord
                             Forms\Components\Hidden::make('area_id'),
                             Forms\Components\Hidden::make('budget_year_id'),
                             Forms\Components\TextInput::make('name')
-                                ->label('ชื่อโครงการ')
+                                ->label('ชื่อกิจกรรม')
                                 ->required()
                                 ->maxLength(300),
 //                            Forms\Components\TextInput::make('code')
-//                                ->label('รหัสโครงการ')
+//                                ->label('รหัสกิจกรรม')
 //                                ->required()
 //                                ->maxLength(50),
                             Forms\Components\RichEditor::make('objective')
-                                ->label('วัตถุประสงค์โครงการ')
+                                ->label('วัตถุประสงค์กิจกรรม')
                                 ->columnSpanFull()
                                 ->required()
                                 ->toolbarButtons(['blockquote', 'bold', 'bulletList', 'codeBlock', 'h2', 'h3', 'italic', 'link', 'orderedList', 'redo', 'strike', 'underline', 'undo'])
@@ -114,14 +114,14 @@ class CreateProject extends CreateRecord
                                 Forms\Components\DatePicker::make('date_start')
                                     ->native(false)
                                     ->required()
-                                    ->label('วันเริ่มโครงการ'),
+                                    ->label('วันเริ่มกิจกรรม'),
                                 Forms\Components\DatePicker::make('date_end')
                                     ->native(false)
                                     ->required()
-                                    ->label('วันสิ้นสุดโครงการ'),
+                                    ->label('วันสิ้นสุดกิจกรรม'),
                             ])->columns(2),
                             Forms\Components\TextInput::make('duration')
-                                ->label('ระยะเวลาตลอดโครงการ')
+                                ->label('ระยะเวลาตลอดกิจกรรม')
                                 ->maxLength(100),
                             Forms\Components\TextInput::make('budget')
                                 ->label('งบประมาณ (บาท)')

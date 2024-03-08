@@ -120,9 +120,9 @@ class Area extends Model
         return $this->hasMany(AreaPaOfManager::class);
     }
 
-    public function projects(): HasMany
+    public function activities(): HasMany
     {
-        return $this->hasMany(Project::class);
+        return $this->hasMany(Activity::class);
     }
 
     public function projectActivities(): HasMany

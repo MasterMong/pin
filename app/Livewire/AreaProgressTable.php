@@ -3,7 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Area;
-use App\Tables\Columns\ProgressCountProjectColumn;
+use App\Tables\Columns\ProgressCountActivityColumn;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Tables;
@@ -30,7 +30,7 @@ class AreaProgressTable extends Component implements HasForms, HasTable
                     ->sortable(),
                 TextColumn::make('name')
                     ->label('สพท'),
-                ProgressCountProjectColumn::make('projects')->label('การส่งแผน')
+                ProgressCountActivityColumn::make('projects')->label('การส่งแผน')
             ])
             ->filters([
                 //

@@ -10,7 +10,7 @@ class StrategyMap extends Page
 
     protected static string $view = 'filament.pages.strategy-map';
 
-    protected static ?string $navigationGroup = 'รายงานแผน/ความก้าวหน้า';
+    protected static ?string $navigationGroup = 'รายงานผลการขับเคลื่อนนโยบาย';
 
     protected static ?string $navigationLabel = 'Strategy Map';
 

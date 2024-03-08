@@ -142,7 +142,8 @@ class FormVision extends Component implements HasForms
                                                 // TODO Bug delete all (> 0)
                                                 $action->requiresConfirmation();
                                                 $action->before(function ($state, array $arguments) {
-                                                    $target = AreaTarget::find($state[$arguments['item']]['id']);
+//                                                    dd($arguments);
+                                                    $target = AreaTarget::where('id', ($state[$arguments['item']]));
                                                     $target->delete();
                                                     Notification::make()
                                                         ->title('ลบแล้ว')

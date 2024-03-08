@@ -20,9 +20,9 @@ class ActivityResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    protected static ?string $navigationGroup = 'รายงานแผน/ความก้าวหน้า';
+    protected static ?string $navigationGroup = 'รายงานผลการขับเคลื่อนนโยบาย';
 
-    protected static ?string $navigationLabel = 'การขับเคลื่อนนโยบาย';
+    protected static ?string $navigationLabel = 'ผลการขับเคลื่อนนโยบาย';
 
     protected static ?int $navigationSort = 2;
 
@@ -40,7 +40,7 @@ class ActivityResource extends Resource
                     ->relationship('areaStrategy', 'id')
                     ->required(),
                 Forms\Components\TextInput::make('name')
-                    ->label('ชื่อโครงการ')
+                    ->label('ชื่อกิจกรรม')
                     ->required()
                     ->maxLength(300),
                 Forms\Components\TextInput::make('code')
@@ -88,45 +88,45 @@ class ActivityResource extends Resource
                     ->label('รหัส')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('name')
-                    ->label('ชื่อโครงการ')
+                    ->label('ชื่อกิจกรรม')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('date_start')
-                    ->label('เริ่ม')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('date_end')
-                    ->label('สิ้นสุด')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('budget')
-                    ->label('งบประมาณ')
-                    ->numeric()
-                    ->label('งบ')
-                    ->sortable(),
-                Tables\Columns\ToggleColumn::make('is_pa_of_manager')
-                    ->label('PA')
-                    ,
+//                Tables\Columns\TextColumn::make('date_start')
+//                    ->label('เริ่ม')
+//                    ->searchable(),
+//                Tables\Columns\TextColumn::make('date_end')
+//                    ->label('สิ้นสุด')
+//                    ->searchable(),
+//                Tables\Columns\TextColumn::make('budget')
+//                    ->label('งบประมาณ')
+//                    ->numeric()
+//                    ->label('งบ')
+//                    ->sortable(),
+//                Tables\Columns\ToggleColumn::make('is_pa_of_manager')
+//                    ->label('PA')
+//                    ,
                 Tables\Columns\TextColumn::make('progress')
                     ->label('ความคืบหน้า')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('handler_name')
-                    ->label('ผุ้รับผิดชอบ')
-                    ->hidden()
-                    ->searchable(),
+//                Tables\Columns\TextColumn::make('handler_name')
+//                    ->label('ผุ้รับผิดชอบ')
+//                    ->hidden()
+//                    ->searchable(),
                 Tables\Columns\TextColumn::make('status')
-                    ->label('สภานะ')
+                    ->label('สถานะ')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('deleted_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+//                Tables\Columns\TextColumn::make('created_at')
+//                    ->dateTime()
+//                    ->sortable()
+//                    ->toggleable(isToggledHiddenByDefault: true),
+//                Tables\Columns\TextColumn::make('updated_at')
+//                    ->dateTime()
+//                    ->sortable()
+//                    ->toggleable(isToggledHiddenByDefault: true),
+//                Tables\Columns\TextColumn::make('deleted_at')
+//                    ->dateTime()
+//                    ->sortable()
+//                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
@@ -136,9 +136,9 @@ class ActivityResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+//                Tables\Actions\BulkActionGroup::make([
+//                    Tables\Actions\DeleteBulkAction::make(),
+//                ]),
             ]);
     }
 

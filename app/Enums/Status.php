@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Enums;
+
 use Filament\Support\Contracts\HasLabel;
 
 enum Status: string implements HasLabel

@@ -78,7 +78,7 @@
         </div>
         <div class="flex flex-col md:flex-row ">
             <div class="md:basis-48 md:mr-3 prose mb-3 items-center">
-                <h3 class="text-center rounded p-3 bg-orange-300">โครงการ</h3>
+                <h3 class="text-center rounded p-3 bg-orange-300">โครงการ/กิจกรรม</h3>
             </div>
             <div class="flex-auto">
                 <div class="grid grid-flow-col grid-cols-{{ count($contex->areaMission->areaGoals) }} gap-3">
