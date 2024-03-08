@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->foreignId('area_id')->nullable();
             $table->string('tel', 20)->nullable();
+            $table->string('role', 20)->default('pending');
             $table->rememberToken();
             $table->timestamps();
         });

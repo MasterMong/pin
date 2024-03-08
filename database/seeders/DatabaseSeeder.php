@@ -86,6 +86,7 @@ class DatabaseSeeder extends Seeder
                 'name' => Env('ADMIN_NAME', 'admin'),
                 'email' => Env('ADMIN_EMAIL', 'admin@admin.com'),
                 'password' => Hash::make(Env('ADMIN_PASSWORD', 'password')),
+                'role' => 'admin',
                 'email_verified_at' => now(),
             ]);
         }
@@ -133,6 +134,7 @@ class DatabaseSeeder extends Seeder
                 'name' => $data->name,
                 'email' => $data->email,
                 'area_id' => $data->area_id,
+                'role' => $data->role,
                 'password' => Hash::make($data->password),
                 'email_verified_at' => now(),
             ]);

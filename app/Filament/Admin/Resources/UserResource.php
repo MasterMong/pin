@@ -2,6 +2,7 @@
 
 namespace App\Filament\Admin\Resources;
 
+use App\Enums\Role;
 use App\Filament\Admin\Resources\UserResource\Pages;
 use App\Filament\Admin\Resources\UserResource\RelationManagers;
 use App\Models\User;
@@ -35,8 +36,13 @@ class UserResource extends Resource
                     ->password()
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('area_id')
-                    ->numeric(),
+                Forms\Components\Select::make('area_id')
+                    ->relationship('area', 'name'),
+                Forms\Components\TextInput::make('tel')
+                    ->tel()
+                    ->maxLength(20),
+                Forms\Components\Select::make('role')
+                    ->options(Role::class),
             ]);
     }
 
@@ -51,9 +57,13 @@ class UserResource extends Resource
                 Tables\Columns\TextColumn::make('email_verified_at')
                     ->dateTime()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('area_id')
+                Tables\Columns\TextColumn::make('area.name')
                     ->numeric()
                     ->sortable(),
+                Tables\Columns\TextColumn::make('tel')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('role')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
