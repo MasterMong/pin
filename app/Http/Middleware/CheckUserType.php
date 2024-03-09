@@ -15,6 +15,7 @@ class CheckUserType
      */
     public function handle(Request $request, Closure $next): Response
     {
+//        dd($request);
         if($request->user()) {
             if (auth()->user()->role == 'pending') {
                 auth()->logout();

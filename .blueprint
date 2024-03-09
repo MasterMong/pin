@@ -24,31 +24,33 @@ created:
     - database/factories/RelateTypeFactory.php
     - database/factories/RelateItemFactory.php
     - database/factories/RelateItemTargetValueFactory.php
-    - database/migrations/2024_03_07_163159_create_regions_table.php
-    - database/migrations/2024_03_07_163200_create_provinces_table.php
-    - database/migrations/2024_03_07_163201_create_districts_table.php
-    - database/migrations/2024_03_07_163202_create_sub_districts_table.php
-    - database/migrations/2024_03_07_163203_create_inspection_areas_table.php
-    - database/migrations/2024_03_07_163204_create_settings_table.php
-    - database/migrations/2024_03_07_163205_create_budget_years_table.php
-    - database/migrations/2024_03_07_163206_create_area_types_table.php
-    - database/migrations/2024_03_07_163207_create_areas_table.php
-    - database/migrations/2024_03_07_163208_create_area_member_types_table.php
-    - database/migrations/2024_03_07_163209_create_area_members_table.php
-    - database/migrations/2024_03_07_163210_create_area_attachment_types_table.php
-    - database/migrations/2024_03_07_163211_create_area_attachments_table.php
-    - database/migrations/2024_03_07_163212_create_area_visions_table.php
-    - database/migrations/2024_03_07_163213_create_area_missions_table.php
-    - database/migrations/2024_03_07_163214_create_area_goals_table.php
-    - database/migrations/2024_03_07_163215_create_area_strategies_table.php
-    - database/migrations/2024_03_07_163216_create_area_targets_table.php
-    - database/migrations/2024_03_07_163217_create_area_pa_of_managers_table.php
-    - database/migrations/2024_03_07_163218_create_activities_table.php
-    - database/migrations/2024_03_07_163219_create_activity_innovations_table.php
-    - database/migrations/2024_03_07_163220_create_relate_groups_table.php
-    - database/migrations/2024_03_07_163221_create_relate_types_table.php
-    - database/migrations/2024_03_07_163222_create_relate_items_table.php
-    - database/migrations/2024_03_07_163223_create_relate_item_target_values_table.php
+    - database/factories/PostFactory.php
+    - database/migrations/2024_03_09_052002_create_regions_table.php
+    - database/migrations/2024_03_09_052003_create_provinces_table.php
+    - database/migrations/2024_03_09_052004_create_districts_table.php
+    - database/migrations/2024_03_09_052005_create_sub_districts_table.php
+    - database/migrations/2024_03_09_052006_create_inspection_areas_table.php
+    - database/migrations/2024_03_09_052007_create_settings_table.php
+    - database/migrations/2024_03_09_052008_create_budget_years_table.php
+    - database/migrations/2024_03_09_052009_create_area_types_table.php
+    - database/migrations/2024_03_09_052010_create_areas_table.php
+    - database/migrations/2024_03_09_052011_create_area_member_types_table.php
+    - database/migrations/2024_03_09_052012_create_area_members_table.php
+    - database/migrations/2024_03_09_052013_create_area_attachment_types_table.php
+    - database/migrations/2024_03_09_052014_create_area_attachments_table.php
+    - database/migrations/2024_03_09_052015_create_area_visions_table.php
+    - database/migrations/2024_03_09_052016_create_area_missions_table.php
+    - database/migrations/2024_03_09_052017_create_area_goals_table.php
+    - database/migrations/2024_03_09_052018_create_area_strategies_table.php
+    - database/migrations/2024_03_09_052019_create_area_targets_table.php
+    - database/migrations/2024_03_09_052020_create_area_pa_of_managers_table.php
+    - database/migrations/2024_03_09_052021_create_activities_table.php
+    - database/migrations/2024_03_09_052022_create_activity_innovations_table.php
+    - database/migrations/2024_03_09_052023_create_relate_groups_table.php
+    - database/migrations/2024_03_09_052024_create_relate_types_table.php
+    - database/migrations/2024_03_09_052025_create_relate_items_table.php
+    - database/migrations/2024_03_09_052026_create_relate_item_target_values_table.php
+    - database/migrations/2024_03_09_052027_create_posts_table.php
     - app/Models/Region.php
     - app/Models/Province.php
     - app/Models/District.php
@@ -74,10 +76,11 @@ created:
     - app/Models/RelateType.php
     - app/Models/RelateItem.php
     - app/Models/RelateItemTargetValue.php
+    - app/Models/Post.php
 models:
     Blog\Category: {  }
     Blog\Post: {  }
-    User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, area_id: 'biginteger unsigned nullable', tel: 'string:20 nullable', remember_token: 'string:100 nullable' }
+    User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, area_id: 'biginteger unsigned nullable', tel: 'string:20 nullable', role: 'string:20 default:pending', remember_token: 'string:100 nullable' }
     Region: { name: 'string:300', relationships: { hasMany: 'Province, Area' }, softdeletes: softDeletes }
     Province: { code: integer, name_in_thai: 'string:300', name_in_english: 'string:300', region_id: 'id foreign', relationships: { belongsTo: Region, hasMany: 'District, SubDistrict' }, softdeletes: softDeletes }
     District: { code: integer, name_in_thai: 'string:300', name_in_english: 'string:300', province_id: 'id foreign', relationships: { belongsTo: Province, hasMany: SubDistrict }, softdeletes: softDeletes }
@@ -103,3 +106,4 @@ models:
     RelateType: { label: 'string:1000', name: 'string:100', budget_year_id: 'id foreign', relate_group_id: 'id foreign', is_parent: 'boolean default:false', is_single: 'boolean default:true', parent_name: 'string:100 nullable', order: 'string nullable default:0', relationships: { belongsTo: 'BudgetYear, RelateGroup', hasMany: RelateItem }, softdeletes: softDeletes }
     RelateItem: { label: 'string:1000', budget_year_id: 'id foreign', relate_type_id: 'id foreign', ref: 'string:100', parent_item_ref: 'string:100 nullable', order: 'string nullable default:0', req_value: 'boolean default:false', relationships: { belongsTo: 'BudgetYear, RelateType' }, softdeletes: softDeletes }
     RelateItemTargetValue: { label: 'string:1000', budget_year_id: 'id foreign', relate_item_id: 'id foreign', value: 'float default:0', relationships: { belongsTo: 'BudgetYear, RelateItem' }, softdeletes: softDeletes }
+    Post: { user_id: 'id foreign', title: 'string:1000', content: longtext, is_enabled: bool, is_feature: bool, relationships: { belongsTo: User }, softdeletes: softDeletes }

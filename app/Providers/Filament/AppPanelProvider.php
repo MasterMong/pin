@@ -53,6 +53,7 @@ class AppPanelProvider extends PanelProvider
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
                 StartSession::class,
+                CheckUserType::class,
                 AuthenticateSession::class,
                 CheckUserType::class,
                 ShareErrorsFromSession::class,
