@@ -83,8 +83,8 @@ class FormVision extends Component implements HasForms
             $field_att[] = Forms\Components\FileUpload::make($att->name)
                 ->acceptedFileTypes($att->file_types)
                 ->label($att->label)
-//                ->multiple()
-                    ->required()
+                ->multiple(!$att->is_single)
+                ->required()
                 ->getUploadedFileNameForStorageUsing(
                     fn(TemporaryUploadedFile $file): string => (string)str($file->getClientOriginalName())
                         ->prepend($this->budget_year_id . '-' . $att->name . '-' . auth()->user()->area_id . '-'),

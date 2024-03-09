@@ -40,7 +40,9 @@ class CreateProject extends CreateRecord
         $this->relate_groups = RelateGroup::with([
             'relateTypes' => function ($q) {
                 $q->with([
-                    'relateItems'
+                    'relateItems' => function ($qi) {
+                        $qi->orderBy('order');
+                    }
                 ]);
             }
         ])->get()->toArray();
@@ -94,6 +96,32 @@ class CreateProject extends CreateRecord
                                 ->label('ชื่อกิจกรรม')
                                 ->required()
                                 ->maxLength(300),
+                            Repeater::make('relate_items')
+                                ->reorderable(False)
+                                // ->addable(False)
+                                ->schema($relate_form)
+                                ->deletable(False)
+                                ->minItems(1)
+                                ->maxItems(1)
+                                ->columnSpanFull()
+                                ->label('ความสอดคล้อง'),
+                            Forms\Components\Select::make('area_strategy_id')
+                                ->relationship('areaStrategy', 'detail')
+                                ->label('กลยุทธ์ สพท.')
+                                ->required(),
+                            Forms\Components\Toggle::make('is_pa_of_manager')
+                                ->label('วPA ของผู้บริหาร')
+                                ->required(),
+                            Forms\Components\Group::make()->schema([
+                                Forms\Components\DatePicker::make('date_start')
+                                    ->native(false)
+                                    ->required()
+                                    ->label('วันเริ่มกิจกรรม'),
+                                Forms\Components\DatePicker::make('date_end')
+                                    ->native(false)
+                                    ->required()
+                                    ->label('วันสิ้นสุดกิจกรรม'),
+                            ])->columns(2),
 //                            Forms\Components\TextInput::make('code')
 //                                ->label('รหัสกิจกรรม')
 //                                ->required()
@@ -110,16 +138,7 @@ class CreateProject extends CreateRecord
                                 ->toolbarButtons(['blockquote', 'bold', 'bulletList', 'codeBlock', 'h2', 'h3', 'italic', 'link', 'orderedList', 'redo', 'strike', 'underline', 'undo'])
                                 ->columnSpanFull()
                                 ->maxLength(1000),
-                            Forms\Components\Group::make()->schema([
-                                Forms\Components\DatePicker::make('date_start')
-                                    ->native(false)
-                                    ->required()
-                                    ->label('วันเริ่มกิจกรรม'),
-                                Forms\Components\DatePicker::make('date_end')
-                                    ->native(false)
-                                    ->required()
-                                    ->label('วันสิ้นสุดกิจกรรม'),
-                            ])->columns(2),
+
                             Forms\Components\TextInput::make('duration')
                                 ->label('ระยะเวลาตลอดกิจกรรม')
                                 ->maxLength(100),
@@ -127,24 +146,8 @@ class CreateProject extends CreateRecord
                                 ->label('งบประมาณ (บาท)')
                                 ->required()
                                 ->numeric(),
-                            Forms\Components\Select::make('area_strategy_id')
-                                ->relationship('areaStrategy', 'detail')
-                                ->label('กลยุทธ์ สพท.')
-                                ->required(),
-                            Forms\Components\Toggle::make('is_pa_of_manager')
-                                ->label('วPA ของผู้บริหาร')
-                                ->required(),
                         ]
-                    ),
-
-                    Repeater::make('relate_items')
-                        ->reorderable(False)
-                        // ->addable(False)
-                        ->schema($relate_form)
-                        ->deletable(False)
-                        ->minItems(1)
-                        ->maxItems(1)
-                        ->columnSpanFull()
+                    )
                 ]
             );
     }

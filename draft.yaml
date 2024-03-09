@@ -204,6 +204,10 @@ models:
     relate_items: json
     handler_name: string nullable
     status: string:50
+    q1: bool
+    q2: bool
+    q3: bool
+    q4: bool
     relationships:
       belongsTo: Area, BudgetYear, AreaStrategy
       hasMany: ActivityInnovation
