@@ -7,11 +7,13 @@ use Filament\Infolists\Contracts\HasInfolists;
 use Filament\Infolists\Infolist;
 use Filament\Pages\Page;
 
-class Area extends Page implements HasInfolists
+class AreaInfo extends Page implements HasInfolists
 {
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
-    protected static string $view = 'filament.pages.area';
+    protected static string $view = 'filament.pages.area-info';
+
+//    protected static ?string $navigationLabel = auth()->user()->area->name;
 
     /**
      * @return string|null
@@ -21,7 +23,7 @@ class Area extends Page implements HasInfolists
         return auth()->user()->area->name;
     }
 
-    public  function getTitle(): string
+    public function getTitle(): string
     {
         return auth()->user()->area->name;
     }
