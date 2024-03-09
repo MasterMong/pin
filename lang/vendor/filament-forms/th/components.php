@@ -7,11 +7,11 @@ return [
         'actions' => [
 
             'clone' => [
-                'label' => 'Clone',
+                'label' => 'โคลน',
             ],
 
             'add' => [
-                'label' => 'Add to :label',
+                'label' => 'เพิ่ม :ป้าย',
             ],
 
             'add_between' => [
@@ -19,31 +19,31 @@ return [
             ],
 
             'delete' => [
-                'label' => 'Delete',
+                'label' => 'ลบ',
             ],
 
             'reorder' => [
-                'label' => 'Move',
+                'label' => 'ย้าย',
             ],
 
             'move_down' => [
-                'label' => 'Move down',
+                'label' => 'ย้ายลง',
             ],
 
             'move_up' => [
-                'label' => 'Move up',
+                'label' => 'ย้ายขึ้น',
             ],
 
             'collapse' => [
-                'label' => 'Collapse',
+                'label' => 'ยุบ',
             ],
 
             'expand' => [
-                'label' => 'Expand',
+                'label' => 'ขยาย',
             ],
 
             'collapse_all' => [
-                'label' => 'Collapse all',
+                'label' => 'ยุบทั้งหมด',
             ],
 
             'expand_all' => [
@@ -59,11 +59,11 @@ return [
         'actions' => [
 
             'deselect_all' => [
-                'label' => 'Deselect all',
+                'label' => 'ไม่เลือกทั้งหมด',
             ],
 
             'select_all' => [
-                'label' => 'Select all',
+                'label' => 'เลือกทั้งหมด',
             ],
 
         ],
@@ -77,7 +77,7 @@ return [
             'actions' => [
 
                 'cancel' => [
-                    'label' => 'Cancel',
+                    'label' => 'ยกเลิก',
                 ],
 
                 'drag_crop' => [

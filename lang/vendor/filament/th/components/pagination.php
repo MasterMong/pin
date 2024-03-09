@@ -10,10 +10,10 @@ return [
 
         'records_per_page' => [
 
-            'label' => 'Per page',
+            'label' => 'ต่อหน้า',
 
             'options' => [
-                'all' => 'All',
+                'all' => 'ทั้งหมด',
             ],
 
         ],
@@ -23,23 +23,23 @@ return [
     'actions' => [
 
         'first' => [
-            'label' => 'First',
+            'label' => 'หน้าแรก',
         ],
 
         'go_to_page' => [
-            'label' => 'Go to page :page',
+            'label' => 'ไปที่หน้า :หน้า',
         ],
 
         'last' => [
-            'label' => 'Last',
+            'label' => 'หน้าสุดท้าย',
         ],
 
         'next' => [
-            'label' => 'Next',
+            'label' => 'ถัดไป',
         ],
 
         'previous' => [
-            'label' => 'Previous',
+            'label' => 'ก่อนหน้า',
         ],
 
     ],
