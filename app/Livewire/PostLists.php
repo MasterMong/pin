@@ -42,8 +42,8 @@ class PostLists extends Component implements HasForms, HasTable
                 Tables\Actions\ViewAction::make()
                     ->infolist([
                         TextEntry::make('title')->hiddenLabel()->html(),
-                        ViewEntry::make('content')->view('infolists.components.post-entry')
-                    ])
+                        ViewEntry::make('content')->view('infolists.components.post-entry')->hiddenLabel()
+                    ])->slideOver()
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

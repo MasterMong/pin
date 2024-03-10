@@ -2,6 +2,7 @@
 
 namespace App\Filament\Admin\Resources;
 
+use AmidEsfahani\FilamentTinyEditor\TinyEditor;
 use App\Filament\Admin\Resources\PostResource\Pages;
 use App\Filament\Admin\Resources\PostResource\RelationManagers;
 use App\Models\Post;
@@ -31,7 +32,7 @@ class PostResource extends Resource
                     ->columnSpanFull()
                     ->required()
                     ->maxLength(1000),
-                Forms\Components\RichEditor::make('content')
+                TinyEditor::make('content')
                     ->required()
                     ->columnSpanFull(),
                 Forms\Components\ToggleButtons::make('is_enabled')
