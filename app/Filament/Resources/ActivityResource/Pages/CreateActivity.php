@@ -164,6 +164,8 @@ class CreateActivity extends CreateRecord
                                 ->label('ภาพกิจกรรม')
                                 ->multiple()
                                 ->image()
+                                ->downloadable()
+                                ->previewable()
                                 ->imageEditor()
                                 ->required()
                                 ->multiple(),

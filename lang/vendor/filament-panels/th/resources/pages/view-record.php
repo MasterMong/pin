@@ -2,14 +2,14 @@
 
 return [
 
-    'title' => 'View :label',
+    'title' => 'รายละเอียด:label',
 
-    'breadcrumb' => 'View',
+    'breadcrumb' => 'รายละเอียด',
 
     'content' => [
 
         'tab' => [
-            'label' => 'View',
+            'label' => 'รายละเอียด',
         ],
 
     ],

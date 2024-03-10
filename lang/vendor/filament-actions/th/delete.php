@@ -4,16 +4,16 @@ return [
 
     'single' => [
 
-        'label' => 'Delete',
+        'label' => 'ลบ',
 
         'modal' => [
 
-            'heading' => 'Delete :label',
+            'heading' => 'ลบ:label',
 
             'actions' => [
 
                 'delete' => [
-                    'label' => 'Delete',
+                    'label' => 'ลบ',
                 ],
 
             ],

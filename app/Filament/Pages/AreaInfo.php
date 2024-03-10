@@ -2,6 +2,7 @@
 
 namespace App\Filament\Pages;
 
+use Filament\Infolists\Components\Section;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Contracts\HasInfolists;
 use Filament\Infolists\Infolist;
@@ -33,7 +34,23 @@ class AreaInfo extends Page implements HasInfolists
         return $infolist
             ->record(\App\Models\Area::where('id', auth()->user()->area_id)->first())
             ->schema([
-                TextEntry::make('name')
+                Section::make('ข้อมุลทั่วไป')->schema([
+                    TextEntry::make('name')->label('สพท.'),
+                    TextEntry::make('areaType.des')->label('ประเภท'),
+                    TextEntry::make('inspectionArea.name')->label('เขตตรวจราชการ'),
+                    TextEntry::make('tel')->label('โทรศัทท์'),
+                    TextEntry::make('website')->label('เว็บไซต์')->url(true),
+//                    TextEntry::make('num_person')->label('จำนวนบุคลากร'),
+//                    TextEntry::make('num_school')->label('จำนวนโรงเรียน'),
+//                    TextEntry::make('num_teacher')->label('จำนวนครู'),
+//                    TextEntry::make('num_student')->label('จำนวนนักเรียน'),
+                ])->columns(2),
+                Section::make('ที่ตั้ง')->schema([
+                    TextEntry::make('address')->label('ที่อยู่'),
+                    TextEntry::make('district.name_in_thai')->label('อำเภอ'),
+                    TextEntry::make('province.name_in_thai')->label('จังหวัด'),
+                    TextEntry::make('zip_code'),
+                ])
             ]);
     }
 }

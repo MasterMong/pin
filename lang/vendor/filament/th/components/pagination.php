@@ -2,7 +2,7 @@
 
 return [
 
-    'label' => 'Pagination navigation',
+    'label' => 'การนำทางการแบ่งหน้า',
 
     'overview' => '{1} Showing 1 result|[2,*] Showing :first to :last of :total results',
 
@@ -10,7 +10,7 @@ return [
 
         'records_per_page' => [
 
-            'label' => 'ต่อหน้า',
+            'label' => 'จำนวนต่อหน้า',
 
             'options' => [
                 'all' => 'ทั้งหมด',
@@ -23,15 +23,15 @@ return [
     'actions' => [
 
         'first' => [
-            'label' => 'หน้าแรก',
+            'label' => 'ลำดับแรก',
         ],
 
         'go_to_page' => [
-            'label' => 'ไปที่หน้า :หน้า',
+            'label' => 'ไปที่หน้า:หน้า',
         ],
 
         'last' => [
-            'label' => 'หน้าสุดท้าย',
+            'label' => 'ลำดับสุดท้าย',
         ],
 
         'next' => [

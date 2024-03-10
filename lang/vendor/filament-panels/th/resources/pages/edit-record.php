@@ -2,20 +2,20 @@
 
 return [
 
-    'title' => 'Edit :label',
+    'title' => 'แก้ไข:label',
 
-    'breadcrumb' => 'Edit',
+    'breadcrumb' => 'แก้ไข',
 
     'form' => [
 
         'actions' => [
 
             'cancel' => [
-                'label' => 'Cancel',
+                'label' => 'ยกเลิก',
             ],
 
             'save' => [
-                'label' => 'Save changes',
+                'label' => 'บันทึกการแก้ไข',
             ],
 
         ],
@@ -25,7 +25,7 @@ return [
     'content' => [
 
         'tab' => [
-            'label' => 'Edit',
+            'label' => 'แก้ไข',
         ],
 
     ],
@@ -33,7 +33,7 @@ return [
     'notifications' => [
 
         'saved' => [
-            'title' => 'Saved',
+            'title' => 'บันทึกแล้ว',
         ],
 
     ],

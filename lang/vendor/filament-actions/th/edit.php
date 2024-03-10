@@ -4,16 +4,16 @@ return [
 
     'single' => [
 
-        'label' => 'Edit',
+        'label' => 'แก้ไข',
 
         'modal' => [
 
-            'heading' => 'Edit :label',
+            'heading' => 'แก้ไข:label',
 
             'actions' => [
 
                 'save' => [
-                    'label' => 'Save changes',
+                    'label' => 'บันทึกการแก้ไข',
                 ],
 
             ],
@@ -23,7 +23,7 @@ return [
         'notifications' => [
 
             'saved' => [
-                'title' => 'Saved',
+                'title' => 'บึนทึกแล้ว',
             ],
 
         ],

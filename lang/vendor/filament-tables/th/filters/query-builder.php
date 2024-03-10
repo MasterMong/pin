@@ -2,12 +2,12 @@
 
 return [
 
-    'label' => 'สร้างแบบสอบถาม',
+    'label' => 'ตัวสร้างแบบสอบถาม',
 
     'form' => [
 
         'operator' => [
-            'label' => 'ผู้ดำเนินการ',
+            'label' => 'ตัวดำเนินการ',
         ],
 
         'or_groups' => [
@@ -15,7 +15,7 @@ return [
             'label' => 'กลุ่ม',
 
             'block' => [
-                'label' => 'การแยกทาง (หรือ)',
+                'label' => 'Disjunction (OR)',
                 'or' => 'หรือ',
             ],
 
@@ -33,7 +33,7 @@ return [
 
     ],
 
-    'no_rules' => '(ไม่มีกฎ)',
+    'no_rules' => '(No rules)',
 
     'item_separators' => [
         'and' => 'และ',
@@ -45,13 +45,13 @@ return [
         'is_filled' => [
 
             'label' => [
-                'direct' => 'Is เติมเต็ม',
-                'inverse' => 'Is ว่าง',
+                'direct' => 'เป็นที่เติมเต็ม',
+                'inverse' => 'ว่างเปล่า',
             ],
 
             'summary' => [
-                'direct' => ':คุณลักษณะเติมเต็ม',
-                'inverse' => ':คุณลักษณะว่างเปล่า',
+                'direct' => ':คุณสมบัติเต็ม',
+                'inverse' => ':คุณสมบัติว่างเปล่า',
             ],
 
         ],
@@ -61,13 +61,13 @@ return [
             'is_true' => [
 
                 'label' => [
-                    'direct' => 'Is true',
-                    'inverse' => 'Is false',
+                    'direct' => 'เป็นความจริง',
+                    'inverse' => 'เป็นความเท็จ',
                 ],
 
                 'summary' => [
-                    'direct' => ':attribute is true',
-                    'inverse' => ':attribute is false',
+                    'direct' => ':คุณสมบัติเป็นจริง',
+                    'inverse' => ':คุณสมบัติเป็นเท็จ',
                 ],
 
             ],
@@ -309,8 +309,8 @@ return [
                 'label' => [
 
                     'single' => [
-                        'direct' => 'ใช่',
-                        'inverse' => 'ไม่ใช่',
+                        'direct' => 'Is',
+                        'inverse' => 'Is not',
                     ],
 
                     'multiple' => [

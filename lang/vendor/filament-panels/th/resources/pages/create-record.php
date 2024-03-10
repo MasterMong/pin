@@ -2,24 +2,24 @@
 
 return [
 
-    'title' => 'Create :label',
+    'title' => 'เพิ่ม:label',
 
-    'breadcrumb' => 'Create',
+    'breadcrumb' => 'เพิ่ม',
 
     'form' => [
 
         'actions' => [
 
             'cancel' => [
-                'label' => 'Cancel',
+                'label' => 'ยกเลิก',
             ],
 
             'create' => [
-                'label' => 'Create',
+                'label' => 'บันทึก',
             ],
 
             'create_another' => [
-                'label' => 'Create & create another',
+                'label' => 'บันทึกและเพิ่มอีก',
             ],
 
         ],

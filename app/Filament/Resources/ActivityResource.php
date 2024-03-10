@@ -100,6 +100,7 @@ class ActivityResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->query(Activity::query()->where('area_id', auth()->user()->area_id))
             ->columns([
 //                Tables\Columns\TextColumn::make('code')
 //                    ->label('รหัส')

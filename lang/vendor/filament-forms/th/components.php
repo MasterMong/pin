@@ -11,11 +11,11 @@ return [
             ],
 
             'add' => [
-                'label' => 'เพิ่ม :ป้าย',
+                'label' => 'เพิ่มไปที่ :label',
             ],
 
             'add_between' => [
-                'label' => 'Insert between blocks',
+                'label' => 'แทรกระหว่างบล็อก',
             ],
 
             'delete' => [
@@ -47,7 +47,7 @@ return [
             ],
 
             'expand_all' => [
-                'label' => 'Expand all',
+                'label' => 'ขยายทั้งหมด',
             ],
 
         ],
@@ -59,7 +59,7 @@ return [
         'actions' => [
 
             'deselect_all' => [
-                'label' => 'ไม่เลือกทั้งหมด',
+                'label' => 'ยกเลิกการเลือกทั้งหมด',
             ],
 
             'select_all' => [
@@ -81,67 +81,67 @@ return [
                 ],
 
                 'drag_crop' => [
-                    'label' => 'Drag mode "crop"',
+                    'label' => 'โหมดลาก "ตัด"',
                 ],
 
                 'drag_move' => [
-                    'label' => 'Drag mode "move"',
+                    'label' => 'โหมดลาก "ย้าย"',
                 ],
 
                 'flip_horizontal' => [
-                    'label' => 'Flip image horizontally',
+                    'label' => 'พลิกภาพในแนวนอน',
                 ],
 
                 'flip_vertical' => [
-                    'label' => 'Flip image vertically',
+                    'label' => 'พลิกภาพในแนวตั้ง',
                 ],
 
                 'move_down' => [
-                    'label' => 'Move image down',
+                    'label' => 'ย้ายภาพลง',
                 ],
 
                 'move_left' => [
-                    'label' => 'Move image to left',
+                    'label' => 'ย้ายภาพไปทางซ้าย',
                 ],
 
                 'move_right' => [
-                    'label' => 'Move image to right',
+                    'label' => 'ย้ายภาพไปทางขวา',
                 ],
 
                 'move_up' => [
-                    'label' => 'Move image up',
+                    'label' => 'ย้ายภาพขึ้น',
                 ],
 
                 'reset' => [
-                    'label' => 'Reset',
+                    'label' => 'รีเซ็ต',
                 ],
 
                 'rotate_left' => [
-                    'label' => 'Rotate image to left',
+                    'label' => 'หมุนภาพไปทางซ้าย',
                 ],
 
                 'rotate_right' => [
-                    'label' => 'Rotate image to right',
+                    'label' => 'หมุนภาพไปทางขวา',
                 ],
 
                 'set_aspect_ratio' => [
-                    'label' => 'Set aspect ratio to :ratio',
+                    'label' => 'ตั้งค่าอัตราส่วนภาพเป็น:อัตราส่วน',
                 ],
 
                 'save' => [
-                    'label' => 'Save',
+                    'label' => 'บันทึก',
                 ],
 
                 'zoom_100' => [
-                    'label' => 'Zoom image to 100%',
+                    'label' => 'ขยายภาพ 100%',
                 ],
 
                 'zoom_in' => [
-                    'label' => 'Zoom in',
+                    'label' => 'ขยายภาพ',
                 ],
 
                 'zoom_out' => [
-                    'label' => 'Zoom out',
+                    'label' => 'ย่อภาพ',
                 ],
 
             ],
@@ -149,17 +149,17 @@ return [
             'fields' => [
 
                 'height' => [
-                    'label' => 'Height',
+                    'label' => 'ความสูง',
                     'unit' => 'px',
                 ],
 
                 'rotation' => [
-                    'label' => 'Rotation',
-                    'unit' => 'deg',
+                    'label' => 'การหมุน',
+                    'unit' => 'องศา',
                 ],
 
                 'width' => [
-                    'label' => 'Width',
+                    'label' => 'ความกว้าง',
                     'unit' => 'px',
                 ],
 
@@ -177,10 +177,10 @@ return [
 
             'aspect_ratios' => [
 
-                'label' => 'Aspect ratios',
+                'label' => 'อัตราส่วนภาพ',
 
                 'no_fixed' => [
-                    'label' => 'Free',
+                    'label' => 'อิสระ',
                 ],
 
             ],
@@ -203,15 +203,15 @@ return [
         'actions' => [
 
             'add' => [
-                'label' => 'Add row',
+                'label' => 'เพิ่มแถว',
             ],
 
             'delete' => [
-                'label' => 'Delete row',
+                'label' => 'ลบแถว',
             ],
 
             'reorder' => [
-                'label' => 'Reorder row',
+                'label' => 'เรียงลำดับแถวใหม่',
             ],
 
         ],
@@ -219,11 +219,11 @@ return [
         'fields' => [
 
             'key' => [
-                'label' => 'Key',
+                'label' => 'คีย์',
             ],
 
             'value' => [
-                'label' => 'Value',
+                'label' => 'ค่า',
             ],
 
         ],
@@ -233,19 +233,19 @@ return [
     'markdown_editor' => [
 
         'toolbar_buttons' => [
-            'attach_files' => 'Attach files',
-            'blockquote' => 'Blockquote',
-            'bold' => 'Bold',
-            'bullet_list' => 'Bullet list',
-            'code_block' => 'Code block',
-            'heading' => 'Heading',
-            'italic' => 'Italic',
-            'link' => 'Link',
-            'ordered_list' => 'Numbered list',
-            'redo' => 'Redo',
-            'strike' => 'Strikethrough',
-            'table' => 'Table',
-            'undo' => 'Undo',
+            'attach_files' => 'แนบไฟล์',
+            'blockquote' => 'บล็อกคำพูด',
+            'bold' => 'ตัวหนา',
+            'bullet_list' => 'รายการหัวข้อย่อย',
+            'code_block' => 'บล็อกโค๊ด',
+            'heading' => 'หัวเรื่อง',
+            'italic' => 'ตัวเอียง',
+            'link' => 'ลิงค์',
+            'ordered_list' => 'ลำดับตัวเลข',
+            'redo' => 'ทำซ้ำ',
+            'strike' => 'ขีดทับ',
+            'table' => 'ตาราง',
+            'undo' => 'เลิกทำ',
         ],
 
     ],
@@ -253,8 +253,8 @@ return [
     'radio' => [
 
         'boolean' => [
-            'true' => 'Yes',
-            'false' => 'No',
+            'true' => 'ใช่',
+            'false' => 'ไม่ใช่',
         ],
 
     ],
@@ -264,47 +264,47 @@ return [
         'actions' => [
 
             'add' => [
-                'label' => 'Add to :label',
+                'label' => 'เพิ่มไปที่ :label',
             ],
 
             'add_between' => [
-                'label' => 'Insert between',
+                'label' => 'แทรกระหว่าง',
             ],
 
             'delete' => [
-                'label' => 'Delete',
+                'label' => 'ลบ',
             ],
 
             'clone' => [
-                'label' => 'Clone',
+                'label' => 'โคลน',
             ],
 
             'reorder' => [
-                'label' => 'Move',
+                'label' => 'ย้าย',
             ],
 
             'move_down' => [
-                'label' => 'Move down',
+                'label' => 'ย้ายลง',
             ],
 
             'move_up' => [
-                'label' => 'Move up',
+                'label' => 'ย้ายขึ้น',
             ],
 
             'collapse' => [
-                'label' => 'Collapse',
+                'label' => 'ยุบ',
             ],
 
             'expand' => [
-                'label' => 'Expand',
+                'label' => 'ขยาย',
             ],
 
             'collapse_all' => [
-                'label' => 'Collapse all',
+                'label' => 'ยุบทั้งหมด',
             ],
 
             'expand_all' => [
-                'label' => 'Expand all',
+                'label' => 'ขยายทั้งหมด',
             ],
 
         ],
@@ -318,8 +318,8 @@ return [
             'link' => [
 
                 'actions' => [
-                    'link' => 'Link',
-                    'unlink' => 'Unlink',
+                    'link' => 'ลิ้งค์',
+                    'unlink' => 'ยกเลิกลิ้งค์',
                 ],
 
                 'label' => 'URL',
@@ -331,21 +331,21 @@ return [
         ],
 
         'toolbar_buttons' => [
-            'attach_files' => 'Attach files',
-            'blockquote' => 'Blockquote',
-            'bold' => 'Bold',
-            'bullet_list' => 'Bullet list',
-            'code_block' => 'Code block',
-            'h1' => 'Title',
-            'h2' => 'Heading',
-            'h3' => 'Subheading',
-            'italic' => 'Italic',
-            'link' => 'Link',
-            'ordered_list' => 'Numbered list',
-            'redo' => 'Redo',
-            'strike' => 'Strikethrough',
-            'underline' => 'Underline',
-            'undo' => 'Undo',
+            'attach_files' => 'แนบไฟล์',
+            'blockquote' => 'บล็อกคำพูด',
+            'bold' => 'ตัวหนา',
+            'bullet_list' => 'รายการหัวข้อย่อย',
+            'code_block' => 'บล็อกโค๊ด',
+            'h1' => 'หัวข้อ',
+            'h2' => 'หัวเรื่อง',
+            'h3' => 'หัวเรื่องย่อย',
+            'italic' => 'ตัวเอียง',
+            'link' => 'ลิงค์',
+            'ordered_list' => 'ลำดับตัวเลข',
+            'redo' => 'ทำซ้ำ',
+            'strike' => 'ขีดทับ',
+            'underline' => 'ขีดเส้นใต้',
+            'undo' => 'เลิกทำ',
         ],
 
     ],
@@ -358,16 +358,16 @@ return [
 
                 'modal' => [
 
-                    'heading' => 'Create',
+                    'heading' => 'เพิ่ม',
 
                     'actions' => [
 
                         'create' => [
-                            'label' => 'Create',
+                            'label' => 'เพิ่ม',
                         ],
 
                         'create_another' => [
-                            'label' => 'Create & create another',
+                            'label' => 'บันทึกและเพิ่มอีก',
                         ],
 
                     ],
@@ -380,12 +380,12 @@ return [
 
                 'modal' => [
 
-                    'heading' => 'Edit',
+                    'heading' => 'แก้ไข',
 
                     'actions' => [
 
                         'save' => [
-                            'label' => 'Save',
+                            'label' => 'บันทึก',
                         ],
 
                     ],
@@ -397,21 +397,21 @@ return [
         ],
 
         'boolean' => [
-            'true' => 'Yes',
-            'false' => 'No',
+            'true' => 'ใช่',
+            'false' => 'ไม่ใช่',
         ],
 
-        'loading_message' => 'Loading...',
+        'loading_message' => 'กำลังโหลด...',
 
         'max_items_message' => 'Only :count can be selected.',
 
-        'no_search_results_message' => 'No options match your search.',
+        'no_search_results_message' => 'ไม่มีตัวเลือกที่ตรงกับการค้นหาของคุณ',
 
-        'placeholder' => 'Select an option',
+        'placeholder' => 'เลือกตัวเลือก',
 
-        'searching_message' => 'Searching...',
+        'searching_message' => 'ค้นหา...',
 
-        'search_prompt' => 'Start typing to search...',
+        'search_prompt' => 'เริ่มพิมพ์เพื่อค้นหา...',
 
     ],
 
@@ -424,11 +424,11 @@ return [
         'actions' => [
 
             'hide_password' => [
-                'label' => 'Hide password',
+                'label' => 'ซ่อนรหัสผ่าน',
             ],
 
             'show_password' => [
-                'label' => 'Show password',
+                'label' => 'แสดงรหัสผ่าน',
             ],
 
         ],
@@ -438,8 +438,8 @@ return [
     'toggle_buttons' => [
 
         'boolean' => [
-            'true' => 'Yes',
-            'false' => 'No',
+            'true' => 'ใช่',
+            'false' => 'ไม่ใช่',
         ],
 
     ],
@@ -449,11 +449,11 @@ return [
         'actions' => [
 
             'previous_step' => [
-                'label' => 'Back',
+                'label' => 'ย้อนกลับ',
             ],
 
             'next_step' => [
-                'label' => 'Next',
+                'label' => 'ถัดไป',
             ],
 
         ],

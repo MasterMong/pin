@@ -4,7 +4,7 @@ return [
 
     'column_toggle' => [
 
-        'heading' => 'Columns',
+        'heading' => 'คอลัมน์',
 
     ],
 
@@ -13,8 +13,8 @@ return [
         'text' => [
 
             'actions' => [
-                'collapse_list' => 'Show :count less',
-                'expand_list' => 'Show :count more',
+                'collapse_list' => 'แสดงน้อยลง',
+                'expand_list' => 'แสดงมากขึ้น',
             ],
 
             'more_list_items' => 'and :count more',
@@ -26,47 +26,47 @@ return [
     'fields' => [
 
         'bulk_select_page' => [
-            'label' => 'Select/deselect all items for bulk actions.',
+            'label' => 'เลือก/ยกเลิกการเลือกรายการทั้งหมดสำหรับการดำเนินการแบบกลุ่ม',
         ],
 
         'bulk_select_record' => [
-            'label' => 'Select/deselect item :key for bulk actions.',
+            'label' => 'เลือก/ยกเลิกการเลือกรายการกุญแจสำหรับการดำเนินการแบบกลุ่ม',
         ],
 
         'bulk_select_group' => [
-            'label' => 'Select/deselect group :title for bulk actions.',
+            'label' => 'เลือก/ยกเลิกการเลือกรายการหัวข้อสำหรับการดำเนินการแบบกลุ่ม',
         ],
 
         'search' => [
-            'label' => 'Search',
-            'placeholder' => 'Search',
-            'indicator' => 'Search',
+            'label' => 'ค้นหา',
+            'placeholder' => 'ค้นหา',
+            'indicator' => 'ค้นหา',
         ],
 
     ],
 
     'summary' => [
 
-        'heading' => 'Summary',
+        'heading' => 'สรุป',
 
         'subheadings' => [
             'all' => 'All :label',
-            'group' => ':group summary',
-            'page' => 'This page',
+            'group' => ':กลุ่ม สรุป',
+            'page' => 'หน้านี้',
         ],
 
         'summarizers' => [
 
             'average' => [
-                'label' => 'Average',
+                'label' => 'เฉลี่ย',
             ],
 
             'count' => [
-                'label' => 'Count',
+                'label' => 'นับ',
             ],
 
             'sum' => [
-                'label' => 'Sum',
+                'label' => 'รวม',
             ],
 
         ],
@@ -76,36 +76,36 @@ return [
     'actions' => [
 
         'disable_reordering' => [
-            'label' => 'Finish reordering records',
+            'label' => 'เสร็จสิ้นการเรียงลำดับบันทึกใหม่',
         ],
 
         'enable_reordering' => [
-            'label' => 'Reorder records',
+            'label' => 'จัดลำดับบันทึกใหม่',
         ],
 
         'filter' => [
-            'label' => 'Filter',
+            'label' => 'ตัวกรอง',
         ],
 
         'group' => [
-            'label' => 'Group',
+            'label' => 'กลุ่ม',
         ],
 
         'open_bulk_actions' => [
-            'label' => 'Bulk actions',
+            'label' => 'การดำเนินการเป็นกลุ่ม',
         ],
 
         'toggle_columns' => [
-            'label' => 'Toggle columns',
+            'label' => 'สลับคอลัมน์',
         ],
 
     ],
 
     'empty' => [
 
-        'heading' => 'No :model',
+        'heading' => 'ไม่มีข้อมูลที่จะแสดง',
 
-        'description' => 'Create a :model to get started.',
+        'description' => 'เพิ่มข้อมูลเพื่อเริ่มต้น',
 
     ],
 
@@ -114,45 +114,45 @@ return [
         'actions' => [
 
             'apply' => [
-                'label' => 'Apply filters',
+                'label' => 'ใช้ตัวกรอง',
             ],
 
             'remove' => [
-                'label' => 'Remove filter',
+                'label' => 'ลบตัวกรอง',
             ],
 
             'remove_all' => [
-                'label' => 'Remove all filters',
-                'tooltip' => 'Remove all filters',
+                'label' => 'ลบตัวกรองทั้งหมด',
+                'tooltip' => 'ลบตัวกรองทั้งหมด',
             ],
 
             'reset' => [
-                'label' => 'Reset',
+                'label' => 'รีเซ็ต',
             ],
 
         ],
 
-        'heading' => 'Filters',
+        'heading' => 'ตัวกรอง',
 
-        'indicator' => 'Active filters',
+        'indicator' => 'ตัวกรองที่ใช้งานอยู่',
 
         'multi_select' => [
-            'placeholder' => 'All',
+            'placeholder' => 'ทั้งหมด',
         ],
 
         'select' => [
-            'placeholder' => 'All',
+            'placeholder' => 'ทั้งหมด',
         ],
 
         'trashed' => [
 
-            'label' => 'Deleted records',
+            'label' => 'บันทึกที่ถูกลบ',
 
-            'only_trashed' => 'Only deleted records',
+            'only_trashed' => 'เฉพาะบันทึกที่ถูกลบ',
 
-            'with_trashed' => 'With deleted records',
+            'with_trashed' => 'รวมบันทึกที่ถูกลบ',
 
-            'without_trashed' => 'Without deleted records',
+            'without_trashed' => 'ไม่รวมบันทึกที่ถูกลบ',
 
         ],
 
@@ -163,17 +163,17 @@ return [
         'fields' => [
 
             'group' => [
-                'label' => 'Group by',
-                'placeholder' => 'Group by',
+                'label' => 'จัดกลุ่มตาม',
+                'placeholder' => 'จัดกลุ่มตาม',
             ],
 
             'direction' => [
 
-                'label' => 'Group direction',
+                'label' => 'ทิศทางของกลุ่ม',
 
                 'options' => [
-                    'asc' => 'Ascending',
-                    'desc' => 'Descending',
+                    'asc' => 'จากน้อยไปมาก',
+                    'desc' => 'จากมากไปน้อย',
                 ],
 
             ],
@@ -182,7 +182,7 @@ return [
 
     ],
 
-    'reorder_indicator' => 'Drag and drop the records into order.',
+    'reorder_indicator' => 'ลากและวางบันทึกตามลำดับ',
 
     'selection_indicator' => [
 
@@ -191,11 +191,11 @@ return [
         'actions' => [
 
             'select_all' => [
-                'label' => 'Select all :count',
+                'label' => 'เลือกทั้งหมด',
             ],
 
             'deselect_all' => [
-                'label' => 'Deselect all',
+                'label' => 'ยกเลิกการเลือกทั้งหมด',
             ],
 
         ],
@@ -207,16 +207,16 @@ return [
         'fields' => [
 
             'column' => [
-                'label' => 'Sort by',
+                'label' => 'เรียงตาม',
             ],
 
             'direction' => [
 
-                'label' => 'Sort direction',
+                'label' => 'ทิศทางการจัดเรียง',
 
                 'options' => [
-                    'asc' => 'Ascending',
-                    'desc' => 'Descending',
+                    'asc' => 'จากน้อยไปมาก',
+                    'desc' => 'จากมากไปน้อย',
                 ],
 
             ],

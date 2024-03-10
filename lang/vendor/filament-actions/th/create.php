@@ -4,20 +4,20 @@ return [
 
     'single' => [
 
-        'label' => 'New :label',
+        'label' => 'เพิ่ม:label',
 
         'modal' => [
 
-            'heading' => 'Create :label',
+            'heading' => 'เพิ่ม:label',
 
             'actions' => [
 
                 'create' => [
-                    'label' => 'Create',
+                    'label' => 'บันทึก',
                 ],
 
                 'create_another' => [
-                    'label' => 'Create & create another',
+                    'label' => 'บันทึกและเพิ่มอีก',
                 ],
 
             ],

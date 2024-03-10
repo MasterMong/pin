@@ -85,6 +85,8 @@ class FormVision extends Component implements HasForms
                 ->label($att->label)
                 ->multiple(!$att->is_single)
                 ->required()
+                ->downloadable()
+                ->previewable()
                 ->getUploadedFileNameForStorageUsing(
                     fn(TemporaryUploadedFile $file): string => (string)str($file->getClientOriginalName())
                         ->prepend($this->budget_year_id . '-' . $att->name . '-' . auth()->user()->area_id . '-'),
