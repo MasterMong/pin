@@ -21,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
         );
 
         FilamentAsset::register([
-            Css::make('example-local-stylesheet', asset('/build/assets/app.css'))
+            Css::make('example-local-stylesheet', asset(config('app.url')  . '/build/assets/app.css'))
             // Css::make('daisyui', 'https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css'),
         ]);
     }
