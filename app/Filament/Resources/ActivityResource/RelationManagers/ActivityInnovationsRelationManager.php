@@ -42,6 +42,8 @@ class ActivityInnovationsRelationManager extends RelationManager
                 Forms\Components\FileUpload::make('attachment')
                     ->maxSize(10000)
                     ->required()
+                    ->previewable()
+                    ->downloadable()
                     ->maxFiles(3)
                     ->columnSpanFull()
                     ->label('แนบไฟล์')
@@ -58,7 +60,8 @@ class ActivityInnovationsRelationManager extends RelationManager
             ->recordTitleAttribute('name')
             ->columns([
                 Tables\Columns\TextColumn::make('name')
-                    ->label('ชื่อนวัตกรรม')
+                    ->label('ชื่อนวัตกรรม'),
+
             ])
             ->filters([
                 //

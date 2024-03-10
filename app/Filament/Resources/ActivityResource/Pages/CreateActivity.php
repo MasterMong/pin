@@ -9,6 +9,7 @@ use App\Models\BudgetYear;
 use App\Models\RelateGroup;
 use App\Models\RelateItem;
 use App\Models\RelateType;
+use Carbon\Carbon;
 use Filament\Actions;
 use Filament\Forms\Components\Section;
 use Filament\Forms;
@@ -190,6 +191,9 @@ class CreateActivity extends CreateRecord
         $data['code'] = $activity_code;
         $data['relate_items'] = $data['relate_items'][0];
         $data['status'] = 'pending';
+        $date_start = Carbon::parse($data['date_start']);
+        $date_end = Carbon::parse($data['date_end']);
+        $data['duration'] = $date_start->diffInDays($date_end);
         Activity::create($data);
         Notification::make()
             ->title('บันทึกข้อมูลแล้ว')

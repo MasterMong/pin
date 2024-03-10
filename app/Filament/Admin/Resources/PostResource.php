@@ -37,9 +37,11 @@ class PostResource extends Resource
                 Forms\Components\ToggleButtons::make('is_enabled')
                     ->boolean()
                     ->grouped()
+                    ->default(true)
                     ->required(),
                 Forms\Components\ToggleButtons::make('is_feature')
                     ->boolean()
+                    ->default(false)
                     ->grouped()
                     ->required(),
                 Forms\Components\FileUpload::make('attachment')
