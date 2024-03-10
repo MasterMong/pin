@@ -8,10 +8,10 @@ export default {
     theme: {
         extend: {},
     },
-    safelist: [
-        {
-            pattern: /./, // the "." means "everything"
-        },
-    ],
+    // safelist: [
+    //     {
+    //         pattern: /./, // the "." means "everything"
+    //     },
+    // ],
     plugins: [],
 };

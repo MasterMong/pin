@@ -18,8 +18,13 @@ class NotAllowRolePending
 //        dd($request);
         if($request->user()) {
             if (auth()->user()->role == 'pending') {
-                auth()->logout();
-                return \response(view('Error.verify_user'));
+//                auth()->logout();
+                return \response(view('Error.ErrorMessage', [
+                    'message' => "ผู้ใช้งาน " . auth()->user()->email . " ยังไม่ได้รับอนุมัติให้ใช้งาน",
+                    'des' => 'ระบบได้บันทึกบัญชีผู้ใช้งานแล้ว ท่านจะสมารถเข้าสู่ระบบได้เมื่อรับการยืนยันตัวตนจากผู้ดูแลระบบ',
+                    'bt_label' => 'ลองอีกครั้ง',
+                    'bt_link' => route('filament.app.pages.home')
+                ]));
             }
         };
         return $next($request);

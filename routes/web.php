@@ -13,10 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
+Route::get('/web', [\App\Http\Controllers\WebpageController::class, 'index'])->name('index');
+Route::get('/logmeout', function () {
+    Session::flush();
+    Auth::logout();
+//    return redirect()->route('index');
+    return redirect()->to('/');
+})->name('logmeout');
 //if (env('APP_ENV') === 'production') {
 //    URL::forceScheme('https');
 //}
