@@ -2,10 +2,15 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Resources\ActivityResource\Pages\CreateActivity;
+use App\Filament\Resources\ActivityResource\Pages\EditActivity;
+use App\Filament\Resources\ActivityResource\Pages\ListActivities;
+use App\Filament\Resources\ActivityResource\RelationManagers\ActivityInnovationsRelationManager;
 use App\Filament\Resources\ProjectResource\Pages;
 use App\Filament\Resources\ProjectResource\RelationManagers;
 use App\Filament\Resources\ProjectResource\RelationManagers\ProjectActivityRelationManager;
 use App\Models\Activity;
+use App\Tables\Columns\ColumnInnovationList;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -22,8 +27,10 @@ class ActivityResource extends Resource
 
     protected static ?string $navigationGroup = 'รายงานผลการขับเคลื่อนนโยบาย';
 
-    protected static ?string $navigationLabel = 'ผลการขับเคลื่อนนโยบาย';
+    protected static ?string $navigationLabel = 'รายงานความก้าวหน้า';
 
+    protected static ?string $modelLabel = 'กิจกรรม';
+    protected static ?string $pluralModelLabel = 'กิจกรรม';
     protected static ?int $navigationSort = 2;
 
     public static function form(Form $form): Form
@@ -40,43 +47,53 @@ class ActivityResource extends Resource
                     ->relationship('areaStrategy', 'id')
                     ->required(),
                 Forms\Components\TextInput::make('name')
-                    ->label('ชื่อกิจกรรม')
                     ->required()
                     ->maxLength(300),
                 Forms\Components\TextInput::make('code')
-                    ->label('รหัส')
                     ->required()
                     ->maxLength(50),
-                Forms\Components\TextInput::make('objective')
-                    ->required()
-                    ->maxLength(1000),
-                Forms\Components\Textarea::make('indicator')
-                    ->required()
-                    ->columnSpanFull(),
                 Forms\Components\TextInput::make('duration')
                     ->maxLength(100),
                 Forms\Components\TextInput::make('date_start')
                     ->maxLength(50),
                 Forms\Components\TextInput::make('date_end')
                     ->maxLength(50),
-                Forms\Components\TextInput::make('budget')
+                Forms\Components\TextInput::make('q1')
                     ->required()
-                    ->numeric(),
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('q2')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('q3')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('q4')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\Textarea::make('process')
+                    ->columnSpanFull(),
+                Forms\Components\TextInput::make('target_area')
+                    ->required()
+                    ->maxLength(1000),
+                Forms\Components\TextInput::make('relate_items')
+                    ->required(),
                 Forms\Components\Toggle::make('is_pa_of_manager')
+                    ->required(),
+                Forms\Components\TextInput::make('beneficiary')
                     ->required(),
                 Forms\Components\Textarea::make('problem')
                     ->columnSpanFull(),
                 Forms\Components\Textarea::make('suggestions')
                     ->columnSpanFull(),
+                Forms\Components\Toggle::make('is_success'),
                 Forms\Components\TextInput::make('progress')
                     ->numeric(),
-                Forms\Components\Textarea::make('relate_items')
-                    ->required(),
                 Forms\Components\TextInput::make('handler_name')
                     ->maxLength(255),
                 Forms\Components\TextInput::make('status')
                     ->required()
-                    ->maxLength(50),
+                    ->maxLength(50)
+                    ->default('pending'),
             ]);
     }
 
@@ -84,49 +101,17 @@ class ActivityResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('code')
-                    ->label('รหัส')
-                    ->searchable(),
+//                Tables\Columns\TextColumn::make('code')
+//                    ->label('รหัส')
+//                    ->searchable(),
                 Tables\Columns\TextColumn::make('name')
                     ->label('ชื่อกิจกรรม')
                     ->searchable(),
-//                Tables\Columns\TextColumn::make('date_start')
-//                    ->label('เริ่ม')
-//                    ->searchable(),
-//                Tables\Columns\TextColumn::make('date_end')
-//                    ->label('สิ้นสุด')
-//                    ->searchable(),
-//                Tables\Columns\TextColumn::make('budget')
-//                    ->label('งบประมาณ')
-//                    ->numeric()
-//                    ->label('งบ')
-//                    ->sortable(),
-//                Tables\Columns\ToggleColumn::make('is_pa_of_manager')
-//                    ->label('PA')
-//                    ,
-                Tables\Columns\TextColumn::make('progress')
-                    ->label('ความคืบหน้า')
-                    ->numeric()
-                    ->sortable(),
-//                Tables\Columns\TextColumn::make('handler_name')
-//                    ->label('ผุ้รับผิดชอบ')
-//                    ->hidden()
-//                    ->searchable(),
-                Tables\Columns\TextColumn::make('status')
-                    ->label('สถานะ')
-                    ->searchable(),
-//                Tables\Columns\TextColumn::make('created_at')
-//                    ->dateTime()
-//                    ->sortable()
-//                    ->toggleable(isToggledHiddenByDefault: true),
-//                Tables\Columns\TextColumn::make('updated_at')
-//                    ->dateTime()
-//                    ->sortable()
-//                    ->toggleable(isToggledHiddenByDefault: true),
-//                Tables\Columns\TextColumn::make('deleted_at')
-//                    ->dateTime()
-//                    ->sortable()
-//                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\IconColumn::make('is_success')
+                    ->alignCenter()
+                    ->label('เป็นไปตามแผน'),
+                ColumnInnovationList::make('activityInnovations')
+                    ->label('นวัตกรรม'),
             ])
             ->filters([
                 //
@@ -145,17 +130,17 @@ class ActivityResource extends Resource
     public static function getRelations(): array
     {
         return [
-            RelationManagers\ActivityInnovationsRelationManager::class
+            ActivityInnovationsRelationManager::class
         ];
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListActivities::route('/'),
-            'create' => Pages\CreateProject::route('/create'),
+            'index' => ListActivities::route('/'),
+            'create' => CreateActivity::route('/create'),
             'view' => Pages\ViewActivity::route('/{record}'),
-            'edit' => Pages\EditActivity::route('/{record}/edit'),
+            'edit' => EditActivity::route('/{record}/edit'),
         ];
     }
 }

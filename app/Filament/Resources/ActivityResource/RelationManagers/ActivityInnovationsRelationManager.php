@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\ProjectResource\RelationManagers;
+namespace App\Filament\Resources\ActivityResource\RelationManagers;
 
 use App\Http\Controllers\SettingController;
 use Filament\Forms;
@@ -13,8 +13,11 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ActivityInnovationsRelationManager extends RelationManager
 {
-    protected static string $relationship = 'activityInnovations';
+    protected static string $relationship = 'ActivityInnovations';
 
+    protected static ?string $modelLabel = 'นวัตกรรม';
+    protected static ?string $pluralModelLabel = 'นวัตกรรม';
+    protected static ?string $title = 'รายการนวัตกรรม';
     public function isReadOnly(): bool
     {
         return false;
@@ -32,29 +35,20 @@ class ActivityInnovationsRelationManager extends RelationManager
                 Forms\Components\Hidden::make('budget_year_id')
                     ->default($budget_year),
                 Forms\Components\TextInput::make('name')
-                    ->columnSpanFull()
                     ->required()
-                    ->maxLength(255),
-                Forms\Components\Repeater::make('url')
+                    ->label('ชื่อนวัตกรรม')
                     ->columnSpanFull()
-                    ->reorderable(false)
-                    ->schema([
-                        Forms\Components\TextInput::make('url')
-                            ->required()
-                    ]),
-                Forms\Components\TextInput::make('type')
-                    ->required()
-                    ->columnSpanFull(),
-                Forms\Components\Textarea::make('detail')
-                    ->required(),
-                Forms\Components\Textarea::make('use')
-                    ->required(),
-                Forms\Components\Textarea::make('problem')
-                    ->required(),
-                Forms\Components\Textarea::make('suggest')
-                    ->required(),
+                    ->maxLength(600),
                 Forms\Components\FileUpload::make('attachment')
+                    ->maxSize(10000)
+                    ->required()
+                    ->maxFiles(3)
                     ->columnSpanFull()
+                    ->label('แนบไฟล์')
+                    ->acceptedFileTypes(['application/pdf']),
+                Forms\Components\TextInput::make('url')
+                    ->columnSpanFull()
+                    ->label('แนบลิงก์วีดิโอ (ถ้ามี)')
             ]);
     }
 
@@ -63,9 +57,8 @@ class ActivityInnovationsRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('name')
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('activityInnovations.name'),
-                Tables\Columns\TextColumn::make('type'),
+                Tables\Columns\TextColumn::make('name')
+                    ->label('ชื่อนวัตกรรม')
             ])
             ->filters([
                 //
@@ -79,9 +72,7 @@ class ActivityInnovationsRelationManager extends RelationManager
                 Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+
             ]);
     }
 }

@@ -18,6 +18,30 @@
         "email": "area@admin.com",
         "password": "password",
         "role": "area",
-        "area_id": 50
+        "area_id": 1
+    },
+    {
+        "name": "กัญญา อินสอน",
+        "email": "kanya.insorn@gmail.com",
+        "password": "password",
+        "tel" : "0877125322",
+        "role": "admin",
+        "area_id": null
+    },
+    {
+        "name": "ลลิตา ฉัตรเมธี",
+        "email": "lalita.chatmatee@gmail.com",
+        "password": "password",
+        "tel" : "0840837326",
+        "role": "admin",
+        "area_id": null
+    },
+    {
+        "name": "นฤพิพัฒน์  อามาตย์สมบัติ",
+        "email": "bent.nrpp@gmail.com",
+        "password": "password",
+        "tel" : "0642863697",
+        "role": "admin",
+        "area_id": null
     }
 ]

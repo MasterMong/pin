@@ -22,18 +22,25 @@ class Activity extends Model
         'budget_year_id',
         'name',
         'code',
-        'objective',
-        'indicator',
         'duration',
         'date_start',
         'date_end',
-        'budget',
+        'q1',
+        'q2',
+        'q3',
+        'q4',
+        'process',
+        'target_area',
+        'relate_items',
         'area_strategy_id',
         'is_pa_of_manager',
+        'progress',
         'problem',
         'suggestions',
-        'progress',
-        'relate_items',
+        'beneficiary',
+        'is_success',
+        'galleries',
+        'urls',
         'handler_name',
         'status',
     ];
@@ -47,10 +54,12 @@ class Activity extends Model
         'id' => 'integer',
         'area_id' => 'integer',
         'budget_year_id' => 'integer',
-        'budget' => 'float',
+        'relate_items' => 'array',
         'area_strategy_id' => 'integer',
         'is_pa_of_manager' => 'boolean',
-        'relate_items' => 'array',
+        'beneficiary' => 'array',
+        'is_success' => 'boolean',
+        'galleries' => 'array',
     ];
 
     public function area(): BelongsTo
@@ -71,5 +80,10 @@ class Activity extends Model
     public function activityInnovations(): HasMany
     {
         return $this->hasMany(ActivityInnovation::class);
+    }
+
+    public function scopeByField($query, $field)
+    {
+        return $query->where($field, true);
     }
 }

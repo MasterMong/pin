@@ -22,6 +22,7 @@ class AreaMember extends Model
         'area_id',
         'cover_image',
         'name',
+        'budget_year_id',
     ];
 
     /**
@@ -33,6 +34,7 @@ class AreaMember extends Model
         'id' => 'integer',
         'area_member_type_id' => 'integer',
         'area_id' => 'integer',
+        'budget_year_id' => 'integer',
     ];
 
     public function area(): BelongsTo
@@ -43,6 +45,11 @@ class AreaMember extends Model
     public function areaMemberType(): BelongsTo
     {
         return $this->belongsTo(AreaMemberType::class);
+    }
+
+    public function budgetYear(): BelongsTo
+    {
+        return $this->belongsTo(BudgetYear::class);
     }
 
     public function areaMembers(): HasMany

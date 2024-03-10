@@ -18,14 +18,9 @@ return new class extends Migration
             $table->foreignId('area_id')->constrained();
             $table->foreignId('activity_id')->constrained();
             $table->foreignId('budget_year_id')->constrained();
-            $table->string('attachment');
             $table->string('name', 600);
-            $table->string('type', 600);
-            $table->json('url');
-            $table->longText('detail');
-            $table->longText('use');
-            $table->longText('problem');
-            $table->longText('suggest');
+            $table->string('attachment');
+            $table->string('url', 2000)->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

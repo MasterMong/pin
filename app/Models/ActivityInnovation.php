@@ -20,14 +20,9 @@ class ActivityInnovation extends Model
         'area_id',
         'activity_id',
         'budget_year_id',
-        'attachment',
         'name',
-        'type',
+        'attachment',
         'url',
-        'detail',
-        'use',
-        'problem',
-        'suggest',
     ];
 
     /**
@@ -40,7 +35,6 @@ class ActivityInnovation extends Model
         'area_id' => 'integer',
         'activity_id' => 'integer',
         'budget_year_id' => 'integer',
-        'url' => 'array',
     ];
 
     public function area(): BelongsTo

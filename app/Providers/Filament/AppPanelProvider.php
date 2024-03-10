@@ -5,7 +5,8 @@ namespace App\Providers\Filament;
 use App\Filament\Pages\Auth\EditProfile;
 use App\Filament\Pages\Auth\Login;
 use App\Filament\Pages\Auth\Register;
-use App\Http\Middleware\CheckUserType;
+use App\Http\Middleware\NotAllowRoleAdmin;
+use App\Http\Middleware\NotAllowRolePending;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -53,9 +54,9 @@ class AppPanelProvider extends PanelProvider
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
                 StartSession::class,
-                CheckUserType::class,
+                NotAllowRoleAdmin::class,
+                NotAllowRolePending::class,
                 AuthenticateSession::class,
-                CheckUserType::class,
                 ShareErrorsFromSession::class,
                 VerifyCsrfToken::class,
                 SubstituteBindings::class,

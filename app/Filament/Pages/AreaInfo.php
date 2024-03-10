@@ -20,12 +20,12 @@ class AreaInfo extends Page implements HasInfolists
      */
     public static function getNavigationLabel(): string
     {
-        return auth()->user()->area->name;
+        return auth()->user()->area->areaType->name . ' ' . auth()->user()->area->name;
     }
 
     public function getTitle(): string
     {
-        return auth()->user()->area->name;
+        return auth()->user()->area->areaType->name . ' ' . auth()->user()->area->name;
     }
 
     public function areaInfolist(Infolist $infolist): Infolist

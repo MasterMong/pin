@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Filament\Resources\ProjectResource\Pages;
+namespace App\Filament\Resources\ActivityResource\Pages;
 
 use App\Filament\Resources\ActivityResource;
 use App\Http\Controllers\SettingController;
 use App\Models\Activity;
 use App\Models\BudgetYear;
-use App\Models\Project;
 use App\Models\RelateGroup;
 use App\Models\RelateItem;
 use App\Models\RelateType;
@@ -23,7 +22,7 @@ use Illuminate\Support\Facades\Auth;
 
 use function PHPSTORM_META\type;
 
-class CreateProject extends CreateRecord
+class CreateActivity extends CreateRecord
 {
     protected static string $resource = ActivityResource::class;
     public ?int $area_id = null;
@@ -51,12 +50,25 @@ class CreateProject extends CreateRecord
             'name' => $this->null_value,
             'area_id' => $this->area_id,
             'budget_year_id' => $this->budget_year_id,
-//            'code' => $this->null_value,
-            'objective' => $this->null_value,
-            'indicator' => $this->null_value,
-            'duration' => $this->null_value,
-            'budget' => $this->null_value,
-            'relate_items' => [self::parse_relate($this->relate_groups)]
+            'code' => $this->null_value,
+            'is_pa_of_manager' => $this->null_value,
+            'area_strategy_id' => $this->null_value,
+            'date_start' => $this->null_value,
+            'date_end' => $this->null_value,
+            'process' => $this->null_value,
+            'target_area' => $this->null_value,
+            'problem' => $this->null_value,
+            'suggestions' => $this->null_value,
+            'beneficiary' => [
+                [
+                    'qualitative' => $this->null_value,
+                    'people' => $this->null_value,
+                    'count' => $this->null_value,
+                ]
+            ],
+            'relate_items' => [self::parse_relate($this->relate_groups)],
+            'galleies' => [],
+            'urls' => ''
         ]);
     }
 
@@ -112,40 +124,53 @@ class CreateProject extends CreateRecord
                             Forms\Components\Toggle::make('is_pa_of_manager')
                                 ->label('วPA ของผู้บริหาร')
                                 ->required(),
-                            Forms\Components\Group::make()->schema([
-                                Forms\Components\DatePicker::make('date_start')
-                                    ->native(false)
-                                    ->required()
-                                    ->label('วันเริ่มกิจกรรม'),
-                                Forms\Components\DatePicker::make('date_end')
-                                    ->native(false)
-                                    ->required()
-                                    ->label('วันสิ้นสุดกิจกรรม'),
-                            ])->columns(2),
-//                            Forms\Components\TextInput::make('code')
-//                                ->label('รหัสกิจกรรม')
-//                                ->required()
-//                                ->maxLength(50),
-                            Forms\Components\RichEditor::make('objective')
-                                ->label('วัตถุประสงค์กิจกรรม')
-                                ->columnSpanFull()
+                            Forms\Components\Fieldset::make()->schema([
+                                Forms\Components\Group::make([
+                                    Forms\Components\DatePicker::make('date_start')
+                                        ->native(false)
+                                        ->displayFormat('d-m-Y')
+                                        ->required()
+                                        ->label('วันเริ่มกิจกรรม'),
+                                    Forms\Components\DatePicker::make('date_end')
+                                        ->native(false)
+                                        ->displayFormat('d-m-Y')
+                                        ->required()
+                                        ->label('วันสิ้นสุดกิจกรรม')
+                                ]),
+                                Forms\Components\Group::make()->schema([
+                                    Forms\Components\Toggle::make('q1')->label('ไตรมาส 1'),
+                                    Forms\Components\Toggle::make('q2')->label('ไตรมาส 2'),
+                                    Forms\Components\Toggle::make('q3')->label('ไตรมาส 3'),
+                                    Forms\Components\Toggle::make('q4')->label('ไตรมาส 4'),
+                                ])->columns(1),
+                            ])->columns(2)->label('ระยะเวลาดำเนินกิจกรรม'),
+                            Forms\Components\Textarea::make('process')->label('ขั้นตอนกระบวนการ'),
+                            Forms\Components\Textarea::make('target_area')->label('สถานที่ดำเนินการ'),
+                            Repeater::make('beneficiary')->schema([
+                                Fieldset::make()->schema([
+                                    Forms\Components\TextInput::make('people')->label('กลุ่มผู้ได้รับประโยชน์'),
+                                    Forms\Components\TextInput::make('count')->label('จำนวน/คน'),
+                                ])->label('เชิงปริมาณ'),
+                                Fieldset::make()->schema([
+                                    Forms\Components\RichEditor::make('qualitative')->label('เชิงคุณภาพ')
+                                        ->columnSpanFull()
+                                ])->label('เชิงคุณภาพ')
+                            ])->label('ผลการดำเนินงาน')->minItems(1),
+                            Forms\Components\Textarea::make('problem')
+                                ->label('ปัญหาอุปสรรค'),
+                            Forms\Components\Textarea::make('suggestions')
+                                ->label('ข้อเสนอแนะ'),
+                            Forms\Components\FileUpload::make('galleries')
+                                ->label('ภาพกิจกรรม')
+                                ->multiple()
+                                ->image()
+                                ->imageEditor()
                                 ->required()
-                                ->toolbarButtons(['blockquote', 'bold', 'bulletList', 'codeBlock', 'h2', 'h3', 'italic', 'link', 'orderedList', 'redo', 'strike', 'underline', 'undo'])
-                                ->maxLength(1000),
-                            Forms\Components\RichEditor::make('indicator')
-                                ->label('ตัวชี้วัดความสำเร็จ')
-                                ->required()
-                                ->toolbarButtons(['blockquote', 'bold', 'bulletList', 'codeBlock', 'h2', 'h3', 'italic', 'link', 'orderedList', 'redo', 'strike', 'underline', 'undo'])
-                                ->columnSpanFull()
-                                ->maxLength(1000),
-
-                            Forms\Components\TextInput::make('duration')
-                                ->label('ระยะเวลาตลอดกิจกรรม')
-                                ->maxLength(100),
-                            Forms\Components\TextInput::make('budget')
-                                ->label('งบประมาณ (บาท)')
-                                ->required()
-                                ->numeric(),
+                                ->multiple(),
+                            Forms\Components\TextInput::make('ถ้ามี')->label('ลิงก์วิดีโอ (ถ้ามี)'),
+                            Fieldset::make()->schema([
+                                Forms\Components\Toggle::make('is_success')->label('เป็นไปตามแผน')
+                            ])->label('ประเมินตนเอง')
                         ]
                     )
                 ]
@@ -154,12 +179,13 @@ class CreateProject extends CreateRecord
 
     public function create(bool $another = false): void
     {
-        $project_count = Activity::where('area_id', auth()->user()->area_id)->count();
+        $activity_count = Activity::where('area_id', auth()->user()->area_id)->count();
         $year = BudgetYear::where('id', $this->budget_year_id)->pluck('name')->first();
-        $project_code = $year . '.' . auth()->user()->area->code3d . '.' . $project_count + 1;
+        $activity_code = $year . '.' . auth()->user()->area->code3d . '.' . $activity_count + 1;
 
         $data = $this->form->getState();
-        $data['code'] = $project_code;
+
+        $data['code'] = $activity_code;
         $data['relate_items'] = $data['relate_items'][0];
         $data['status'] = 'pending';
         Activity::create($data);
@@ -169,9 +195,13 @@ class CreateProject extends CreateRecord
             ->send();
     }
 
+    protected function getRedirectUrl(): string
+    {
+        return $this->previousUrl ?? $this->getResource()::getUrl('index');
+    }
+
     public static function parse_relate($relate_groups)
     {
-        // dd($relate_groups);
         $fields = [];
         foreach ($relate_groups as $group) {
             foreach ($group['relate_types'] as $type) {

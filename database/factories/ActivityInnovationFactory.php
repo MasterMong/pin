@@ -27,14 +27,9 @@ class ActivityInnovationFactory extends Factory
             'area_id' => Area::factory(),
             'activity_id' => Activity::factory(),
             'budget_year_id' => BudgetYear::factory(),
-            'attachment' => $this->faker->word(),
             'name' => $this->faker->name(),
-            'type' => $this->faker->regexify('[A-Za-z0-9]{600}'),
-            'url' => '{}',
-            'detail' => $this->faker->text(),
-            'use' => $this->faker->text(),
-            'problem' => $this->faker->text(),
-            'suggest' => $this->faker->text(),
+            'attachment' => $this->faker->word(),
+            'url' => $this->faker->url(),
         ];
     }
 }

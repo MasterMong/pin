@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class CheckUserType
+class NotAllowRoleAdmin
 {
     /**
      * Handle an incoming request.
@@ -15,11 +15,10 @@ class CheckUserType
      */
     public function handle(Request $request, Closure $next): Response
     {
-//        dd($request);
         if($request->user()) {
-            if (auth()->user()->role == 'pending') {
+            if (auth()->user()->role == 'admin') {
                 auth()->logout();
-                return \response(view('Error.verify_user'));
+                return \response(view('Error.ErrorMessage', ['message' => "ไม่อนุญาตให้ Admin เข้าถึหน้านี้"]));
             }
         };
         return $next($request);

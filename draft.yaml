@@ -190,60 +190,39 @@ models:
     budget_year_id: id foreign
     name: string:300
     code: string:50
-    objective: string:1000
-    indicator: longText
     duration: string:100 nullable
     date_start: string:50 nullable
     date_end: string:50 nullable
-    budget: float
-    area_strategy_id: id foreign
-    is_pa_of_manager: boolean default:false
-    problem: longText nullable
-    suggestions: longText nullable
-    progress: integer nullable
-    relate_items: json
-    handler_name: string nullable
-    status: string:50
     q1: bool
     q2: bool
     q3: bool
     q4: bool
+    process: longText nullable
+    target_area: string:1000
+    relate_items: json
+    area_strategy_id: id foreign
+    is_pa_of_manager: boolean default:false
+    progress: integer nullable
+    problem: longText nullable
+    suggestions: longText nullable
+    beneficiary: json
+    is_success: boolean nullable
+    galleries: json
+    urls: string:2000 nullable
+    handler_name: string nullable
+    status: string:50 default:pending
     relationships:
       belongsTo: Area, BudgetYear, AreaStrategy
       hasMany: ActivityInnovation
     softDeletes
 
-#  ProjectActivity:
-#    area_id: id foreign
-#    project_id: id foreign
-#    budget_year_id: id foreign
-#    name: string:300
-#    process: longText nullable
-#    target_area: string:1000
-#    expect: string:1000
-#    date_start: string:50 nullable
-#    date_end: string:50 nullable
-#    result: longText nullable
-#    count_beneficiary: integer nullable
-#    is_success: boolean nullable
-#    unsuccessful_reason: longText nullable
-#    relationships:
-#      belongsTo: Area,  BudgetYear
-#      hasMany: ActivityInnovation
-#    softDeletes
-
   ActivityInnovation:
     area_id: id foreign
     activity_id: id foreign
     budget_year_id: id foreign
-    attachment: string
     name: string:600
-    type: string:600
-    url: json
-    detail: longText
-    use: longText
-    problem: longText
-    suggest: longText
+    attachment: string
+    url: string:2000 nullable
     relationships:
       belongsTo: Area,  Activity, BudgetYear
     softDeletes
