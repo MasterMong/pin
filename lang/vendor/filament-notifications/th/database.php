@@ -4,23 +4,23 @@ return [
 
     'modal' => [
 
-        'heading' => 'Notifications',
+        'heading' => 'การแจ้งเตือน',
 
         'actions' => [
 
             'clear' => [
-                'label' => 'Clear',
+                'label' => 'ล้าง',
             ],
 
             'mark_all_as_read' => [
-                'label' => 'Mark all as read',
+                'label' => 'อ่านทั้งหมด',
             ],
 
         ],
 
         'empty' => [
-            'heading' => 'No notifications',
-            'description' => 'Please check again later.',
+            'heading' => 'ไม่มีการแจ้งเตือน',
+            'description' => 'กรุณาตรวจสอบอีกครั้ง.',
         ],
 
     ],

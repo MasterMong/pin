@@ -2,42 +2,42 @@
 
 return [
 
-    'label' => 'Query builder',
+    'label' => 'สร้างแบบสอบถาม',
 
     'form' => [
 
         'operator' => [
-            'label' => 'Operator',
+            'label' => 'ผู้ดำเนินการ',
         ],
 
         'or_groups' => [
 
-            'label' => 'Groups',
+            'label' => 'กลุ่ม',
 
             'block' => [
-                'label' => 'Disjunction (OR)',
-                'or' => 'OR',
+                'label' => 'การแยกทาง (หรือ)',
+                'or' => 'หรือ',
             ],
 
         ],
 
         'rules' => [
 
-            'label' => 'Rules',
+            'label' => 'กฎ',
 
             'item' => [
-                'and' => 'AND',
+                'and' => 'และ',
             ],
 
         ],
 
     ],
 
-    'no_rules' => '(No rules)',
+    'no_rules' => '(ไม่มีกฎ)',
 
     'item_separators' => [
-        'and' => 'AND',
-        'or' => 'OR',
+        'and' => 'และ',
+        'or' => 'หรือ',
     ],
 
     'operators' => [
@@ -45,13 +45,13 @@ return [
         'is_filled' => [
 
             'label' => [
-                'direct' => 'Is filled',
-                'inverse' => 'Is blank',
+                'direct' => 'Is เติมเต็ม',
+                'inverse' => 'Is ว่าง',
             ],
 
             'summary' => [
-                'direct' => ':attribute is filled',
-                'inverse' => ':attribute is blank',
+                'direct' => ':คุณลักษณะเติมเต็ม',
+                'inverse' => ':คุณลักษณะว่างเปล่า',
             ],
 
         ],
@@ -309,8 +309,8 @@ return [
                 'label' => [
 
                     'single' => [
-                        'direct' => 'Is',
-                        'inverse' => 'Is not',
+                        'direct' => 'ใช่',
+                        'inverse' => 'ไม่ใช่',
                     ],
 
                     'multiple' => [

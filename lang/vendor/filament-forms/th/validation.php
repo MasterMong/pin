@@ -3,8 +3,8 @@
 return [
 
     'distinct' => [
-        'must_be_selected' => 'At least one :attribute field must be selected.',
-        'only_one_must_be_selected' => 'Only one :attribute field must be selected.',
+        'must_be_selected' => 'ต้องเลือกช่อง :คุณลักษณะ อย่างน้อยหนึ่งช่อง.',
+        'only_one_must_be_selected' => 'ต้องเลือกช่อง :คุณลักษณะ เพียงช่องเดียวเท่านั้น',
     ],
 
 ];
