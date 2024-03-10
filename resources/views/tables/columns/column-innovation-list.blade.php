@@ -1,6 +1,6 @@
 <div>
     <ul class="list-disc pl-3">
-        @if(count($getState()) > 0)
+        @if($getState() != null)
             @foreach($getState() as $innovation)
                 <li>
                     {{$innovation->name}}
