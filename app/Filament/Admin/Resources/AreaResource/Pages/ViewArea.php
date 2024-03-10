@@ -4,17 +4,16 @@ namespace App\Filament\Admin\Resources\AreaResource\Pages;
 
 use App\Filament\Admin\Resources\AreaResource;
 use Filament\Actions;
-use Filament\Resources\Pages\EditRecord;
+use Filament\Resources\Pages\ViewRecord;
 
-class EditArea extends EditRecord
+class ViewArea extends ViewRecord
 {
     protected static string $resource = AreaResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            Actions\ViewAction::make(),
-            Actions\DeleteAction::make(),
+            Actions\EditAction::make(),
         ];
     }
 }

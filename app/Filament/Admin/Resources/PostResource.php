@@ -18,6 +18,7 @@ class PostResource extends Resource
     protected static ?string $model = Post::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationLabel = 'โพสข่าว';
 
     public static function form(Form $form): Form
     {
@@ -27,20 +28,22 @@ class PostResource extends Resource
                     ->default(auth()->user()->id)
                     ->required(),
                 Forms\Components\TextInput::make('title')
-                    ->label('หัวข้อ')
-                    ->required()
                     ->columnSpanFull()
+                    ->required()
                     ->maxLength(1000),
                 Forms\Components\RichEditor::make('content')
-                    ->label('เนื้อหา')
                     ->required()
                     ->columnSpanFull(),
-                Forms\Components\Toggle::make('is_enabled')
-                    ->label('เผยแพร่')
+                Forms\Components\ToggleButtons::make('is_enabled')
+                    ->boolean()
+                    ->grouped()
                     ->required(),
-                Forms\Components\Toggle::make('is_feature')
-                    ->label('เรื่องเด่น')
+                Forms\Components\ToggleButtons::make('is_feature')
+                    ->boolean()
+                    ->grouped()
                     ->required(),
+                Forms\Components\FileUpload::make('attachment')
+                    ->columnSpanFull(),
             ]);
     }
 

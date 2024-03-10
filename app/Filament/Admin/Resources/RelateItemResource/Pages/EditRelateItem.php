@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Admin\Resources\AreaMemberTypeResource\Pages;
+namespace App\Filament\Admin\Resources\RelateItemResource\Pages;
 
-use App\Filament\Admin\Resources\AreaMemberTypeResource;
+use App\Filament\Admin\Resources\RelateItemResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 
-class EditAreaMemberType extends EditRecord
+class EditRelateItem extends EditRecord
 {
-    protected static string $resource = AreaMemberTypeResource::class;
+    protected static string $resource = RelateItemResource::class;
 
     protected function getHeaderActions(): array
     {

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->longText('content');
             $table->string('is_enabled');
             $table->string('is_feature');
+            $table->json('attachment')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

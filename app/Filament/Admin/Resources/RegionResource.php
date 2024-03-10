@@ -43,11 +43,16 @@ class RegionResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('deleted_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
@@ -69,6 +74,7 @@ class RegionResource extends Resource
         return [
             'index' => Pages\ListRegions::route('/'),
             'create' => Pages\CreateRegion::route('/create'),
+            'view' => Pages\ViewRegion::route('/{record}'),
             'edit' => Pages\EditRegion::route('/{record}/edit'),
         ];
     }

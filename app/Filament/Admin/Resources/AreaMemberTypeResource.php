@@ -48,11 +48,16 @@ class AreaMemberTypeResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('deleted_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
@@ -74,6 +79,7 @@ class AreaMemberTypeResource extends Resource
         return [
             'index' => Pages\ListAreaMemberTypes::route('/'),
             'create' => Pages\CreateAreaMemberType::route('/create'),
+            'view' => Pages\ViewAreaMemberType::route('/{record}'),
             'edit' => Pages\EditAreaMemberType::route('/{record}/edit'),
         ];
     }

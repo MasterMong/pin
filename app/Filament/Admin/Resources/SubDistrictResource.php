@@ -86,11 +86,16 @@ class SubDistrictResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('deleted_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
@@ -112,6 +117,7 @@ class SubDistrictResource extends Resource
         return [
             'index' => Pages\ListSubDistricts::route('/'),
             'create' => Pages\CreateSubDistrict::route('/create'),
+            'view' => Pages\ViewSubDistrict::route('/{record}'),
             'edit' => Pages\EditSubDistrict::route('/{record}/edit'),
         ];
     }

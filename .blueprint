@@ -25,32 +25,32 @@ created:
     - database/factories/RelateItemFactory.php
     - database/factories/RelateItemTargetValueFactory.php
     - database/factories/PostFactory.php
-    - database/migrations/2024_03_10_005036_create_regions_table.php
-    - database/migrations/2024_03_10_005037_create_provinces_table.php
-    - database/migrations/2024_03_10_005038_create_districts_table.php
-    - database/migrations/2024_03_10_005039_create_sub_districts_table.php
-    - database/migrations/2024_03_10_005040_create_inspection_areas_table.php
-    - database/migrations/2024_03_10_005041_create_settings_table.php
-    - database/migrations/2024_03_10_005042_create_budget_years_table.php
-    - database/migrations/2024_03_10_005043_create_area_types_table.php
-    - database/migrations/2024_03_10_005044_create_areas_table.php
-    - database/migrations/2024_03_10_005045_create_area_member_types_table.php
-    - database/migrations/2024_03_10_005046_create_area_members_table.php
-    - database/migrations/2024_03_10_005047_create_area_attachment_types_table.php
-    - database/migrations/2024_03_10_005048_create_area_attachments_table.php
-    - database/migrations/2024_03_10_005049_create_area_visions_table.php
-    - database/migrations/2024_03_10_005050_create_area_missions_table.php
-    - database/migrations/2024_03_10_005051_create_area_goals_table.php
-    - database/migrations/2024_03_10_005052_create_area_strategies_table.php
-    - database/migrations/2024_03_10_005053_create_area_targets_table.php
-    - database/migrations/2024_03_10_005054_create_area_pa_of_managers_table.php
-    - database/migrations/2024_03_10_005055_create_activities_table.php
-    - database/migrations/2024_03_10_005056_create_activity_innovations_table.php
-    - database/migrations/2024_03_10_005057_create_relate_groups_table.php
-    - database/migrations/2024_03_10_005058_create_relate_types_table.php
-    - database/migrations/2024_03_10_005059_create_relate_items_table.php
-    - database/migrations/2024_03_10_005100_create_relate_item_target_values_table.php
-    - database/migrations/2024_03_10_005101_create_posts_table.php
+    - database/migrations/2024_03_10_034120_create_regions_table.php
+    - database/migrations/2024_03_10_034121_create_provinces_table.php
+    - database/migrations/2024_03_10_034122_create_districts_table.php
+    - database/migrations/2024_03_10_034123_create_sub_districts_table.php
+    - database/migrations/2024_03_10_034124_create_inspection_areas_table.php
+    - database/migrations/2024_03_10_034125_create_settings_table.php
+    - database/migrations/2024_03_10_034126_create_budget_years_table.php
+    - database/migrations/2024_03_10_034127_create_area_types_table.php
+    - database/migrations/2024_03_10_034128_create_areas_table.php
+    - database/migrations/2024_03_10_034129_create_area_member_types_table.php
+    - database/migrations/2024_03_10_034130_create_area_members_table.php
+    - database/migrations/2024_03_10_034131_create_area_attachment_types_table.php
+    - database/migrations/2024_03_10_034132_create_area_attachments_table.php
+    - database/migrations/2024_03_10_034133_create_area_visions_table.php
+    - database/migrations/2024_03_10_034134_create_area_missions_table.php
+    - database/migrations/2024_03_10_034135_create_area_goals_table.php
+    - database/migrations/2024_03_10_034136_create_area_strategies_table.php
+    - database/migrations/2024_03_10_034137_create_area_targets_table.php
+    - database/migrations/2024_03_10_034138_create_area_pa_of_managers_table.php
+    - database/migrations/2024_03_10_034139_create_activities_table.php
+    - database/migrations/2024_03_10_034140_create_activity_innovations_table.php
+    - database/migrations/2024_03_10_034141_create_relate_groups_table.php
+    - database/migrations/2024_03_10_034142_create_relate_types_table.php
+    - database/migrations/2024_03_10_034143_create_relate_items_table.php
+    - database/migrations/2024_03_10_034144_create_relate_item_target_values_table.php
+    - database/migrations/2024_03_10_034145_create_posts_table.php
     - app/Models/Region.php
     - app/Models/Province.php
     - app/Models/District.php
@@ -106,4 +106,4 @@ models:
     RelateType: { label: 'string:1000', name: 'string:100', budget_year_id: 'id foreign', relate_group_id: 'id foreign', is_parent: 'boolean default:false', is_single: 'boolean default:true', parent_name: 'string:100 nullable', order: 'string nullable default:0', relationships: { belongsTo: 'BudgetYear, RelateGroup', hasMany: RelateItem }, softdeletes: softDeletes }
     RelateItem: { label: 'string:1000', budget_year_id: 'id foreign', relate_type_id: 'id foreign', ref: 'string:100', parent_item_ref: 'string:100 nullable', order: 'string nullable default:0', req_value: 'boolean default:false', relationships: { belongsTo: 'BudgetYear, RelateType' }, softdeletes: softDeletes }
     RelateItemTargetValue: { label: 'string:1000', budget_year_id: 'id foreign', relate_item_id: 'id foreign', value: 'float default:0', relationships: { belongsTo: 'BudgetYear, RelateItem' }, softdeletes: softDeletes }
-    Post: { user_id: 'id foreign', title: 'string:1000', content: longtext, is_enabled: bool, is_feature: bool, relationships: { belongsTo: User }, softdeletes: softDeletes }
+    Post: { user_id: 'id foreign', title: 'string:1000', content: longtext, is_enabled: bool, is_feature: bool, attachment: json, relationships: { belongsTo: User }, softdeletes: softDeletes }

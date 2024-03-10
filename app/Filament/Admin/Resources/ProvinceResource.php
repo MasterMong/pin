@@ -60,11 +60,16 @@ class ProvinceResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('deleted_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
@@ -86,6 +91,7 @@ class ProvinceResource extends Resource
         return [
             'index' => Pages\ListProvinces::route('/'),
             'create' => Pages\CreateProvince::route('/create'),
+            'view' => Pages\ViewProvince::route('/{record}'),
             'edit' => Pages\EditProvince::route('/{record}/edit'),
         ];
     }

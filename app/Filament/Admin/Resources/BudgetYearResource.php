@@ -43,11 +43,16 @@ class BudgetYearResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('deleted_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
@@ -69,6 +74,7 @@ class BudgetYearResource extends Resource
         return [
             'index' => Pages\ListBudgetYears::route('/'),
             'create' => Pages\CreateBudgetYear::route('/create'),
+            'view' => Pages\ViewBudgetYear::route('/{record}'),
             'edit' => Pages\EditBudgetYear::route('/{record}/edit'),
         ];
     }

@@ -4,17 +4,16 @@ namespace App\Filament\Admin\Resources\SubDistrictResource\Pages;
 
 use App\Filament\Admin\Resources\SubDistrictResource;
 use Filament\Actions;
-use Filament\Resources\Pages\EditRecord;
+use Filament\Resources\Pages\ViewRecord;
 
-class EditSubDistrict extends EditRecord
+class ViewSubDistrict extends ViewRecord
 {
     protected static string $resource = SubDistrictResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            Actions\ViewAction::make(),
-            Actions\DeleteAction::make(),
+            Actions\EditAction::make(),
         ];
     }
 }

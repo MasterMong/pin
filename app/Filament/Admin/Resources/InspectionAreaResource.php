@@ -43,11 +43,16 @@ class InspectionAreaResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('deleted_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
@@ -69,6 +74,7 @@ class InspectionAreaResource extends Resource
         return [
             'index' => Pages\ListInspectionAreas::route('/'),
             'create' => Pages\CreateInspectionArea::route('/create'),
+            'view' => Pages\ViewInspectionArea::route('/{record}'),
             'edit' => Pages\EditInspectionArea::route('/{record}/edit'),
         ];
     }

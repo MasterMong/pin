@@ -27,6 +27,7 @@ class PostFactory extends Factory
             'content' => $this->faker->paragraphs(3, true),
             'is_enabled' => $this->faker->word(),
             'is_feature' => $this->faker->word(),
+            'attachment' => '{}',
         ];
     }
 }

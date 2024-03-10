@@ -22,6 +22,7 @@ class Post extends Model
         'content',
         'is_enabled',
         'is_feature',
+        'attachment',
     ];
 
     /**
@@ -32,6 +33,7 @@ class Post extends Model
     protected $casts = [
         'id' => 'integer',
         'user_id' => 'integer',
+        'attachment' => 'array',
     ];
 
     public function user(): BelongsTo

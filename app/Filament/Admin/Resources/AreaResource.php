@@ -41,6 +41,9 @@ class AreaResource extends Resource
                 Forms\Components\TextInput::make('code')
                     ->required()
                     ->maxLength(100),
+                Forms\Components\TextInput::make('code3d')
+                    ->required()
+                    ->maxLength(100),
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(300),
@@ -102,6 +105,8 @@ class AreaResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('code')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('code3d')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('address')
@@ -136,11 +141,16 @@ class AreaResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('deleted_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
@@ -162,6 +172,7 @@ class AreaResource extends Resource
         return [
             'index' => Pages\ListAreas::route('/'),
             'create' => Pages\CreateArea::route('/create'),
+            'view' => Pages\ViewArea::route('/{record}'),
             'edit' => Pages\EditArea::route('/{record}/edit'),
         ];
     }
