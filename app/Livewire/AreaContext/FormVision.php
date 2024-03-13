@@ -117,12 +117,12 @@ class FormVision extends Component implements HasForms
                                     ->required()
                                     ->label('ระบุเป้าประสงค์'),
                                 Repeater::make('strategy')
-                                    ->label('กลยุทธ์')
+                                    ->label('กลยุทธ์ สพท.')
                                     ->schema([
                                         Forms\Components\Hidden::make('id'),
                                         TextInput::make('detail')
                                             ->required()
-                                            ->label('รายละเอียดกลยุทธ์'),
+                                            ->label('รายละเอียดกลยุทธ์ สพท.'),
                                         Repeater::make('target')
                                             ->label('เป้าหมาย')
                                             ->schema([

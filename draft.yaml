@@ -203,6 +203,7 @@ models:
     area_strategy_id: id foreign
     is_pa_of_manager: boolean default:false
     progress: integer nullable
+    objective: string:2000
     problem: longText nullable
     suggestions: longText nullable
     beneficiary: json

@@ -106,7 +106,7 @@ class CreateActivity extends CreateRecord
                             Forms\Components\Hidden::make('area_id'),
                             Forms\Components\Hidden::make('budget_year_id'),
                             Forms\Components\TextInput::make('name')
-                                ->label('ชื่อกิจกรรม')
+                                ->label('ชื่อผลงานการขันเคลื่อนนโยบายสู่การปฏิบัติ')
                                 ->required()
                                 ->maxLength(300),
                             Repeater::make('relate_items')
@@ -145,7 +145,8 @@ class CreateActivity extends CreateRecord
                                     Forms\Components\Toggle::make('q4')->label('ไตรมาส 4'),
                                 ])->columns(1),
                             ])->columns(2)->label('ระยะเวลาดำเนินกิจกรรม'),
-                            Forms\Components\Textarea::make('process')->label('ขั้นตอนกระบวนการ'),
+                            Forms\Components\TextInput::make('objective')->label('วัตถุประสงต์'),
+                            Forms\Components\Textarea::make('process')->label('การดำเนินงาน'),
                             Forms\Components\Textarea::make('target_area')->label('สถานที่ดำเนินการ'),
                             Repeater::make('beneficiary')->schema([
                                 Fieldset::make()->schema([

@@ -15,7 +15,7 @@
         </div>
         <div class="flex flex-col md:flex-row ">
             <div class="md:basis-48 md:mr-3 prose mb-3 items-center">
-                <h3 class="text-center rounded p-3 bg-orange-300">พันธกืจ</h3>
+                <h3 class="text-center rounded p-3 bg-orange-300">พันธกิจ</h3>
             </div>
             <div class="flex-auto shadow rounded p-4 bg-indigo-200 hover:bg-indigo-100 mb-3">
                 {!! $contex->areaMission->detail !!}
@@ -38,7 +38,7 @@
         </div>
         <div class="flex flex-col md:flex-row ">
             <div class="md:basis-48 md:mr-3 prose mb-3 items-center">
-                <h3 class="text-center rounded p-3 bg-orange-300">กลยุทธ์</h3>
+                <h3 class="text-center rounded p-3 bg-orange-300">กลยุทธ์ สพท.</h3>
             </div>
             <div class="flex-auto">
                 <div class="grid grid-flow-col grid-cols-{{ count($contex->areaMission->areaGoals) }} gap-3">
