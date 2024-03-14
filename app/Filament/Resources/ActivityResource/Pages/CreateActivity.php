@@ -56,6 +56,7 @@ class CreateActivity extends CreateRecord
             'area_strategy_id' => $this->null_value,
             'date_start' => $this->null_value,
             'date_end' => $this->null_value,
+            'objective' => $this->null_value,
             'process' => $this->null_value,
             'target_area' => $this->null_value,
             'problem' => $this->null_value,
@@ -145,7 +146,7 @@ class CreateActivity extends CreateRecord
                                     Forms\Components\Toggle::make('q4')->label('ไตรมาส 4'),
                                 ])->columns(1),
                             ])->columns(2)->label('ระยะเวลาดำเนินกิจกรรม'),
-                            Forms\Components\TextInput::make('objective')->label('วัตถุประสงต์'),
+                            Forms\Components\Textarea::make('objective')->label('วัตถุประสงต์')->required(),
                             Forms\Components\Textarea::make('process')->label('การดำเนินงาน'),
                             Forms\Components\Textarea::make('target_area')->label('สถานที่ดำเนินการ'),
                             Repeater::make('beneficiary')->schema([
@@ -154,7 +155,7 @@ class CreateActivity extends CreateRecord
                                     Forms\Components\TextInput::make('count')->label('จำนวน/คน'),
                                 ])->label('เชิงปริมาณ'),
                                 Fieldset::make()->schema([
-                                    Forms\Components\RichEditor::make('qualitative')->label('เชิงคุณภาพ')
+                                    Forms\Components\Textarea::make('qualitative')->label('เชิงคุณภาพ')
                                         ->columnSpanFull()
                                 ])->label('เชิงคุณภาพ')
                             ])->label('ผลการดำเนินงาน')->minItems(1),

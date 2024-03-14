@@ -35,6 +35,7 @@ class Activity extends Model
         'area_strategy_id',
         'is_pa_of_manager',
         'progress',
+        'objective',
         'problem',
         'suggestions',
         'beneficiary',

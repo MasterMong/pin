@@ -32,6 +32,7 @@ return new class extends Migration
             $table->foreignId('area_strategy_id')->constrained();
             $table->boolean('is_pa_of_manager')->default(false);
             $table->integer('progress')->nullable();
+            $table->string('objective', 2000);
             $table->longText('problem')->nullable();
             $table->longText('suggestions')->nullable();
             $table->json('beneficiary');

@@ -29,12 +29,12 @@ class ViewActivity extends ViewRecord
     {
         return $infolist->schema([
 
-            Section::make('ข้อมูลโครงการ')
+            Section::make('ข้อมูลกิจกรรม')
                 ->schema([
                     TextEntry::make("name")
-                        ->label('ชื่อโครงการ'),
+                        ->label('ชื่อผลงานการขันเคลื่อนนโยบายสู่การปฏิบัติ'),
                     TextEntry::make("code")
-                        ->label('รหัสโครงการ'),
+                        ->label('รหัสกิจกรรม'),
                     TextEntry::make("duration")
                         ->label('ระยะเวลา (วัน)'),
                     TextEntry::make("date_start")

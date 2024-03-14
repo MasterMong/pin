@@ -7,14 +7,14 @@
                     <ol class="list-disc pl-5">
                         @foreach($txt()['relate_items'][$type->id] as $item)
                             <li>
-                                {{$item->id}} {{$item->label}}
+                                {{$item->label}}
                             </li>
                         @endforeach
                         @if(isset($txt()['relate_type_child'][$type->name]))
                             <ol class="list-disc pl-5">
                                 @foreach($txt()['relate_items'][$txt()['relate_type_child'][$type->name]->id] as $item)
                                     <li>
-                                        {{$item->id}} {{$item->label}}
+                                        {{$item->label}}
                                     </li>
                                 @endforeach
                             </ol>
