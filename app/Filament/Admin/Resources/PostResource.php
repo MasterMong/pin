@@ -46,6 +46,7 @@ class PostResource extends Resource
                     ->grouped()
                     ->required(),
                 Forms\Components\FileUpload::make('attachment')
+                    ->multiple()
                     ->columnSpanFull(),
             ]);
     }

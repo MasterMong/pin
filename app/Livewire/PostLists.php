@@ -2,10 +2,12 @@
 
 namespace App\Livewire;
 
+use App\Infolists\Components\AttachmentEntry;
 use App\Models\Post;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
+use Filament\Infolists\Components\RepeatableEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Components\ViewEntry;
 use Filament\Infolists\Infolist;
@@ -41,8 +43,9 @@ class PostLists extends Component implements HasForms, HasTable
             ->actions([
                 Tables\Actions\ViewAction::make()
                     ->infolist([
-                        TextEntry::make('title')->hiddenLabel()->html(),
-                        ViewEntry::make('content')->view('infolists.components.post-entry')->hiddenLabel()
+                        TextEntry::make('title')->hiddenLabel(),
+                        ViewEntry::make('content')->view('infolists.components.post-entry')->hiddenLabel(),
+                        AttachmentEntry::make('attachment')->hiddenLabel()
                     ])->slideOver()
             ])
             ->bulkActions([

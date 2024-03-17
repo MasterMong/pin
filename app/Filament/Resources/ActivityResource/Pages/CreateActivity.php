@@ -121,7 +121,7 @@ class CreateActivity extends CreateRecord
                                 ->columnSpanFull()
                                 ->label('ความสอดคล้อง'),
                             Forms\Components\Select::make('area_strategy_id')
-                                ->relationship('areaStrategy', 'detail', fn (Builder $query) => $query->where('area_id', auth()->user()->area_id)->where('budget_year_id', $this->budget_year_id))
+                                ->relationship('areaStrategy', 'detail', fn(Builder $query) => $query->where('area_id', auth()->user()->area_id)->where('budget_year_id', $this->budget_year_id))
                                 ->label('กลยุทธ์ สพท.')
                                 ->required(),
                             Forms\Components\Toggle::make('is_pa_of_manager')
@@ -148,7 +148,9 @@ class CreateActivity extends CreateRecord
                                 ])->columns(1),
                             ])->columns(2)->label('ระยะเวลาดำเนินกิจกรรม'),
                             Forms\Components\Textarea::make('objective')->label('วัตถุประสงต์')->required(),
-                            Forms\Components\Textarea::make('process')->label('การดำเนินงาน'),
+                            Forms\Components\RichEditor::make('process')
+                                ->toolbarButtons(['blockquote', 'bold', 'bulletList', 'codeBlock', 'h2', 'h3', 'italic', 'link', 'orderedList', 'redo', 'strike', 'underline', 'undo'])
+                                ->label('การดำเนินงาน'),
                             Forms\Components\Textarea::make('target_area')->label('สถานที่ดำเนินการ'),
                             Repeater::make('beneficiary')->schema([
                                 Fieldset::make()->schema([
