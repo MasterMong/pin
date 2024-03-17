@@ -32,7 +32,6 @@ class ActivityResource extends Resource
     protected static ?string $modelLabel = 'กิจกรรม';
     protected static ?string $pluralModelLabel = 'กิจกรรม';
     protected static ?int $navigationSort = 2;
-
     public static function form(Form $form): Form
     {
         return $form
@@ -119,7 +118,7 @@ class ActivityResource extends Resource
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
-                Tables\Actions\EditAction::make(),
+//                Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
 //                Tables\Actions\BulkActionGroup::make([
@@ -141,7 +140,7 @@ class ActivityResource extends Resource
             'index' => ListActivities::route('/'),
             'create' => CreateActivity::route('/create'),
             'view' => Pages\ViewActivity::route('/{record}'),
-            'edit' => EditActivity::route('/{record}/edit'),
+//            'edit' => EditActivity::route('/{record}/edit'),
         ];
     }
 }

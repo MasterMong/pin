@@ -125,13 +125,13 @@ class Area extends Model
         return $this->hasMany(Activity::class);
     }
 
-    public function projectActivities(): HasMany
+    public function ActivityInnovation(): HasMany
     {
-        return $this->hasMany(ProjectActivity::class);
+        return $this->hasMany(ActivityInnovation::class);
     }
 
-    public function projectInnovations(): HasMany
+    public function getFullNameAttribute()
     {
-        return $this->hasMany(ProjectInnovation::class);
+        return $this->areaType->name . ' ' . $this->name;
     }
 }

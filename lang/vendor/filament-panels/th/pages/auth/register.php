@@ -2,15 +2,15 @@
 
 return [
 
-    'title' => 'Register',
+    'title' => 'ลงทะเบียน',
 
-    'heading' => 'Sign up',
+    'heading' => 'สมัครสมาชิก',
 
     'actions' => [
 
         'login' => [
-            'before' => 'or',
-            'label' => 'sign in to your account',
+            'before' => 'หรือ',
+            'label' => 'เข้าสู่ระบบ',
         ],
 
     ],
@@ -18,26 +18,26 @@ return [
     'form' => [
 
         'email' => [
-            'label' => 'Email address',
+            'label' => 'ที่อยู่ Email',
         ],
 
         'name' => [
-            'label' => 'Name',
+            'label' => 'ชื่อ',
         ],
 
         'password' => [
-            'label' => 'Password',
+            'label' => 'รหัสผ่าน',
             'validation_attribute' => 'password',
         ],
 
         'password_confirmation' => [
-            'label' => 'Confirm password',
+            'label' => 'ยืนยันรหัสผ่าน',
         ],
 
         'actions' => [
 
             'register' => [
-                'label' => 'Sign up',
+                'label' => 'สมัครสมาชิก',
             ],
 
         ],
@@ -47,8 +47,8 @@ return [
     'notifications' => [
 
         'throttled' => [
-            'title' => 'Too many registration attempts',
-            'body' => 'Please try again in :seconds seconds.',
+            'title' => 'ลงทะเบียนบ่อยครั้งเกินไป',
+            'body' => 'ลองใหม่อีกครั้งใน :seconds วินาที.',
         ],
 
     ],

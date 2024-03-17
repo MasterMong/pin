@@ -2,19 +2,19 @@
 
 return [
 
-    'title' => 'Login',
+    'title' => 'เข้าสู่ระบบ',
 
-    'heading' => 'Sign in',
+    'heading' => 'เข้าสู่ระบบ',
 
     'actions' => [
 
         'register' => [
-            'before' => 'or',
-            'label' => 'sign up for an account',
+            'before' => 'หรือ',
+            'label' => 'ลงทะเบียนสมาชิก',
         ],
 
         'request_password_reset' => [
-            'label' => 'Forgotten your password?',
+            'label' => 'ลืมรหัสผ่าน?',
         ],
 
     ],
@@ -22,21 +22,21 @@ return [
     'form' => [
 
         'email' => [
-            'label' => 'Email address',
+            'label' => 'ที่อยู่ Email',
         ],
 
         'password' => [
-            'label' => 'Password',
+            'label' => 'รหัสผ่าน',
         ],
 
         'remember' => [
-            'label' => 'Remember me',
+            'label' => 'บันทึกการเข้าสู่ระบบครั้งนี้',
         ],
 
         'actions' => [
 
             'authenticate' => [
-                'label' => 'Sign in',
+                'label' => 'เข้าสู่ระบบ',
             ],
 
         ],
@@ -45,15 +45,15 @@ return [
 
     'messages' => [
 
-        'failed' => 'These credentials do not match our records.',
+        'failed' => 'ไม่พบผุ้ใช้งาน',
 
     ],
 
     'notifications' => [
 
         'throttled' => [
-            'title' => 'Too many login attempts',
-            'body' => 'Please try again in :seconds seconds.',
+            'title' => 'คุณเข้าสุ่ระบบผิดบ่อยครั้งเกินไป',
+            'body' => 'ลองอีกครั้งภายหลังใน :seconds วินาที',
         ],
 
     ],

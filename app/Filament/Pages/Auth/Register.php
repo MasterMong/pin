@@ -18,7 +18,7 @@ class Register extends \Filament\Pages\Auth\Register
 {
     public function form(Form $form): Form
     {
-        $areas = Area::get()->pluck('name', 'id');
+        $areas = Area::get()->pluck('full_name', 'id');
         return $form
             ->schema([
                 $this->getNameFormComponent()->label('ชื่อ'),
