@@ -6,6 +6,10 @@
                     {{$innovation->name}}
                 </li>
             @endforeach
+        @else
+            <div>
+                ไม่มีข้อมูล
+            </div>
         @endif
     </ul>
 </div>

@@ -34,9 +34,7 @@ class AreaInfo extends Page implements HasInfolists
         return $infolist
             ->record(\App\Models\Area::where('id', auth()->user()->area_id)->first())
             ->schema([
-                Section::make('ข้อมุลทั่วไป')->schema([
-                    TextEntry::make('name')->label('สพท.'),
-                    TextEntry::make('areaType.des')->label('ประเภท'),
+                Section::make('ข้อมูลทั่วไป')->schema([
                     TextEntry::make('inspectionArea.name')->label('เขตตรวจราชการ'),
                     TextEntry::make('tel')->label('โทรศัทท์'),
                     TextEntry::make('website')->label('เว็บไซต์')->url(true),
@@ -49,7 +47,7 @@ class AreaInfo extends Page implements HasInfolists
                     TextEntry::make('address')->label('ที่อยู่'),
                     TextEntry::make('district.name_in_thai')->label('อำเภอ'),
                     TextEntry::make('province.name_in_thai')->label('จังหวัด'),
-                    TextEntry::make('zip_code'),
+                    TextEntry::make('zip_code')->label('รหัสไปรษณีย์'),
                 ])
             ]);
     }

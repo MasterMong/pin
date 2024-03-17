@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('name', 300);
             $table->string('address', 600)->nullable();
             $table->string('zip_code', 5)->nullable();
-            $table->string('tel', 20);
+            $table->string('tel', 30);
             $table->integer('num_person')->default(0);
             $table->integer('num_school')->default(0);
             $table->integer('num_teacher')->default(0);

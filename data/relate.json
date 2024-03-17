@@ -1,12 +1,6 @@
 {
     "group": [
         {
-            "id": 1,
-            "label": "ยุทธศาสตร์ชาติ",
-            "budget_year_id": 3,
-            "order": 1
-        },
-        {
             "id": 2,
             "label": "นโยบายและจุดเน้น สพฐ.",
             "budget_year_id": 3,
@@ -20,134 +14,6 @@
         }
     ],
     "relate": [
-        {
-            "label": "ยุธศาสตร์ชาติ",
-            "name": "st20",
-            "budget_year_id": 3,
-            "relate_group_id": 1,
-            "order" : 0,
-            "items": [
-                {
-                    "budget_year_id": 3,
-                    "label": "1. ความมั่นคง",
-                    "ref": "st201",
-                    "parent_item_ref": null,
-                    "req_value": false,
-                    "order": 0
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "2. การสร้างความสามารถในการแข่งขัน",
-                    "ref": "st202",
-                    "parent_item_ref": null,
-                    "req_value": false,
-                    "order": 1
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "3. การพัฒนาและเสริมสร้างศักยภาพทรัพยากรมนุษย์",
-                    "ref": "st203",
-                    "parent_item_ref": null,
-                    "req_value": false,
-                    "order": 2
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "4. การสร้างโอกาสและความเสมอภาคทางสังคม",
-                    "ref": "st204",
-                    "parent_item_ref": null,
-                    "req_value": false,
-                    "order": 3
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "5. การสร้างการเติบโตบนคุณภาพชีวิตที่เป็นมิตรต่อสิ่งแวดล้อม",
-                    "ref": "st205",
-                    "parent_item_ref": null,
-                    "req_value": false,
-                    "order": 4
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "6. การปรับสมดุลและพัฒนาระบบการบริหารจัดการภาครัฐ",
-                    "ref": "st206",
-                    "parent_item_ref": null,
-                    "req_value": false,
-                    "order": 5
-                }
-            ],
-            "is_parent": true,
-            "is_single": true,
-            "parent_name": null
-        },
-        {
-            "label": "แผนแม่บท",
-            "name": "chapter",
-            "budget_year_id": 3,
-            "relate_group_id": 1,
-            "order" : 1,
-            "items": [
-                {
-                    "budget_year_id": 3,
-                    "label": "ประเด็นที่ 1 ความมั่นคง (รอง)",
-                    "ref": "chapter1",
-                    "parent_item_ref": null,
-                    "req_value": false,
-                    "order": 0
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "ประเด็นที่ 10 การปรับเปลี่ยนค่านิยมและวัฒนธรรม (รอง)",
-                    "ref": "chapter2",
-                    "parent_item_ref": null,
-                    "req_value": false,
-                    "order": 1
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "ประเด็นที่ 11 การพัฒนาคนตลอดช่วงชีวิต (หลัก)",
-                    "ref": "chapter3",
-                    "parent_item_ref": null,
-                    "req_value": false,
-                    "order": 2
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "ประเด็นที่ 12 การพัฒนาการเรียนรู้ (หลัก)",
-                    "ref": "chapter4",
-                    "parent_item_ref": null,
-                    "req_value": false,
-                    "order": 3
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "ประเด็นที่ 17 ความเสมอภาคและหลักประกันทางสังคม (รอง)",
-                    "ref": "chapter5",
-                    "parent_item_ref": null,
-                    "req_value": false,
-                    "order": 4
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "ประเด็นที่ 20 การบริการประชาชนและประสิทธิภาพภาครัฐ (รอง)",
-                    "ref": "chapter6",
-                    "parent_item_ref": null,
-                    "req_value": false,
-                    "order": 5
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "ประเด็นที่ 21 การต่อต้านทุจริตและประพฤติมิชอบ (รอง)",
-                    "ref": "chapter7",
-                    "parent_item_ref": null,
-                    "req_value": false,
-                    "order": 6
-                }
-            ],
-            "is_parent": true,
-            "is_single": true,
-            "parent_name": null
-        },
         {
             "label": "Quick Policy",
             "name": "qp",
@@ -239,250 +105,6 @@
             "is_parent": true,
             "is_single": false,
             "parent_name": null
-        },
-        {
-            "label": "",
-            "name": "qp_sub1",
-            "budget_year_id": 3,
-            "relate_group_id": 2,
-            "order" : 2,
-            "items": [
-                {
-                    "budget_year_id": 3,
-                    "label": "1.1) ขับเคลื่อนหลักปรัชญาของเศรษฐกิจพอเพียงสู่สถานศึกษา เพื่อการบรรลุเป้าหมายการพัฒนาที่ยั่งยืน",
-                    "ref": "qp1_1",
-                    "parent_item_ref": "qp1",
-                    "req_value": true,
-                    "order": 0
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "1.2) ขับเคลื่อนพระบรมราโชบายด้านการศึกษาของในหลวงรัชกาลที่ 10 สู่การปฏิบัติ",
-                    "ref": "qp1_2",
-                    "parent_item_ref": "qp1",
-                    "req_value": true,
-                    "order": 1
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "1.3) ปลูกฝังความรักในสถาบันหลักของชาติ",
-                    "ref": "qp1_3",
-                    "parent_item_ref": "qp1",
-                    "req_value": true,
-                    "order": 2
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "2.1) พัฒนาการจัดการเรียนรู้ประวัติศาสตร์ หน้าที่พลเมือง ศีลธรรม และประชาธิปไตยในสังคมร่วมสมัย",
-                    "ref": "qp2_1",
-                    "parent_item_ref": "qp2",
-                    "req_value": true,
-                    "order": 3
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "2.2) พัฒนานวัตกรรมการจัดการเรียนรู้ประวัติศาสตร์ หน้าที่พลเมือง ศีลธรรม ประชาธิปไตย และส่งเสริมความรักชาติ ศาสน์ กษัตริย์ สู่ห้องเรียนวิถีใหม่ด้วยเทคโนโลยีดิจิทัล",
-                    "ref": "qp2_2",
-                    "parent_item_ref": "qp2",
-                    "req_value": true,
-                    "order": 4
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "3.1) ส่งเสริมให้มีการต่อยอดแนวคิดการจัดการเรียนรู้เชิงรุก (Active Learning) เพื่อพัฒนาสมรรถนะสำคัญของผู้เรียน",
-                    "ref": "qp3_1",
-                    "parent_item_ref": "qp3",
-                    "req_value": true,
-                    "order": 5
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "3.2) พัฒนาศักยภาพและคุณลักษณะผู้เรียนตามความถนัด ความสนใจ ด้วยการเรียนรู้อย่างมีความสุข",
-                    "ref": "qp3_2",
-                    "parent_item_ref": "qp3",
-                    "req_value": true,
-                    "order": 6
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "3.3) ส่งเสริมผู้เรียนให้มีคุณลักษณะที่พึงประสงค์ด้านสิ่งแวดล้อม และจิตสำนึกในการอนุรักษ์ฟื้นฟู ทรัพยากรธรรมชาติและสิ่งแวดล้อม",
-                    "ref": "qp3_3",
-                    "parent_item_ref": "qp3",
-                    "req_value": true,
-                    "order": 7
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "4.1) ส่งเสริมการอ่านเพื่อการเรียนรู้ตลอดชีวิต",
-                    "ref": "qp4_1",
-                    "parent_item_ref": "qp4",
-                    "req_value": true,
-                    "order": 8
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "4.2) พัฒนาความสามารถด้านการอ่านตามแนวทางการประเมิน PISA",
-                    "ref": "qp4_2",
-                    "parent_item_ref": "qp4",
-                    "req_value": true,
-                    "order": 9
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "5.1) ส่งเสริมให้ผู้เรียนมีคุณลักษณะด้านการทำประโยชน์เพื่อส่วนรวม การมีจิตอาสา ทำความดีด้วยหัวใจ",
-                    "ref": "qp5_1",
-                    "parent_item_ref": "qp5",
-                    "req_value": true,
-                    "order": 10
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "5.2) สร้างผู้นำด้วยกระบวนการลูกเสือ เนตรนารี ยุวกาชาด ผู้บำเพ็ญประโยชน์ และกิจกรรมพัฒนาผู้เรียนอื่น ๆ",
-                    "ref": "qp5_2",
-                    "parent_item_ref": "qp5",
-                    "req_value": true,
-                    "order": 11
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "5.3) ส่งเสริมกิจกรรมสภานักเรียน ชุมนุม ชมรม และการมีส่วนร่วมให้เกิดวิถีประชาธิปไตยในโรงเรียน เป็นพลเมืองที่ดี และแสดงออกอย่างสร้างสรรค์",
-                    "ref": "qp5_3",
-                    "parent_item_ref": "qp5",
-                    "req_value": true,
-                    "order": 12
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "6.1) พัฒนาองค์ความรู้ เจตคติและทักษะการจัดการเรียนรู้สำหรับเด็กที่มีความต้องการจำเป็นพิเศษ",
-                    "ref": "qp6_1",
-                    "parent_item_ref": "qp6",
-                    "req_value": true,
-                    "order": 13
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "6.2) สร้างเครือข่ายบูรณาการความร่วมมือช่วยเหลือเด็กที่มีความต้องการจำเป็นพิเศษระหว่างสถานศึกษากับทีมสหวิชาชีพ",
-                    "ref": "qp6_2",
-                    "parent_item_ref": "qp6",
-                    "req_value": true,
-                    "order": 14
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "6.3) นิเทศ กำกับ ติดตาม โดยร่วมมือกับเครือข่ายในทุกภาคส่วน",
-                    "ref": "qp6_3",
-                    "parent_item_ref": "qp6",
-                    "req_value": true,
-                    "order": 15
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "7.1) ส่งเสริมและพัฒนาศักยภาพผู้เรียนตามพหุปัญญา",
-                    "ref": "qp7_1",
-                    "parent_item_ref": "qp7",
-                    "req_value": true,
-                    "order": 16
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "7.2) พัฒนาผู้มีความสามารถพิเศษ ด้านคณิตศาสตร์ ด้านวิทยาศาสตร์ ด้านภาษา ด้านทัศนศิลป์ ด้านดนตรี ด้านนาฏศิลป์ ด้านกีฬา และด้านอื่น ๆ",
-                    "ref": "qp7_2",
-                    "parent_item_ref": "qp7",
-                    "req_value": true,
-                    "order": 17
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "7.3) ส่งเสริมความเป็นเลิศของผู้มีความสามารถพิเศษ และ Soft Power อย่างเต็มศักยภาพ เพื่อเพิ่มขีดความสามารถในการแข่งขันของประเทศ",
-                    "ref": "qp7_3",
-                    "parent_item_ref": "qp7",
-                    "req_value": true,
-                    "order": 18
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "8.1) ปรับปรุงโครงสร้างพื้นฐานทางกายภาพของสถานศึกษา เพื่อให้เป็นพื้นที่ปลอดภัย อบอุ่น มีความสุข เอื้อต่อการเรียนรู้",
-                    "ref": "qp8_1",
-                    "parent_item_ref": "qp8",
-                    "req_value": true,
-                    "order": 19
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "8.2) สร้างเครือข่ายและกลไกในการดูแลความปลอดภัยให้กับผู้เรียน ครูและบุคลากรทางการศึกษาและสถานศึกษา",
-                    "ref": "qp8_2",
-                    "parent_item_ref": "qp8",
-                    "req_value": true,
-                    "order": 20
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "8.3) สร้างภูมิคุ้มกันผู้เรียน ครูและบุคลากรทางการศึกษา ไม่ให้เข้าไปข้องเกี่ยวกับยาเสพติด",
-                    "ref": "qp8_3",
-                    "parent_item_ref": "qp8",
-                    "req_value": true,
-                    "order": 21
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "8.4) รับเรื่องร้องเรียน ร้องทุกข์ ดูแลความปลอดภัยของผู้เรียน ครูและบุคลากรทางการศึกษา ผ่านระบบ OBEC Safety Center",
-                    "ref": "qp8_4",
-                    "parent_item_ref": "qp8",
-                    "req_value": true,
-                    "order": 22
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "9.1) พัฒนาระบบการป้องกัน การเฝ้าระวัง และการดูแลช่วยเหลือเด็กกลุ่มเสี่ยง เด็กตกหล่น เด็กออกกลางคัน เด็กไร้สัญชาติ เด็กพื้นที่สูงในถิ่นทุรกันดารและพื้นที่เกาะ ตามความต้องการจำเป็นรายบุคคลเพื่อไม่ให้หลุดจากระบบการศึกษา โดยบูรณาการความร่วมมือกับบุคคลและหน่วยงานที่เกี่ยวข้อง",
-                    "ref": "qp9_1",
-                    "parent_item_ref": "qp9",
-                    "req_value": true,
-                    "order": 23
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "9.2) ส่งเสริม สนับสนุนให้เด็กที่มีความต้องการจำเป็นพิเศษ เด็กพิการและเด็กด้อยโอกาสได้รับโอกาสเข้าถึงการศึกษา แหล่งเรียนรู้ และการฝึกอาชีพที่หลากหลายเหมาะสมตามศักยภาพ เพื่อให้มีทักษะในการดำเนินชีวิต สามารถพึ่งตนเองได้",
-                    "ref": "qp9_2",
-                    "parent_item_ref": "qp9",
-                    "req_value": true,
-                    "order": 24
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "10.1) พัฒนาผู้บริหารสำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน ผู้บริหารการศึกษาผู้บริหารสถานศึกษา และบุคลากรส่วนกลาง ให้เป็นผู้นำเชิงกลยุทธ์ นำนโยบายสู่การปฏิบัติ และมีทักษะในการบริหารสถานการณ์",
-                    "ref": "qp10_1",
-                    "parent_item_ref": "qp10",
-                    "req_value": true,
-                    "order": 25
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "10.2) พัฒนาสมรรถนะศึกษานิเทศก์ ในการนิเทศ และการชี้แนะ (Coaching)",
-                    "ref": "qp10_2",
-                    "parent_item_ref": "qp10",
-                    "req_value": true,
-                    "order": 26
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "10.3) พัฒนาสมรรถนะครู ด้านภาษาอังกฤษ ภาษาจีน เทคโนโลยีดิจิทัล การจัดการเรียนรู้จิตวิญญาณความเป็นครู และทักษะอื่นที่จำเป็น",
-                    "ref": "qp10_3",
-                    "parent_item_ref": "qp10",
-                    "req_value": true,
-                    "order": 27
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "10.4) พัฒนาครูและบุคลากรทางการศึกษา ให้มีความรู้และสมรรถนะด้านวิชาการ ด้านทักษะการจัดการเรียนรู้เชิงรุก (Active Learning)",
-                    "ref": "qp10_4",
-                    "parent_item_ref": "qp10",
-                    "req_value": true,
-                    "order": 28
-                }
-            ],
-            "is_parent": false,
-            "is_single": false,
-            "parent_name": "qp"
         },
         {
             "label": "Quick Win",
@@ -585,324 +207,8 @@
             "parent_name": null
         },
         {
-            "label": "",
-            "name": "qw_sub1",
-            "budget_year_id": 3,
-            "relate_group_id": 2,
-            "order" : 3,
-            "items": [
-                {
-                    "budget_year_id": 3,
-                    "label": "1.1) ปรับปรุงหลักเกณฑ์และวิธีการ การแต่งตั้ง การย้าย การช่วยราชการ และการขอมีและเลื่อนวิทยฐานะ",
-                    "ref": "qw1_1",
-                    "parent_item_ref": "qw1",
-                    "req_value": true,
-                    "order": 0
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "1.2) พัฒนาระบบข้อมูลสารสนเทศข้าราชการครูและบุคลากรทางการศึกษา",
-                    "ref": "qw1_2",
-                    "parent_item_ref": "qw1",
-                    "req_value": true,
-                    "order": 1
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "2.1) จัดตั้งศูนย์และสถานีแก้หนี้สินครูและบุคลากรทางการศึกษาทุกระดับ",
-                    "ref": "qw2_1",
-                    "parent_item_ref": "qw2",
-                    "req_value": true,
-                    "order": 2
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "2.2) จัดทำข้อมูลสารสนเทศ และแนวทางแก้ไขปัญหาหนี้สินครูและบุคลากรทางการศึกษา",
-                    "ref": "qw2_2",
-                    "parent_item_ref": "qw2",
-                    "req_value": true,
-                    "order": 3
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "2.3) ดำเนินการแก้ไขปัญหาหนี้สินครูและบุคลากรทางการศึกษา",
-                    "ref": "qw2_3",
-                    "parent_item_ref": "qw2",
-                    "req_value": true,
-                    "order": 4
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "3.1) จัดทำแผนการบริหารจัดการโรงเรียนขนาดเล็ก และโรงเรียนขยายโอกาสทางการศึกษา",
-                    "ref": "qw3_1",
-                    "parent_item_ref": "qw3",
-                    "req_value": true,
-                    "order": 5
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "3.2) จัดการเรียนรู้เชิงรุก (Active Learning) สำหรับโรงเรียนขนาดเล็ก และโรงเรียนขยายโอกาสทางการศึกษา",
-                    "ref": "qw3_2",
-                    "parent_item_ref": "qw3",
-                    "req_value": true,
-                    "order": 6
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "3.3) เสนอปรับเกณฑ์อัตรากำลังผู้บริหารสถานศึกษา ครูและบุคลากรสายสนับสนุน",
-                    "ref": "qw3_3",
-                    "parent_item_ref": "qw3",
-                    "req_value": true,
-                    "order": 7
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "3.4) จัดทำคำสั่งมอบอำนาจเกี่ยวกับการจัดซื้อจัดจ้างและการบริหารพัสดุภาครัฐ โดยให้สำนักงานเขตพื้นที่การศึกษาเป็นผู้ดำเนินการแทนโรงเรียนที่มีจำนวนนักเรียนไม่เกิน 60 คน",
-                    "ref": "qw3_4",
-                    "parent_item_ref": "qw3",
-                    "req_value": true,
-                    "order": 8
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "3.5) จัดทำรูปแบบการบริหารเจ้าหน้าที่ธุรการ ในโรงเรียนขนาดเล็กและโรงเรียนขยายโอกาสทางการศึกษา",
-                    "ref": "qw3_5",
-                    "parent_item_ref": "qw3",
-                    "req_value": true,
-                    "order": 9
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "3.6) สร้างและใช้แพลตฟอร์มการเรียนรู้ในระบบดิจิทัล และส่งเสริมการใช้ DLTV",
-                    "ref": "qw3_6",
-                    "parent_item_ref": "qw3",
-                    "req_value": true,
-                    "order": 10
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "4.1) สำรวจรายการประเมิน การรายงานข้อมูล และโครงการของสถานศึกษา",
-                    "ref": "qw4_1",
-                    "parent_item_ref": "qw4",
-                    "req_value": true,
-                    "order": 11
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "4.2) จัดทำรูปแบบและแนวทางการประเมินเพื่อลดภาระของสถานศึกษา",
-                    "ref": "qw4_2",
-                    "parent_item_ref": "qw4",
-                    "req_value": true,
-                    "order": 12
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "4.3) ติดตามผลการประเมินตามแนวทางเพื่อลดภาระการประเมินของสถานศึกษา",
-                    "ref": "qw4_3",
-                    "parent_item_ref": "qw4",
-                    "req_value": true,
-                    "order": 13
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "5.1) เสริมสร้างคุณธรรม จริยธรรม และธรรมาภิบาลในสถานศึกษา สำนักงานเขตพื้นที่การศึกษาและสำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน",
-                    "ref": "qw5_1",
-                    "parent_item_ref": "qw5",
-                    "req_value": true,
-                    "order": 14
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "5.2) สรรหา บรรจุและแต่งตั้ง โยกย้าย ตามหลักการบริหารกิจการบ้านเมืองที่ดี ยึดถือระบบคุณธรรม และความโปร่งใส",
-                    "ref": "qw5_2",
-                    "parent_item_ref": "qw5",
-                    "req_value": true,
-                    "order": 15
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "5.3) จัดซื้อจัดจ้างวัสดุ ครุภัณฑ์ อาหารกลางวัน อย่างมีคุณภาพและถูกต้องตามระเบียบกฎหมายที่เกี่ยวข้อง",
-                    "ref": "qw5_3",
-                    "parent_item_ref": "qw5",
-                    "req_value": true,
-                    "order": 16
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "6.1) พัฒนาการสื่อสารทุกช่องทาง",
-                    "ref": "qw6_1",
-                    "parent_item_ref": "qw6",
-                    "req_value": true,
-                    "order": 17
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "6.2) ติดตามและวิเคราะห์ประเด็นข่าวที่เกี่ยวข้องกับการศึกษา",
-                    "ref": "qw6_2",
-                    "parent_item_ref": "qw6",
-                    "req_value": true,
-                    "order": 18
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "6.3) ผลิตและเผยแพร่สื่อประชาสัมพันธ์ เพื่อส่งเสริมภาพลักษณ์ สพฐ.",
-                    "ref": "qw6_3",
-                    "parent_item_ref": "qw6",
-                    "req_value": true,
-                    "order": 19
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "6.4) สร้างเครือข่าย และประยุกต์ใช้ AI เพื่อการประชาสัมพันธ์",
-                    "ref": "qw6_4",
-                    "parent_item_ref": "qw6",
-                    "req_value": true,
-                    "order": 20
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "1.1) จัดหาเครื่องมือ พร้อมอุปกรณ์เทคโนโลยีที่ทันสมัยสำหรับการเรียนรู้",
-                    "ref": "qw7_1",
-                    "parent_item_ref": "qw7",
-                    "req_value": true,
-                    "order": 21
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "1.2) จัดหาระบบเครือข่ายอินเทอร์เน็ตความเร็วสูงของสถานศึกษา",
-                    "ref": "qw7_2",
-                    "parent_item_ref": "qw7",
-                    "req_value": true,
-                    "order": 22
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "1.3) พัฒนา ส่งเสริม และขับเคลื่อนการจัดการเรียนรู้ผ่านแพลตฟอร์มการเรียนรู้เทคโนโลยีดิจิทัลให้แก่ผู้เรียนทุกที่ทุกเวลา",
-                    "ref": "qw7_3",
-                    "parent_item_ref": "qw7",
-                    "req_value": true,
-                    "order": 23
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "2.1) พัฒนาระบบการแนะแนวและการชี้แนะแนวทาง (Coaching)",
-                    "ref": "qw8_1",
-                    "parent_item_ref": "qw8",
-                    "req_value": true,
-                    "order": 24
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "2.2) พัฒนาครูแนะแนวแกนนำ และพัฒนาให้ครูทุกคนให้การแนะแนวนักเรียนได้",
-                    "ref": "qw8_2",
-                    "parent_item_ref": "qw8",
-                    "req_value": true,
-                    "order": 25
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "2.3) ส่งเสริมสุขภาพจิตนักเรียนวิถีใหม่ด้วย School Health Hero และส่งเสริมขภาพกายรอบด้าน",
-                    "ref": "qw8_3",
-                    "parent_item_ref": "qw8",
-                    "req_value": true,
-                    "order": 26
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "3.1) พัฒนาระบบการเทียบโอนความรู้ และประสบการณ์เพื่อใช้ในการสะสมหน่วยกิต และผลการเรียนของผู้เรียน ผ่านระบบธนาคารหน่วยกิต (Credit Bank)",
-                    "ref": "qw9_1",
-                    "parent_item_ref": "qw9",
-                    "req_value": true,
-                    "order": 27
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "3.2) พัฒนาระบบธนาคารหน่วยกิตดิจิทัล",
-                    "ref": "qw9_2",
-                    "parent_item_ref": "qw9",
-                    "req_value": true,
-                    "order": 28
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "3.3) เชื่อมโยง API ระหว่างสถานศึกษา หน่วยงานต้นสังกัด และระบบธนาคารหน่วยกิตแห่งชาติ",
-                    "ref": "qw9_3",
-                    "parent_item_ref": "qw9",
-                    "req_value": true,
-                    "order": 29
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "4.1) จัดทำแผนการพัฒนาโรงเรียนคุณภาพ",
-                    "ref": "qw10_1",
-                    "parent_item_ref": "qw10",
-                    "req_value": true,
-                    "order": 30
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "4.2) กำหนดเกณฑ์มาตรฐานโรงเรียนคุณภาพ",
-                    "ref": "qw10_2",
-                    "parent_item_ref": "qw10",
-                    "req_value": true,
-                    "order": 31
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "4.3) สนับสนุนและพัฒนาโรงเรียนคุณภาพที่สอดคล้องกับบริบทและความต้องการ เพื่อการจัดการศึกษาที่มีคุณภาพ",
-                    "ref": "qw10_3",
-                    "parent_item_ref": "qw10",
-                    "req_value": true,
-                    "order": 32
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "5.1) พัฒนานักธุรกิจน้อยมีคุณธรรม นำสู่เศรษฐกิจสร้างสรรค์",
-                    "ref": "qw11_1",
-                    "parent_item_ref": "qw11",
-                    "req_value": true,
-                    "order": 33
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "5.2) ส่งเสริมให้นักเรียนทำงานหารายได้ในช่วงปิดภาคเรียนฤดูร้อน",
-                    "ref": "qw11_2",
-                    "parent_item_ref": "qw11",
-                    "req_value": true,
-                    "order": 34
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "5.3) ส่งเสริมประสบการณ์อาชีพของนักเรียนในจังหวัดชายแดนภาคใต้",
-                    "ref": "qw11_3",
-                    "parent_item_ref": "qw11",
-                    "req_value": true,
-                    "order": 35
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "5.4) พัฒนาต่อยอดห้องแล็บสอนอาชีพ ในโรงเรียนต้นแบบสหกรณ์โรงเรียน",
-                    "ref": "qw11_4",
-                    "parent_item_ref": "qw11",
-                    "req_value": true,
-                    "order": 36
-                },
-                {
-                    "budget_year_id": 3,
-                    "label": "5.5) ส่งเสริมการศึกษาร่วมหลักสูตรประกาศนียบัตรวิชาชีพ (ทวิศึกษา) ระดับมัธยมศึกษาตอนปลาย",
-                    "ref": "qw11_5",
-                    "parent_item_ref": "qw11",
-                    "req_value": true,
-                    "order": 37
-                }
-            ],
-            "is_parent": false,
-            "is_single": false,
-            "parent_name": "qw"
-        },
-        {
             "label": "นโยบาย 4 ด้าน 24 ประเด็น",
-            "name": "policy423",
+            "name": "policy424",
             "budget_year_id": 3,
             "relate_group_id": 3,
             "order" : 4,
@@ -910,7 +216,7 @@
                 {
                     "budget_year_id": 3,
                     "label": "ด้านที่ 1 การเพิ่มโอกาสทางการศึกษา",
-                    "ref": "policy423_1",
+                    "ref": "policy424_1",
                     "parent_item_ref": null,
                     "req_value": false,
                     "order": 0
@@ -918,7 +224,7 @@
                 {
                     "budget_year_id": 3,
                     "label": "ด้านที่ 2 การยกระดับคุณภาพทางการศึกษา",
-                    "ref": "policy423_2",
+                    "ref": "policy424_2",
                     "parent_item_ref": null,
                     "req_value": false,
                     "order": 1
@@ -926,7 +232,7 @@
                 {
                     "budget_year_id": 3,
                     "label": "ด้านที่ 3 การเพิ่มประสิทธิภาพการบริหารจัดการศึกษา",
-                    "ref": "policy423_3",
+                    "ref": "policy424_3",
                     "parent_item_ref": null,
                     "req_value": false,
                     "order": 2
@@ -934,7 +240,7 @@
                 {
                     "budget_year_id": 3,
                     "label": "ด้านที่ 4 การจัดการศึกษาเพื่อความปลอดภัย",
-                    "ref": "policy423_4",
+                    "ref": "policy424_4",
                     "parent_item_ref": null,
                     "req_value": false,
                     "order": 3
@@ -954,7 +260,7 @@
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 1 ผู้พิการ ผู้ด้อยโอกาส ได้รับการศึกษาที่เหมาะสม",
                     "ref": "policy_sub_1",
-                    "parent_item_ref": "policy423_1",
+                    "parent_item_ref": "policy424_1",
                     "req_value": true,
                     "order": 1
                 },
@@ -962,7 +268,7 @@
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 2 อัตราการออกกลางคัน",
                     "ref": "policy_sub_2",
-                    "parent_item_ref": "policy423_1",
+                    "parent_item_ref": "policy424_1",
                     "req_value": true,
                     "order": 2
                 },
@@ -970,7 +276,7 @@
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 3 การเสริมสร้างทักษะอาชีพและการมีรายได้ระหว่างเรียน",
                     "ref": "policy_sub_3",
-                    "parent_item_ref": "policy423_1",
+                    "parent_item_ref": "policy424_1",
                     "req_value": true,
                     "order": 3
                 },
@@ -978,7 +284,7 @@
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 4 คุณลักษณะอันพึงประสงค์",
                     "ref": "policy_sub_4",
-                    "parent_item_ref": "policy423_2",
+                    "parent_item_ref": "policy424_2",
                     "req_value": true,
                     "order": 4
                 },
@@ -986,7 +292,7 @@
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 5 พัฒนาการเด็กปฐมวัย",
                     "ref": "policy_sub_5",
-                    "parent_item_ref": "policy423_2",
+                    "parent_item_ref": "policy424_2",
                     "req_value": true,
                     "order": 5
                 },
@@ -994,7 +300,7 @@
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 6 การพัฒนาผู้เรียนให้มีทักษะในศตวรรษที่ 21",
                     "ref": "policy_sub_6",
-                    "parent_item_ref": "policy423_2",
+                    "parent_item_ref": "policy424_2",
                     "req_value": true,
                     "order": 6
                 },
@@ -1002,7 +308,7 @@
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 7 การส่งเสริมพหุปัญญาของผู้เรียน",
                     "ref": "policy_sub_7",
-                    "parent_item_ref": "policy423_2",
+                    "parent_item_ref": "policy424_2",
                     "req_value": true,
                     "order": 7
                 },
@@ -1010,7 +316,7 @@
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 8 การส่งเสริมการประเมินความฉลาดรู้ตามแนวทาง PISA",
                     "ref": "policy_sub_8",
-                    "parent_item_ref": "policy423_2",
+                    "parent_item_ref": "policy424_2",
                     "req_value": true,
                     "order": 8
                 },
@@ -1018,7 +324,7 @@
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 9 หลักสูตรสถานศึกษาที่มีความยืดหยุ่น",
                     "ref": "policy_sub_9",
-                    "parent_item_ref": "policy423_2",
+                    "parent_item_ref": "policy424_2",
                     "req_value": true,
                     "order": 9
                 },
@@ -1026,7 +332,7 @@
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 10 การจัดการเรียนรู้เชิงรุกและการวัดผลด้วยวิธีการที่หลากหลาย",
                     "ref": "policy_sub_10",
-                    "parent_item_ref": "policy423_2",
+                    "parent_item_ref": "policy424_2",
                     "req_value": true,
                     "order": 10
                 },
@@ -1034,7 +340,7 @@
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 11 การพัฒนาสมรรถนะของครูและบุคลากรทางการศึกษา",
                     "ref": "policy_sub_11",
-                    "parent_item_ref": "policy423_2",
+                    "parent_item_ref": "policy424_2",
                     "req_value": true,
                     "order": 11
                 },
@@ -1042,7 +348,7 @@
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 12 การจัดการเรียนรู้ประวัติศาสตร์ หน้าที่พลเมือง ศีลธรรมและประชาธิปไตย",
                     "ref": "policy_sub_12",
-                    "parent_item_ref": "policy423_2",
+                    "parent_item_ref": "policy424_2",
                     "req_value": true,
                     "order": 12
                 },
@@ -1050,7 +356,7 @@
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 13 การส่งเสริมสนับสนุนกิจกรรมพัฒนาผู้เรียน",
                     "ref": "policy_sub_13",
-                    "parent_item_ref": "policy423_2",
+                    "parent_item_ref": "policy424_2",
                     "req_value": true,
                     "order": 13
                 },
@@ -1058,7 +364,7 @@
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 14  การบริหารจัดการที่เป็นดิจิทัล",
                     "ref": "policy_sub_14",
-                    "parent_item_ref": "policy423_3",
+                    "parent_item_ref": "policy424_3",
                     "req_value": true,
                     "order": 14
                 },
@@ -1066,7 +372,7 @@
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 15 การประกันคุณภาพการศึกษา",
                     "ref": "policy_sub_15",
-                    "parent_item_ref": "policy423_3",
+                    "parent_item_ref": "policy424_3",
                     "req_value": true,
                     "order": 15
                 },
@@ -1074,7 +380,7 @@
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 16 การสร้างความตระหนักในการป้องกันการทุจริต",
                     "ref": "policy_sub_16",
-                    "parent_item_ref": "policy423_3",
+                    "parent_item_ref": "policy424_3",
                     "req_value": true,
                     "order": 16
                 },
@@ -1082,7 +388,7 @@
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 17 การลดภาระการประเมินของสถานศึกษา",
                     "ref": "policy_sub_17",
-                    "parent_item_ref": "policy423_3",
+                    "parent_item_ref": "policy424_3",
                     "req_value": true,
                     "order": 17
                 },
@@ -1090,7 +396,7 @@
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 18 การพัฒนาสู่องค์การแห่งการเรียนรู้",
                     "ref": "policy_sub_18",
-                    "parent_item_ref": "policy423_3",
+                    "parent_item_ref": "policy424_3",
                     "req_value": true,
                     "order": 18
                 },
@@ -1098,7 +404,7 @@
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 19 การติดตาม ตรวจสอบ ประเมินผล และนิเทศการจัดการศึกษาที่มีประสิทธิภาพ",
                     "ref": "policy_sub_19",
-                    "parent_item_ref": "policy423_3",
+                    "parent_item_ref": "policy424_3",
                     "req_value": true,
                     "order": 19
                 },
@@ -1106,7 +412,7 @@
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 20 ผลงานที่เป็นแบบอย่างได้ของ สพท.",
                     "ref": "policy_sub_20",
-                    "parent_item_ref": "policy423_3",
+                    "parent_item_ref": "policy424_3",
                     "req_value": true,
                     "order": 20
                 },
@@ -1114,7 +420,7 @@
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 21 การยกย่องเชิดชูเกียรติครูและบุคลากรทางการศึกษา",
                     "ref": "policy_sub_21",
-                    "parent_item_ref": "policy423_3",
+                    "parent_item_ref": "policy424_3",
                     "req_value": true,
                     "order": 21
                 },
@@ -1122,7 +428,7 @@
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 22 การประเมินความพึงพอใจในการบริหารจัดการของ สพท.",
                     "ref": "policy_sub_22",
-                    "parent_item_ref": "policy423_3",
+                    "parent_item_ref": "policy424_3",
                     "req_value": true,
                     "order": 22
                 },
@@ -1130,7 +436,7 @@
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 23 การเสริมสร้างความสุขและความปลอดภัยในสถานศึกษา",
                     "ref": "policy_sub_23",
-                    "parent_item_ref": "policy423_4",
+                    "parent_item_ref": "policy424_4",
                     "req_value": true,
                     "order": 23
                 },
@@ -1138,14 +444,14 @@
                     "budget_year_id": 3,
                     "label": "ประเด็นที่ 24 การสร้างความเข้มแข็งระบบแนะแนว การชี้แนะ (Coaching)",
                     "ref": "policy_sub_24",
-                    "parent_item_ref": "policy423_4",
+                    "parent_item_ref": "policy424_4",
                     "req_value": true,
                     "order": 24
                 }
             ],
             "is_parent": false,
             "is_single": true,
-            "parent_name": "policy423"
+            "parent_name": "policy424"
         }
     ]
 }

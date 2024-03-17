@@ -19,6 +19,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Notifications\Notification;
 use Filament\Resources\Pages\CreateRecord;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
 
 use function PHPSTORM_META\type;
@@ -107,7 +108,7 @@ class CreateActivity extends CreateRecord
                             Forms\Components\Hidden::make('area_id'),
                             Forms\Components\Hidden::make('budget_year_id'),
                             Forms\Components\TextInput::make('name')
-                                ->label('ชื่อผลงานการขันเคลื่อนนโยบายสู่การปฏิบัติ')
+                                ->label('ชื่อกิจกรรม/ผลงานการขันเคลื่อนนโยบายสู่การปฏิบัติ')
                                 ->required()
                                 ->maxLength(300),
                             Repeater::make('relate_items')
@@ -120,11 +121,11 @@ class CreateActivity extends CreateRecord
                                 ->columnSpanFull()
                                 ->label('ความสอดคล้อง'),
                             Forms\Components\Select::make('area_strategy_id')
-                                ->relationship('areaStrategy', 'detail')
+                                ->relationship('areaStrategy', 'detail', fn (Builder $query) => $query->where('area_id', auth()->user()->area_id)->where('budget_year_id', $this->budget_year_id))
                                 ->label('กลยุทธ์ สพท.')
                                 ->required(),
                             Forms\Components\Toggle::make('is_pa_of_manager')
-                                ->label('วPA ของผู้บริหาร')
+                                ->label('ประเด็นท้าทาย (PA) ของผู้บริหาร')
                                 ->required(),
                             Forms\Components\Fieldset::make()->schema([
                                 Forms\Components\Group::make([
@@ -152,7 +153,7 @@ class CreateActivity extends CreateRecord
                             Repeater::make('beneficiary')->schema([
                                 Fieldset::make()->schema([
                                     Forms\Components\TextInput::make('people')->label('กลุ่มผู้ได้รับประโยชน์'),
-                                    Forms\Components\TextInput::make('count')->label('จำนวน/คน'),
+                                    Forms\Components\TextInput::make('count')->label('จำนวน/คน')->numeric(),
                                 ])->label('เชิงปริมาณ'),
                                 Fieldset::make()->schema([
                                     Forms\Components\Textarea::make('qualitative')->label('เชิงคุณภาพ')

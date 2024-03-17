@@ -106,7 +106,7 @@ class ActivityResource extends Resource
 //                    ->label('รหัส')
 //                    ->searchable(),
                 Tables\Columns\TextColumn::make('name')
-                    ->label('ชื่อกิจกรรม')
+                    ->label('ชื่อกิจกรรม/ผลงานการขันเคลื่อนนโยบายสู่การปฏิบัติ')
                     ->searchable(),
                 Tables\Columns\IconColumn::make('is_success')
                     ->alignCenter()

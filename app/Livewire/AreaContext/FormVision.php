@@ -135,7 +135,8 @@ class FormVision extends Component implements HasForms
                                                     ->label('ตัวชี้วัด'),
                                                 TextInput::make('unit')
                                                     ->required()
-                                                    ->label('ค่าเป้าหมาย'),
+                                                    ->label('ค่าเป้าหมาย')
+                                                    ->numeric(),
                                                 TextInput::make('target_value')
                                                     ->required()
                                                     ->label('ระบุหน่วยนับ'),

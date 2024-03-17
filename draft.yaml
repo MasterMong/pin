@@ -70,7 +70,7 @@ models:
     name: string:300
     address: string:600 nullable
     zip_code: string:5 nullable
-    tel: string:20
+    tel: string:30
     num_person: integer default:0
     num_school: integer default:0
     num_teacher: integer default:0
