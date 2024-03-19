@@ -108,7 +108,7 @@ class CreateActivity extends CreateRecord
                             Forms\Components\Hidden::make('area_id'),
                             Forms\Components\Hidden::make('budget_year_id'),
                             Forms\Components\TextInput::make('name')
-                                ->label('ชื่อกิจกรรม/ผลงานการขันเคลื่อนนโยบายสู่การปฏิบัติ')
+                                ->label('ชื่อกิจกรรม/ผลงานการขับเคลื่อนนโยบายสู่การปฏิบัติ')
                                 ->required()
                                 ->maxLength(300),
                             Repeater::make('relate_items')
@@ -121,7 +121,10 @@ class CreateActivity extends CreateRecord
                                 ->columnSpanFull()
                                 ->label('ความสอดคล้อง'),
                             Forms\Components\Select::make('area_strategy_id')
-                                ->relationship('areaStrategy', 'detail', fn(Builder $query) => $query->where('area_id', auth()->user()->area_id)->where('budget_year_id', $this->budget_year_id))
+                                ->relationship('areaStrategy', 'detail', fn(Builder $query) => $query->where('area_id', auth()->user()->area_id)
+                                    ->where('budget_year_id', $this->budget_year_id)
+                                    ->whereNull('deleted_at')
+                                )
                                 ->label('กลยุทธ์ สพท.')
                                 ->required(),
                             Forms\Components\Toggle::make('is_pa_of_manager')
@@ -155,7 +158,7 @@ class CreateActivity extends CreateRecord
                             Repeater::make('beneficiary')->schema([
                                 Fieldset::make()->schema([
                                     Forms\Components\TextInput::make('people')->label('กลุ่มผู้ได้รับประโยชน์'),
-                                    Forms\Components\TextInput::make('count')->label('จำนวน/คน')->numeric(),
+                                    Forms\Components\TextInput::make('count')->label('จำนวน (คน/แห่ง)')->numeric(),
                                 ])->label('เชิงปริมาณ'),
                                 Fieldset::make()->schema([
                                     Forms\Components\Textarea::make('qualitative')->label('เชิงคุณภาพ')

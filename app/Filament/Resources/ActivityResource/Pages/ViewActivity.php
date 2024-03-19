@@ -34,7 +34,7 @@ class ViewActivity extends ViewRecord
             Section::make('ข้อมูลกิจกรรม')
                 ->schema([
                     TextEntry::make("name")
-                        ->label('ชื่อกิจกรรม/ผลงานการขันเคลื่อนนโยบายสู่การปฏิบัติ'),
+                        ->label('ชื่อกิจกรรม/ผลงานการขับเคลื่อนนโยบายสู่การปฏิบัติ'),
                     TextEntry::make("code")
                         ->label('รหัสกิจกรรม'),
                     TextEntry::make("duration")
