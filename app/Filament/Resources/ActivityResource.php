@@ -9,6 +9,7 @@ use App\Filament\Resources\ActivityResource\RelationManagers\ActivityInnovations
 use App\Filament\Resources\ProjectResource\Pages;
 use App\Filament\Resources\ProjectResource\RelationManagers;
 use App\Filament\Resources\ProjectResource\RelationManagers\ProjectActivityRelationManager;
+use App\Http\Controllers\FormController;
 use App\Models\Activity;
 use App\Tables\Columns\ColumnInnovationList;
 use Filament\Forms;
@@ -32,68 +33,10 @@ class ActivityResource extends Resource
     protected static ?string $modelLabel = 'กิจกรรม';
     protected static ?string $pluralModelLabel = 'กิจกรรม';
     protected static ?int $navigationSort = 2;
+
     public static function form(Form $form): Form
     {
-        return $form
-            ->schema([
-                Forms\Components\Select::make('area_id')
-                    ->relationship('area', 'name')
-                    ->required(),
-                Forms\Components\Select::make('budget_year_id')
-                    ->relationship('budgetYear', 'name')
-                    ->required(),
-                Forms\Components\Select::make('area_strategy_id')
-                    ->relationship('areaStrategy', 'id')
-                    ->required(),
-                Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->maxLength(300),
-                Forms\Components\TextInput::make('code')
-                    ->required()
-                    ->maxLength(50),
-                Forms\Components\TextInput::make('duration')
-                    ->maxLength(100),
-                Forms\Components\TextInput::make('date_start')
-                    ->maxLength(50),
-                Forms\Components\TextInput::make('date_end')
-                    ->maxLength(50),
-                Forms\Components\TextInput::make('q1')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('q2')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('q3')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('q4')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Textarea::make('process')
-                    ->columnSpanFull(),
-                Forms\Components\TextInput::make('target_area')
-                    ->required()
-                    ->maxLength(1000),
-                Forms\Components\TextInput::make('relate_items')
-                    ->required(),
-                Forms\Components\Toggle::make('is_pa_of_manager')
-                    ->required(),
-                Forms\Components\TextInput::make('beneficiary')
-                    ->required(),
-                Forms\Components\Textarea::make('problem')
-                    ->columnSpanFull(),
-                Forms\Components\Textarea::make('suggestions')
-                    ->columnSpanFull(),
-                Forms\Components\Toggle::make('is_success'),
-                Forms\Components\TextInput::make('progress')
-                    ->numeric(),
-                Forms\Components\TextInput::make('handler_name')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('status')
-                    ->required()
-                    ->maxLength(50)
-                    ->default('pending'),
-            ]);
+        return FormController::getProjectActivityFormInput($form);
     }
 
     public static function table(Table $table): Table
@@ -140,7 +83,7 @@ class ActivityResource extends Resource
             'index' => ListActivities::route('/'),
             'create' => CreateActivity::route('/create'),
             'view' => Pages\ViewActivity::route('/{record}'),
-//            'edit' => EditActivity::route('/{record}/edit'),
+            'edit' => EditActivity::route('/{record}/edit'),
         ];
     }
 }
