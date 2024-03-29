@@ -280,7 +280,7 @@ class FormVision extends Component implements HasForms
                 if ($strategy['id'] == 0) {
                     // New strategy
                     $area_strategy = AreaStrategy::create([
-                        'detail' => $goal['detail'],
+                        'detail' => $strategy['detail'],
                         'area_id' => $this->area_id,
                         'budget_year_id' => $this->budget_year_id,
                         'area_goal_id' => $area_goal->id,
