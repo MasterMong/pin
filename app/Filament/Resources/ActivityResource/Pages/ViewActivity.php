@@ -47,7 +47,7 @@ class ViewActivity extends ViewRecord
                     // ไตรมาสที่
                     TextEntry::make('areaStrategy.detail')->label('กลยุทธ์ สพท.')->html(),
                     TextEntry::make('objective')->label('วัตถุประสงค์')->html(),
-                    TextEntry::make('process')->label('การดำเนินงาน')->html(),
+                    TextEntry::make('process')->label('การดำเนินงาน')->isHtml(),
                     TextEntry::make('target_area')->label('กลุ่มเป่าหมาย')->html(),
 // ผลการดำเนินงาน
                     RepeatableEntry::make('beneficiary')->schema(
