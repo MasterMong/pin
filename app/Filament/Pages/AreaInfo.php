@@ -49,11 +49,11 @@ class AreaInfo extends Page implements HasInfolists
                         ->required(),
                     \Filament\Forms\Components\Section::make()->label('ข้อมูลติดต่อ')->schema([
                         Select::make('district_id')
-                            ->label('จังหวัด')
+                            ->label('อำเภอ')
                             ->relationship('district', 'name_in_thai')
                             ->required(),
                         Select::make('province_id')
-                            ->label('อำเภอ')
+                            ->label('จังหวัด')
                             ->relationship('province', 'name_in_thai')
                             ->required(),
                         Select::make('region_id')

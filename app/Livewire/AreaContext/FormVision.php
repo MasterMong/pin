@@ -113,7 +113,7 @@ class FormVision extends Component implements HasForms
                             ->label('เป้าประสงค์')
                             ->schema([
                                 Forms\Components\Hidden::make('id'),
-                                TextInput::make('detail')
+                                Forms\Components\Textarea::make('detail')
                                     ->required()
                                     ->label('ระบุเป้าประสงค์'),
                                 Repeater::make('strategy')
@@ -127,10 +127,12 @@ class FormVision extends Component implements HasForms
                                             ->label('เป้าหมาย')
                                             ->schema([
                                                 Forms\Components\Hidden::make('id'),
-                                                TextInput::make('detail')
+                                                Forms\Components\Textarea::make('detail')
+                                                    ->columnSpanFull()
                                                     ->required()
                                                     ->label('ระบุเป้าหมาย'),
-                                                TextInput::make('indicator')
+                                                Forms\Components\Textarea::make('indicator')
+                                                    ->columnSpanFull()
                                                     ->required()
                                                     ->label('ตัวชี้วัด'),
                                                 TextInput::make('unit')
@@ -154,7 +156,7 @@ class FormVision extends Component implements HasForms
                                                         ->send();
                                                 });
                                             })
-                                            ->columns(4)
+                                            ->columns(2)
                                             ->reorderable(False)
                                     ])
                                     ->reorderable(False)
@@ -278,7 +280,7 @@ class FormVision extends Component implements HasForms
                 if ($strategy['id'] == 0) {
                     // New strategy
                     $area_strategy = AreaStrategy::create([
-                        'detail' => $goal['detail'],
+                        'detail' => $strategy['detail'],
                         'area_id' => $this->area_id,
                         'budget_year_id' => $this->budget_year_id,
                         'area_goal_id' => $area_goal->id,

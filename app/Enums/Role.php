@@ -11,7 +11,6 @@ enum Role: string implements HasLabel
     case EVA = 'eva';
     case MANAGER = 'manager';
     case PENDING = 'pending';
-
     public function getLabel(): ?string
     {
         return $this->name;
