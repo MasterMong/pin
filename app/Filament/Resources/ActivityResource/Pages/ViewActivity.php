@@ -54,7 +54,7 @@ class ViewActivity extends ViewRecord
                             Grid::make()->schema(
                                 [
                                     TextEntry::make('people')->label('กลุ่มผู้ได้รับประโยชน์'),
-                                    TextEntry::make('count')->label('จำนวน/คน')
+                                    TextEntry::make('count')->label('จำนวน (คน/แห่ง)')
                                 ]
                             )->columns(2)
                         ]
