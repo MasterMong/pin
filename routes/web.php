@@ -23,3 +23,4 @@ Route::get('/logmeout', function () {
 //if (env('APP_ENV') === 'production') {
 //    URL::forceScheme('https');
 //}
+Route::get('bug', [\App\Http\Controllers\ServiceController::class, 'fix_bug_c_activity']);

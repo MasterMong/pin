@@ -28,8 +28,9 @@ class ActivityInnovationsRelationManager extends RelationManager
         $budget_year = SettingController::getSetting('budget_year');
         return $form
             ->schema([
-                Forms\Components\Hidden::make('area_id')
-                    ->default(auth()->user()->id),
+                // Bug use area_id not user id
+                Forms\Components\Hidden::meke('area_id')
+                    ->default(auth()->user()->area_id),
                 Forms\Components\Hidden::make('activity_id')
                     ->default($this->ownerRecord->id),
                 Forms\Components\Hidden::make('budget_year_id')
