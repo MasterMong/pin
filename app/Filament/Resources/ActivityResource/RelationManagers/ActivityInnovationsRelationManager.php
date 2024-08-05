@@ -29,7 +29,7 @@ class ActivityInnovationsRelationManager extends RelationManager
         return $form
             ->schema([
                 // Bug use area_id not user id
-                Forms\Components\Hidden::meke('area_id')
+                Forms\Components\Hidden::make('area_id')
                     ->default(auth()->user()->area_id),
                 Forms\Components\Hidden::make('activity_id')
                     ->default($this->ownerRecord->id),
